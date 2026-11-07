@@ -1,0 +1,37 @@
+{
+  "model": "HGBForecaster",
+  "technical_points": 35.07429043313985,
+  "mean_loss_ratio": 0.7106547063118677,
+  "by_condition": {
+    "stable": {
+      "error": 0.13118384183759435,
+      "reference_error": 0.19625080289290195,
+      "loss_ratio": 0.6684499625165051,
+      "episodes": 24,
+      "queries": 192
+    },
+    "short_history": {
+      "error": 0.13879017787783185,
+      "reference_error": 0.1773414479878668,
+      "loss_ratio": 0.7826155670462749,
+      "episodes": 24,
+      "queries": 192
+    },
+    "drift": {
+      "error": 0.14403684507444184,
+      "reference_error": 0.18983393064179913,
+      "loss_ratio": 0.7587518447701924,
+      "episodes": 24,
+      "queries": 192
+    },
+    "shared_change": {
+      "error": 0.13008034290795017,
+      "reference_error": 0.20556264957983816,
+      "loss_ratio": 0.6328014509144984,
+      "episodes": 24,
+      "queries": 192
+    }
+  },
+  "fit_seconds": 9.771093130111694,
+  "total_seconds": 12.028326749801636
+}

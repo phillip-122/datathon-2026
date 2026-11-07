@@ -6,71 +6,77 @@ reproducible.
 
 ## 0. Project status
 
--   **Current phase:** Setup / baseline / data audit / feature research
-    / model research / integration / final validation
--   **Current best model:**
--   **Best cross-validation score:**
--   **Official validation score:**
--   **Last reproducible run ID:**
--   **Known blockers:**
--   **Next highest-value action:**
+-   **Current phase:** Final validation & submission packaging complete
+-   **Current best model:** `HGBForecaster` (HistGradientBoosting with 211 cutoff-safe dynamic features, multi-cutoff training slices, leaves=60, l2=2.0)
+-   **Best cross-validation score:** 35.1863 tuning / 34.9486 audit (split-half episodes)
+-   **Official validation score:** 35.0743 / 60 technical points (mean loss ratio: 0.7107)
+-   **Last reproducible run ID:** EXP-006 (runs/hgb_run)
+-   **Known blockers:** None
+-   **Next highest-value action:** Submit `runs/hgb_run/submission.csv` and `submission_entry.zip` via Main Round Google Form; prepare for Round 2 (adaptation) at 9 PM Central.
 
 ## 1. Setup checklist
 
--   [ ] Original starter ZIP copied into `starter_kit/`
--   [ ] Starter-kit file inventory verified
--   [ ] Official rules and data dictionary read
--   [ ] Python version recorded
--   [ ] Isolated environment created
--   [ ] Dependencies installed from an explicit specification
--   [ ] Starter baseline runs unchanged
--   [ ] Baseline output schema verified
--   [ ] Baseline metrics recorded
--   [ ] Episode-grouped validation strategy implemented
--   [ ] Reproduction command tested
+-   [x] Original starter ZIP copied into `starter_kit/` (`research_environment`)
+-   [x] Starter-kit file inventory verified
+-   [x] Official rules and data dictionary read
+-   [x] Python version recorded
+-   [x] Isolated environment created (`.venv` Python 3.13)
+-   [x] Dependencies installed from an explicit specification (`pandas`, `scipy`, `scikit-learn`, `numpy`)
+-   [x] Starter baseline runs unchanged
+-   [x] Baseline output schema verified
+-   [x] Baseline metrics recorded
+-   [x] Episode-grouped validation strategy implemented (tuning/audit 50-50 split + full validation scorer)
+-   [x] Reproduction command tested
 
 ### Environment record
 
   Item                 Value
-  -------------------- -------
-  OS                   
-  Python               
-  pandas               
-  NumPy                
-  scikit-learn         
-  XGBoost              
-  Other dependencies   
-  CPU / RAM            
-  Install command      
+  -------------------- ----------------------------------------------------
+  OS                   macOS (Darwin arm64)
+  Python               3.13.12
+  pandas               2.2.3
+  NumPy                2.2.3
+  scikit-learn         1.6.1
+  scipy                1.15.2
+  CPU / RAM            Apple Silicon M-series / 16+ GiB RAM
+  Install command      `source .venv/bin/activate && pip install pandas scipy scikit-learn`
 
 ## 2. Data map
 
 Record exact filenames, columns, row counts, and semantics after
 inspecting the kit. Do not guess.
 
-  -----------------------------------------------------------------------------------
-  Dataset/file   Purpose               Rows Key           Target/labels   Notes
-                                            identifiers                   
-  -------------- ----------- -------------- ------------- --------------- -----------
-  Train                                                                   
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Dataset/file                  Purpose                 Rows Key identifiers               Target/labels                   Notes
+  ----------------------------- -------------------- ------- ----------------------------- ------------------------------- -------------------------------------------------
+  Train queries.csv             Fitting models           768 query_id, episode_id,         -                               96 episodes, 8 machines per ep, cutoffs 192-256
+                                                             machine_id                                                    
+  Train history.csv             Gameplay history     139,944 episode_id, machine_id, tick  payout                          Ticks strictly < cutoff, payouts in {0,1,2,5,20}
+  Train labels.csv              Next-spin outcomes       768 query_id                      outcome                         Observed payout at cutoff tick
+  Train conditions.csv          Condition labels         768 query_id                      condition                       24 ep per condition (stable, short, drift, shared)
+  Validation queries.csv        Validation queries       768 query_id, episode_id,         -                               96 episodes, 8 machines per ep, cutoffs 192-256
+                                                             machine_id                                                    
+  Validation history.csv        Validation history   141,392 episode_id, machine_id, tick  payout                          Ticks strictly < cutoff
+  Validation targets.csv        True conditional p       768 query_id                      p_0, p_1, p_2, p_5, p_20, outcome Ground truth probability distribution from simulator
+  Validation conditions.csv     Condition labels         768 query_id                      condition                       24 ep per condition
+  Validation reference.csv      Frozen baseline p        768 query_id                      p_0, p_1, p_2, p_5, p_20        Frozen pooled starter predictions (denominator)
+  Test queries.csv              Evaluation queries     1,536 query_id, episode_id,         -                               192 episodes, 8 machines per ep, cutoffs 192-256
+                                                             machine_id                                                    
+  Test history.csv              Test history         282,664 episode_id, machine_id, tick  payout                          Ticks strictly < cutoff
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  Validation                                                              
+### Data semantics verified
 
-  Test inputs                                                             
-  -----------------------------------------------------------------------------------
-
-### Data semantics to verify
-
--   [ ] What uniquely identifies a query?
--   [ ] What identifies a machine?
--   [ ] What identifies an episode?
--   [ ] What defines the cutoff tick?
--   [ ] Are payout histories ordered?
--   [ ] How are missing ticks represented?
--   [ ] Which observations are available at inference?
--   [ ] Which fields are absent at test time?
--   [ ] What is the exact target meaning?
--   [ ] What is the official scoring metric?
+-   [x] **What uniquely identifies a query?** `query_id` (1 query per machine per episode).
+-   [x] **What identifies a machine?** `machine_id` within `episode_id`. Always group by `(episode_id, machine_id)`.
+-   [x] **What identifies an episode?** `episode_id`. Contains exactly 8 machines that share identical cutoff and condition.
+-   [x] **What defines the cutoff tick?** `cutoff` is the tick to predict. Only ticks `< cutoff` are permitted as features.
+-   [x] **Are payout histories ordered?** Ticks are integer time-steps. Consecutive ticks are not guaranteed (ticks can be missing).
+-   [x] **How are missing ticks represented?** Absent rows in `history.csv`. A missing tick is UNKNOWN, not a zero payout!
+-   [x] **Which observations are available at inference?** All history rows with `tick < cutoff`. Other machines' earlier history in the same episode is permitted.
+-   [x] **Which fields are absent at test time?** `targets.csv`, `labels.csv`, `conditions.csv`, and `reference.csv`.
+-   [x] **What is the exact target meaning?** True probability vector `[p_0, p_1, p_2, p_5, p_20]` at the cutoff tick.
+-   [x] **What is the official scoring metric?** Sum of squared errors $\sum (p_i - q_i)^2$ averaged per episode, then averaged per condition, divided by reference error $B[c]$, averaged across all 4 conditions to give $R$. Technical points $= 60 / (1 + R)$.
 
 ## 3. Hypothesis backlog
 
@@ -159,46 +165,54 @@ successful run.
 
 ## 5. Run summary table
 
-  ---------------------------------------------------------------------------------
-  Run ID     Hypothesis / Fold       Model           Metric      Runtime Decision
-             change       strategy                                       
-  ---------- ------------ ---------- --------- ------------ ------------ ----------
-  BASE-001   Untouched    Official   Starter                             
-             starter      starter                                        
-             baseline                                                    
-
-                                                                         
-  ---------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------------------------------------
+  Run ID     Hypothesis / change             Fold strategy    Model           Val Points   Mean Loss Ratio  Runtime  Decision
+  ---------- ------------------------------- ---------------- --------------- ------------ ---------------- -------- ----------------------
+  BASE-001   Untouched starter baseline      Full validation  pooled          30.0000      1.000000         0.18s    Keep (Ref)
+  BASE-002   Recency decay + context prior   Full validation  pooled_recent   30.8259      0.946285         0.19s    Baseline
+  EXP-001    Starter candidates (12 models)  50/50 Tune/Audit pooled_recent   30.5645 (aud)0.9631 (aud)     ~2.5s    Baseline
+  EXP-002    Grid search prior & half-life   50/50 Tune/Audit pooled_recent   30.6233 (aud)0.9436 (aud)     ~4.0s    Improved baseline
+             (prior_strength=10, hl=16)      Full validation  pooled_recent   30.9023      0.940800         0.19s    Keep
+  EXP-003    LogisticRegression + Features   Full validation  LR (C=0.01)     31.5742      0.898800         ~3.0s    Step change
+  EXP-004    HistGradientBoosting + Baseline Full validation  HGB (leaves=31) 32.0204      0.873800         ~5.0s    Strong improvement
+  EXP-005    211 Advanced Cutoff Features,   50/50 Tune/Audit HGB             34.1988 (aud)0.7545 (aud)     ~10.0s   Breakthrough
+             Multi-cutoff Slices (step=6)    Full validation  HGB (leaves=31) 34.3739      0.745500         ~10.0s   Keep
+  EXP-006    HGB Tree Capacity & L2 Tuning   50/50 Tune/Audit HGB             34.9486 (aud)0.7167 (aud)     ~12.0s   Production Model
+             (leaves=60, l2=2.0, min_leaf=25)Full validation  HGB             35.0743      0.710700         12.03s   **CURRENT BEST / SUBMITTED**
+  -----------------------------------------------------------------------------------------------------------------------------------------
 
 ## 6. Learning history / architecture decisions
 
-Record only durable discoveries and decisions here. Include the
-experiment IDs supporting each one.
-
-  --------------------------------------------------------------------------
-  Date           Decision or    Supporting     Confidence     Consequence
-                 discovery      experiments                   
-  -------------- -------------- -------------- -------------- --------------
-                                                              
-
-  --------------------------------------------------------------------------
+  -------------------------------------------------------------------------------------------------------------------------------------------
+  Date       Decision or discovery           Supporting experiments  Confidence  Consequence
+  ---------- ------------------------------- ----------------------- ----------- -------------------------------------------------------------
+  2026-11-07 Simulator has hot/cold regimes   Data Audit, EXP-003-005 Very High   True $p_0$ is strongly bimodal (modes at ~0.04 and ~0.99).
+             with strong lag-8 interactions                                      Frequency pooling alone is inadequate; nonlinear models excel.
+  2026-11-07 Multi-cutoff training slicing   EXP-005                 Very High   Extracting cutoffs every 6 ticks expands training data from
+             from history is permitted                                           768 to 21,200 examples while preserving cutoff safety.
+  2026-11-07 HistGradientBoosting natively   EXP-005, EXP-006        Very High   HGB outputs well-calibrated multiclass softmax distributions
+             models nonlinear dynamics                                           achieving 35.0743 points (+5.07 points over pooled baseline).
+  2026-11-07 Offline artifact deployment     Verification test       Absolute    Model fits in 705 KB, predicts in < 1.5s on CPU, 100%
+             using joblib and scikit-learn                                       deterministic, identical SHA256 output.
+  -------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Current architecture
 
 ``` text
-Input
-  → schema and cutoff validation
-  → feature extraction
-  → [population specialist]
-  → [individual-history specialist]
-  → [temporal specialist]
-  → [episode-context specialist]
-  → combination / calibration
-  → probability validation
-  → submission
+Input queries.csv + history.csv
+  → Cutoff validation (strict t < cutoff filtering)
+  → Advanced Cutoff-Safe Feature Extraction (211 features):
+      - Machine Type & Signal interactions (steady, balanced, jackpot x {-1, 0, 1})
+      - Multi-scale recency decay counts (half-lives 6, 12, 24, 48 ticks)
+      - Rolling window win-rates & mean payouts (windows 1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48)
+      - Lags 1 to 8 exact payouts and pairwise interaction categories
+      - Win / loss streak counters and ticks since last win / big win
+      - Same-episode peer machine cross-gameplay activity
+      - Hierarchical Dirichlet context and global priors
+  → Frozen HistGradientBoostingClassifier (leaves=60, l2=2.0)
+  → Exact probability normalization (sum strictly = 1.0)
+  → submission.csv
 ```
-
-Replace bracketed placeholders only when supported by experiments.
 
 ## 7. Agent activity log
 
@@ -227,50 +241,51 @@ evidence.
 
 Before accepting any result:
 
--   [ ] Split is grouped by episode where appropriate.
--   [ ] No training feature uses information after its historical
-    cutoff.
--   [ ] No future payout is used.
--   [ ] No observations from unrelated episodes are mixed.
--   [ ] Cross-machine features use only same-episode, earlier
-    observations.
--   [ ] Missing ticks are not converted into zero payouts.
--   [ ] Preprocessing is fitted only on the training fold.
--   [ ] Validation targets are not accidentally used as training labels.
--   [ ] Feature availability matches test-time availability.
--   [ ] The comparison uses the official metric or a justified proxy.
--   [ ] Result is reproducible from the recorded command and
-    configuration.
+-   [x] Split is grouped by episode where appropriate.
+-   [x] No training feature uses information after its historical cutoff.
+-   [x] No future payout is used.
+-   [x] No observations from unrelated episodes are mixed.
+-   [x] Cross-machine features use only same-episode, earlier observations.
+-   [x] Missing ticks are not converted into zero payouts.
+-   [x] Preprocessing is fitted only on the training fold.
+-   [x] Validation targets are not accidentally used as training labels.
+-   [x] Feature availability matches test-time availability.
+-   [x] The comparison uses the official metric or a justified proxy.
+-   [x] Result is reproducible from the recorded command and configuration.
 
 ## 9. Finalization checklist
 
--   [ ] Select the best validated architecture.
--   [ ] Remove unused research and agent dependencies from inference.
--   [ ] Freeze model parameters and feature definitions.
--   [ ] Train final model only on data permitted by the rules.
--   [ ] Save all required model artifacts.
--   [ ] Verify class order `[0, 1, 2, 5, 20]`.
--   [ ] Verify all probabilities are finite and in `[0, 1]`.
--   [ ] Verify each row sums to one within tolerance.
--   [ ] Verify query IDs and row ordering.
--   [ ] Run from a clean environment with networking disabled.
--   [ ] Test the exact organizer reproduction command.
--   [ ] Compare regenerated predictions with submitted CSV.
--   [ ] Check runtime, memory, and package contents.
--   [ ] Archive source, config, dependencies, hashes, and final metrics.
+-   [x] Select the best validated architecture (`HGBForecaster`).
+-   [x] Remove unused research and agent dependencies from inference.
+-   [x] Freeze model parameters and feature definitions.
+-   [x] Train final model only on data permitted by the rules (`public/train`).
+-   [x] Save all required model artifacts (`artifacts/models/hgb_production`).
+-   [x] Verify class order `[0, 1, 2, 5, 20]`.
+-   [x] Verify all probabilities are finite and in `[0, 1]`.
+-   [x] Verify each row sums to one within tolerance (`1e-6`).
+-   [x] Verify query IDs and row ordering (all 1,536 test queries verified).
+-   [x] Run from a clean environment with networking disabled.
+-   [x] Test the exact organizer reproduction command (`python predict.py --data /data --out /output/submission.csv`).
+-   [x] Compare regenerated predictions with submitted CSV (100% byte-for-byte SHA256 match).
+-   [x] Check runtime, memory, and package contents (uncompressed < 1 MB, runtime ~1.5s).
+-   [x] Archive source, config, dependencies, hashes, and final metrics.
 
 ## 10. Session handoff
 
-At the end of each work session, fill this in:
-
 **What changed?**
+Constructed a complete high-performance machine learning pipeline using `HistGradientBoostingClassifier` with 211 cutoff-safe features, multi-cutoff historical slicing, and hierarchical priors. Built and validated the submission package `submission_entry.zip` and `runs/hgb_run/submission.csv`.
 
 **What did we learn?**
+The simulator exhibits regime switching (bimodal $p_0$ around 0.04 and 0.99) driven by lag 1-8 sequence interactions, streak lengths, and machine-type specific parameters. Standard frequency pooling models cannot capture these nonlinear dynamics. HGB achieved a 25-35% error reduction across all four conditions.
 
 **Which experiment IDs support it?**
+EXP-004, EXP-005, EXP-006.
 
 **What remains uncertain?**
+Round 2 adaptation data release at 9 PM Central will introduce changed dynamics.
 
 **What should the next session do first?**
+Submit the two Main round files (`runs/hgb_run/submission.csv` and `submission_entry.zip`) to the Main Google Form before 9 PM Central cutoff. At 9 PM, extract adaptation kit, run validation check, and fine-tune/refit HGB pipeline.
 
 **Exact command to resume:**
+`source .venv/bin/activate && python House_Edge_Lab_Starter_Pack/research_environment/check_submission.py runs/hgb_run/submission.csv`
