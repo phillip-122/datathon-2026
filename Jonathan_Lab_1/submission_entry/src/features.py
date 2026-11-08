@@ -29,8 +29,8 @@ def build_advanced_features(query, sequence, peer_sequences, cutoff, base_foreca
     feats.append(float(n_obs))
     feats.append(1.0 if n_obs == 64 else 0.0)
     
-    # 2. Recency decay counts for half-lives [6, 12, 24, 48]
-    for hl in (6.0, 12.0, 24.0, 48.0):
+    # 2. Recency decay counts for half-lives [2, 4, 6, 12, 24, 48]
+    for hl in (2.0, 4.0, 6.0, 12.0, 24.0, 48.0):
         counts = [0.0] * 5
         for tick, p in sequence.items():
             age = cutoff - 1 - tick

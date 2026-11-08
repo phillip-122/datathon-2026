@@ -1,7 +1,7 @@
 # House Edge Research Experiment Registry
 
-**Current Champion:** `EXP-012`
-**Last Updated:** `2026-11-07 18:20:47`
+**Current Champion:** `EXP-013`  
+**Last Updated:** `2026-11-07 19:23:00`  
 
 | Exp ID | Hypothesis | Author | Tuning Pts | Audit Pts | Full Pts | Mean Loss Ratio | Decision | Notes |
 |---|---|---|---|---|---|---|---|---|
@@ -13,6 +13,7 @@
 | EXP-010 | Drift velocity features with safe tick 30 cutoffs | TemporalDriftSpecialist | 34.8703 | 34.6534 | 34.7644 | 0.7259 | **REJECTED** | Velocity diffs on sparse windows introduced noise. |
 | EXP-011 | Specialist HistGradientBoosting models by machine type | ModelSpecialist | 30.9509 | 30.3597 | 30.6602 | 0.9569 | **REJECTED** | Splitting training data by type fragmented sample size and broke shared episode learning. |
 | EXP-012 | Logit temperature scaling T=1.06 (Brier score optimization) | CalibrationSpecialist | 35.2282 | 34.9660 | 35.1057 | 0.7091 | **CHAMPION** | Passed both gates: Tune 35.2282 > 35.1863, Audit 34.9660 > 34.9486. Promoted to Champion v2. |
+| EXP-013 | 3-Seed HGB Ensemble + Fast Recency (hl=2,4) + Machine Volatility Calibration | EnsembleSpecialist | **36.8194** | **36.6807** | **36.7561** | **0.6324** | **CHAMPION** | Smashed both gates: Tune 36.8194 > 35.3044, Audit 36.6807 > 34.9857. Promoted to Champion v3. |
 
 ## Condition Breakdown by Experiment
 
@@ -26,3 +27,4 @@
 | EXP-010 | 0.6979 | 0.7798 | 0.8112 | 0.6147 |
 | EXP-011 | 0.9184 | 1.0386 | 1.0159 | 0.8548 |
 | EXP-012 | 0.6686 | 0.7838 | 0.7580 | 0.6261 |
+| EXP-013 | **0.5697** | **0.7218** | **0.7053** | **0.5328** |

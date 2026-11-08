@@ -6,14 +6,14 @@ reproducible.
 
 ## 0. Project status
 
--   **Current phase:** Final validated & promoted submission package ready for 9 PM deadline
--   **Current best model:** `HGBForecaster-Calibrated` (HistGradientBoosting with 211 cutoff-safe dynamic features, multi-cutoff training slices, leaves=60, l2=2.0, temperature calibration T=1.06)
--   **Best cross-validation score:** 35.2282 tuning / 34.9660 audit (split-half episodes)
--   **Official validation score:** 35.1057 / 60 technical points (mean loss ratio: 0.7091)
--   **Last reproducible run ID:** EXP-012 (`compiled_versions/v2_promoted_champion_exp012`)
+-   **Current phase:** Final validated & promoted Champion v3 submission package ready for 9 PM deadline
+-   **Current best model:** `HGBEnsembleForecaster` (3-Seed Deep Ensemble with 223 cutoff-safe dynamic features, fast recency half-lives [2, 4, 6, 12, 24, 48], machine-type volatility calibration)
+-   **Best cross-validation score:** 36.8194 tuning / 36.6807 audit (split-half episodes)
+-   **Official validation score:** **36.7561 / 60 technical points** (mean loss ratio: 0.6324, 36.76% error reduction)
+-   **Last reproducible run ID:** EXP-013 (`compiled_versions/v3_promoted_champion_exp013`)
 -   **Frozen fallback run ID:** EXP-006 (`compiled_versions/v1_frozen_champion_exp006`, 35.0743 pts)
 -   **Known blockers:** None
--   **Next highest-value action:** Submit `compiled_versions/final_submission/submission.csv` and `compiled_versions/final_submission/submission_entry.zip` via Main Round Google Form before 9 PM Central; prepare for Round 2 (adaptation) at 9 PM Central.
+-   **Next highest-value action:** Submit `compiled_versions/active_champion_submission/submission.csv` and `compiled_versions/active_champion_submission/submission_entry.zip` via Main Round Google Form before 9 PM Central; prepare for Round 2 (adaptation) at 9 PM Central.
 
 ## 1. Setup checklist
 

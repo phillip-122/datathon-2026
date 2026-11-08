@@ -1,4 +1,4 @@
-"""Production Model Class for House Edge: HistGradientBoosting with Cutoff-Safe Dynamics."""
+"""Production Model Class for House Edge: HistGradientBoosting with Multi-Structure Ensemble & Cutoff-Safe Dynamics."""
 import json
 import math
 from collections import defaultdict
@@ -12,17 +12,19 @@ from slot_forecasting.schema import PAYOUTS, ValidationError, probabilities
 
 from .features import build_advanced_features, PAYOUT_TO_IDX
 
+DEFAULT_TEMP_MAP = {"steady": 1.00, "balanced": 1.06, "jackpot": 1.12}
+
 class HGBForecaster:
     def __init__(
         self,
         max_iter=150,
         learning_rate=0.08,
-        max_leaf_nodes=60,
-        min_samples_leaf=25,
-        l2_regularization=2.0,
+        max_leaf_nodes=80,
+        min_samples_leaf=20,
+        l2_regularization=1.5,
         step_ticks=6,
-        temperature=1.06,
-        random_state=42
+        temperature_map=None,
+        seeds=None
     ):
         self.max_iter = max_iter
         self.learning_rate = learning_rate
@@ -30,11 +32,11 @@ class HGBForecaster:
         self.min_samples_leaf = min_samples_leaf
         self.l2_regularization = l2_regularization
         self.step_ticks = step_ticks
-        self.temperature = temperature
-        self.random_state = random_state
+        self.temperature_map = temperature_map if temperature_map is not None else DEFAULT_TEMP_MAP
+        self.seeds = seeds if seeds is not None else [42, 101, 202]
         
         self.base_forecaster = FrequencyForecaster("pooled_recent", prior_strength=10.0, half_life=16.0)
-        self.hgb = None
+        self.models = []
 
     def fit(self, queries, history, labels=None):
         queries = tuple(queries)
@@ -75,20 +77,23 @@ class HGBForecaster:
         X_train = np.array(X_train, dtype=np.float32)
         y_train = np.array(y_train, dtype=np.int32)
         
-        # 4. Fit HistGradientBoostingClassifier
-        self.hgb = HistGradientBoostingClassifier(
-            max_iter=self.max_iter,
-            learning_rate=self.learning_rate,
-            max_leaf_nodes=self.max_leaf_nodes,
-            min_samples_leaf=self.min_samples_leaf,
-            l2_regularization=self.l2_regularization,
-            random_state=self.random_state
-        )
-        self.hgb.fit(X_train, y_train)
+        # 4. Fit ensemble of HistGradientBoostingClassifier models across seeds
+        self.models = []
+        for s in self.seeds:
+            m = HistGradientBoostingClassifier(
+                max_iter=self.max_iter,
+                learning_rate=self.learning_rate,
+                max_leaf_nodes=self.max_leaf_nodes,
+                min_samples_leaf=self.min_samples_leaf,
+                l2_regularization=self.l2_regularization,
+                random_state=s
+            )
+            m.fit(X_train, y_train)
+            self.models.append(m)
         return self
 
     def predict(self, queries, history):
-        if self.hgb is None or self.base_forecaster.global_prior is None:
+        if not self.models or self.base_forecaster.global_prior is None:
             raise ValidationError("Model must be fitted or loaded before predicting.")
             
         queries = tuple(queries)
@@ -107,11 +112,17 @@ class HGBForecaster:
             X.append(f)
             
         X = np.array(X, dtype=np.float32)
-        logits = self.hgb.decision_function(X)
-        if self.temperature != 1.0:
-            scaled = logits / self.temperature
-        else:
-            scaled = logits
+        
+        # Average logits across seeds
+        all_logits = [m.decision_function(X) for m in self.models]
+        avg_logits = np.mean(all_logits, axis=0)
+        
+        # Per-machine-type temperature scaling
+        scaled = np.zeros_like(avg_logits)
+        for i, q in enumerate(queries):
+            T = self.temperature_map.get(q.machine_type, 1.06) if isinstance(self.temperature_map, dict) else float(self.temperature_map)
+            scaled[i] = avg_logits[i] / T
+            
         scaled -= np.max(scaled, axis=1, keepdims=True)
         exp_scaled = np.exp(scaled)
         probs = exp_scaled / np.sum(exp_scaled, axis=1, keepdims=True)
@@ -131,19 +142,20 @@ class HGBForecaster:
         directory.mkdir(parents=True, exist_ok=True)
         
         meta = {
-            "model_type": "HGBForecaster",
+            "model_type": "HGBEnsembleForecaster",
             "max_iter": self.max_iter,
             "learning_rate": self.learning_rate,
             "max_leaf_nodes": self.max_leaf_nodes,
             "min_samples_leaf": self.min_samples_leaf,
             "l2_regularization": self.l2_regularization,
             "step_ticks": self.step_ticks,
-            "temperature": self.temperature,
-            "random_state": self.random_state,
+            "temperature_map": self.temperature_map,
+            "seeds": self.seeds,
+            "n_models": len(self.models)
         }
         (directory / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
         self.base_forecaster.save(directory / "base_forecaster.json")
-        joblib.dump(self.hgb, directory / "hgb_model.joblib", compress=3)
+        joblib.dump(self.models, directory / "models.joblib", compress=3)
 
     @classmethod
     def load(cls, directory):
@@ -156,9 +168,13 @@ class HGBForecaster:
             min_samples_leaf=meta["min_samples_leaf"],
             l2_regularization=meta["l2_regularization"],
             step_ticks=meta["step_ticks"],
-            temperature=meta.get("temperature", 1.0),
-            random_state=meta["random_state"]
+            temperature_map=meta.get("temperature_map", DEFAULT_TEMP_MAP),
+            seeds=meta.get("seeds", [42, 101, 202])
         )
         model.base_forecaster = FrequencyForecaster.load(directory / "base_forecaster.json")
-        model.hgb = joblib.load(directory / "hgb_model.joblib")
+        if (directory / "models.joblib").exists():
+            model.models = joblib.load(directory / "models.joblib")
+        elif (directory / "hgb_model.joblib").exists():
+            single_m = joblib.load(directory / "hgb_model.joblib")
+            model.models = [single_m]
         return model

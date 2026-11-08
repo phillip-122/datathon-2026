@@ -1,11 +1,20 @@
 {
-  "model_type": "HGBForecaster",
+  "model_type": "HGBEnsembleForecaster",
   "max_iter": 150,
   "learning_rate": 0.08,
-  "max_leaf_nodes": 60,
-  "min_samples_leaf": 25,
-  "l2_regularization": 2.0,
+  "max_leaf_nodes": 80,
+  "min_samples_leaf": 20,
+  "l2_regularization": 1.5,
   "step_ticks": 6,
-  "temperature": 1.06,
-  "random_state": 42
+  "temperature_map": {
+    "steady": 1.0,
+    "balanced": 1.06,
+    "jackpot": 1.12
+  },
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "n_models": 3
 }
