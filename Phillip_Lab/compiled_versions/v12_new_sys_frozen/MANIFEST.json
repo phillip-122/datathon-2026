@@ -1,0 +1,33 @@
+{
+  "version": "Phillip_v12_new_sys_frozen",
+  "files": {
+    "README_FROZEN.md": {
+      "bytes": 1519,
+      "sha256": "45c6d66aa7d28abebf52bbb1a42349e007d76828f115a40d3edc7bd43c6f5e25"
+    },
+    "regenerated_v10_validation.csv": {
+      "bytes": 105227,
+      "sha256": "599603d067fb0f64292a320b318819178e52bbc7385cd4d09e8c46d72770ad96"
+    },
+    "report.json": {
+      "bytes": 44858,
+      "sha256": "70fd47b7f5caee48694303f9b4bbbf31ad23050c1950d720c2b0efe5c120a9d0"
+    },
+    "submission.csv": {
+      "bytes": 200424,
+      "sha256": "1533697717de1537817225d43b8ff383678cf3b22a4005a2397d7fb8c8d0227c"
+    },
+    "submission_entry.zip": {
+      "bytes": 33387007,
+      "sha256": "1d97bb13b419837cad88749d806614c8b53035b9c180784ef98fe4f67f1cf92a"
+    },
+    "v12.json": {
+      "bytes": 781,
+      "sha256": "73419bd86ccb99e2e3f393390f2a4e1a2f378d56e218d427ce02a23616db55fb"
+    },
+    "validation_predictions.csv": {
+      "bytes": 104639,
+      "sha256": "11d88dc2de70fc9b1392a45798b11c2e96491d936698f95e5ca61025833a17f1"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "half": 64,
+  "method": "local",
+  "strength": 4,
+  "temporal": true,
+  "weight": 0.5
+}
