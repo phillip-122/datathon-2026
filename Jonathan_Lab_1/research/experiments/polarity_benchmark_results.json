@@ -1,0 +1,62 @@
+{
+  "baseline_Candidate_A2": {
+    "points": 11.722448,
+    "mean_loss_ratio": 0.706128,
+    "by_condition": {
+      "stable": 0.8154,
+      "short_history": 0.691,
+      "drift": 0.6004,
+      "shared_change": 0.7177
+    }
+  },
+  "all_polarity_features_hgb": {
+    "points": 11.613,
+    "mean_loss_ratio": 0.722208,
+    "by_condition": {
+      "stable": 0.8017,
+      "short_history": 0.7121,
+      "drift": 0.6359,
+      "shared_change": 0.7392
+    }
+  },
+  "peer_contagion_only": {
+    "points": 11.641134,
+    "mean_loss_ratio": 0.718046,
+    "by_condition": {
+      "stable": 0.8155,
+      "short_history": 0.7211,
+      "drift": 0.61,
+      "shared_change": 0.7256
+    }
+  },
+  "regime_trend_only": {
+    "points": 11.647679,
+    "mean_loss_ratio": 0.71708,
+    "by_condition": {
+      "stable": 0.8173,
+      "short_history": 0.7122,
+      "drift": 0.6077,
+      "shared_change": 0.7312
+    }
+  },
+  "self_lag2_polarity_only": {
+    "points": 11.766458,
+    "mean_loss_ratio": 0.699747,
+    "by_condition": {
+      "stable": 0.788,
+      "short_history": 0.6729,
+      "drift": 0.6048,
+      "shared_change": 0.7333
+    }
+  },
+  "dual_horizon_lag2_polarity": {
+    "points": 11.773192,
+    "mean_loss_ratio": 0.698775,
+    "by_condition": {
+      "stable": 0.7874,
+      "short_history": 0.6885,
+      "drift": 0.617,
+      "shared_change": 0.7023
+    }
+  }
+}
