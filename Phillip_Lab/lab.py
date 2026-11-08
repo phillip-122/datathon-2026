@@ -15,6 +15,7 @@ sys.path[:0]=[str(LAB/'src'),str(REPO)]
 os.chdir(REPO)
 
 COMMANDS={
+    'train-v12':('v12_new_sys.run',['train']),
     'train-xgboost':('my_model.train',[]),
     'train-ensemble':('combo_model.run',['train']),
     'train-hgb':('hgb_upgrade.run',['train']),
@@ -32,7 +33,7 @@ def main():
     if args.command=='test':
         modules=['my_model.test_features','combo_model.test_models','hgb_upgrade.test_data',
                  'win_model.test_probability','lag_model.test_features','pdf_model.test_features',
-                 'calibrated_model.test_calibration']
+                 'calibrated_model.test_calibration','v12_new_sys.test_system']
         sys.argv=['unittest',*modules,'-v',*rest]
         runpy.run_module('unittest',run_name='__main__')
     elif args.command=='compare':

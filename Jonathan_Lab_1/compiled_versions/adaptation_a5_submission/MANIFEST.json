@@ -1,0 +1,14 @@
+{
+  "queries": 1536,
+  "maximum_probability_difference": 0.0,
+  "exact_file_match": true,
+  "sha256": {
+    "submission.csv": "d1fec847f57be2f6f6649b99ef3e369c7511ec0f834dd4f05c199f2ff949824a",
+    "submission_entry.zip": "ef642d6ab3fef80dc72050751e0cec129d78e05a200c8f9e33cb49c5d016c488",
+    "validation_predictions.csv": "1c23c10fab4de162fbd7bc554c99c533709fda6faf5af7e0561dbb8fd719c6c3"
+  },
+  "source_sha256": "adacdc658351165fb85cc0a10a70320be26a7a9cbbeee6c447c40458789b434e",
+  "base_commit": "957f082",
+  "round": "adaptation",
+  "max_points": 20
+}
