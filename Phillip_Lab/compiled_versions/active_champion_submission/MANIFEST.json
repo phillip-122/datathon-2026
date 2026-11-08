@@ -1,0 +1,18 @@
+{
+  "README_ACTIVE_SUBMISSION.md": {
+    "bytes": 631,
+    "sha256": "323cdd399f115f96b1d5845af14bf929e86078db20b96d3352710e4d32281f8a"
+  },
+  "report.json": {
+    "bytes": 12289,
+    "sha256": "8a7f6d3de5442feb7962dffb0c05e2e32ba9970b78da5f0799ae49fb87423382"
+  },
+  "submission.csv": {
+    "bytes": 200982,
+    "sha256": "a4b42a156c12797865ebadf9f51c14ce565f1c9b50c5fdf9d04a969b455f29a5"
+  },
+  "submission_entry.zip": {
+    "bytes": 10222980,
+    "sha256": "b66683c407384e08811067c9ef08fa070656fd9aa462d14c5271691b33ee79ad"
+  }
+}

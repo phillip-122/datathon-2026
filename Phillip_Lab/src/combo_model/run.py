@@ -1,3 +1,4 @@
+from importlib.util import find_spec
 """Train and reproduce the House Edge ensemble using pinned NumPy/SciPy/XGBoost."""
 import os
 os.environ['OPENBLAS_NUM_THREADS'] = '2'
@@ -119,7 +120,7 @@ def train(args):
     entry = root/'entry'; entry.mkdir()
     for package in ('combo_model','slot_forecasting'):
         destination = entry/package; destination.mkdir()
-        for p in (Path(__file__).parent.parent/package).glob('*.py'):
+        for p in Path(find_spec(package).origin).parent.glob('*.py'):
             shutil.copy2(p,destination/p.name)
     for filename in ('shared.npz','ensemble.json','model.ubj','baseline.json','training-report.json'):
         shutil.copy2(root/filename,entry/filename)
@@ -135,7 +136,7 @@ if __name__ == '__main__':
     parser.add_argument('action',choices=['train','predict'])
     parser.add_argument('--data',default='public')
     parser.add_argument('--out',required=True)
-    parser.add_argument('--tree-source',default='phillip-lab/champion')
+    parser.add_argument('--tree-source',default='Phillip_Lab/artifacts/neural_xgboost')
     parser.add_argument('--model-dir',default='.')
     parser.add_argument('--epochs',type=int,default=100)
     args = parser.parse_args()

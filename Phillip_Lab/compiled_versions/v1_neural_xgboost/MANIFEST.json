@@ -1,0 +1,14 @@
+{
+  "submission.csv": {
+    "bytes": 200886,
+    "sha256": "020f1257f0ac15971274390848788d6df7acd8dc8c956c5d38f39b10bac801d1"
+  },
+  "submission_entry.zip": {
+    "bytes": 6127261,
+    "sha256": "ba79ea636004d28a39310efef584acc8083fefbfb4ea3efe72ef6361456b13ad"
+  },
+  "validation_predictions.csv": {
+    "bytes": 105010,
+    "sha256": "71418969d8f42136a0e634de12726db8fc134f3ba5e7382cdd0b424651159cc1"
+  }
+}

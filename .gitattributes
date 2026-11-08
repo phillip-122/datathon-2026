@@ -1,0 +1,7 @@
+/Phillip_Lab/** text=auto eol=lf
+/Phillip_Lab/compiled_versions/** -text whitespace=cr-at-eol
+/Phillip_Lab/artifacts/**/*.csv -text whitespace=cr-at-eol
+/Phillip_Lab/**/*.zip -text
+/Phillip_Lab/**/*.joblib -text
+/Phillip_Lab/**/*.ubj -text
+/Phillip_Lab/**/*.npz -text

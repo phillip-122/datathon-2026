@@ -1,3 +1,4 @@
+from importlib.util import find_spec
 """Train on training data; choose on tuning episodes; audit the winner once."""
 import argparse
 import hashlib
@@ -115,8 +116,8 @@ def main():
         features=FEATURE_NAMES, python=sys.version,
         packages={p: importlib.metadata.version(p) for p in ("xgboost", "numpy", "scipy")},
         feature_importance_gain=winner.booster.get_score(importance_type="gain"),
-        source_sha256={str(p.relative_to(Path(__file__).parent.parent)): hashlib.sha256(p.read_bytes()).hexdigest()
-                       for folder in (Path(__file__).parent, Path(__file__).parent.parent / "slot_forecasting")
+        source_sha256={f"{folder.name}/{p.name}": hashlib.sha256(p.read_bytes()).hexdigest()
+                       for folder in (Path(__file__).parent, Path(find_spec("slot_forecasting").origin).parent)
                        for p in folder.glob("*.py")},
         input_sha256={str(p.relative_to(public)): hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs},
         saved_model_max_difference=difference, test_csv_max_difference=test_difference,
@@ -128,7 +129,7 @@ def main():
     for package in ("my_model", "slot_forecasting"):
         destination = entry / package
         destination.mkdir()
-        for source in (Path(__file__).resolve().parent.parent / package).glob("*.py"):
+        for source in Path(find_spec(package).origin).parent.glob("*.py"):
             shutil.copy2(source, destination / source.name)
     for name in ("model.ubj", "baseline.json", "selection.json", "training-report.json"):
         shutil.copy2(out / name, entry / name)

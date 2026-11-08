@@ -1,3 +1,5 @@
+> Current layout: use `Phillip_Lab/lab.py` from the repository root. See `Phillip_Lab/README.md` for supported commands. Earlier command examples below describe the original experiment layout; packaged offline commands remain unchanged.
+
 # House Edge combined model
 
 Python 3.11+, pinned dependencies in requirements.txt. No new dependencies beyond

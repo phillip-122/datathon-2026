@@ -1,0 +1,18 @@
+{
+  "report.json": {
+    "bytes": 9072,
+    "sha256": "067db046bbc114a09ca939f47e9a40b1135ea958fbc51f3ba0a17170e76d9f6d"
+  },
+  "submission.csv": {
+    "bytes": 200425,
+    "sha256": "4cd406d8cb1697356afc4868c7252855590ac972e8bab60234c26ecb087afea5"
+  },
+  "submission_entry.zip": {
+    "bytes": 10184200,
+    "sha256": "3da2ca0c1355ad337c64ec43f35c9d59dc9e8383b2bd1a42292393a6dd8c0e77"
+  },
+  "validation_predictions.csv": {
+    "bytes": 104697,
+    "sha256": "a2b78aa52df362c38ee94182fade4b1830ad480e43c89625d9acf1288a3eb1f1"
+  }
+}

@@ -1,3 +1,8 @@
+import sys, os
+from pathlib import Path
+_REPO=Path(__file__).resolve().parents[3]
+sys.path[:0]=[str(_REPO/'Phillip_Lab/src'),str(_REPO)]
+os.chdir(_REPO)
 """Compare two validation CSVs on identical official episode folds."""
 import argparse
 from pathlib import Path
@@ -11,7 +16,7 @@ def main():
     p.add_argument('--a',required=True)
     p.add_argument('--b',required=True)
     p.add_argument('--data',default='public')
-    p.add_argument('--out',default='comparisons/comparison.json')
+    p.add_argument('--out',default='Phillip_Lab/runs/comparisons/comparison.json')
     args=p.parse_args()
     root=Path(args.data); v=root/'validation'
     targets=read_targets(v/'targets.csv')
