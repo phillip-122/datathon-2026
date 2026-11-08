@@ -1,0 +1,116 @@
+[
+  {
+    "model": "Jonathan main V12",
+    "dataset": "public",
+    "contest_version": "evidence-contest-v1",
+    "technical_points": 38.90806240443457,
+    "max_points": 60.0,
+    "mean_loss_ratio": 0.542096837830749,
+    "by_condition": {
+      "stable": {
+        "error": 0.10340081969540442,
+        "reference_error": 0.19625080289290195,
+        "loss_ratio": 0.5268810021217205,
+        "episodes": 24,
+        "queries": 192
+      },
+      "short_history": {
+        "error": 0.10494681575133584,
+        "reference_error": 0.1773414479878668,
+        "loss_ratio": 0.5917782726039093,
+        "episodes": 24,
+        "queries": 192
+      },
+      "drift": {
+        "error": 0.11098423509413614,
+        "reference_error": 0.18983393064179913,
+        "loss_ratio": 0.5846385560205999,
+        "episodes": 24,
+        "queries": 192
+      },
+      "shared_change": {
+        "error": 0.09560503414157677,
+        "reference_error": 0.20556264957983816,
+        "loss_ratio": 0.46508952057676645,
+        "episodes": 24,
+        "queries": 192
+      }
+    }
+  },
+  {
+    "model": "A6 on main without refitting",
+    "dataset": "public",
+    "contest_version": "evidence-contest-v1",
+    "technical_points": 44.523704387584935,
+    "max_points": 60.0,
+    "mean_loss_ratio": 0.34759676503311143,
+    "by_condition": {
+      "stable": {
+        "error": 0.03345259445019263,
+        "reference_error": 0.19625080289290195,
+        "loss_ratio": 0.1704583826260746,
+        "episodes": 24,
+        "queries": 192
+      },
+      "short_history": {
+        "error": 0.0724790645890159,
+        "reference_error": 0.1773414479878668,
+        "loss_ratio": 0.40869782789849957,
+        "episodes": 24,
+        "queries": 192
+      },
+      "drift": {
+        "error": 0.09081488689225287,
+        "reference_error": 0.18983393064179913,
+        "loss_ratio": 0.4783912264010011,
+        "episodes": 24,
+        "queries": 192
+      },
+      "shared_change": {
+        "error": 0.0684193948315593,
+        "reference_error": 0.20556264957983816,
+        "loss_ratio": 0.33283962320687055,
+        "episodes": 24,
+        "queries": 192
+      }
+    }
+  },
+  {
+    "model": "A6 on adaptation",
+    "dataset": "adaptation/kit/public",
+    "contest_version": "evidence-contest-v1",
+    "technical_points": 16.63479646501288,
+    "max_points": 20.0,
+    "mean_loss_ratio": 0.20229905079181368,
+    "by_condition": {
+      "stable": {
+        "error": 0.030975480978825767,
+        "reference_error": 0.18181045823311018,
+        "loss_ratio": 0.17037238275429806,
+        "episodes": 24,
+        "queries": 192
+      },
+      "short_history": {
+        "error": 0.03131678602614343,
+        "reference_error": 0.17514568035651593,
+        "loss_ratio": 0.1788042157956558,
+        "episodes": 24,
+        "queries": 192
+      },
+      "drift": {
+        "error": 0.05033308001947259,
+        "reference_error": 0.20175855443257404,
+        "loss_ratio": 0.24947185095090216,
+        "episodes": 24,
+        "queries": 192
+      },
+      "shared_change": {
+        "error": 0.041738045902255605,
+        "reference_error": 0.1982355317282902,
+        "loss_ratio": 0.2105477536663987,
+        "episodes": 24,
+        "queries": 192
+      }
+    }
+  }
+]

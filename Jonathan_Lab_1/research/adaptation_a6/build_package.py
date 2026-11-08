@@ -76,6 +76,10 @@ def main(a):
     with tempfile.TemporaryDirectory() as tmp:
         entry=Path(tmp)/'entry'; entry.mkdir()
         extract_archive(archive.read_bytes(),entry/'base')
+        # The inherited A4 package includes an unused forecast. Only source,
+        # configuration and model weights belong in the inference archive.
+        for old_forecast in (entry/'base').rglob('*.csv'):
+            old_forecast.unlink()
         for name in ('experts.py','predict.py'): shutil.copy2(Path(__file__).parent/name,entry/name)
         shutil.copytree(REPO/'adaptation/kit/slot_forecasting',entry/'slot_forecasting',ignore=shutil.ignore_patterns('__pycache__'))
         shutil.copy2(source/'residual.joblib',entry/'residual.joblib')

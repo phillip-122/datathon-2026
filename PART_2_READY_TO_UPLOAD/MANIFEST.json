@@ -10,8 +10,9 @@
   "crossfitted_tuning_selection_points": 15.050521678406017,
   "sha256": {
     "submission.csv": "d71336e5123a40067f5221d51a042f939dcac653b02a02b35528cb67c54e317b",
-    "submission_entry.zip": "78f40f63a9affefab7bbcfbf59d6c246363057330dcb837fd6ab206bbf2a7922",
+    "submission_entry.zip": "01b83c54bc54d2258259d4240802f3a1bb0d63c0e5f9997d503ea71ff9149480",
     "validation_predictions.csv": "c47947e2864f3672631e913b0c150157fa571d598992a171e7267c927996623f"
   },
-  "note": "Full validation contains correction fitting episodes. Audit and tuning have been repeatedly inspected. Actual hidden test score is unknown."
+  "note": "Full validation contains correction fitting episodes. Audit and tuning have been repeatedly inspected. Actual hidden test score is unknown.",
+  "packaging_cleanup": "Removed unused inherited base/submission.csv; predictor source and fitted models unchanged."
 }
