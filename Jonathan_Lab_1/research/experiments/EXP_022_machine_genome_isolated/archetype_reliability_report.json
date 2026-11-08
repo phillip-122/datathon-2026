@@ -1,0 +1,143 @@
+{
+  "dataset_machine_count": 571,
+  "momentum_distribution": {
+    "mean": 0.03676371066115229,
+    "std": 0.12247622081115674,
+    "min": -0.32363330529857015,
+    "q25": -0.04458280429547004,
+    "median": 0.020000000000000018,
+    "q75": 0.10222832089110082,
+    "max": 0.47461300309597526,
+    "learned_tertiles": {
+      "q33": -0.020752489983168712,
+      "q67": 0.07382515705705713
+    }
+  },
+  "reliability_by_sample_size": {
+    "N_10": {
+      "valid_machines": 452,
+      "correlation_with_full": 0.1724109652060599,
+      "fixed_pm05": {
+        "overall_accuracy": 0.36504424778761063,
+        "precision_when_classified": 0.35074626865671643,
+        "coverage": 0.8893805309734514
+      },
+      "learned_tertiles": {
+        "overall_accuracy": 0.3915929203539823,
+        "precision_when_classified": 0.4036458333333333,
+        "coverage": 0.8495575221238938
+      },
+      "confidence_gated_uncertain_explicit": {
+        "overall_accuracy": 0.41814159292035397,
+        "precision_when_classified": 0.5,
+        "coverage": 0.022123893805309734,
+        "uncertain_fraction": 0.9778761061946902
+      },
+      "bayesian_shrunk": {
+        "overall_accuracy": 0.3915929203539823,
+        "precision_when_classified": 0.38396624472573837,
+        "coverage": 0.5243362831858407
+      }
+    },
+    "N_20": {
+      "valid_machines": 509,
+      "correlation_with_full": 0.2963330900817621,
+      "fixed_pm05": {
+        "overall_accuracy": 0.4027504911591356,
+        "precision_when_classified": 0.39901477832512317,
+        "coverage": 0.7976424361493124
+      },
+      "learned_tertiles": {
+        "overall_accuracy": 0.4263261296660118,
+        "precision_when_classified": 0.43847874720357943,
+        "coverage": 0.8781925343811395
+      },
+      "confidence_gated_uncertain_explicit": {
+        "overall_accuracy": 0.4027504911591356,
+        "precision_when_classified": 0.3870967741935484,
+        "coverage": 0.060903732809430254,
+        "uncertain_fraction": 0.9390962671905697
+      },
+      "bayesian_shrunk": {
+        "overall_accuracy": 0.4165029469548134,
+        "precision_when_classified": 0.4110429447852761,
+        "coverage": 0.6404715127701375
+      }
+    },
+    "N_30": {
+      "valid_machines": 521,
+      "correlation_with_full": 0.43857946833830386,
+      "fixed_pm05": {
+        "overall_accuracy": 0.45297504798464494,
+        "precision_when_classified": 0.45,
+        "coverage": 0.7677543186180422
+      },
+      "learned_tertiles": {
+        "overall_accuracy": 0.46449136276391556,
+        "precision_when_classified": 0.476303317535545,
+        "coverage": 0.8099808061420346
+      },
+      "confidence_gated_uncertain_explicit": {
+        "overall_accuracy": 0.42994241842610365,
+        "precision_when_classified": 0.6326530612244898,
+        "coverage": 0.09404990403071017,
+        "uncertain_fraction": 0.9059500959692899
+      },
+      "bayesian_shrunk": {
+        "overall_accuracy": 0.46833013435700577,
+        "precision_when_classified": 0.4722222222222222,
+        "coverage": 0.690978886756238
+      }
+    },
+    "N_50": {
+      "valid_machines": 538,
+      "correlation_with_full": 0.6039027353505002,
+      "fixed_pm05": {
+        "overall_accuracy": 0.5371747211895911,
+        "precision_when_classified": 0.5443349753694581,
+        "coverage": 0.7546468401486989
+      },
+      "learned_tertiles": {
+        "overall_accuracy": 0.5148698884758365,
+        "precision_when_classified": 0.5435294117647059,
+        "coverage": 0.7899628252788105
+      },
+      "confidence_gated_uncertain_explicit": {
+        "overall_accuracy": 0.48141263940520446,
+        "precision_when_classified": 0.7340425531914894,
+        "coverage": 0.17472118959107807,
+        "uncertain_fraction": 0.8252788104089219
+      },
+      "bayesian_shrunk": {
+        "overall_accuracy": 0.5483271375464684,
+        "precision_when_classified": 0.5706371191135734,
+        "coverage": 0.671003717472119
+      }
+    },
+    "N_100": {
+      "valid_machines": 555,
+      "correlation_with_full": 0.7672559072356852,
+      "fixed_pm05": {
+        "overall_accuracy": 0.645045045045045,
+        "precision_when_classified": 0.66,
+        "coverage": 0.7207207207207207
+      },
+      "learned_tertiles": {
+        "overall_accuracy": 0.6378378378378379,
+        "precision_when_classified": 0.6543778801843319,
+        "coverage": 0.781981981981982
+      },
+      "confidence_gated_uncertain_explicit": {
+        "overall_accuracy": 0.5765765765765766,
+        "precision_when_classified": 0.8291139240506329,
+        "coverage": 0.28468468468468466,
+        "uncertain_fraction": 0.7153153153153153
+      },
+      "bayesian_shrunk": {
+        "overall_accuracy": 0.6378378378378379,
+        "precision_when_classified": 0.6657963446475196,
+        "coverage": 0.69009009009009
+      }
+    }
+  }
+}

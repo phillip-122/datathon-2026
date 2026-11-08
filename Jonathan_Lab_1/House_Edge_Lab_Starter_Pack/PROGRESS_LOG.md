@@ -297,3 +297,64 @@ Submit the two Main round files (`runs/hgb_run/submission.csv` and `submission_e
 
 **Exact command to resume:**
 `source .venv/bin/activate && python House_Edge_Lab_Starter_Pack/research_environment/check_submission.py runs/hgb_run/submission.csv`
+
+
+## 11. Autonomous Multi-Agent Research Progression (EXP-007 through EXP-020)
+
+### Chronological Milestone Evolution
+
+1. **EXP-007 through EXP-011 (Diagnostic & Exploration Phase):**
+   - *EXP-007 (Prior Blending):* Optimal mixing parameter $\alpha = 1.0000$ (standalone HGB is sharper than frequency pooling).
+   - *EXP-008 (Imputation Flags):* Redundant binary flags degraded tree splits in 60-leaf models.
+   - *EXP-009 (Early Cutoff $t=12$):* High label noise on sparse histories degraded `short_history`.
+   - *EXP-010 (Volatility Bins):* Verified strong interaction between machine volatility and probability calibration.
+   - *EXP-011 (Machine-Type Specialist Slicing):* Slicing training data by type cut sample sizes by ~70% and destroyed shared episode pattern learning.
+
+2. **EXP-012 (Champion v2 Promotion):**
+   - Implemented logit temperature scaling ($T = 1.060$).
+   - Full Validation: **35.1057**, Audit Gate: **34.9660**, Tuning: **35.2282** ($R = 0.7091$).
+
+3. **EXP-013 (Champion v3 Promotion):**
+   - 3-seed HGB ensemble + fast exponential recency ($hl = 2, 4$) + volatility calibration.
+   - Full Validation: **36.7561**, Audit Gate: **36.6807**, Tuning: **36.8194** ($R = 0.6324$).
+
+4. **EXP-014 (Champion v4 Promotion):**
+   - Calibrated changing-lag specialist blend (75% V3 + 25% Specialist + 3-fold episode-cross-fitted calibration).
+   - Full Validation: **37.4814**, Audit Gate: **37.4764**, Tuning: **37.4841** ($R = 0.6008$).
+
+5. **EXP-015 through EXP-018 (Topology Masking & Champion v5 Promotion):**
+   - *EXP-015 (Hierarchical Calibration):* Separated $T_{\text{steady}} = 0.8244$ and $T_{\text{jackpot}} = 0.8631$.
+   - *EXP-016 (40/24 Synthetic Observation Masking):* Trained models directly on synthetic 40-recent + 24-sparse observation topologies.
+   - *EXP-017 (Continuous Drift Slopes):* Differential momentum indicators reduced drift ratio.
+   - *EXP-018 (Champion v5):* Combined topology masking with regularized hierarchical calibration.
+   - Full Validation: **37.8683**, Audit Gate: **37.8495**, Tuning: **37.8832** ($R = 0.5844$).
+
+6. **EXP-019 (Champion v6 Promotion — CURRENT ACTIVE CHAMPION):**
+   - Subagent A (*Discrete Autoregressive Specialist*) extracted discrete 2-tick lag sequences `(payout_{t-1}, payout_{t-2})` and computed Dirichlet/Laplace smoothed transition priors ($\alpha = 10.0$).
+   - Dual Prior specialists (50% global + 50% machine-type conditioned) blended at 30% with Champion changing-lag backbone + hierarchical calibration.
+   - **Full Validation Score:** **37.9990 / 60** Technical Points ($R = \mathbf{0.5790}$, **42.10% Error Reduction**)
+   - **Audit Holdout Gate:** **37.9948 / 60** (Passed Dual Gate by +0.1453 pts)
+   - **Tuning Cross-Fit Gate:** **38.0004 / 60** (Broke 38.00 barrier)
+   - Condition breakdown: `shared_change` $R = 0.4774$ (**52.26% error reduction**), `stable` $R = 0.5487$ (**45.13% error reduction**), `drift` $R = 0.6376$ (**36.24% error reduction**), `short_history` $R = 0.6522$ (**34.78% error reduction**).
+   - Promoted to `compiled_versions/v6_promoted_champion_exp019/` and deployed to `compiled_versions/active_champion_submission/`.
+
+7. **EXP-020 (Subagent B Evaluation):**
+   - Continuous velocity differential slopes + highest-variance peer machine coupling + jackpot domain routing.
+   - Full Validation: **37.9039**, Audit: **37.8606**, Tuning: **37.9420** ($R = 0.5829$).
+   - Successfully beat Champion v5 ($37.8683$), but conceded head-to-head to EXP-019 ($37.9990$). Safely archived in `compiled_versions/v6_candidate_exp020/`.
+
+---
+
+## 12. Active Champion Submission Package Summary
+
+- **Staged Submission Directory:** `compiled_versions/active_champion_submission/`
+- **Submission CSV:**
+  - Path: `compiled_versions/active_champion_submission/submission.csv`
+  - Size: 201,173 bytes (1,536 test queries)
+  - SHA-256: `ef443805d7e3ab10080e806177c7475be42d389b95198836b029bd57b863ccdd`
+  - Status: Passed official `check_submission.py`
+- **Code Entry ZIP:**
+  - Path: `compiled_versions/active_champion_submission/submission_entry.zip`
+  - Size: 18,106,558 bytes
+  - SHA-256: `582ee28c920c3936060e9b1d0a57ae7004fe6068be4da122324547356284cf19`
+  - Clean-Room Verification: Runtime 6.8 seconds, RAM < 200 MB, air-gapped probability deviation 0.0000000000.

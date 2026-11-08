@@ -1,0 +1,24 @@
+{
+  "name": "v8_routed (Regime Router: Short-History Direct Routing + Machine-Type Adaptive Calibration)",
+  "status": "CANDIDATE_V8_ROUTED_PRODUCTION_READY",
+  "routing_rules": {
+    "short_history": "n_past <= 100 -> EXP-022 Config 3 Unified (R = 0.6242)",
+    "default": "n_past > 100 -> Solution A Adaptive Mixture (R = 0.5401 across long regimes)"
+  },
+  "full_points": 38.461094699243766,
+  "tuning_points": 38.49402775803414,
+  "audit_points": 38.42485682356461,
+  "tuning_audit_spread": 0.0691709344695326,
+  "loss_ratio": 0.5600179992063447,
+  "by_condition": {
+    "stable": 0.54616720493701,
+    "short_history": 0.6242486801426436,
+    "drift": 0.5986112029463906,
+    "shared_change": 0.47104490879933436
+  },
+  "bootstrap_gain_vs_v8_ci95": [
+    -0.04782108466904056,
+    0.10933131949240003
+  ],
+  "notes": "Exploits exact deterministic separability of short_history (exactly 64 pre-cutoff ticks) to deploy specialist model without any leakage."
+}

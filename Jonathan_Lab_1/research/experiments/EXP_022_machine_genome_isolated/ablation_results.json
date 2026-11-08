@@ -1,0 +1,123 @@
+{
+  "ablations": {
+    "Config_1_Drift_Only": {
+      "audit_points": 38.31353776345867,
+      "bootstrap_gain_ci95": [
+        0.01779093700718235,
+        0.5783526764162671
+      ],
+      "by_condition": {
+        "drift": 0.6066458339689974,
+        "shared_change": 0.4826590054584256,
+        "short_history": 0.6284181706650519,
+        "stable": 0.5555881291422891
+      },
+      "description": "Isolated 4 EXP-020 Drift Velocity Features",
+      "dual_gate_passed": true,
+      "feature_dim": 360,
+      "full_loss_ratio": 0.568327784808691,
+      "full_points": 38.25730856851393,
+      "passed_audit": true,
+      "passed_tuning": true,
+      "tuning_points": 38.209264413809336
+    },
+    "Config_2A_Genome_Fixed": {
+      "audit_points": 38.21239406507338,
+      "bootstrap_gain_ci95": [
+        -0.08279627474609086,
+        0.4669427375887362
+      ],
+      "by_condition": {
+        "drift": 0.6101635398909276,
+        "shared_change": 0.48334457738832737,
+        "short_history": 0.6341859290708037,
+        "stable": 0.5543605725824889
+      },
+      "description": "Genome Single Categorical Feature (Fixed +/-0.05)",
+      "dual_gate_passed": true,
+      "feature_dim": 359,
+      "full_loss_ratio": 0.5705136547331369,
+      "full_points": 38.204061339533695,
+      "passed_audit": true,
+      "passed_tuning": true,
+      "tuning_points": 38.19891247030861
+    },
+    "Config_2B_Genome_ConfGated": {
+      "audit_points": 38.271791343321425,
+      "bootstrap_gain_ci95": [
+        -0.020806326484733437,
+        0.5311972131451583
+      ],
+      "by_condition": {
+        "drift": 0.612381235009067,
+        "shared_change": 0.4792527177703477,
+        "short_history": 0.6234373717844028,
+        "stable": 0.5510761733677298
+      },
+      "description": "Genome Explicit Uncertainty (Confidence-Gated)",
+      "dual_gate_passed": true,
+      "feature_dim": 360,
+      "full_loss_ratio": 0.5665368744828869,
+      "full_points": 38.30104543169848,
+      "passed_audit": true,
+      "passed_tuning": true,
+      "tuning_points": 38.329150251293115
+    },
+    "Config_2C_Genome_TransConditioned": {
+      "audit_points": 38.21716455835056,
+      "bootstrap_gain_ci95": [
+        -0.067257987734944,
+        0.4941652439301244
+      ],
+      "by_condition": {
+        "drift": 0.6085091988801206,
+        "shared_change": 0.4817978320089051,
+        "short_history": 0.6263594837339935,
+        "stable": 0.5532615193177536
+      },
+      "description": "Discrete Lag Table Conditioned on Archetype",
+      "dual_gate_passed": true,
+      "feature_dim": 359,
+      "full_loss_ratio": 0.5674820084851931,
+      "full_points": 38.277951309937976,
+      "passed_audit": true,
+      "passed_tuning": true,
+      "tuning_points": 38.332898237862906
+    },
+    "Config_3_Combined_Interaction": {
+      "audit_points": 38.30830726398011,
+      "bootstrap_gain_ci95": [
+        0.009851073693553583,
+        0.5925631783011492
+      ],
+      "by_condition": {
+        "drift": 0.6056557018927212,
+        "shared_change": 0.48031058086275624,
+        "short_history": 0.6242486801426436,
+        "stable": 0.5545654600059622
+      },
+      "description": "Unified: Drift Velocity + Conditioned Genome",
+      "dual_gate_passed": true,
+      "feature_dim": 363,
+      "full_loss_ratio": 0.5661951057260208,
+      "full_points": 38.3094033308108,
+      "passed_audit": true,
+      "passed_tuning": true,
+      "tuning_points": 38.31077852498093
+    }
+  },
+  "benchmark_champion_v6": {
+    "audit_points": 37.99481152218958,
+    "by_condition": {
+      "drift": 0.6376366287359617,
+      "shared_change": 0.47743351900437203,
+      "short_history": 0.6521604162758198,
+      "stable": 0.5487168974017328
+    },
+    "full_points": 37.99904946424644,
+    "loss_ratio": 0.5789868653544716,
+    "tuning_points": 38.00041956367762
+  },
+  "best_candidate_selected": "Config_1_Drift_Only",
+  "promotion_recommendation": true
+}

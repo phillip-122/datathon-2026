@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-07T18:20:47.498061",
-  "champion": "EXP-012",
+  "updated_at": "2026-11-08T06:58:56.700893Z",
+  "champion": "EXP-019",
   "experiments": [
     {
       "id": "BASE-001",
@@ -143,6 +143,114 @@
       "decision": "CHAMPION",
       "notes": "Passed both gates: Tune 35.2282 > 35.1863, Audit 34.9660 > 34.9486. Promoted to Champion v2.",
       "timestamp": "2026-11-07T18:20:47.498051"
+    },
+    {
+      "id": "EXP-013",
+      "hypothesis": "3-Seed HGB Ensemble + Fast Recency + Machine Volatility Calibration",
+      "author": "EnsembleSpecialist",
+      "tuning_points": 36.8194,
+      "audit_points": 36.6807,
+      "full_points": 36.7561,
+      "mean_loss_ratio": 0.6324,
+      "by_condition": {
+        "stable": 0.5697,
+        "short_history": 0.7218,
+        "drift": 0.7053,
+        "shared_change": 0.5328
+      },
+      "decision": "CHAMPION",
+      "notes": "Passed dual gate. Promoted to Champion v3.",
+      "timestamp": "2026-11-07T19:40:00.000000"
+    },
+    {
+      "id": "EXP-014",
+      "hypothesis": "Calibrated Changing-Lag Specialist Blend (75% V3 + 25% Specialist + 3-Fold Episode Calibration)",
+      "author": "Phillip/Jonathan Hybrid",
+      "tuning_points": 37.4841,
+      "audit_points": 37.4764,
+      "full_points": 37.4814,
+      "mean_loss_ratio": 0.6008,
+      "by_condition": {
+        "stable": 0.5538,
+        "short_history": 0.6858,
+        "drift": 0.6662,
+        "shared_change": 0.4973
+      },
+      "decision": "CHAMPION",
+      "notes": "Passed dual gate. Promoted to Champion v4.",
+      "timestamp": "2026-11-07T21:24:00.000000"
+    },
+    {
+      "id": "EXP-015",
+      "hypothesis": "Hierarchical Machine-Type Calibration (T_eff = T_global + Delta_T_m)",
+      "author": "CalibrationAgent",
+      "tuning_points": 37.5562,
+      "audit_points": 37.5171,
+      "full_points": 37.5389,
+      "mean_loss_ratio": 0.5983,
+      "by_condition": {
+        "stable": 0.5511,
+        "short_history": 0.6811,
+        "drift": 0.6668,
+        "shared_change": 0.4943
+      },
+      "decision": "BENCHMARK",
+      "notes": "Benchmark candidate.",
+      "timestamp": "2026-11-07T22:15:00.000000"
+    },
+    {
+      "id": "EXP-018",
+      "hypothesis": "40/24 Topology Masking + Regularized Hierarchical Calibration Blend",
+      "author": "Controller / Strategy",
+      "tuning_points": 37.8832,
+      "audit_points": 37.8495,
+      "full_points": 37.8683,
+      "mean_loss_ratio": 0.5844,
+      "by_condition": {
+        "stable": 0.5545,
+        "short_history": 0.6606,
+        "drift": 0.6383,
+        "shared_change": 0.4844
+      },
+      "decision": "CHAMPION",
+      "notes": "Passed dual gate. Promoted to Champion v5.",
+      "timestamp": "2026-11-07T23:45:00.000000"
+    },
+    {
+      "id": "EXP-019",
+      "hypothesis": "Discrete Autoregressive 2-Tick Lag Sequences + Dual Dirichlet Transition Priors + Hierarchical Calibrator",
+      "author": "Subagent A",
+      "tuning_points": 38.0004,
+      "audit_points": 37.9948,
+      "full_points": 37.999,
+      "mean_loss_ratio": 0.579,
+      "by_condition": {
+        "stable": 0.5487,
+        "short_history": 0.6522,
+        "drift": 0.6376,
+        "shared_change": 0.4774
+      },
+      "decision": "CHAMPION",
+      "notes": "Passed dual gate. Promoted to ACTIVE CHAMPION v6.",
+      "timestamp": "2026-11-08T00:15:00.000000"
+    },
+    {
+      "id": "EXP-020",
+      "hypothesis": "Continuous Drift Velocity Slopes & Highest-Variance Peer Coupling (Jackpot Domain Routing)",
+      "author": "Subagent B",
+      "tuning_points": 37.942,
+      "audit_points": 37.8606,
+      "full_points": 37.9039,
+      "mean_loss_ratio": 0.5829,
+      "by_condition": {
+        "stable": 0.5552,
+        "short_history": 0.6588,
+        "drift": 0.6336,
+        "shared_change": 0.4842
+      },
+      "decision": "BENCHMARK",
+      "notes": "Passed gates vs v5; conceded head-to-head to EXP-019.",
+      "timestamp": "2026-11-08T00:52:00.000000"
     }
   ]
 }

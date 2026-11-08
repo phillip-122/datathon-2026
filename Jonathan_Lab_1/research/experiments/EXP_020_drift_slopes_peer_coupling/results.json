@@ -1,196 +1,161 @@
 {
-  "description": "Continuous Drift Slopes & Peer Coupling Specialist",
+  "architecture": "Continuous Drift Slopes & Peer Coupling Specialist (367 features) + Hierarchical Calibration",
+  "candidate_id": "EXP-020",
   "evaluation": {
     "adversarial_status": "Passed all adversarial checks.",
-    "audit_loss_ratio": 0.5970058001658451,
-    "audit_points": 37.57030813148528,
+    "audit_loss_ratio": 0.5847622293420492,
+    "audit_points": 37.860569168732894,
     "bootstrap_gain_vs_base_ci95": [
-      -0.5468415742903974,
-      0.01311300907669367
+      -0.04033567300429262,
+      0.06753690746118932
     ],
     "brier_by_class": {
-      "class_0": 0.06988669098612466,
-      "class_1": 0.023753392154861594,
-      "class_2": 0.013344557552980014,
-      "class_20": 0.000666492265017775,
-      "class_5": 0.0044043929904478505
+      "class_0": 0.07016832768392466,
+      "class_1": 0.0228431829552459,
+      "class_2": 0.013361152930450898,
+      "class_20": 0.0006771901557667655,
+      "class_5": 0.004331733131273728
     },
     "by_condition": {
       "drift": {
-        "error": 0.11794052943214918,
-        "loss_ratio": 0.6212826602357677,
+        "error": 0.12028402723257829,
+        "loss_ratio": 0.6336276493138852,
         "reference_error": 0.18983393064179913
       },
       "shared_change": {
-        "error": 0.10066898271553677,
-        "loss_ratio": 0.4897240958963126,
+        "error": 0.09909132822794016,
+        "loss_ratio": 0.48204928487971366,
         "reference_error": 0.20556264957983816
       },
       "short_history": {
-        "error": 0.11832649430334245,
-        "loss_ratio": 0.6672241353946654,
+        "error": 0.1173582659449088,
+        "loss_ratio": 0.661764450874102,
         "reference_error": 0.1773414479878668
       },
       "stable": {
-        "error": 0.1112860973466997,
-        "loss_ratio": 0.5670605964727227,
+        "error": 0.10879272602122085,
+        "loss_ratio": 0.5543555716334636,
         "reference_error": 0.19625080289290195
       }
     },
     "by_history_length": {
       "long_200+": {
-        "brier": 0.10996520316479523,
-        "loss_ratio": 0.5575882170859192,
+        "brier": 0.1093893604939131,
+        "loss_ratio": 0.5546683562668746,
         "ref_brier": 0.19721579437151307
       },
       "short_64": {
-        "brier": 0.11832649430334245,
-        "loss_ratio": 0.6672241353946655,
+        "brier": 0.1173582659449088,
+        "loss_ratio": 0.6617644508741021,
         "ref_brier": 0.17734144798786677
       }
     },
     "by_machine_type": {
       "balanced": {
-        "brier": 0.12776502954171215,
-        "loss_ratio": 0.5780901239111689,
+        "brier": 0.1274609388322651,
+        "loss_ratio": 0.5767142244452897,
         "ref_brier": 0.22101230285218454
       },
       "jackpot": {
-        "brier": 0.061601488956764,
-        "loss_ratio": 0.5422910920244617,
+        "brier": 0.06354578412031914,
+        "loss_ratio": 0.5594071384921409,
         "ref_brier": 0.11359487526670504
       },
       "steady": {
-        "brier": 0.14809380090282787,
-        "loss_ratio": 0.6051868539995211,
+        "brier": 0.14451883355866849,
+        "loss_ratio": 0.5905777128540222,
         "ref_brier": 0.24470756415826747
       }
     },
-    "full_loss_ratio": 0.5863228719998671,
-    "full_points": 37.82332150601749,
-    "tuning_audit_spread": 0.4795435085751265,
-    "tuning_loss_ratio": 0.5768786845105489,
-    "tuning_points": 38.0498516400604
+    "full_loss_ratio": 0.5829492391752911,
+    "full_points": 37.90393179711796,
+    "tuning_audit_spread": 0.08141039867097533,
+    "tuning_loss_ratio": 0.581361876319871,
+    "tuning_points": 37.94197956740387
   },
   "evaluation_vs_v4": {
     "adversarial_status": "Passed all adversarial checks.",
-    "audit_loss_ratio": 0.5970058001658451,
-    "audit_points": 37.57030813148528,
+    "audit_loss_ratio": 0.5847622293420492,
+    "audit_points": 37.860569168732894,
     "bootstrap_gain_vs_base_ci95": [
-      -0.36875245073784113,
-      0.5666671816484948
+      0.09969948486998063,
+      0.6670727879603303
     ],
     "brier_by_class": {
-      "class_0": 0.06988669098612466,
-      "class_1": 0.023753392154861594,
-      "class_2": 0.013344557552980014,
-      "class_20": 0.000666492265017775,
-      "class_5": 0.0044043929904478505
+      "class_0": 0.07016832768392466,
+      "class_1": 0.0228431829552459,
+      "class_2": 0.013361152930450898,
+      "class_20": 0.0006771901557667655,
+      "class_5": 0.004331733131273728
     },
     "by_condition": {
       "drift": {
-        "error": 0.11794052943214918,
-        "loss_ratio": 0.6212826602357677,
+        "error": 0.12028402723257829,
+        "loss_ratio": 0.6336276493138852,
         "reference_error": 0.18983393064179913
       },
       "shared_change": {
-        "error": 0.10066898271553677,
-        "loss_ratio": 0.4897240958963126,
+        "error": 0.09909132822794016,
+        "loss_ratio": 0.48204928487971366,
         "reference_error": 0.20556264957983816
       },
       "short_history": {
-        "error": 0.11832649430334245,
-        "loss_ratio": 0.6672241353946654,
+        "error": 0.1173582659449088,
+        "loss_ratio": 0.661764450874102,
         "reference_error": 0.1773414479878668
       },
       "stable": {
-        "error": 0.1112860973466997,
-        "loss_ratio": 0.5670605964727227,
+        "error": 0.10879272602122085,
+        "loss_ratio": 0.5543555716334636,
         "reference_error": 0.19625080289290195
       }
     },
     "by_history_length": {
       "long_200+": {
-        "brier": 0.10996520316479523,
-        "loss_ratio": 0.5575882170859192,
+        "brier": 0.1093893604939131,
+        "loss_ratio": 0.5546683562668746,
         "ref_brier": 0.19721579437151307
       },
       "short_64": {
-        "brier": 0.11832649430334245,
-        "loss_ratio": 0.6672241353946655,
+        "brier": 0.1173582659449088,
+        "loss_ratio": 0.6617644508741021,
         "ref_brier": 0.17734144798786677
       }
     },
     "by_machine_type": {
       "balanced": {
-        "brier": 0.12776502954171215,
-        "loss_ratio": 0.5780901239111689,
+        "brier": 0.1274609388322651,
+        "loss_ratio": 0.5767142244452897,
         "ref_brier": 0.22101230285218454
       },
       "jackpot": {
-        "brier": 0.061601488956764,
-        "loss_ratio": 0.5422910920244617,
+        "brier": 0.06354578412031914,
+        "loss_ratio": 0.5594071384921409,
         "ref_brier": 0.11359487526670504
       },
       "steady": {
-        "brier": 0.14809380090282787,
-        "loss_ratio": 0.6051868539995211,
+        "brier": 0.14451883355866849,
+        "loss_ratio": 0.5905777128540222,
         "ref_brier": 0.24470756415826747
       }
     },
-    "full_loss_ratio": 0.5863228719998671,
-    "full_points": 37.82332150601749,
-    "tuning_audit_spread": 0.4795435085751265,
-    "tuning_loss_ratio": 0.5768786845105489,
-    "tuning_points": 38.0498516400604
+    "full_loss_ratio": 0.5829492391752911,
+    "full_points": 37.90393179711796,
+    "tuning_audit_spread": 0.08141039867097533,
+    "tuning_loss_ratio": 0.581361876319871,
+    "tuning_points": 37.94197956740387
   },
-  "exp_id": "EXP-020",
-  "feature_dim": 367,
   "gates": {
-    "dual_gate_passed": false,
-    "passed_audit": false,
-    "passed_drift": true,
-    "passed_tuning": true
+    "audit_gate": 37.8495,
+    "audit_points": 37.860569168732894,
+    "dual_promotion_gate_passed": true,
+    "full_gate": 37.8683,
+    "full_points": 37.90393179711796,
+    "passed_audit": true,
+    "passed_full": true,
+    "passed_tuning": true,
+    "tuning_gate": 37.8832,
+    "tuning_points": 37.94197956740387
   },
-  "parameters": {
-    "best_blend_weight": 0.4,
-    "best_shrinkage_penalty": 0.01,
-    "beta_global": [
-      -0.2738191011269999,
-      -0.025646368043144376,
-      0.08437466029941547,
-      0.16479561481200788,
-      0.0502951940587209
-    ],
-    "delta_beta_machine": {
-      "balanced": [
-        -0.24257917273333648,
-        0.17069345760206725,
-        0.04218781929794805,
-        0.025031194925225174,
-        0.004666700908096048
-      ],
-      "jackpot": [
-        -0.0372426481744506,
-        -0.021663281057695688,
-        -0.02696063378137922,
-        0.040594330251332765,
-        0.045272232762192874
-      ],
-      "steady": [
-        0.006002719780787136,
-        -0.1746765445875159,
-        0.06914747478284677,
-        0.09917008963545001,
-        0.000356260388431998
-      ]
-    },
-    "delta_theta_machine": {
-      "balanced": 0.16503826030550758,
-      "jackpot": -0.08741466941506351,
-      "steady": 0.08648446899863357
-    },
-    "theta_global": 0.16410805988907792
-  },
-  "runtime_seconds": 387.28172397613525
+  "version": "v6_candidate_exp020"
 }

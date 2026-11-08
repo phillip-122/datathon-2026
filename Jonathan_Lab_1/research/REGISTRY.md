@@ -19,7 +19,9 @@ Tracks technical points, loss ratios, and generalization across strict episode s
 | EXP-015 | Hierarchical Machine-Type Calibration (T_eff = T_global + Delta_T_m) | CalibrationAgent | 37.5562 | 37.5171 | 37.5389 | 0.5983 | **BENCHMARK** | [-0.037, +0.115] vs v4 |
 | EXP-016 | Exact 40/24 Observation-Pattern Augmentation (Pre-Calibration) | TopologyAgent | 37.2835 | 37.2281 | 37.2575 | 0.6105 | **BENCHMARK** | [+0.11, +0.22] uncal vs v4-base |
 | EXP-017 | Continuous Regime & Adaptive Recency Descriptors (Pre-Calibration) | RegimeAgent | 37.2377 | 37.0690 | 37.1577 | 0.6148 | **BENCHMARK** | [-0.05, +0.12] uncal vs v4-base |
-| EXP-018 | Augmented Topology + Regularized Hierarchical Calibration Blend | Controller / Strategy | 37.8832 | 37.8495 | 37.8683 | 0.5844 | **ACTIVE CHAMPION v5** | [+0.0932, +0.6578] vs v4 |
+| EXP-018 | Augmented Topology + Regularized Hierarchical Calibration Blend | Controller / Strategy | 37.8832 | 37.8495 | 37.8683 | 0.5844 | **CHAMPION v5** | [+0.0932, +0.6578] vs v4 |
+| EXP-019 | Discrete Autoregressive 2-Tick Lag Sequences + Dual Bayesian Transition Priors + Hierarchical Calibrator | Subagent A | 38.0004 | 37.9948 | 37.9990 | 0.5790 | **ACTIVE CHAMPION v6** | [+0.1652, +0.8490] vs v4 |
+| EXP-020 | Continuous Drift Slopes & Highest-Variance Peer Coupling (Jackpot Routing) | Subagent B | 37.9420 | 37.8606 | 37.9039 | 0.5829 | **BENCHMARK CANDIDATE** | [+0.0997, +0.6671] vs v4 |
 
 ---
 ## 2. Scientific Scoreboard: Discovered Physical & Stochastic Mechanisms
@@ -28,6 +30,8 @@ Tracks the empirical discovery of underlying simulator structures and causal mec
 
 | Exp ID | Discovered Mechanism | Simulator / Physical Grounding | Target Weakness | Empirical Evidence |
 |---|---|---|---|---|
+| EXP-019 | Discrete Markov Sequence Momentum + Dirichlet Transition Priors | Payout sequences possess sharp autoregressive state transitions ($P(0\mid 0,0) \gg P(0\mid 1,1)$); Dirichlet smoothed priors ($\alpha=10$) provide robust Bayesian state estimation without overfitting. | Stable and short history transition uncertainty | Full points reached 37.9990 (Audit: 37.9948, Tuning: 38.0004). Error reduced by 45.13% on stable (R=0.5487) and 34.78% on short history (R=0.6522). |
+| EXP-020 | Continuous Velocity Differential Slopes & Highest-Variance Peer Coupling | Differential momentum ($\Delta \text{win\_rate}$) tracks non-stationary drift; highest-variance peer machine acts as floor-wide latent shock indicator. | Non-stationary drift degradation and jackpot volatility spikes | Drift loss ratio reduced to 0.6336 and jackpot loss ratio to 0.5594; full points 37.9039 (Audit: 37.8606). |
 | EXP-018 | Observation Topology Invariance + Machine-Specific Regularized Uncertainty | Bridging the training/evaluation missingness gap (40/24 topology) alongside regularized shrinkage calibration (Steady T=0.824, Jackpot T=0.863). | Short history error degradation and jackpot burst overconfidence | Full Points reached 37.8683 (Audit: 37.8495). Short history loss ratio dropped to 0.6606, Drift to 0.6383, Jackpot to 0.5670. |
 | EXP-015 | Hierarchical Machine Uncertainty & Bias Correction | Steady machines have low variance (T=0.8244); Jackpot machines have heavy-tailed burst volatility requiring higher calibrated entropy (T=0.8631). | High variance on jackpot reels & uniform temperature bias | Full loss ratio dropped to 0.5983; error reduced across all 3 machine types (Jackpot R=0.5972, Balanced R=0.5899, Steady R=0.5968). |
 | EXP-016 | Exact Observation Topology Conditioning (40 Recent + 24 Sparse Older) | Short history conditions do not have uniform cutoffs; they present exactly 40 recent and 24 sparse older ticks. Synthetic masking closes feature divergence. | Short history performance degradation (R=0.6932 down to 0.6831 uncalibrated) | Direct synthetic observation masking raised uncalibrated score from 37.0902 to 37.2575. |
@@ -46,4 +50,6 @@ Tracks error reduction ($R < 1.0$) across distinct environment conditions.
 | EXP-013 | 0.5697 | 0.7218 | 0.7053 | 0.5328 | Champion v3 |
 | EXP-014 | 0.5538 | 0.6858 | 0.6662 | 0.4973 | Champion v4 |
 | EXP-015 | 0.5511 | 0.6811 | 0.6668 | 0.4943 | Hierarchical Cal only |
-| EXP-018 | 0.5545 | 0.6606 | 0.6383 | 0.4844 | ACTIVE CHAMPION v5 |
+| EXP-018 | 0.5545 | 0.6606 | 0.6383 | 0.4844 | Champion v5 |
+| EXP-019 | 0.5487 | 0.6522 | 0.6376 | 0.4774 | ACTIVE CHAMPION v6 |
+| EXP-020 | 0.5552 | 0.6588 | 0.6336 | 0.4842 | Candidate v6 (drift reduction) |

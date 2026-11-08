@@ -1,0 +1,50 @@
+{
+  "name": "v8_candidate_solution_a (Solution A Optimized: Adaptive Blend 15/28/35 + Hierarchical Calibrator)",
+  "status": "CANDIDATE_V8_PRODUCTION_READY",
+  "blend_weights": {
+    "steady": 0.15,
+    "balanced": 0.28,
+    "jackpot": 0.35
+  },
+  "full_points": 38.422710654046824,
+  "tuning_points": 38.456558264244016,
+  "audit_points": 38.38543296234424,
+  "tuning_audit_spread": 0.07112530189977662,
+  "loss_ratio": 0.5615764473316922,
+  "by_condition": {
+    "stable": 0.54616720493701,
+    "short_history": 0.6304824726440341,
+    "drift": 0.5986112029463906,
+    "shared_change": 0.47104490879933436
+  },
+  "by_machine_type": {
+    "balanced": {
+      "brier": 0.12062896036267334,
+      "ref_brier": 0.22101230285218454,
+      "loss_ratio": 0.5458020155708314
+    },
+    "jackpot": {
+      "brier": 0.057315461643230814,
+      "ref_brier": 0.11359487526670504,
+      "loss_ratio": 0.5045602762330786
+    },
+    "steady": {
+      "brier": 0.14513384278618535,
+      "ref_brier": 0.24470756415826747,
+      "loss_ratio": 0.5930909544435592
+    }
+  },
+  "brier_by_class": {
+    "class_0": 0.06670723696781,
+    "class_1": 0.022722797107387813,
+    "class_2": 0.012948766605455901,
+    "class_5": 0.004266433783397868,
+    "class_20": 0.0007203615903827754
+  },
+  "bootstrap_gain_vs_champion_v6_ci95": [
+    0.10395492501979878,
+    0.6916451343060649
+  ],
+  "adversarial_status": "Passed all adversarial checks.",
+  "notes": "Optimal formulation: condition-adaptive mixture varying per machine type (steady: 0.15, balanced: 0.28, jackpot: 0.35) combined with Champion v6 backbone, followed by regularized hierarchical calibration on the tuning split."
+}

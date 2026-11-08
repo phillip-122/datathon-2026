@@ -1,0 +1,182 @@
+{
+  "raw_drift": {
+    "desc": "Raw Continuous Drift Slopes (EXP-020 replica, kappa=0.0)",
+    "feature_dim": 360,
+    "native": {
+      "full_points": 36.094427275054166,
+      "tuning_points": 36.257782353443964,
+      "audit_points": 35.92506972660305,
+      "loss_ratio": 0.6623064702696534,
+      "bootstrap_ci": [
+        -3.4174324018574795,
+        -0.8368568401150706
+      ],
+      "by_condition": {
+        "stable": 0.6802089037762497,
+        "short_history": 0.7073066098053231,
+        "drift": 0.6528423428745722,
+        "shared_change": 0.6088680246224686
+      }
+    },
+    "mixture": {
+      "full_points": 38.25730856851393,
+      "tuning_points": 38.209264413809336,
+      "audit_points": 38.31353776345867,
+      "loss_ratio": 0.568327784808691,
+      "bootstrap_ci": [
+        0.01779093700718235,
+        0.5783526764162671
+      ],
+      "by_condition": {
+        "stable": 0.5555881291422891,
+        "short_history": 0.6284181706650519,
+        "drift": 0.6066458339689974,
+        "shared_change": 0.4826590054584256
+      }
+    }
+  },
+  "soft_k125": {
+    "desc": "Soft-Thresholded Drift Slopes (kappa=1.25)",
+    "feature_dim": 360,
+    "native": {
+      "full_points": 36.20014030213671,
+      "tuning_points": 36.43590320903519,
+      "audit_points": 35.953360746470786,
+      "loss_ratio": 0.6574521396663899,
+      "bootstrap_ci": [
+        -3.3724638082034994,
+        -0.8919096987606765
+      ],
+      "by_condition": {
+        "stable": 0.69031813909116,
+        "short_history": 0.6862880182745699,
+        "drift": 0.6634314012939649,
+        "shared_change": 0.5897710000058648
+      }
+    },
+    "mixture": {
+      "full_points": 38.30096917037375,
+      "tuning_points": 38.26635863427492,
+      "audit_points": 38.34253230292263,
+      "loss_ratio": 0.5665399936252973,
+      "bootstrap_ci": [
+        0.057757371149870985,
+        0.6251160670914186
+      ],
+      "by_condition": {
+        "stable": 0.5553498176259837,
+        "short_history": 0.6252585419388109,
+        "drift": 0.6102112906134103,
+        "shared_change": 0.47534032432298434
+      }
+    }
+  },
+  "soft_k150": {
+    "desc": "Soft-Thresholded Drift Slopes (kappa=1.50)",
+    "feature_dim": 360,
+    "native": {
+      "full_points": 36.25566321696804,
+      "tuning_points": 36.629565864080746,
+      "audit_points": 35.85331360411896,
+      "loss_ratio": 0.654913872101486,
+      "bootstrap_ci": [
+        -3.3929527504421264,
+        -1.020493663218353
+      ],
+      "by_condition": {
+        "stable": 0.680987107372556,
+        "short_history": 0.6994296142359399,
+        "drift": 0.6464724648626063,
+        "shared_change": 0.592766301934842
+      }
+    },
+    "mixture": {
+      "full_points": 38.32782535449028,
+      "tuning_points": 38.356279831656316,
+      "audit_points": 38.297255946855714,
+      "loss_ratio": 0.5654423240835061,
+      "bootstrap_ci": [
+        0.02899406862174221,
+        0.539808515844846
+      ],
+      "by_condition": {
+        "stable": 0.554315559861884,
+        "short_history": 0.6263758075941716,
+        "drift": 0.6035417491157291,
+        "shared_change": 0.47753617976224
+      }
+    }
+  },
+  "soft_shrunk_genome": {
+    "desc": "Soft Drift (k=1.25) + Bayesian Continuous Shrunk Genome",
+    "feature_dim": 364,
+    "native": {
+      "full_points": 36.0671565029709,
+      "tuning_points": 36.382327755402436,
+      "audit_points": 35.73303242904005,
+      "loss_ratio": 0.6635633583994268,
+      "bootstrap_ci": [
+        -3.5998956152968753,
+        -1.1052394096955585
+      ],
+      "by_condition": {
+        "stable": 0.6983723519701425,
+        "short_history": 0.6865072408812856,
+        "drift": 0.6747527548454045,
+        "shared_change": 0.5946210859008746
+      }
+    },
+    "mixture": {
+      "full_points": 38.268694610797766,
+      "tuning_points": 38.269984931750045,
+      "audit_points": 38.27013340467882,
+      "loss_ratio": 0.5678611619814855,
+      "bootstrap_ci": [
+        0.009644216091677827,
+        0.5046373750038701
+      ],
+      "by_condition": {
+        "stable": 0.557503797894951,
+        "short_history": 0.6222612539832039,
+        "drift": 0.6130652846429985,
+        "shared_change": 0.4786143114047888
+      }
+    }
+  },
+  "full_unified": {
+    "desc": "Unified: Soft Drift (k=1.25) + Shrunk Genome + Conditioned Transitions",
+    "feature_dim": 364,
+    "native": {
+      "full_points": 35.81686235499314,
+      "tuning_points": 36.59858566446674,
+      "audit_points": 34.99368625600606,
+      "loss_ratio": 0.6751886138243919,
+      "bootstrap_ci": [
+        -4.3214246364572935,
+        -1.8653719026067968
+      ],
+      "by_condition": {
+        "stable": 0.7224789542093963,
+        "short_history": 0.702814263952185,
+        "drift": 0.6611322575260384,
+        "shared_change": 0.6143289796099479
+      }
+    },
+    "mixture": {
+      "full_points": 38.197040276392556,
+      "tuning_points": 38.34269296284911,
+      "audit_points": 38.039304673596625,
+      "loss_ratio": 0.5708023335274651,
+      "bootstrap_ci": [
+        -0.2458915289234671,
+        0.297124934361926
+      ],
+      "by_condition": {
+        "stable": 0.5668860262751844,
+        "short_history": 0.6254435063067725,
+        "drift": 0.6084511818504507,
+        "shared_change": 0.482428619677453
+      }
+    }
+  }
+}

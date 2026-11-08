@@ -1,0 +1,20 @@
+{
+  "name": "v7_not_champion (Solution A: 75% Champion v6 + 25% EXP-022 Config 3)",
+  "status": "RESEARCH_STAGED_NOT_CHAMPION",
+  "full_points": 38.11903363741578,
+  "tuning_points": 38.118503035504084,
+  "audit_points": 38.117629074870514,
+  "loss_ratio": 0.5740168171815071,
+  "by_condition": {
+    "stable": 0.5486611712163818,
+    "short_history": 0.643101453110882,
+    "drift": 0.6276921606015117,
+    "shared_change": 0.4766124837972528
+  },
+  "bootstrap_gain_ci95": [
+    0.048092720255726105,
+    0.19359129450670232
+  ],
+  "tuning_audit_spread": 0.0008739606335694816,
+  "notes": "Completely eliminated stable regression while slashing drift and short_history error."
+}
