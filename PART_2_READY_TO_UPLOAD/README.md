@@ -1,50 +1,48 @@
-# Adaptation A5 — recommended Part 2 files
+# Adaptation A6 — Jonathan A4 plus Bayesian temporal residual correction
 
-Upload these two matching files to the adaptation form:
+Upload `submission.csv` and `submission_entry.zip` together for Part 2.
 
-- `submission.csv`
-- `submission_entry.zip`
+Full public validation: **16.634796 / 20** (includes correction-fitting episodes).
+Audit episodes: **15.637562 / 20**. Cross-fitted tuning selection: **15.050522 / 20**.
+Previous A5: 12.360656 full / 12.314882 audit. Original Jonathan A4: 11.764303 full.
+Public validation has been inspected repeatedly, including while developing A4.
+The audit score is not an untouched estimate of test quality. Hidden test score
+is unknown; the 16.63 figure must not be described as fully held out.
 
-Continues Jonathan's A4 adaptation champion from repository commit `957f082`.
-Full validation: **12.360656 / 20**, compared with A4 **11.764303 / 20**.
-Audit episodes: **12.314882**, compared with A4 **11.708280**.
-Tuning: **12.433979**. The hidden test score is unknown.
+The predictor first runs Jonathan's frozen A4 adaptation model. A bank of 36
+Bayesian local temporal experts uses binary and three-category payout contexts
+at single and paired lags 1–8, half-lives 24/64/infinite, prior strengths 1/4/16
+and evidence temperatures 1/2. Missing ticks remain unobserved. All inputs are
+strictly earlier than each query cutoff. History summaries include changes in
+local and peer payout rates and lag polarity. Other episodes are isolated.
 
-The update blends A4's win probability 50/50 with a machine-local Bayesian
-temporal estimate. The estimator averages binary single-lag and two-lag
-conditional models for delays 1–8, using marginal-likelihood evidence,
-64-tick recency weighting, strength 4, and temperature 2. The probabilities
-of positive payout sizes conditional on winning remain those from A4.
-Every history input is strictly before the prediction cutoff; unavailable
-ticks remain missing. Other episodes never contribute local evidence.
+A HistGradientBoostingRegressor learns A4's p_0 residual from those features:
+150 iterations, 7 leaves, minimum leaf size 25, L2 10, learning rate .04,
+early stopping disabled, random seed 42. It is fitted only on tuning episodes.
+Three condition-balanced episode folds select the correction; condition-normalized
+reference errors weight its training loss. Winning probabilities are clipped to
+[.001,.999]; conditional positive payout proportions are retained from A4.
+Audit targets never fit the new correction. No target files, condition labels,
+training process, forecast lookup table, internet or API is needed at inference.
 
-Selection compares candidates on tuning episodes. Residual correction and
-structural projection candidates use three condition-balanced episode folds.
-Local history estimators have no fitted validation coefficients and are
-selected directly on tuning episodes. Audit episodes do not select this
-update. Jonathan's underlying A4 was previously tuned on public validation,
-so these audit results are not an entirely untouched estimate of test quality.
+Install pinned requirements before the offline run. From the extracted ZIP:
 
-The ZIP opens directly to `README.md`, `reproduce.json`, `predict.py`, pinned
-`requirements.txt`, model configuration and frozen A4 source/weights. It does
-not contain forecast lookup tables or target files. Install requirements
-before offline inference, then run from the extracted directory:
-
-```powershell
+```
 python predict.py --data /absolute/path/to/adaptation/public --out /absolute/path/to/submission.csv
 ```
 
-The official adaptation checker validates all 1,536 test queries. Inference
-from a fresh ZIP extraction exactly matches the submitted CSV; hashes and
-comparison results are recorded in `MANIFEST.json`. Two regression tests
-cover future-history exclusion, episode isolation, missing observations and
-probability normalization.
+`--data` also accepts the direct folder with queries.csv and history.csv.
+The ZIP has root README.md/reproduce.json and contains all fitted model weights.
+No data files or secrets are packaged. Use the current adaptation kit's checker;
+the old main kit's checker rejects the new 80/20 metadata.
 
-Training/selection from repository root:
+Training and model selection from the repository root (use a fresh output folder):
 
-```powershell
-.venv/Scripts/python.exe Jonathan_Lab_1/research/adaptation_a5/predict.py --train --data Jonathan_Lab_1/adaptation-participants/public --out Jonathan_Lab_1/compiled_versions/adaptation_a5_new_run --archive Jonathan_Lab_1/compiled_versions/adaptation_active_submission/submission_entry.zip
+```
+.venv/Scripts/python.exe Jonathan_Lab_1/research/adaptation_a6/run.py --data adaptation/kit/public --out Phillip_Lab/runs/adaptation_a6_new
 ```
 
-Use a fresh output folder. `report.json` preserves every comparison and fold.
-The original A4 package remains available. No entry has been uploaded.
+The organizer adaptation data is also at Jonathan_Lab_1/adaptation-participants/public.
+Model comparisons and limitations are in report.json. Source and artifact hashes,
+format checks and clean-extraction reproduction results are in MANIFEST.json
+beside the upload files. Nothing is submitted automatically.

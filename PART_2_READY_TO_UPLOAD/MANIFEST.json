@@ -1,14 +1,17 @@
 {
+  "round": "adaptation",
+  "max_points": 20,
   "queries": 1536,
   "maximum_probability_difference": 0.0,
   "exact_file_match": true,
+  "packaged_validation_maximum_probability_difference": 0.0,
+  "full_validation_points": 16.63479646501288,
+  "audit_points": 15.637561547360713,
+  "crossfitted_tuning_selection_points": 15.050521678406017,
   "sha256": {
-    "submission.csv": "d1fec847f57be2f6f6649b99ef3e369c7511ec0f834dd4f05c199f2ff949824a",
-    "submission_entry.zip": "ef642d6ab3fef80dc72050751e0cec129d78e05a200c8f9e33cb49c5d016c488",
-    "validation_predictions.csv": "1c23c10fab4de162fbd7bc554c99c533709fda6faf5af7e0561dbb8fd719c6c3"
+    "submission.csv": "d71336e5123a40067f5221d51a042f939dcac653b02a02b35528cb67c54e317b",
+    "submission_entry.zip": "78f40f63a9affefab7bbcfbf59d6c246363057330dcb837fd6ab206bbf2a7922",
+    "validation_predictions.csv": "c47947e2864f3672631e913b0c150157fa571d598992a171e7267c927996623f"
   },
-  "source_sha256": "adacdc658351165fb85cc0a10a70320be26a7a9cbbeee6c447c40458789b434e",
-  "base_commit": "957f082",
-  "round": "adaptation",
-  "max_points": 20
+  "note": "Full validation contains correction fitting episodes. Audit and tuning have been repeatedly inspected. Actual hidden test score is unknown."
 }
