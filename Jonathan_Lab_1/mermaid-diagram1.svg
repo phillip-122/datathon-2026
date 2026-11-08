@@ -1,101 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 632.0539999999999 1185.9569999999999" width="632.0539999999999" height="1185.9569999999999" style="--bg:#18181B;--fg:#F4F4F5;--line:#71717A;--muted:#A1A1AA;--surface:#27272A;--border:#3F3F46;background:var(--bg)">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
-  text { font-family: 'Inter', system-ui, sans-serif; }
-  svg {
-    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
-    --_text:          var(--fg);
-    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
-    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
-    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
-    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
-    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
-    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
-    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
-    --_group-fill:    var(--bg);
-    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
-    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
-    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
-  }
-</style>
-<defs>
-  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
-    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
-  </marker>
-  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
-    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
-  </marker>
-</defs>
-<polyline class="edge" data-from="D" data-to="Q" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Massive Distributed Aggregation" points="336.7749999999999,93.80000000000001 336.7749999999999,210.1" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="Q" data-to="A" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Export compact CSV (&lt;50 KB)" points="336.7749999999999,247 336.7749999999999,363.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="A" data-to="F" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Cutoff-safe lookup (t &lt; cutoff)" points="336.7749999999999,400.2 336.7749999999999,516.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="F" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Multi-cutoff Step 6 Training" points="336.7749999999999,570.3000000000001 336.7749999999999,686.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="M" data-to="G" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Deterministic 50/50 Split" points="336.7749999999999,723.5 336.7749999999999,839.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="G" data-to="V3" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Pass" points="310.09883333333323,973.1808333333332 310.09883333333323,1011.857 191.76149999999996,1011.857 191.76149999999996,1092.157" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="G" data-to="REJ" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Fail" points="363.4511666666666,973.1808333333333 363.4511666666666,1011.857 481.7884999999999,1011.857 481.7884999999999,1092.157" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<g class="edge-label" data-from="D" data-to="Q" data-label="Massive Distributed Aggregation">
-  <rect x="250.77499999999992" y="136.8" width="171.496" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
-  <text x="336.5229999999999" y="151.95000000000002" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Massive Distributed Aggregation</text>
-</g>
-<g class="edge-label" data-from="Q" data-to="A" data-label="Export compact CSV (&lt;50 KB)">
-  <rect x="258.7749999999999" y="290" width="155.458" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
-  <text x="336.5039999999999" y="305.15" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Export compact CSV (&lt;50 KB)</text>
-</g>
-<g class="edge-label" data-from="A" data-to="F" data-label="Cutoff-safe lookup (t &lt; cutoff)">
-  <rect x="263.7749999999999" y="443.2" width="145.36" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
-  <text x="336.4549999999999" y="458.34999999999997" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Cutoff-safe lookup (t &lt; cutoff)</text>
-</g>
-<g class="edge-label" data-from="F" data-to="M" data-label="Multi-cutoff Step 6 Training">
-  <rect x="266.275" y="613.3000000000001" width="140.608" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
-  <text x="336.57899999999995" y="628.45" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Multi-cutoff Step 6 Training</text>
-</g>
-<g class="edge-label" data-from="M" data-to="G" data-label="Deterministic 50/50 Split">
-  <rect x="272.27499999999986" y="766.5" width="128.728" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
-  <text x="336.6389999999999" y="781.65" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Deterministic 50/50 Split</text>
-</g>
-<g class="edge-label" data-from="G" data-to="V3" data-label="Pass">
-  <rect x="170.26149999999996" y="1018.8570000000001" width="42.598" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
-  <text x="191.56049999999996" y="1034.007" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Pass</text>
-</g>
-<g class="edge-label" data-from="G" data-to="REJ" data-label="Fail">
-  <rect x="463.7884999999999" y="1018.8570000000001" width="35.47" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
-  <text x="481.5234999999999" y="1034.007" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Fail</text>
-</g>
-<g class="node" data-id="D" data-label="Databricks Lakehouse / Cloud SQL
-(Full History &amp; Queries)" data-shape="rectangle">
-  <rect x="212.43049999999994" y="40" width="248.68899999999996" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="336.7749999999999" y="66.9" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="336.7749999999999" dy="-3.9000000000000012">Databricks Lakehouse / Cloud SQL</tspan><tspan x="336.7749999999999" dy="16.900000000000002">(Full History &amp; Queries)</tspan></text>
-</g>
-<g class="node" data-id="Q" data-label="Analytical Extraction Queries" data-shape="rectangle">
-  <rect x="230.58499999999992" y="210.1" width="212.38" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="336.7749999999999" y="228.55" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Analytical Extraction Queries</text>
-</g>
-<g class="node" data-id="A" data-label="artifacts/prior_tensor.csv" data-shape="rectangle">
-  <rect x="239.8474999999999" y="363.3" width="193.85500000000002" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="336.7749999999999" y="381.75" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">artifacts/prior_tensor.csv</text>
-</g>
-<g class="node" data-id="F" data-label="src/features.py
-(Bayesian Priors &amp; Reversal Factors)" data-shape="rectangle">
-  <rect x="205.3909999999999" y="516.5" width="262.76800000000003" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="336.7749999999999" y="543.4" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="336.7749999999999" dy="-3.9000000000000012">src/features.py</tspan><tspan x="336.7749999999999" dy="16.900000000000002">(Bayesian Priors &amp; Reversal Factors)</tspan></text>
-</g>
-<g class="node" data-id="M" data-label="HGBForecaster + Calibration T=1.06" data-shape="rectangle">
-  <rect x="210.94849999999994" y="686.6" width="251.65299999999993" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="336.7749999999999" y="705.0500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">HGBForecaster + Calibration T=1.06</text>
-</g>
-<g class="node" data-id="G" data-label="50/50 Audit Gate
-Tune &gt; 35.2282
-Audit &gt; 34.9660" data-shape="diamond">
-  <polygon points="336.7749999999999,839.8 416.80349999999993,919.8285 336.7749999999999,999.857 256.7464999999999,919.8285" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="336.7749999999999" y="919.8285" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="336.7749999999999" dy="-12.350000000000001">50/50 Audit Gate</tspan><tspan x="336.7749999999999" dy="16.900000000000002">Tune &gt; 35.2282</tspan><tspan x="336.7749999999999" dy="16.900000000000002">Audit &gt; 34.9660</tspan></text>
-</g>
-<g class="node" data-id="V3" data-label="Promote Champion v3
-Update compiled_versions/final_submission/" data-shape="rectangle">
-  <rect x="40" y="1092.157" width="303.5229999999999" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="191.76149999999996" y="1119.057" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="191.76149999999996" dy="-3.9000000000000012">Promote Champion v3</tspan><tspan x="191.76149999999996" dy="16.900000000000002">Update compiled_versions/final_submission/</tspan></text>
-</g>
-<g class="node" data-id="REJ" data-label="Reject &amp; Keep EXP-012 Locked" data-shape="rectangle">
-  <rect x="371.5229999999999" y="1092.157" width="220.53099999999995" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="481.7884999999999" y="1110.607" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Reject &amp; Keep EXP-012 Locked</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#0f172a;font-family:'Inter',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316" />
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#06b6d4" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <rect x="40" y="30" width="1520" height="80" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="72" font-size="24" font-weight="700" fill="#f8fafc">DATABRICKS SYSTEM IDENTIFICATION TO EDGE INTELLIGENCE</text>
+  <text x="70" y="94" font-size="14" font-weight="400" fill="#94a3b8">Reverse-Engineering Stochastic Simulator Invariants Across 282,664 Events for Microsecond Offline Deployment</text>
+  <rect x="1360" y="50" width="170" height="40" rx="8" fill="#f97316" />
+  <text x="1445" y="75" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff">Databricks Track</text>
+
+  <!-- Panel 1: Lakehouse Discovery -->
+  <rect x="40" y="140" width="460" height="720" rx="16" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+  <rect x="60" y="160" width="420" height="44" rx="8" fill="#0f172a" stroke="#f97316" stroke-width="1"/>
+  <text x="270" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#f97316">LAKEHOUSE HYPOTHESIS TESTING</text>
+
+  <rect x="60" y="225" width="420" height="175" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="80" y="255" font-size="15" font-weight="600" fill="#f8fafc">1. 282,664 Delta Lake Events Ingested</text>
+  <text x="80" y="285" font-size="13" fill="#cbd5e1">• Full multi-round history partitioned by episode and machine</text>
+  <text x="80" y="310" font-size="13" fill="#cbd5e1">• High-concurrency SQL window functions over 8 lags</text>
+  <text x="80" y="335" font-size="13" fill="#cbd5e1">• Genie hypothesis testing: Invariance vs. temporal mutation</text>
+  <text x="80" y="360" font-size="13" fill="#cbd5e1">• Live SQL Warehouse: 01b90cfaa061e148 verified live</text>
+
+  <rect x="60" y="420" width="420" height="205" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="80" y="450" font-size="15" font-weight="600" fill="#f8fafc">2. Proving Physical Symmetries (σ ≤ 10⁻¹⁶)</text>
+  <text x="80" y="480" font-size="13" fill="#f97316">• Mechanical Reel Constants: p2, p5, p20 payout ratios</text>
+  <text x="80" y="505" font-size="13" fill="#cbd5e1">  Steady (200:49:1), Balanced (16:6:1), Jackpot (7:9:3)</text>
+  <text x="80" y="530" font-size="13" fill="#f97316">• Discrete 1x-Regime Shift: Exactly two ratio modes</text>
+  <text x="80" y="555" font-size="13" fill="#cbd5e1">  Δ ln R = 1.3000 verified down to 6 decimal places</text>
+  <text x="80" y="580" font-size="13" fill="#f97316">• Rejection of Floor-Budget &amp; Continuous Drift Hypotheses</text>
+  <text x="80" y="605" font-size="13" fill="#34d399">  Saved hours by eliminating invalid assumptions early</text>
+
+  <rect x="60" y="645" width="420" height="190" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="80" y="675" font-size="15" font-weight="600" fill="#f8fafc">3. The 57-Point Illusion Disproved</text>
+  <text x="80" y="705" font-size="13" fill="#cbd5e1">• Textbook formulas assumed static memoryless coin tosses</text>
+  <text x="80" y="730" font-size="13" fill="#cbd5e1">• Actual empirical error: 31x higher due to hidden states</text>
+  <text x="80" y="755" font-size="13" fill="#cbd5e1">• Drought dependence: p0 = 0.906 after 8 zeros vs 0.467</text>
+  <text x="80" y="780" font-size="13" fill="#cbd5e1">• Proved empirical Bayes ceiling is bounded at 38.5 - 41.0 pts</text>
+  <text x="80" y="810" font-size="14" font-weight="600" fill="#38bdf8">Scientific clarity prevented chasing false targets</text>
+
+  <!-- Connect Panel 1 to 2 -->
+  <line x1="500" y1="520" x2="560" y2="520" stroke="#f97316" stroke-width="2.5" marker-end="url(#arrow-orange)"/>
+
+  <!-- Panel 2: Rapid Adaptation Forensic Audit -->
+  <rect x="560" y="140" width="480" height="720" rx="16" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+  <rect x="580" y="160" width="440" height="44" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-width="1"/>
+  <text x="800" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#06b6d4">RAPID ADAPTATION FORENSIC AUDIT</text>
+
+  <rect x="580" y="225" width="440" height="200" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="605" y="255" font-size="15" font-weight="600" fill="#f8fafc">Round 2 Simulator Mutation Diagnosed</text>
+  <text x="605" y="285" font-size="13" fill="#cbd5e1">• Lag 7 Echo Normalized: Main payout spike (+0.257) decayed</text>
+  <text x="605" y="310" font-size="13" fill="#06b6d4">• Balanced Machines: Lag 2 autocorrelation 2.2x stronger than Lag 1</text>
+  <text x="605" y="335" font-size="13" fill="#06b6d4">• Jackpot Machines: Lags 5 &amp; 8 over 2x stronger than Lag 1</text>
+  <text x="605" y="360" font-size="13" fill="#06b6d4">• Steady Machines: Even harmonics (2, 4, 8) dominate</text>
+  <text x="605" y="385" font-size="13" fill="#f97316">• Signal Polarity Inverted: Signal 0 became the hottest state</text>
+  <text x="605" y="410" font-size="13" fill="#34d399">Forensic audit pinpointed why frozen V12 degraded (9.84)</text>
+
+  <rect x="580" y="445" width="440" height="195" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="605" y="475" font-size="15" font-weight="600" fill="#f8fafc">Dynamic Retraining &amp; Confidence Routing</text>
+  <text x="605" y="505" font-size="13" fill="#cbd5e1">• Discarded stale weights; retrained freshly on Adaptation logs</text>
+  <text x="605" y="530" font-size="13" fill="#cbd5e1">• Re-anchored context priors f(machine_type, signal)</text>
+  <text x="605" y="555" font-size="13" fill="#cbd5e1">• Retuned pair interactions to (2, 4), (2, 6), (4, 6), (6, 8)</text>
+  <text x="605" y="580" font-size="13" fill="#cbd5e1">• Preserved hard physical reel and regime constants</text>
+  <text x="605" y="615" font-size="14" font-weight="700" fill="#34d399">Jumped from 9.84 → 11.7224 / 20.0 (29.4% Error Reduction)</text>
+
+  <rect x="580" y="660" width="440" height="175" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="605" y="690" font-size="15" font-weight="600" fill="#f8fafc">Multi-Agent Parallel Research Fleet</text>
+  <text x="605" y="720" font-size="13" fill="#cbd5e1">• Lead Agent: Strategic coordination &amp; submission verification</text>
+  <text x="605" y="745" font-size="13" fill="#cbd5e1">• Subagent 1: Machine-level polarity &amp; opposite reactivity</text>
+  <text x="605" y="770" font-size="13" fill="#cbd5e1">• Subagent 2: Short-history Bayesian shrinkage bounds</text>
+  <text x="605" y="795" font-size="13" fill="#cbd5e1">• Subagent 3: Floor contagion &amp; HMM regime duration</text>
+  <text x="605" y="820" font-size="13" fill="#38bdf8">Parallel execution delivered results before 12:00 PM cutoff</text>
+
+  <!-- Connect Panel 2 to 3 -->
+  <line x1="1040" y1="520" x2="1100" y2="520" stroke="#06b6d4" stroke-width="2.5" marker-end="url(#arrow-cyan)"/>
+
+  <!-- Panel 3: Edge Production Results -->
+  <rect x="1100" y="140" width="460" height="720" rx="16" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <rect x="1120" y="160" width="420" height="44" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="1330" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#34d399">COMPETITION BENCHMARK RESULTS</text>
+
+  <rect x="1120" y="225" width="420" height="185" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="1145" y="255" font-size="15" font-weight="600" fill="#f8fafc">Round 1 (Main Challenge)</text>
+  <text x="1145" y="285" font-size="13" fill="#cbd5e1">• Starter Reference Baseline: 30.00 / 60 points</text>
+  <text x="1145" y="310" font-size="13" fill="#cbd5e1">• Clean-sheet ML models: 31.3 - 31.9 points</text>
+  <text x="1145" y="335" font-size="14" font-weight="700" fill="#34d399">• House Edge Champion V12: 39.1427 Points</text>
+  <text x="1145" y="360" font-size="13" fill="#38bdf8">• Loss Ratio R = 0.5421 (45.79% Error Reduction)</text>
+  <text x="1145" y="385" font-size="13" fill="#cbd5e1">• Audit gate passed with zero data leakage</text>
+
+  <rect x="1120" y="430" width="420" height="185" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="1145" y="460" font-size="15" font-weight="600" fill="#f8fafc">Round 2 (Adaptation Challenge)</text>
+  <text x="1145" y="490" font-size="13" fill="#cbd5e1">• Starter Reference Baseline: 10.00 / 20 points</text>
+  <text x="1145" y="515" font-size="13" fill="#cbd5e1">• Frozen V12 Zero-Shot: 9.84 / 20 (Negative transfer)</text>
+  <text x="1145" y="540" font-size="14" font-weight="700" fill="#34d399">• House Edge Candidate A2: 11.7224 Points</text>
+  <text x="1145" y="565" font-size="13" fill="#38bdf8">• Scaled Equivalent: 35.17 / 60 (29.39% Error Reduction)</text>
+  <text x="1145" y="590" font-size="13" fill="#cbd5e1">• SHA-256 contracts &amp; offline reproduction verified</text>
+
+  <rect x="1120" y="635" width="420" height="200" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="1145" y="665" font-size="15" font-weight="600" fill="#f8fafc">Strict Edge Deployment Contract</text>
+  <text x="1145" y="695" font-size="13" fill="#cbd5e1">• Runtime: 2.8 seconds total for 1,536 test queries</text>
+  <text x="1145" y="720" font-size="13" fill="#cbd5e1">• RAM: &lt; 220 MB RAM footprint (limit: 16 GiB)</text>
+  <text x="1145" y="745" font-size="13" fill="#cbd5e1">• Package Size: 4.5 MB zip archive (limit: 100 MB)</text>
+  <text x="1145" y="770" font-size="13" fill="#cbd5e1">• Reproducibility: 'image': 'python' (Standard CPU)</text>
+  <text x="1145" y="800" font-size="14" font-weight="700" fill="#34d399">Air-Gapped, deterministic, zero network API calls</text>
 </svg>

@@ -27,3 +27,13 @@ We translated supported discoveries into statistical priors, regime estimates, a
 - **45.8%:** Reduction in normalized prediction error (Loss Ratio R = 0.5421).
 
 The score is not percentage accuracy: it measures improvement over a defined baseline in a stochastic prediction challenge. Our achievement was not eliminating uncertainty, but discovering enough hidden structure to substantially outperform conventional prediction while respecting limited observations and strict deployment constraints.
+
+
+
+MORE:
+how did we apply the adaptation stage.
+how did we integrate the databricks mcp
+buzzwords:
+    - Genie
+    - Lakes
+    - Bronze/gold/silver medallions

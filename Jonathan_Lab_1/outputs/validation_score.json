@@ -1,0 +1,210 @@
+{
+  "calibration_bins": [
+    {
+      "bin": 0,
+      "forecast_nonzero": 0.06454331064438111,
+      "true_nonzero": 0.049529961957667464,
+      "weight": 0.04557291666666668
+    },
+    {
+      "bin": 1,
+      "forecast_nonzero": 0.15437533721972765,
+      "true_nonzero": 0.21307249257979566,
+      "weight": 0.09895833333333325
+    },
+    {
+      "bin": 2,
+      "forecast_nonzero": 0.24722162405278067,
+      "true_nonzero": 0.27920732678405413,
+      "weight": 0.16536458333333343
+    },
+    {
+      "bin": 3,
+      "forecast_nonzero": 0.35022973877628594,
+      "true_nonzero": 0.31151847152182294,
+      "weight": 0.17187500000000014
+    },
+    {
+      "bin": 4,
+      "forecast_nonzero": 0.4473136365150878,
+      "true_nonzero": 0.5027735120016269,
+      "weight": 0.25651041666666724
+    },
+    {
+      "bin": 5,
+      "forecast_nonzero": 0.5441307613331268,
+      "true_nonzero": 0.5780381533330198,
+      "weight": 0.17317708333333348
+    },
+    {
+      "bin": 6,
+      "forecast_nonzero": 0.645965113243967,
+      "true_nonzero": 0.6265567654870584,
+      "weight": 0.06901041666666669
+    },
+    {
+      "bin": 7,
+      "forecast_nonzero": 0.7525134742008999,
+      "true_nonzero": 0.7097364545498305,
+      "weight": 0.014322916666666668
+    },
+    {
+      "bin": 8,
+      "forecast_nonzero": 0.8540621110693555,
+      "true_nonzero": 0.8247205903653727,
+      "weight": 0.005208333333333333
+    }
+  ],
+  "contest": {
+    "by_condition": {
+      "drift": {
+        "episodes": 24,
+        "error": 0.20175855443257404,
+        "loss_ratio": 1.0,
+        "queries": 192,
+        "reference_error": 0.20175855443257404
+      },
+      "shared_change": {
+        "episodes": 24,
+        "error": 0.1982355317282902,
+        "loss_ratio": 1.0,
+        "queries": 192,
+        "reference_error": 0.1982355317282902
+      },
+      "short_history": {
+        "episodes": 24,
+        "error": 0.17514568035651593,
+        "loss_ratio": 1.0,
+        "queries": 192,
+        "reference_error": 0.17514568035651593
+      },
+      "stable": {
+        "episodes": 24,
+        "error": 0.18181045823311018,
+        "loss_ratio": 1.0,
+        "queries": 192,
+        "reference_error": 0.18181045823311018
+      }
+    },
+    "contest_version": "temporal-adaptation-v2",
+    "max_points": 20.0,
+    "mean_loss_ratio": 1.0,
+    "technical_points": 10.0
+  },
+  "diagnostics": {
+    "expected_interval_coverage_80": 0.9402985910323072,
+    "expected_payout_mae": 0.9976921532986994,
+    "mean_interval_width_80": 2.6796874999999885,
+    "nonzero_calibration_error": 0.04063848551144382,
+    "outcome_brier": 0.5441452992072077,
+    "realized_interval_coverage_80": 0.9335937500000094,
+    "realized_payout_mae": 1.2638590728955374
+  },
+  "episode_errors": {
+    "adaptation-validation-e00000": 0.25714386371807646,
+    "adaptation-validation-e00001": 0.16013954844159933,
+    "adaptation-validation-e00002": 0.17178173368722965,
+    "adaptation-validation-e00003": 0.20624794489554862,
+    "adaptation-validation-e00004": 0.11660868995517305,
+    "adaptation-validation-e00005": 0.22143748897351048,
+    "adaptation-validation-e00006": 0.33272699004972006,
+    "adaptation-validation-e00007": 0.21276360886891452,
+    "adaptation-validation-e00008": 0.13875211414886054,
+    "adaptation-validation-e00009": 0.2712758734909926,
+    "adaptation-validation-e00010": 0.15111322595617893,
+    "adaptation-validation-e00011": 0.1726296763131816,
+    "adaptation-validation-e00012": 0.17545244889746886,
+    "adaptation-validation-e00013": 0.1974977958902498,
+    "adaptation-validation-e00014": 0.2751578150003383,
+    "adaptation-validation-e00015": 0.1584665727699009,
+    "adaptation-validation-e00016": 0.06941575182732075,
+    "adaptation-validation-e00017": 0.17761375549671027,
+    "adaptation-validation-e00018": 0.2492088620317305,
+    "adaptation-validation-e00019": 0.25184999917883244,
+    "adaptation-validation-e00020": 0.19475581442992423,
+    "adaptation-validation-e00021": 0.18831272639246358,
+    "adaptation-validation-e00022": 0.2210147503332023,
+    "adaptation-validation-e00023": 0.206937324568994,
+    "adaptation-validation-e00024": 0.1563730384975489,
+    "adaptation-validation-e00025": 0.23837523303743605,
+    "adaptation-validation-e00026": 0.20664557042687343,
+    "adaptation-validation-e00027": 0.17452731048315276,
+    "adaptation-validation-e00028": 0.20583092497160643,
+    "adaptation-validation-e00029": 0.16714817442589958,
+    "adaptation-validation-e00030": 0.20119408024020857,
+    "adaptation-validation-e00031": 0.22006050710706063,
+    "adaptation-validation-e00032": 0.19276750298325496,
+    "adaptation-validation-e00033": 0.19844555207290504,
+    "adaptation-validation-e00034": 0.24752012889339206,
+    "adaptation-validation-e00035": 0.2134985267536626,
+    "adaptation-validation-e00036": 0.22262486978661902,
+    "adaptation-validation-e00037": 0.12164005648014022,
+    "adaptation-validation-e00038": 0.1849324947903392,
+    "adaptation-validation-e00039": 0.21965207727078842,
+    "adaptation-validation-e00040": 0.111402538083273,
+    "adaptation-validation-e00041": 0.18759255976039485,
+    "adaptation-validation-e00042": 0.15821714593225591,
+    "adaptation-validation-e00043": 0.14212233372701372,
+    "adaptation-validation-e00044": 0.18845188987591632,
+    "adaptation-validation-e00045": 0.18196885705319965,
+    "adaptation-validation-e00046": 0.19479691919527486,
+    "adaptation-validation-e00047": 0.1921101078450911,
+    "adaptation-validation-e00048": 0.1583877442956119,
+    "adaptation-validation-e00049": 0.16968030172642515,
+    "adaptation-validation-e00050": 0.19772815615028,
+    "adaptation-validation-e00051": 0.18408378069419506,
+    "adaptation-validation-e00052": 0.19761989956630813,
+    "adaptation-validation-e00053": 0.17380758814944366,
+    "adaptation-validation-e00054": 0.21193689717246583,
+    "adaptation-validation-e00055": 0.17099584543916146,
+    "adaptation-validation-e00056": 0.13347228997555724,
+    "adaptation-validation-e00057": 0.1536611010033661,
+    "adaptation-validation-e00058": 0.21210055516862972,
+    "adaptation-validation-e00059": 0.23920949561080912,
+    "adaptation-validation-e00060": 0.2752443591759488,
+    "adaptation-validation-e00061": 0.1445886246588016,
+    "adaptation-validation-e00062": 0.1587754538306582,
+    "adaptation-validation-e00063": 0.2637943996245724,
+    "adaptation-validation-e00064": 0.15471701882977848,
+    "adaptation-validation-e00065": 0.20337031353071672,
+    "adaptation-validation-e00066": 0.2315346114059684,
+    "adaptation-validation-e00067": 0.16873622968036256,
+    "adaptation-validation-e00068": 0.2222716725451337,
+    "adaptation-validation-e00069": 0.22736247946832017,
+    "adaptation-validation-e00070": 0.1975548833632041,
+    "adaptation-validation-e00071": 0.15199072304217465,
+    "adaptation-validation-e00072": 0.15879000956592945,
+    "adaptation-validation-e00073": 0.15048564496727987,
+    "adaptation-validation-e00074": 0.2234607231501471,
+    "adaptation-validation-e00075": 0.1434575080041913,
+    "adaptation-validation-e00076": 0.22018101083708816,
+    "adaptation-validation-e00077": 0.14922550160384337,
+    "adaptation-validation-e00078": 0.21245035920981412,
+    "adaptation-validation-e00079": 0.2220459784880241,
+    "adaptation-validation-e00080": 0.10456498076196025,
+    "adaptation-validation-e00081": 0.2247802462038102,
+    "adaptation-validation-e00082": 0.1916719510286981,
+    "adaptation-validation-e00083": 0.22420035171696823,
+    "adaptation-validation-e00084": 0.10740311650535803,
+    "adaptation-validation-e00085": 0.15204189821468098,
+    "adaptation-validation-e00086": 0.11104106117655231,
+    "adaptation-validation-e00087": 0.19212898730279201,
+    "adaptation-validation-e00088": 0.21013076745921122,
+    "adaptation-validation-e00089": 0.1810895903028892,
+    "adaptation-validation-e00090": 0.3012802939475609,
+    "adaptation-validation-e00091": 0.21230964541496794,
+    "adaptation-validation-e00092": 0.22193261475276682,
+    "adaptation-validation-e00093": 0.10610928701498223,
+    "adaptation-validation-e00094": 0.09766390694697058,
+    "adaptation-validation-e00095": 0.13953276031796039
+  },
+  "n_episodes": 96,
+  "n_queries": 768,
+  "probability_error": 0.18923755618762259,
+  "score": 90.53812219061888,
+  "score_ci95": [
+    90.08116448950932,
+    91.01759030253808
+  ],
+  "scoring_version": "distribution-brier-v1"
+}

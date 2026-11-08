@@ -1,151 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2765.972999999999 1415.3" width="2765.972999999999" height="1415.3" style="--bg:#18181B;--fg:#F4F4F5;--line:#71717A;--muted:#A1A1AA;--surface:#27272A;--border:#3F3F46;background:var(--bg)">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
-  text { font-family: 'Inter', system-ui, sans-serif; }
-  svg {
-    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
-    --_text:          var(--fg);
-    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
-    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
-    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
-    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
-    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
-    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
-    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
-    --_group-fill:    var(--bg);
-    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
-    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
-    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
-  }
-</style>
-<defs>
-  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
-    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
-  </marker>
-  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
-    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
-  </marker>
-</defs>
-<g class="subgraph" data-id="Step1" data-label="Step 1: Ingestion &amp; Resolution">
-  <rect x="1105.2237499999994" y="40" width="525.5149999999999" height="283.6" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <rect x="1105.2237499999994" y="40" width="525.5149999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <text x="1117.2237499999994" y="54" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 1: Ingestion &amp; Resolution</text>
-</g>
-<g class="subgraph" data-id="Step2" data-label="Step 2: Cutoff-Safe History Indexing">
-  <rect x="1176.6929999999995" y="383.6" width="357.7529999999998" height="113.80000000000001" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <rect x="1176.6929999999995" y="383.6" width="357.7529999999998" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <text x="1188.6929999999995" y="397.6" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 2: Cutoff-Safe History Indexing</text>
-</g>
-<g class="subgraph" data-id="Step3" data-label="Step 3: 211 Feature Engineering (src/features.py)">
-  <rect x="40" y="557.4000000000001" width="2685.972999999999" height="96.9" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <rect x="40" y="557.4000000000001" width="2685.972999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <text x="52" y="571.4000000000001" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 3: 211 Feature Engineering (src/features.py)</text>
-</g>
-<g class="subgraph" data-id="Step4" data-label="Step 4: Inference &amp; Calibration (src/model.py)">
-  <rect x="1202.6279999999995" y="714.3" width="305.8829999999999" height="487.2" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <rect x="1202.6279999999995" y="714.3" width="305.8829999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <text x="1214.6279999999995" y="728.3" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 4: Inference &amp; Calibration (src/model.py)</text>
-</g>
-<g class="subgraph" data-id="Step5" data-label="Step 5: Output Generation">
-  <rect x="1167.0599999999995" y="1261.5" width="377.01899999999995" height="113.80000000000001" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <rect x="1167.0599999999995" y="1261.5" width="377.01899999999995" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
-  <text x="1179.0599999999995" y="1275.5" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 5: Output Generation</text>
-</g>
-<polyline class="edge" data-from="Q" data-to="T" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1225.1907499999993,307.6 1225.1907499999993,367.6 1355.5694999999994,367.6 1355.5694999999994,427.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="H" data-to="T" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1485.9482499999995,307.6 1485.9482499999995,367.6 1355.5694999999994,367.6 1355.5694999999994,427.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="T" data-to="F1" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 217.76499999999996,541.4000000000001 217.76499999999996,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="T" data-to="F2" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 614.4959999999999,541.4000000000001 614.4959999999999,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="T" data-to="F3" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 1047.5359999999998,541.4000000000001 1047.5359999999998,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="T" data-to="F4" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 1534.6689999999994,541.4000000000001 1534.6689999999994,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="T" data-to="F5" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 2036.2514999999992,541.4000000000001 2036.2514999999992,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="T" data-to="F6" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 2493.373999999999,541.4000000000001 2493.373999999999,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="F1" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="217.76499999999996,638.3000000000001 217.76499999999996,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="F2" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="614.4959999999999,638.3000000000001 614.4959999999999,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="F3" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1047.5359999999998,638.3000000000001 1047.5359999999998,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="F4" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1534.6689999999994,638.3000000000001 1534.6689999999994,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="F5" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="2036.2514999999992,638.3000000000001 2036.2514999999992,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="F6" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="2493.373999999999,638.3000000000001 2493.373999999999,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="N" data-to="CSV" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,1185.5 1355.5694999999994,1305.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="D" data-to="P" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,120.9 1355.5694999999994,168.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="P" data-to="Q" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,205.8 1355.5694999999994,229.8 1225.1907499999993,229.8 1225.1907499999993,253.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="P" data-to="H" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,205.8 1355.5694999999994,229.8 1485.9482499999995,229.8 1485.9482499999995,253.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="M" data-to="L" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,812.0999999999999 1355.5694999999994,860.0999999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="L" data-to="C" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,913.9 1355.5694999999994,961.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="C" data-to="S" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,998.8 1355.5694999999994,1046.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<polyline class="edge" data-from="S" data-to="N" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,1083.6999999999998 1355.5694999999994,1131.6999999999998" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
-<g class="node" data-id="D" data-label="Test Data Folder" data-shape="rectangle">
-  <rect x="1285.6884999999993" y="84" width="139.762" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1355.5694999999994" y="102.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Test Data Folder</text>
-</g>
-<g class="node" data-id="P" data-label="predict.py" data-shape="rectangle">
-  <rect x="1304.9544999999994" y="168.9" width="101.22999999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1355.5694999999994" y="187.35000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">predict.py</text>
-</g>
-<g class="node" data-id="Q" data-label="Load 1,536 Queries
-(machine_type, signal, cutoff)" data-shape="rectangle">
-  <rect x="1121.2237499999994" y="253.8" width="207.93399999999994" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1225.1907499999993" y="280.7" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1225.1907499999993" dy="-3.9000000000000012">Load 1,536 Queries</tspan><tspan x="1225.1907499999993" dy="16.900000000000002">(machine_type, signal, cutoff)</tspan></text>
-</g>
-<g class="node" data-id="H" data-label="Load History Spins
-(episode_id, machine_id, tick, payout)" data-shape="rectangle">
-  <rect x="1357.1577499999994" y="253.8" width="257.5809999999999" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1485.9482499999995" y="280.7" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1485.9482499999995" dy="-3.9000000000000012">Load History Spins</tspan><tspan x="1485.9482499999995" dy="16.900000000000002">(episode_id, machine_id, tick, payout)</tspan></text>
-</g>
-<g class="node" data-id="T" data-label="Filter observations strictly before cutoff (t &lt; cutoff)
-Group by Episode &amp; Machine" data-shape="rectangle">
-  <rect x="1192.6929999999995" y="427.6" width="325.7529999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1355.5694999999994" y="454.5" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">Filter observations strictly before cutoff (t &lt; cutoff)</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">Group by Episode &amp; Machine</tspan></text>
-</g>
-<g class="node" data-id="F1" data-label="Static: Machine type &amp; signal one-hot interactions" data-shape="rectangle">
-  <rect x="56" y="601.4000000000001" width="323.5299999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="217.76499999999996" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Static: Machine type &amp; signal one-hot interactions</text>
-</g>
-<g class="node" data-id="F2" data-label="Recency: Exponential decay weights (half-lives 6, 12, 24, 48 ticks)" data-shape="rectangle">
-  <rect x="407.53" y="601.4000000000001" width="413.93199999999973" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="614.4959999999999" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Recency: Exponential decay weights (half-lives 6, 12, 24, 48 ticks)</text>
-</g>
-<g class="node" data-id="F3" data-label="Rolling Windows: Win rates &amp; average payout (windows 1 to 48)" data-shape="rectangle">
-  <rect x="849.4619999999998" y="601.4000000000001" width="396.14799999999997" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1047.5359999999998" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Rolling Windows: Win rates &amp; average payout (windows 1 to 48)</text>
-</g>
-<g class="node" data-id="F4" data-label="Databricks Markov Lags: Exact payouts at lags 1-8 &amp; pairwise transitions (lag1, lag2)" data-shape="rectangle">
-  <rect x="1273.6099999999997" y="601.4000000000001" width="522.1179999999996" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1534.6689999999994" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Databricks Markov Lags: Exact payouts at lags 1-8 &amp; pairwise transitions (lag1, lag2)</text>
-</g>
-<g class="node" data-id="F5" data-label="Streaks: Current cold drought length &amp; ticks since last big win (&gt;=5)" data-shape="rectangle">
-  <rect x="1823.7279999999992" y="601.4000000000001" width="425.04699999999985" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="2036.2514999999992" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Streaks: Current cold drought length &amp; ticks since last big win (&gt;=5)</text>
-</g>
-<g class="node" data-id="F6" data-label="Peer Regimes: What the other 7 machines in the episode did recently" data-shape="rectangle">
-  <rect x="2276.774999999999" y="601.4000000000001" width="433.19799999999975" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="2493.373999999999" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Peer Regimes: What the other 7 machines in the episode did recently</text>
-</g>
-<g class="node" data-id="M" data-label="HistGradientBoosting Classifier
-(Loaded from artifacts/hgb_model.joblib)" data-shape="rectangle">
-  <rect x="1218.6279999999995" y="758.3" width="273.8829999999999" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1355.5694999999994" y="785.1999999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">HistGradientBoosting Classifier</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">(Loaded from artifacts/hgb_model.joblib)</tspan></text>
-</g>
-<g class="node" data-id="L" data-label="&quot;Raw Decision Logits
-[z_0, z_1, z_2, z_5, z_20" data-shape="rectangle">
-  <rect x="1265.3109999999995" y="860.0999999999999" width="180.517" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1355.5694999999994" y="886.9999999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">&quot;Raw Decision Logits</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">[z_0, z_1, z_2, z_5, z_20</tspan></text>
-</g>
-<g class="node" data-id="C" data-label="Temperature Scaling: logits / 1.06" data-shape="rectangle">
-  <rect x="1240.1169999999995" y="961.9" width="230.90499999999994" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1355.5694999999994" y="980.35" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Temperature Scaling: logits / 1.06</text>
-</g>
-<g class="node" data-id="S" data-label="Numerically Stable Softmax" data-shape="rectangle">
-  <rect x="1256.0484999999994" y="1046.8" width="199.04199999999994" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1355.5694999999994" y="1065.25" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Numerically Stable Softmax</text>
-</g>
-<g class="node" data-id="N" data-label="math.fsum Normalization
-(Sum = 1.0 within 1e-16)" data-shape="rectangle">
-  <rect x="1265.3109999999995" y="1131.6999999999998" width="180.51699999999997" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1355.5694999999994" y="1158.6" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">math.fsum Normalization</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">(Sum = 1.0 within 1e-16)</tspan></text>
-</g>
-<g class="node" data-id="CSV" data-label="submission.csv
-(1,536 rows, header: query_id,p_0,p_1,p_2,p_5,p_20)" data-shape="rectangle">
-  <rect x="1183.0599999999995" y="1305.5" width="345.01899999999995" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
-  <text x="1355.5694999999994" y="1332.4" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">submission.csv</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">(1,536 rows, header: query_id,p_0,p_1,p_2,p_5,p_20)</tspan></text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#0f172a;font-family:'Inter',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="grad-emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="grad-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.05"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#38bdf8" />
+    </marker>
+    <marker id="arrow-emerald" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34d399" />
+    </marker>
+  </defs>
+
+  <!-- Title & Header -->
+  <rect x="40" y="30" width="1520" height="80" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="72" font-size="24" font-weight="700" fill="#f8fafc">HOUSE EDGE: Confidence-Routed Probabilistic Forecaster</text>
+  <text x="70" y="94" font-size="14" font-weight="400" fill="#94a3b8">Multi-Hypothesis Portfolio • Physical Simplex Projection • 1x-Regime Mixture Inverter • 2.8s Sub-Second Offline Inference</text>
+  <rect x="1360" y="50" width="170" height="40" rx="8" fill="#0284c7" />
+  <text x="1445" y="75" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff">TAMU Datathon 2026</text>
+
+  <!-- Column 1: Input & Confidence Gate -->
+  <rect x="40" y="140" width="440" height="720" rx="16" fill="url(#grad-blue)" stroke="#1e293b" stroke-width="2"/>
+  <rect x="60" y="160" width="400" height="44" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="260" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#38bdf8">STEP 1: INGESTION &amp; EVIDENCE</text>
+
+  <rect x="60" y="225" width="400" height="95" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="80" y="255" font-size="15" font-weight="600" fill="#f1f5f9">Input Telemetry (Cutoff t)</text>
+  <text x="80" y="280" font-size="13" fill="#94a3b8">• Machine Type (Steady, Balanced, Jackpot)</text>
+  <text x="80" y="302" font-size="13" fill="#94a3b8">• Query Signal (-1, 0, 1) &amp; Available History Ticks</text>
+
+  <!-- Decision Fork: Confidence Routing -->
+  <polygon points="260,360 410,430 260,500 110,430" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="260" y="425" text-anchor="middle" font-size="14" font-weight="700" fill="#fbbf24">CONFIDENCE ROUTER</text>
+  <text x="260" y="445" text-anchor="middle" font-size="12" fill="#cbd5e1">History Length (N)</text>
+
+  <rect x="60" y="540" width="185" height="120" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="152" y="570" text-anchor="middle" font-size="13" font-weight="700" fill="#f59e0b">Short History (N ≤ 64)</text>
+  <text x="152" y="595" text-anchor="middle" font-size="11" fill="#cbd5e1">High Observation Noise</text>
+  <text x="152" y="615" text-anchor="middle" font-size="11" fill="#94a3b8">Route: Bayesian Shrinkage</text>
+  <text x="152" y="635" text-anchor="middle" font-size="11" fill="#94a3b8">α = 64 / (64 + 150)</text>
+
+  <rect x="275" y="540" width="185" height="120" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="367" y="570" text-anchor="middle" font-size="13" font-weight="700" fill="#38bdf8">Deep History (N ≥ 192)</text>
+  <text x="367" y="595" text-anchor="middle" font-size="11" fill="#cbd5e1">High Confidence Evidence</text>
+  <text x="367" y="615" text-anchor="middle" font-size="11" fill="#94a3b8">Route: Gradient Trees</text>
+  <text x="367" y="635" text-anchor="middle" font-size="11" fill="#94a3b8">Lags (2, 4, 6, 8) + Recency</text>
+
+  <rect x="60" y="690" width="400" height="145" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="80" y="720" font-size="14" font-weight="600" fill="#f1f5f9">Subpopulation Hazard Suppression</text>
+  <text x="80" y="745" font-size="12" fill="#94a3b8">• Zero Streak Drought (streak ≥ 8): Payouts suppressed</text>
+  <text x="80" y="768" font-size="12" fill="#94a3b8">• Peer Floor Surges: Coupled floor bankroll adjustments</text>
+  <text x="80" y="791" font-size="12" fill="#94a3b8">• Signal Polarity: Inverted context priors</text>
+  <text x="80" y="814" font-size="12" fill="#34d399">✓ Eliminates sample-variance overfitting</text>
+
+  <!-- Connect Column 1 to Column 2 -->
+  <line x1="460" y1="600" x2="520" y2="600" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <line x1="245" y1="600" x2="520" y2="600" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Predictive Engine & Sequence Features -->
+  <rect x="520" y="140" width="500" height="720" rx="16" fill="url(#grad-purple)" stroke="#1e293b" stroke-width="2"/>
+  <rect x="540" y="160" width="460" height="44" rx="8" fill="#0f172a" stroke="#c084fc" stroke-width="1"/>
+  <text x="770" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#c084fc">STEP 2: ENSEMBLE SEQUENCE MODELING</text>
+
+  <rect x="540" y="225" width="460" height="180" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="565" y="255" font-size="15" font-weight="600" fill="#f1f5f9">Autoregressive Lag &amp; Recency Engine</text>
+  <text x="565" y="285" font-size="13" fill="#cbd5e1">• Dominant Adaptation Lags: Lags 2, 4, 6, 8 (Lag 7 normalized)</text>
+  <text x="565" y="310" font-size="13" fill="#cbd5e1">• Harmonic Decay Filters: Half-lives [2.0, 4.0, 8.0, 16.0, 32.0, 48.0]</text>
+  <text x="565" y="335" font-size="13" fill="#cbd5e1">• Cross-Lag Pairs: (2, 4), (2, 6), (2, 7), (4, 6), (4, 7), (6, 8)</text>
+  <text x="565" y="360" font-size="13" fill="#cbd5e1">• Rolling Window Rates: Windows 1, 2, 3, 4, 6, 8, 12, 16, 24, 48</text>
+  <text x="565" y="385" font-size="13" fill="#cbd5e1">• Peer Burst Indicators: Floor bankroll surge contagion</text>
+
+  <rect x="540" y="430" width="460" height="175" rx="12" fill="#1e293b" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="565" y="460" font-size="15" font-weight="600" fill="#f1f5f9">Multi-Seed HistGradientBoosting Ensemble</text>
+  <text x="565" y="490" font-size="13" fill="#cbd5e1">• 3-Seed Parallel Ensemble (Seeds: 42, 101, 202)</text>
+  <text x="565" y="515" font-size="13" fill="#cbd5e1">• Max Leaf Nodes = 150 | Learning Rate = 0.065 | Max Iter = 180</text>
+  <text x="565" y="540" font-size="13" fill="#cbd5e1">• Min Samples Leaf = 12 | L2 Regularization = 1.2</text>
+  <text x="565" y="565" font-size="13" fill="#cbd5e1">• Multi-Cutoff Training: Historical checkpoints step=5 ticks</text>
+  <text x="565" y="590" font-size="13" fill="#c084fc">• Raw Output: Latent Probability Vector [p0, p1, p2, p5, p20]</text>
+
+  <rect x="540" y="630" width="460" height="205" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="565" y="660" font-size="15" font-weight="600" fill="#f1f5f9">Machine-Level Polarity Calibration</text>
+  <text x="565" y="690" font-size="13" fill="#cbd5e1">• Solves "Opposite Reactivity" across machines of same type</text>
+  <text x="565" y="715" font-size="13" fill="#cbd5e1">• Self Lag-2 Momentum: P(win_t | win_{t-2}) - P(win_t | loss_{t-2})</text>
+  <text x="565" y="740" font-size="13" fill="#cbd5e1">• Peer Win Covariance: Tracking positive vs negative contagion</text>
+  <text x="565" y="765" font-size="13" fill="#cbd5e1">• Dynamic shrinkage ensures variance stays tightly controlled</text>
+  <text x="565" y="800" font-size="14" font-weight="600" fill="#34d399">Validation Score: 11.7224 / 20.0 (29.4% Error Reduction)</text>
+
+  <!-- Connect Column 2 to Column 3 -->
+  <line x1="1000" y1="515" x2="1060" y2="515" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrow-emerald)"/>
+
+  <!-- Column 3: Physical Invariants & Production Edge -->
+  <rect x="1060" y="140" width="500" height="720" rx="16" fill="url(#grad-emerald)" stroke="#1e293b" stroke-width="2"/>
+  <rect x="1080" y="160" width="460" height="44" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="1310" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#34d399">STEP 3: PHYSICAL INVARIANTS &amp; EDGE</text>
+
+  <rect x="1080" y="225" width="460" height="200" rx="12" fill="#1e293b" stroke="#059669" stroke-width="1.5"/>
+  <text x="1105" y="255" font-size="15" font-weight="600" fill="#f1f5f9">1. Physical Reel Simplex Projection (σ ≤ 10⁻¹⁶)</text>
+  <text x="1105" y="285" font-size="13" fill="#cbd5e1">Multipliers (p2, p5, p20) obey exact rational constants:</text>
+  <text x="1105" y="310" font-size="13" fill="#38bdf8">• Steady: (200/250, 49/250, 1/250) = (0.8000, 0.1960, 0.0040)</text>
+  <text x="1105" y="335" font-size="13" fill="#38bdf8">• Balanced: (16/23, 6/23, 1/23) ≈ (0.6957, 0.2609, 0.0435)</text>
+  <text x="1105" y="360" font-size="13" fill="#38bdf8">• Jackpot: (7/19, 9/19, 3/19) ≈ (0.3684, 0.4737, 0.1579)</text>
+  <text x="1105" y="395" font-size="13" font-weight="600" fill="#34d399">✓ Completely eliminates prediction noise on high payouts</text>
+
+  <rect x="1080" y="450" width="460" height="180" rx="12" fill="#1e293b" stroke="#059669" stroke-width="1.5"/>
+  <text x="1105" y="480" font-size="15" font-weight="600" fill="#f1f5f9">2. Discrete 1x-Regime Mixture Inverter (Δ ln R = 1.3)</text>
+  <text x="1105" y="510" font-size="13" fill="#cbd5e1">Ratio p1 / W_high clusters at exactly two states per machine:</text>
+  <text x="1105" y="535" font-size="13" fill="#cbd5e1">• Steady: (0.8353, 3.0649) | Balanced: (0.2724, 0.9994)</text>
+  <text x="1105" y="560" font-size="13" fill="#cbd5e1">• Predicts π = P(Hot State | Features) via L2-Logistic Classifier</text>
+  <text x="1105" y="585" font-size="13" fill="#cbd5e1">• Smooth convex blend: p1 = (1-π)*p1_cold + π*p1_hot</text>
+  <text x="1105" y="610" font-size="13" font-weight="600" fill="#34d399">✓ No brittle hard-threshold penalties</text>
+
+  <rect x="1080" y="655" width="460" height="180" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="1105" y="685" font-size="15" font-weight="600" fill="#f1f5f9">3. Production Edge Runtime Contract</text>
+  <text x="1105" y="715" font-size="13" fill="#cbd5e1">• Execution Speed: ~2.8 seconds for 1,536 queries (limit: 30 min)</text>
+  <text x="1105" y="740" font-size="13" fill="#cbd5e1">• Memory Footprint: &lt; 220 MB RAM (limit: 16 GiB)</text>
+  <text x="1105" y="765" font-size="13" fill="#cbd5e1">• Air-Gapped: 100% offline, zero cloud APIs, deterministic</text>
+  <text x="1105" y="790" font-size="13" fill="#cbd5e1">• Archive Size: 4.5 MB ZIP (limit: 100 MB)</text>
+  <text x="1105" y="815" font-size="14" font-weight="700" fill="#38bdf8">OUTPUT: submission.csv (1,536 Queries Verified)</text>
 </svg>

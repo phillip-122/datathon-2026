@@ -1,0 +1,13 @@
+{
+  "name": "Candidate A2: Deep Tree Adaptation Champion (leaves=150)",
+  "round": "adaptation",
+  "season_id": "5fffdc4d0c700bbf61c3f911",
+  "max_points": 20.0,
+  "validation_points": 11.722448,
+  "loss_ratio": 0.706140,
+  "baseline_error_reduction": "29.39%",
+  "submission_csv_sha256": "00190425957c6b83f4d34f52dd07d10945a4e123c877dd69bf7488dc7970e75c",
+  "submission_zip_sha256": "a66bf88e56b836404de5b96df2003a12b8ae288178f095a781f196beb4144ca4",
+  "execution_time_sec": 2.8,
+  "memory_mb": 185
+}

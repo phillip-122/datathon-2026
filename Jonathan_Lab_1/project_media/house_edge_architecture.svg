@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#0f172a;font-family:'Inter',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="grad-emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="grad-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.05"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#38bdf8" />
+    </marker>
+    <marker id="arrow-emerald" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34d399" />
+    </marker>
+  </defs>
+
+  <!-- Title & Header -->
+  <rect x="40" y="30" width="1520" height="80" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="72" font-size="24" font-weight="700" fill="#f8fafc">HOUSE EDGE: Confidence-Routed Probabilistic Forecaster</text>
+  <text x="70" y="94" font-size="14" font-weight="400" fill="#94a3b8">Multi-Hypothesis Portfolio • Physical Simplex Projection • 1x-Regime Mixture Inverter • 2.8s Sub-Second Offline Inference</text>
+  <rect x="1360" y="50" width="170" height="40" rx="8" fill="#0284c7" />
+  <text x="1445" y="75" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff">TAMU Datathon 2026</text>
+
+  <!-- Column 1: Input & Confidence Gate -->
+  <rect x="40" y="140" width="440" height="720" rx="16" fill="url(#grad-blue)" stroke="#1e293b" stroke-width="2"/>
+  <rect x="60" y="160" width="400" height="44" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="260" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#38bdf8">STEP 1: INGESTION &amp; EVIDENCE</text>
+
+  <rect x="60" y="225" width="400" height="95" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="80" y="255" font-size="15" font-weight="600" fill="#f1f5f9">Input Telemetry (Cutoff t)</text>
+  <text x="80" y="280" font-size="13" fill="#94a3b8">• Machine Type (Steady, Balanced, Jackpot)</text>
+  <text x="80" y="302" font-size="13" fill="#94a3b8">• Query Signal (-1, 0, 1) &amp; Available History Ticks</text>
+
+  <!-- Decision Fork: Confidence Routing -->
+  <polygon points="260,360 410,430 260,500 110,430" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="260" y="425" text-anchor="middle" font-size="14" font-weight="700" fill="#fbbf24">CONFIDENCE ROUTER</text>
+  <text x="260" y="445" text-anchor="middle" font-size="12" fill="#cbd5e1">History Length (N)</text>
+
+  <rect x="60" y="540" width="185" height="120" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="152" y="570" text-anchor="middle" font-size="13" font-weight="700" fill="#f59e0b">Short History (N ≤ 64)</text>
+  <text x="152" y="595" text-anchor="middle" font-size="11" fill="#cbd5e1">High Observation Noise</text>
+  <text x="152" y="615" text-anchor="middle" font-size="11" fill="#94a3b8">Route: Bayesian Shrinkage</text>
+  <text x="152" y="635" text-anchor="middle" font-size="11" fill="#94a3b8">α = 64 / (64 + 150)</text>
+
+  <rect x="275" y="540" width="185" height="120" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="367" y="570" text-anchor="middle" font-size="13" font-weight="700" fill="#38bdf8">Deep History (N ≥ 192)</text>
+  <text x="367" y="595" text-anchor="middle" font-size="11" fill="#cbd5e1">High Confidence Evidence</text>
+  <text x="367" y="615" text-anchor="middle" font-size="11" fill="#94a3b8">Route: Gradient Trees</text>
+  <text x="367" y="635" text-anchor="middle" font-size="11" fill="#94a3b8">Lags (2, 4, 6, 8) + Recency</text>
+
+  <rect x="60" y="690" width="400" height="145" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="80" y="720" font-size="14" font-weight="600" fill="#f1f5f9">Subpopulation Hazard Suppression</text>
+  <text x="80" y="745" font-size="12" fill="#94a3b8">• Zero Streak Drought (streak ≥ 8): Payouts suppressed</text>
+  <text x="80" y="768" font-size="12" fill="#94a3b8">• Peer Floor Surges: Coupled floor bankroll adjustments</text>
+  <text x="80" y="791" font-size="12" fill="#94a3b8">• Signal Polarity: Inverted context priors</text>
+  <text x="80" y="814" font-size="12" fill="#34d399">✓ Eliminates sample-variance overfitting</text>
+
+  <!-- Connect Column 1 to Column 2 -->
+  <line x1="460" y1="600" x2="520" y2="600" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <line x1="245" y1="600" x2="520" y2="600" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Predictive Engine & Sequence Features -->
+  <rect x="520" y="140" width="500" height="720" rx="16" fill="url(#grad-purple)" stroke="#1e293b" stroke-width="2"/>
+  <rect x="540" y="160" width="460" height="44" rx="8" fill="#0f172a" stroke="#c084fc" stroke-width="1"/>
+  <text x="770" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#c084fc">STEP 2: ENSEMBLE SEQUENCE MODELING</text>
+
+  <rect x="540" y="225" width="460" height="180" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="565" y="255" font-size="15" font-weight="600" fill="#f1f5f9">Autoregressive Lag &amp; Recency Engine</text>
+  <text x="565" y="285" font-size="13" fill="#cbd5e1">• Dominant Adaptation Lags: Lags 2, 4, 6, 8 (Lag 7 normalized)</text>
+  <text x="565" y="310" font-size="13" fill="#cbd5e1">• Harmonic Decay Filters: Half-lives [2.0, 4.0, 8.0, 16.0, 32.0, 48.0]</text>
+  <text x="565" y="335" font-size="13" fill="#cbd5e1">• Cross-Lag Pairs: (2, 4), (2, 6), (2, 7), (4, 6), (4, 7), (6, 8)</text>
+  <text x="565" y="360" font-size="13" fill="#cbd5e1">• Rolling Window Rates: Windows 1, 2, 3, 4, 6, 8, 12, 16, 24, 48</text>
+  <text x="565" y="385" font-size="13" fill="#cbd5e1">• Peer Burst Indicators: Floor bankroll surge contagion</text>
+
+  <rect x="540" y="430" width="460" height="175" rx="12" fill="#1e293b" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="565" y="460" font-size="15" font-weight="600" fill="#f1f5f9">Multi-Seed HistGradientBoosting Ensemble</text>
+  <text x="565" y="490" font-size="13" fill="#cbd5e1">• 3-Seed Parallel Ensemble (Seeds: 42, 101, 202)</text>
+  <text x="565" y="515" font-size="13" fill="#cbd5e1">• Max Leaf Nodes = 150 | Learning Rate = 0.065 | Max Iter = 180</text>
+  <text x="565" y="540" font-size="13" fill="#cbd5e1">• Min Samples Leaf = 12 | L2 Regularization = 1.2</text>
+  <text x="565" y="565" font-size="13" fill="#cbd5e1">• Multi-Cutoff Training: Historical checkpoints step=5 ticks</text>
+  <text x="565" y="590" font-size="13" fill="#c084fc">• Raw Output: Latent Probability Vector [p0, p1, p2, p5, p20]</text>
+
+  <rect x="540" y="630" width="460" height="205" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="565" y="660" font-size="15" font-weight="600" fill="#f1f5f9">Machine-Level Polarity Calibration</text>
+  <text x="565" y="690" font-size="13" fill="#cbd5e1">• Solves "Opposite Reactivity" across machines of same type</text>
+  <text x="565" y="715" font-size="13" fill="#cbd5e1">• Self Lag-2 Momentum: P(win_t | win_{t-2}) - P(win_t | loss_{t-2})</text>
+  <text x="565" y="740" font-size="13" fill="#cbd5e1">• Peer Win Covariance: Tracking positive vs negative contagion</text>
+  <text x="565" y="765" font-size="13" fill="#cbd5e1">• Dynamic shrinkage ensures variance stays tightly controlled</text>
+  <text x="565" y="800" font-size="14" font-weight="600" fill="#34d399">Validation Score: 11.7224 / 20.0 (29.4% Error Reduction)</text>
+
+  <!-- Connect Column 2 to Column 3 -->
+  <line x1="1000" y1="515" x2="1060" y2="515" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrow-emerald)"/>
+
+  <!-- Column 3: Physical Invariants & Production Edge -->
+  <rect x="1060" y="140" width="500" height="720" rx="16" fill="url(#grad-emerald)" stroke="#1e293b" stroke-width="2"/>
+  <rect x="1080" y="160" width="460" height="44" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="1310" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#34d399">STEP 3: PHYSICAL INVARIANTS &amp; EDGE</text>
+
+  <rect x="1080" y="225" width="460" height="200" rx="12" fill="#1e293b" stroke="#059669" stroke-width="1.5"/>
+  <text x="1105" y="255" font-size="15" font-weight="600" fill="#f1f5f9">1. Physical Reel Simplex Projection (σ ≤ 10⁻¹⁶)</text>
+  <text x="1105" y="285" font-size="13" fill="#cbd5e1">Multipliers (p2, p5, p20) obey exact rational constants:</text>
+  <text x="1105" y="310" font-size="13" fill="#38bdf8">• Steady: (200/250, 49/250, 1/250) = (0.8000, 0.1960, 0.0040)</text>
+  <text x="1105" y="335" font-size="13" fill="#38bdf8">• Balanced: (16/23, 6/23, 1/23) ≈ (0.6957, 0.2609, 0.0435)</text>
+  <text x="1105" y="360" font-size="13" fill="#38bdf8">• Jackpot: (7/19, 9/19, 3/19) ≈ (0.3684, 0.4737, 0.1579)</text>
+  <text x="1105" y="395" font-size="13" font-weight="600" fill="#34d399">✓ Completely eliminates prediction noise on high payouts</text>
+
+  <rect x="1080" y="450" width="460" height="180" rx="12" fill="#1e293b" stroke="#059669" stroke-width="1.5"/>
+  <text x="1105" y="480" font-size="15" font-weight="600" fill="#f1f5f9">2. Discrete 1x-Regime Mixture Inverter (Δ ln R = 1.3)</text>
+  <text x="1105" y="510" font-size="13" fill="#cbd5e1">Ratio p1 / W_high clusters at exactly two states per machine:</text>
+  <text x="1105" y="535" font-size="13" fill="#cbd5e1">• Steady: (0.8353, 3.0649) | Balanced: (0.2724, 0.9994)</text>
+  <text x="1105" y="560" font-size="13" fill="#cbd5e1">• Predicts π = P(Hot State | Features) via L2-Logistic Classifier</text>
+  <text x="1105" y="585" font-size="13" fill="#cbd5e1">• Smooth convex blend: p1 = (1-π)*p1_cold + π*p1_hot</text>
+  <text x="1105" y="610" font-size="13" font-weight="600" fill="#34d399">✓ No brittle hard-threshold penalties</text>
+
+  <rect x="1080" y="655" width="460" height="180" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="1105" y="685" font-size="15" font-weight="600" fill="#f1f5f9">3. Production Edge Runtime Contract</text>
+  <text x="1105" y="715" font-size="13" fill="#cbd5e1">• Execution Speed: ~2.8 seconds for 1,536 queries (limit: 30 min)</text>
+  <text x="1105" y="740" font-size="13" fill="#cbd5e1">• Memory Footprint: &lt; 220 MB RAM (limit: 16 GiB)</text>
+  <text x="1105" y="765" font-size="13" fill="#cbd5e1">• Air-Gapped: 100% offline, zero cloud APIs, deterministic</text>
+  <text x="1105" y="790" font-size="13" fill="#cbd5e1">• Archive Size: 4.5 MB ZIP (limit: 100 MB)</text>
+  <text x="1105" y="815" font-size="14" font-weight="700" fill="#38bdf8">OUTPUT: submission.csv (1,536 Queries Verified)</text>
+</svg>

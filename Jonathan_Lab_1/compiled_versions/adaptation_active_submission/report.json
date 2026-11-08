@@ -1,0 +1,13 @@
+{
+  "name": "Candidate A4: Unified Adaptation Champion (Full-Horizon Inverter + Short Triage)",
+  "round": "adaptation",
+  "season_id": "5fffdc4d0c700bbf61c3f911",
+  "max_points": 20.0,
+  "validation_points": 11.764303,
+  "loss_ratio": 0.700058,
+  "baseline_error_reduction": "29.99%",
+  "submission_csv_sha256": "a05653f75c7d1542457a875218adad063e7b17cf93cc77283b774998bf42e757",
+  "submission_zip_sha256": "81f18e95086ee46fa2c462372e6be7945d7f1d464fc7cf0c8f121d5c2fc9ec39",
+  "execution_time_sec": 2.8,
+  "memory_mb": 195
+}

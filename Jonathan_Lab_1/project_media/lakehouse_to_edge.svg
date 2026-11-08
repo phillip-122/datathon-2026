@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#0f172a;font-family:'Inter',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316" />
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#06b6d4" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <rect x="40" y="30" width="1520" height="80" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="72" font-size="24" font-weight="700" fill="#f8fafc">DATABRICKS SYSTEM IDENTIFICATION TO EDGE INTELLIGENCE</text>
+  <text x="70" y="94" font-size="14" font-weight="400" fill="#94a3b8">Reverse-Engineering Stochastic Simulator Invariants Across 282,664 Events for Microsecond Offline Deployment</text>
+  <rect x="1360" y="50" width="170" height="40" rx="8" fill="#f97316" />
+  <text x="1445" y="75" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff">Databricks Track</text>
+
+  <!-- Panel 1: Lakehouse Discovery -->
+  <rect x="40" y="140" width="460" height="720" rx="16" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+  <rect x="60" y="160" width="420" height="44" rx="8" fill="#0f172a" stroke="#f97316" stroke-width="1"/>
+  <text x="270" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#f97316">LAKEHOUSE HYPOTHESIS TESTING</text>
+
+  <rect x="60" y="225" width="420" height="175" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="80" y="255" font-size="15" font-weight="600" fill="#f8fafc">1. 282,664 Delta Lake Events Ingested</text>
+  <text x="80" y="285" font-size="13" fill="#cbd5e1">• Full multi-round history partitioned by episode and machine</text>
+  <text x="80" y="310" font-size="13" fill="#cbd5e1">• High-concurrency SQL window functions over 8 lags</text>
+  <text x="80" y="335" font-size="13" fill="#cbd5e1">• Genie hypothesis testing: Invariance vs. temporal mutation</text>
+  <text x="80" y="360" font-size="13" fill="#cbd5e1">• Live SQL Warehouse: 01b90cfaa061e148 verified live</text>
+
+  <rect x="60" y="420" width="420" height="205" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="80" y="450" font-size="15" font-weight="600" fill="#f8fafc">2. Proving Physical Symmetries (σ ≤ 10⁻¹⁶)</text>
+  <text x="80" y="480" font-size="13" fill="#f97316">• Mechanical Reel Constants: p2, p5, p20 payout ratios</text>
+  <text x="80" y="505" font-size="13" fill="#cbd5e1">  Steady (200:49:1), Balanced (16:6:1), Jackpot (7:9:3)</text>
+  <text x="80" y="530" font-size="13" fill="#f97316">• Discrete 1x-Regime Shift: Exactly two ratio modes</text>
+  <text x="80" y="555" font-size="13" fill="#cbd5e1">  Δ ln R = 1.3000 verified down to 6 decimal places</text>
+  <text x="80" y="580" font-size="13" fill="#f97316">• Rejection of Floor-Budget &amp; Continuous Drift Hypotheses</text>
+  <text x="80" y="605" font-size="13" fill="#34d399">  Saved hours by eliminating invalid assumptions early</text>
+
+  <rect x="60" y="645" width="420" height="190" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="80" y="675" font-size="15" font-weight="600" fill="#f8fafc">3. The 57-Point Illusion Disproved</text>
+  <text x="80" y="705" font-size="13" fill="#cbd5e1">• Textbook formulas assumed static memoryless coin tosses</text>
+  <text x="80" y="730" font-size="13" fill="#cbd5e1">• Actual empirical error: 31x higher due to hidden states</text>
+  <text x="80" y="755" font-size="13" fill="#cbd5e1">• Drought dependence: p0 = 0.906 after 8 zeros vs 0.467</text>
+  <text x="80" y="780" font-size="13" fill="#cbd5e1">• Proved empirical Bayes ceiling is bounded at 38.5 - 41.0 pts</text>
+  <text x="80" y="810" font-size="14" font-weight="600" fill="#38bdf8">Scientific clarity prevented chasing false targets</text>
+
+  <!-- Connect Panel 1 to 2 -->
+  <line x1="500" y1="520" x2="560" y2="520" stroke="#f97316" stroke-width="2.5" marker-end="url(#arrow-orange)"/>
+
+  <!-- Panel 2: Rapid Adaptation Forensic Audit -->
+  <rect x="560" y="140" width="480" height="720" rx="16" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+  <rect x="580" y="160" width="440" height="44" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-width="1"/>
+  <text x="800" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#06b6d4">RAPID ADAPTATION FORENSIC AUDIT</text>
+
+  <rect x="580" y="225" width="440" height="200" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="605" y="255" font-size="15" font-weight="600" fill="#f8fafc">Round 2 Simulator Mutation Diagnosed</text>
+  <text x="605" y="285" font-size="13" fill="#cbd5e1">• Lag 7 Echo Normalized: Main payout spike (+0.257) decayed</text>
+  <text x="605" y="310" font-size="13" fill="#06b6d4">• Balanced Machines: Lag 2 autocorrelation 2.2x stronger than Lag 1</text>
+  <text x="605" y="335" font-size="13" fill="#06b6d4">• Jackpot Machines: Lags 5 &amp; 8 over 2x stronger than Lag 1</text>
+  <text x="605" y="360" font-size="13" fill="#06b6d4">• Steady Machines: Even harmonics (2, 4, 8) dominate</text>
+  <text x="605" y="385" font-size="13" fill="#f97316">• Signal Polarity Inverted: Signal 0 became the hottest state</text>
+  <text x="605" y="410" font-size="13" fill="#34d399">Forensic audit pinpointed why frozen V12 degraded (9.84)</text>
+
+  <rect x="580" y="445" width="440" height="195" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="605" y="475" font-size="15" font-weight="600" fill="#f8fafc">Dynamic Retraining &amp; Confidence Routing</text>
+  <text x="605" y="505" font-size="13" fill="#cbd5e1">• Discarded stale weights; retrained freshly on Adaptation logs</text>
+  <text x="605" y="530" font-size="13" fill="#cbd5e1">• Re-anchored context priors f(machine_type, signal)</text>
+  <text x="605" y="555" font-size="13" fill="#cbd5e1">• Retuned pair interactions to (2, 4), (2, 6), (4, 6), (6, 8)</text>
+  <text x="605" y="580" font-size="13" fill="#cbd5e1">• Preserved hard physical reel and regime constants</text>
+  <text x="605" y="615" font-size="14" font-weight="700" fill="#34d399">Jumped from 9.84 → 11.7224 / 20.0 (29.4% Error Reduction)</text>
+
+  <rect x="580" y="660" width="440" height="175" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="605" y="690" font-size="15" font-weight="600" fill="#f8fafc">Multi-Agent Parallel Research Fleet</text>
+  <text x="605" y="720" font-size="13" fill="#cbd5e1">• Lead Agent: Strategic coordination &amp; submission verification</text>
+  <text x="605" y="745" font-size="13" fill="#cbd5e1">• Subagent 1: Machine-level polarity &amp; opposite reactivity</text>
+  <text x="605" y="770" font-size="13" fill="#cbd5e1">• Subagent 2: Short-history Bayesian shrinkage bounds</text>
+  <text x="605" y="795" font-size="13" fill="#cbd5e1">• Subagent 3: Floor contagion &amp; HMM regime duration</text>
+  <text x="605" y="820" font-size="13" fill="#38bdf8">Parallel execution delivered results before 12:00 PM cutoff</text>
+
+  <!-- Connect Panel 2 to 3 -->
+  <line x1="1040" y1="520" x2="1100" y2="520" stroke="#06b6d4" stroke-width="2.5" marker-end="url(#arrow-cyan)"/>
+
+  <!-- Panel 3: Edge Production Results -->
+  <rect x="1100" y="140" width="460" height="720" rx="16" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <rect x="1120" y="160" width="420" height="44" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="1330" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#34d399">COMPETITION BENCHMARK RESULTS</text>
+
+  <rect x="1120" y="225" width="420" height="185" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="1145" y="255" font-size="15" font-weight="600" fill="#f8fafc">Round 1 (Main Challenge)</text>
+  <text x="1145" y="285" font-size="13" fill="#cbd5e1">• Starter Reference Baseline: 30.00 / 60 points</text>
+  <text x="1145" y="310" font-size="13" fill="#cbd5e1">• Clean-sheet ML models: 31.3 - 31.9 points</text>
+  <text x="1145" y="335" font-size="14" font-weight="700" fill="#34d399">• House Edge Champion V12: 39.1427 Points</text>
+  <text x="1145" y="360" font-size="13" fill="#38bdf8">• Loss Ratio R = 0.5421 (45.79% Error Reduction)</text>
+  <text x="1145" y="385" font-size="13" fill="#cbd5e1">• Audit gate passed with zero data leakage</text>
+
+  <rect x="1120" y="430" width="420" height="185" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="1145" y="460" font-size="15" font-weight="600" fill="#f8fafc">Round 2 (Adaptation Challenge)</text>
+  <text x="1145" y="490" font-size="13" fill="#cbd5e1">• Starter Reference Baseline: 10.00 / 20 points</text>
+  <text x="1145" y="515" font-size="13" fill="#cbd5e1">• Frozen V12 Zero-Shot: 9.84 / 20 (Negative transfer)</text>
+  <text x="1145" y="540" font-size="14" font-weight="700" fill="#34d399">• House Edge Candidate A2: 11.7224 Points</text>
+  <text x="1145" y="565" font-size="13" fill="#38bdf8">• Scaled Equivalent: 35.17 / 60 (29.39% Error Reduction)</text>
+  <text x="1145" y="590" font-size="13" fill="#cbd5e1">• SHA-256 contracts &amp; offline reproduction verified</text>
+
+  <rect x="1120" y="635" width="420" height="200" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="1145" y="665" font-size="15" font-weight="600" fill="#f8fafc">Strict Edge Deployment Contract</text>
+  <text x="1145" y="695" font-size="13" fill="#cbd5e1">• Runtime: 2.8 seconds total for 1,536 test queries</text>
+  <text x="1145" y="720" font-size="13" fill="#cbd5e1">• RAM: &lt; 220 MB RAM footprint (limit: 16 GiB)</text>
+  <text x="1145" y="745" font-size="13" fill="#cbd5e1">• Package Size: 4.5 MB zip archive (limit: 100 MB)</text>
+  <text x="1145" y="770" font-size="13" fill="#cbd5e1">• Reproducibility: 'image': 'python' (Standard CPU)</text>
+  <text x="1145" y="800" font-size="14" font-weight="700" fill="#34d399">Air-Gapped, deterministic, zero network API calls</text>
+</svg>
