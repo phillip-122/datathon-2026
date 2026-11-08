@@ -1,0 +1,22 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_ovomucin",
+  "captured_at": "2026-11-08T09:52:21.011281+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": null,
+      "uniprot_id": "P39880",
+      "name": "Ovomucin",
+      "iupac_name": "Fibrous sulfated glycoprotein complex",
+      "formula": "Polypeptide-heteropolysaccharide complex (1.5-33% carbohydrate)",
+      "molecular_weight": 8300000.0,
+      "classification": "FOAM_STABILIZER / RHEOLOGY_MODIFIER",
+      "functional_role": "Provides thick egg white structure; forms electrostatic complex with lysozyme; imparts elastic modulus to foam lamellae.",
+      "solubility": "Insoluble in pure water; soluble in 0.1M NaCl at pH 8",
+      "isoelectric_point": 4.5,
+      "denaturation_temp_c": 75.0,
+      "inchikey": "PROTEIN_OVOMUCIN_COMPLEX"
+    }
+  }
+}

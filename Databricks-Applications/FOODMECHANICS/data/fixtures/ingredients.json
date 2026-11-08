@@ -1,0 +1,819 @@
+[
+  {
+    "id": "ing_egg_white_raw",
+    "common_name": "Egg White (Liquid, Raw)",
+    "scientific_name": "Gallus gallus albumen",
+    "category": "Poultry & Egg Products",
+    "physical_state": "Liquid (aqueous colloid)",
+    "density_g_per_ml": 1.035,
+    "volume_conversions": {
+      "1_large_egg_white_g": 33.0,
+      "1_tablespoon_g": 15.2,
+      "1_cup_g": 243.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 52.0,
+      "water_g": 87.57,
+      "protein_g": 10.9,
+      "total_fat_g": 0.17,
+      "saturated_fat_g": 0.0,
+      "monounsaturated_fat_g": 0.0,
+      "polyunsaturated_fat_g": 0.0,
+      "carbohydrates_g": 0.73,
+      "sugars_g": 0.71,
+      "dietary_fiber_g": 0.0,
+      "ash_g": 0.63,
+      "calcium_mg": 7.0,
+      "iron_mg": 0.08,
+      "magnesium_mg": 12.0,
+      "phosphorus_mg": 15.0,
+      "potassium_mg": 163.0,
+      "sodium_mg": 166.0,
+      "cholesterol_mg": 0.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 600.0,
+        "typical": 750.0,
+        "max": 950.0
+      },
+      "foam_stability_half_life_min": 45.0,
+      "drainage_rate_ml_per_10min": 1.8,
+      "emulsion_capacity_g_oil_per_g_protein": 42.0,
+      "gelation_temperature_c": {
+        "onset": 62.0,
+        "peak": 65.0,
+        "firm": 71.0
+      },
+      "heat_denaturation_threshold_c": 61.0,
+      "isoelectric_point_ph": 4.6,
+      "ambient_ph": 9.0,
+      "interfacial_tension_reduction_mn_m": 22.5
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_ovalbumin",
+        "mass_fraction_pct_of_protein": 54.0
+      },
+      {
+        "compound_id": "comp_ovotransferrin",
+        "mass_fraction_pct_of_protein": 12.0
+      },
+      {
+        "compound_id": "comp_ovomucoid",
+        "mass_fraction_pct_of_protein": 11.0
+      },
+      {
+        "compound_id": "comp_ovomucin",
+        "mass_fraction_pct_of_protein": 3.5
+      },
+      {
+        "compound_id": "comp_lysozyme",
+        "mass_fraction_pct_of_protein": 3.4
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_protein_mechanical_denaturation",
+      "mech_fat_interference_foam_disruption",
+      "mech_acid_electrostatic_stabilization"
+    ],
+    "evidence": {
+      "source_id": "usda:172183",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172183/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_172183_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_egg_white_dried",
+    "common_name": "Egg White Powder (Dried Albumen)",
+    "scientific_name": "Gallus gallus albumen desiccatus",
+    "category": "Poultry & Egg Products",
+    "physical_state": "Solid (fine powder)",
+    "density_g_per_ml": 0.45,
+    "volume_conversions": {
+      "1_tablespoon_g": 6.8,
+      "1_cup_g": 108.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 382.0,
+      "water_g": 5.8,
+      "protein_g": 82.4,
+      "total_fat_g": 0.04,
+      "saturated_fat_g": 0.0,
+      "monounsaturated_fat_g": 0.0,
+      "polyunsaturated_fat_g": 0.0,
+      "carbohydrates_g": 4.47,
+      "sugars_g": 0.0,
+      "dietary_fiber_g": 0.0,
+      "ash_g": 7.29,
+      "calcium_mg": 78.0,
+      "iron_mg": 0.24,
+      "magnesium_mg": 88.0,
+      "phosphorus_mg": 880.0,
+      "potassium_mg": 1180.0,
+      "sodium_mg": 1150.0,
+      "cholesterol_mg": 0.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 700.0,
+        "typical": 880.0,
+        "max": 1100.0
+      },
+      "foam_stability_half_life_min": 60.0,
+      "drainage_rate_ml_per_10min": 1.1,
+      "emulsion_capacity_g_oil_per_g_protein": 48.0,
+      "gelation_temperature_c": {
+        "onset": 63.0,
+        "peak": 66.0,
+        "firm": 72.0
+      },
+      "heat_denaturation_threshold_c": 62.0,
+      "isoelectric_point_ph": 4.6,
+      "ambient_ph": 7.2,
+      "interfacial_tension_reduction_mn_m": 25.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_ovalbumin",
+        "mass_fraction_pct_of_protein": 54.0
+      },
+      {
+        "compound_id": "comp_ovotransferrin",
+        "mass_fraction_pct_of_protein": 12.0
+      },
+      {
+        "compound_id": "comp_ovomucoid",
+        "mass_fraction_pct_of_protein": 11.0
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_protein_mechanical_denaturation",
+      "mech_sugar_drainage_retardation"
+    ],
+    "evidence": {
+      "source_id": "usda:172186",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172186/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_172186_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_whole_egg_raw",
+    "common_name": "Whole Egg (Liquid, Raw)",
+    "scientific_name": "Gallus gallus ovum",
+    "category": "Poultry & Egg Products",
+    "physical_state": "Liquid (natural emulsion/colloid)",
+    "density_g_per_ml": 1.028,
+    "volume_conversions": {
+      "1_large_egg_g": 50.0,
+      "1_cup_g": 243.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 143.0,
+      "water_g": 76.15,
+      "protein_g": 12.56,
+      "total_fat_g": 9.51,
+      "saturated_fat_g": 3.126,
+      "monounsaturated_fat_g": 3.658,
+      "polyunsaturated_fat_g": 1.911,
+      "carbohydrates_g": 0.72,
+      "sugars_g": 0.37,
+      "dietary_fiber_g": 0.0,
+      "ash_g": 1.06,
+      "calcium_mg": 56.0,
+      "iron_mg": 1.75,
+      "magnesium_mg": 12.0,
+      "phosphorus_mg": 198.0,
+      "potassium_mg": 138.0,
+      "sodium_mg": 142.0,
+      "cholesterol_mg": 372.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 150.0,
+        "typical": 250.0,
+        "max": 350.0
+      },
+      "foam_stability_half_life_min": 18.0,
+      "drainage_rate_ml_per_10min": 5.4,
+      "emulsion_capacity_g_oil_per_g_protein": 78.0,
+      "gelation_temperature_c": {
+        "onset": 65.0,
+        "peak": 69.0,
+        "firm": 74.0
+      },
+      "heat_denaturation_threshold_c": 64.0,
+      "isoelectric_point_ph": 5.5,
+      "ambient_ph": 7.6,
+      "interfacial_tension_reduction_mn_m": 31.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_ovalbumin",
+        "mass_fraction_pct_of_protein": 35.0
+      },
+      {
+        "compound_id": "comp_phospholipids",
+        "mass_fraction_pct_of_lipid": 28.0
+      },
+      {
+        "compound_id": "comp_triglycerides",
+        "mass_fraction_pct_of_lipid": 65.0
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_fat_interference_foam_disruption",
+      "mech_protein_mechanical_denaturation"
+    ],
+    "evidence": {
+      "source_id": "usda:171287",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171287/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_171287_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_heavy_cream",
+    "common_name": "Heavy Whipping Cream (36% Milkfat)",
+    "scientific_name": "Emulsio lipidorum lactis",
+    "category": "Dairy Products",
+    "physical_state": "Liquid oil-in-water emulsion",
+    "density_g_per_ml": 0.994,
+    "volume_conversions": {
+      "1_tablespoon_g": 14.9,
+      "1_cup_g": 238.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 340.0,
+      "water_g": 57.71,
+      "protein_g": 2.84,
+      "total_fat_g": 36.1,
+      "saturated_fat_g": 23.03,
+      "monounsaturated_fat_g": 9.38,
+      "polyunsaturated_fat_g": 1.25,
+      "carbohydrates_g": 2.69,
+      "sugars_g": 2.89,
+      "dietary_fiber_g": 0.0,
+      "ash_g": 0.66,
+      "calcium_mg": 65.0,
+      "iron_mg": 0.06,
+      "magnesium_mg": 7.0,
+      "phosphorus_mg": 59.0,
+      "potassium_mg": 75.0,
+      "sodium_mg": 38.0,
+      "cholesterol_mg": 137.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 90.0,
+        "typical": 115.0,
+        "max": 135.0
+      },
+      "foam_stability_half_life_min": 180.0,
+      "drainage_rate_ml_per_10min": 0.2,
+      "emulsion_capacity_g_oil_per_g_protein": 95.0,
+      "gelation_temperature_c": {
+        "onset": 4.0,
+        "peak": 12.0,
+        "firm": 18.0
+      },
+      "heat_denaturation_threshold_c": 78.0,
+      "isoelectric_point_ph": 4.6,
+      "ambient_ph": 6.6,
+      "interfacial_tension_reduction_mn_m": 18.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_triglycerides",
+        "mass_fraction_pct_of_lipid": 98.0
+      },
+      {
+        "compound_id": "comp_casein_micelle",
+        "mass_fraction_pct_of_protein": 80.0
+      },
+      {
+        "compound_id": "comp_beta_lactoglobulin",
+        "mass_fraction_pct_of_protein": 10.0
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_cream_partial_coalescence"
+    ],
+    "evidence": {
+      "source_id": "usda:170859",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/170859/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_170859_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_whole_milk",
+    "common_name": "Whole Cow Milk (3.25% Fat)",
+    "scientific_name": "Lac bovinum",
+    "category": "Dairy Products",
+    "physical_state": "Liquid emulsion/colloid",
+    "density_g_per_ml": 1.032,
+    "volume_conversions": {
+      "1_cup_g": 244.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 61.0,
+      "water_g": 88.13,
+      "protein_g": 3.15,
+      "total_fat_g": 3.25,
+      "saturated_fat_g": 1.865,
+      "monounsaturated_fat_g": 0.812,
+      "polyunsaturated_fat_g": 0.195,
+      "carbohydrates_g": 4.8,
+      "sugars_g": 5.05,
+      "dietary_fiber_g": 0.0,
+      "ash_g": 0.67,
+      "calcium_mg": 113.0,
+      "iron_mg": 0.03,
+      "magnesium_mg": 10.0,
+      "phosphorus_mg": 84.0,
+      "potassium_mg": 132.0,
+      "sodium_mg": 43.0,
+      "cholesterol_mg": 10.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 25.0,
+        "typical": 40.0,
+        "max": 65.0
+      },
+      "foam_stability_half_life_min": 6.0,
+      "drainage_rate_ml_per_10min": 12.0,
+      "emulsion_capacity_g_oil_per_g_protein": 35.0,
+      "gelation_temperature_c": {
+        "onset": 80.0,
+        "peak": 85.0,
+        "firm": 90.0
+      },
+      "heat_denaturation_threshold_c": 78.0,
+      "isoelectric_point_ph": 4.6,
+      "ambient_ph": 6.7,
+      "interfacial_tension_reduction_mn_m": 15.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_casein_micelle",
+        "mass_fraction_pct_of_protein": 80.0
+      },
+      {
+        "compound_id": "comp_beta_lactoglobulin",
+        "mass_fraction_pct_of_protein": 10.0
+      },
+      {
+        "compound_id": "comp_triglycerides",
+        "mass_fraction_pct_of_lipid": 98.0
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_fat_interference_foam_disruption"
+    ],
+    "evidence": {
+      "source_id": "usda:171265",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171265/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_171265_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_skim_milk",
+    "common_name": "Skim Milk (Nonfat)",
+    "scientific_name": "Lac bovinum defatigatum",
+    "category": "Dairy Products",
+    "physical_state": "Liquid aqueous solution/colloid",
+    "density_g_per_ml": 1.035,
+    "volume_conversions": {
+      "1_cup_g": 245.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 34.0,
+      "water_g": 90.84,
+      "protein_g": 3.37,
+      "total_fat_g": 0.08,
+      "saturated_fat_g": 0.05,
+      "monounsaturated_fat_g": 0.02,
+      "polyunsaturated_fat_g": 0.01,
+      "carbohydrates_g": 4.96,
+      "sugars_g": 4.96,
+      "dietary_fiber_g": 0.0,
+      "ash_g": 0.75,
+      "calcium_mg": 122.0,
+      "iron_mg": 0.03,
+      "magnesium_mg": 11.0,
+      "phosphorus_mg": 101.0,
+      "potassium_mg": 156.0,
+      "sodium_mg": 42.0,
+      "cholesterol_mg": 2.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 120.0,
+        "typical": 180.0,
+        "max": 240.0
+      },
+      "foam_stability_half_life_min": 12.0,
+      "drainage_rate_ml_per_10min": 8.5,
+      "emulsion_capacity_g_oil_per_g_protein": 38.0,
+      "gelation_temperature_c": {
+        "onset": 82.0,
+        "peak": 88.0,
+        "firm": 92.0
+      },
+      "heat_denaturation_threshold_c": 78.0,
+      "isoelectric_point_ph": 4.6,
+      "ambient_ph": 6.7,
+      "interfacial_tension_reduction_mn_m": 19.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_casein_micelle",
+        "mass_fraction_pct_of_protein": 82.0
+      },
+      {
+        "compound_id": "comp_beta_lactoglobulin",
+        "mass_fraction_pct_of_protein": 11.0
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_protein_mechanical_denaturation",
+      "mech_hydrocolloid_yield_stress_stabilization"
+    ],
+    "evidence": {
+      "source_id": "usda:171269",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171269/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_171269_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_aquafaba_liquid",
+    "common_name": "Aquafaba (Chickpea Cooking Liquid)",
+    "scientific_name": "Cicer arietinum extractum",
+    "category": "Legumes & Plant Extracts",
+    "physical_state": "Liquid (aqueous polymer solution)",
+    "density_g_per_ml": 1.018,
+    "volume_conversions": {
+      "1_tablespoon_g": 15.0,
+      "1_cup_g": 240.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 18.0,
+      "water_g": 93.8,
+      "protein_g": 1.15,
+      "total_fat_g": 0.12,
+      "saturated_fat_g": 0.02,
+      "monounsaturated_fat_g": 0.03,
+      "polyunsaturated_fat_g": 0.05,
+      "carbohydrates_g": 3.1,
+      "sugars_g": 0.4,
+      "dietary_fiber_g": 0.85,
+      "ash_g": 0.98,
+      "calcium_mg": 14.0,
+      "iron_mg": 0.45,
+      "magnesium_mg": 16.0,
+      "phosphorus_mg": 28.0,
+      "potassium_mg": 145.0,
+      "sodium_mg": 110.0,
+      "cholesterol_mg": 0.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 400.0,
+        "typical": 520.0,
+        "max": 650.0
+      },
+      "foam_stability_half_life_min": 25.0,
+      "drainage_rate_ml_per_10min": 3.6,
+      "emulsion_capacity_g_oil_per_g_protein": 36.0,
+      "gelation_temperature_c": {
+        "onset": 75.0,
+        "peak": 82.0,
+        "firm": 88.0
+      },
+      "heat_denaturation_threshold_c": 72.0,
+      "isoelectric_point_ph": 4.5,
+      "ambient_ph": 6.2,
+      "interfacial_tension_reduction_mn_m": 24.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_saponin_complex",
+        "mass_fraction_pct_of_dry_matter": 8.0
+      },
+      {
+        "compound_id": "comp_legume_globulins",
+        "mass_fraction_pct_of_dry_matter": 18.0
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_protein_mechanical_denaturation",
+      "mech_sugar_drainage_retardation",
+      "mech_acid_electrostatic_stabilization"
+    ],
+    "evidence": {
+      "source_id": "doi:10.1177/1082013219890696",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1177/1082013219890696",
+      "publication_date": "2020-05-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1177_1082013219890696_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_sucrose_granulated",
+    "common_name": "Granulated White Sugar (Sucrose)",
+    "scientific_name": "alpha-D-glucopyranosyl-(1->2)-beta-D-fructofuranoside",
+    "category": "Sweeteners & Carbohydrates",
+    "physical_state": "Crystalline solid",
+    "density_g_per_ml": 0.85,
+    "volume_conversions": {
+      "1_tablespoon_g": 12.5,
+      "1_cup_g": 200.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 387.0,
+      "water_g": 0.02,
+      "protein_g": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "monounsaturated_fat_g": 0.0,
+      "polyunsaturated_fat_g": 0.0,
+      "carbohydrates_g": 99.98,
+      "sugars_g": 99.8,
+      "dietary_fiber_g": 0.0,
+      "ash_g": 0.01,
+      "calcium_mg": 1.0,
+      "iron_mg": 0.01,
+      "magnesium_mg": 0.0,
+      "phosphorus_mg": 0.0,
+      "potassium_mg": 2.0,
+      "sodium_mg": 1.0,
+      "cholesterol_mg": 0.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 0.0,
+        "typical": 0.0,
+        "max": 0.0
+      },
+      "foam_stability_half_life_min": 0.0,
+      "drainage_rate_ml_per_10min": 0.0,
+      "emulsion_capacity_g_oil_per_g_protein": 0.0,
+      "gelation_temperature_c": {
+        "onset": 160.0,
+        "peak": 186.0,
+        "firm": 200.0
+      },
+      "heat_denaturation_threshold_c": 160.0,
+      "isoelectric_point_ph": null,
+      "ambient_ph": 7.0,
+      "interfacial_tension_reduction_mn_m": 0.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_sucrose",
+        "mass_fraction_pct_of_dry_matter": 99.9
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_sugar_drainage_retardation"
+    ],
+    "evidence": {
+      "source_id": "usda:169655",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169655/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_169655_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_xanthan_gum",
+    "common_name": "Xanthan Gum (E415)",
+    "scientific_name": "Polysaccharide e Xanthomonas campestris",
+    "category": "Hydrocolloids & Stabilizers",
+    "physical_state": "Solid powder",
+    "density_g_per_ml": 0.65,
+    "volume_conversions": {
+      "1_teaspoon_g": 3.0,
+      "1_tablespoon_g": 9.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 350.0,
+      "water_g": 11.0,
+      "protein_g": 6.8,
+      "total_fat_g": 0.2,
+      "saturated_fat_g": 0.0,
+      "monounsaturated_fat_g": 0.0,
+      "polyunsaturated_fat_g": 0.0,
+      "carbohydrates_g": 81.0,
+      "sugars_g": 0.0,
+      "dietary_fiber_g": 78.0,
+      "ash_g": 8.0,
+      "calcium_mg": 45.0,
+      "iron_mg": 0.5,
+      "magnesium_mg": 70.0,
+      "phosphorus_mg": 120.0,
+      "potassium_mg": 350.0,
+      "sodium_mg": 2900.0,
+      "cholesterol_mg": 0.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 0.0,
+        "typical": 0.0,
+        "max": 0.0
+      },
+      "foam_stability_half_life_min": 240.0,
+      "drainage_rate_ml_per_10min": 0.05,
+      "emulsion_capacity_g_oil_per_g_protein": 0.0,
+      "gelation_temperature_c": {
+        "onset": 90.0,
+        "peak": 95.0,
+        "firm": 100.0
+      },
+      "heat_denaturation_threshold_c": 95.0,
+      "isoelectric_point_ph": null,
+      "ambient_ph": 7.0,
+      "interfacial_tension_reduction_mn_m": 0.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_xanthan_polysaccharide",
+        "mass_fraction_pct_of_dry_matter": 95.0
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_hydrocolloid_yield_stress_stabilization"
+    ],
+    "evidence": {
+      "source_id": "doi:10.1016/j.cocis.2007.07.009",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1016/j.cocis.2007.07.009",
+      "publication_date": "2007-08-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_cocis_2007_07_009_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_gelatin_powder",
+    "common_name": "Unflavored Gelatin Powder (Type A / Type B)",
+    "scientific_name": "Collagenum hydrolysatum",
+    "category": "Hydrocolloids & Gelling Agents",
+    "physical_state": "Solid granules/powder",
+    "density_g_per_ml": 0.68,
+    "volume_conversions": {
+      "1_packet_g": 7.2,
+      "1_tablespoon_g": 9.5
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 335.0,
+      "water_g": 13.0,
+      "protein_g": 85.6,
+      "total_fat_g": 0.1,
+      "saturated_fat_g": 0.04,
+      "monounsaturated_fat_g": 0.02,
+      "polyunsaturated_fat_g": 0.01,
+      "carbohydrates_g": 0.0,
+      "sugars_g": 0.0,
+      "dietary_fiber_g": 0.0,
+      "ash_g": 1.3,
+      "calcium_mg": 55.0,
+      "iron_mg": 1.11,
+      "magnesium_mg": 22.0,
+      "phosphorus_mg": 39.0,
+      "potassium_mg": 16.0,
+      "sodium_mg": 196.0,
+      "cholesterol_mg": 0.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 100.0,
+        "typical": 300.0,
+        "max": 500.0
+      },
+      "foam_stability_half_life_min": 360.0,
+      "drainage_rate_ml_per_10min": 0.02,
+      "emulsion_capacity_g_oil_per_g_protein": 30.0,
+      "gelation_temperature_c": {
+        "onset": 15.0,
+        "peak": 20.0,
+        "firm": 35.0
+      },
+      "heat_denaturation_threshold_c": 35.0,
+      "isoelectric_point_ph": 7.5,
+      "ambient_ph": 5.5,
+      "interfacial_tension_reduction_mn_m": 12.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_gelatin_polypeptide",
+        "mass_fraction_pct_of_protein": 100.0
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_hydrocolloid_yield_stress_stabilization"
+    ],
+    "evidence": {
+      "source_id": "usda:172189",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172189/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_172189_20261108_094810.json"
+    }
+  },
+  {
+    "id": "ing_cream_of_tartar",
+    "common_name": "Cream of Tartar (Potassium Bitartrate)",
+    "scientific_name": "Kalii hydrogenotartras",
+    "category": "Culinary Acidulants & Buffers",
+    "physical_state": "Solid crystalline powder",
+    "density_g_per_ml": 0.85,
+    "volume_conversions": {
+      "1_teaspoon_g": 3.0,
+      "1_tablespoon_g": 9.0
+    },
+    "nutritional_profile_per_100g": {
+      "energy_kcal": 258.0,
+      "water_g": 0.6,
+      "protein_g": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "monounsaturated_fat_g": 0.0,
+      "polyunsaturated_fat_g": 0.0,
+      "carbohydrates_g": 61.5,
+      "sugars_g": 0.0,
+      "dietary_fiber_g": 0.2,
+      "ash_g": 36.8,
+      "calcium_mg": 8.0,
+      "iron_mg": 3.72,
+      "magnesium_mg": 2.0,
+      "phosphorus_mg": 5.0,
+      "potassium_mg": 16500.0,
+      "sodium_mg": 52.0,
+      "cholesterol_mg": 0.0
+    },
+    "functional_properties": {
+      "foam_expansion_overrun_pct": {
+        "min": 0.0,
+        "typical": 0.0,
+        "max": 0.0
+      },
+      "foam_stability_half_life_min": 0.0,
+      "drainage_rate_ml_per_10min": 0.0,
+      "emulsion_capacity_g_oil_per_g_protein": 0.0,
+      "gelation_temperature_c": null,
+      "heat_denaturation_threshold_c": null,
+      "isoelectric_point_ph": null,
+      "ambient_ph": 3.5,
+      "interfacial_tension_reduction_mn_m": 0.0
+    },
+    "constituent_compounds": [
+      {
+        "compound_id": "comp_potassium_bitartrate",
+        "mass_fraction_pct_of_dry_matter": 99.5
+      }
+    ],
+    "dominant_mechanisms": [
+      "mech_acid_electrostatic_stabilization"
+    ],
+    "evidence": {
+      "source_id": "usda:173473",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173473/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_173473_20261108_094810.json"
+    }
+  }
+]

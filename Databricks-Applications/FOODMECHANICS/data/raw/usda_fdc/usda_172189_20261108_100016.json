@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_172189",
+  "captured_at": "2026-11-08T10:00:16.387709+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/172189",
+    "payload": {
+      "fdcId": 172189,
+      "description": "Gelatins, dry powder, unsweetened",
+      "foodCategory": "Sweets",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 85.6
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 0.1
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 335.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T10:00:16.387705+00:00"
+  }
+}

@@ -1,0 +1,1420 @@
+{
+  "models": [
+    {
+      "model_id": "openai-o1",
+      "name": "OpenAI o1 (Full)",
+      "provider": "OpenAI",
+      "release_date": "2024-12-05",
+      "architecture": "Dense Transformer (Inference-Time Search)",
+      "parameter_count_b": 200.0,
+      "context_window": 200000,
+      "license": "Proprietary",
+      "is_open_weights": false,
+      "pricing_input_per_m": 15.0,
+      "pricing_output_per_m": 60.0
+    },
+    {
+      "model_id": "openai-o3-mini",
+      "name": "OpenAI o3-mini (High Effort)",
+      "provider": "OpenAI",
+      "release_date": "2025-01-31",
+      "architecture": "Transformer (Configurable RL Reasoning)",
+      "parameter_count_b": 70.0,
+      "context_window": 200000,
+      "license": "Proprietary",
+      "is_open_weights": false,
+      "pricing_input_per_m": 1.1,
+      "pricing_output_per_m": 4.4
+    },
+    {
+      "model_id": "deepseek-r1",
+      "name": "DeepSeek-R1 (671B MoE)",
+      "provider": "DeepSeek",
+      "release_date": "2025-01-20",
+      "architecture": "Sparse MoE (37B active / 671B total) + MLA",
+      "parameter_count_b": 671.0,
+      "context_window": 128000,
+      "license": "MIT",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.55,
+      "pricing_output_per_m": 2.19
+    },
+    {
+      "model_id": "claude-3-7-sonnet-thinking",
+      "name": "Claude 3.7 Sonnet (Thinking Mode)",
+      "provider": "Anthropic",
+      "release_date": "2025-02-24",
+      "architecture": "Hybrid Reasoning Transformer",
+      "parameter_count_b": 150.0,
+      "context_window": 200000,
+      "license": "Proprietary",
+      "is_open_weights": false,
+      "pricing_input_per_m": 3.0,
+      "pricing_output_per_m": 15.0
+    },
+    {
+      "model_id": "gemini-2-flash-thinking",
+      "name": "Gemini 2.0 Flash Thinking",
+      "provider": "Google",
+      "release_date": "2024-12-19",
+      "architecture": "Multimodal Transformer (Chain-of-Thought)",
+      "parameter_count_b": 50.0,
+      "context_window": 1048576,
+      "license": "Proprietary",
+      "is_open_weights": false,
+      "pricing_input_per_m": 0.0,
+      "pricing_output_per_m": 0.0
+    },
+    {
+      "model_id": "qwq-32b-preview",
+      "name": "QwQ-32B-Preview",
+      "provider": "Alibaba Qwen",
+      "release_date": "2024-11-28",
+      "architecture": "Dense Transformer (RL Reasoning)",
+      "parameter_count_b": 32.5,
+      "context_window": 32768,
+      "license": "Apache 2.0",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.2,
+      "pricing_output_per_m": 0.6
+    },
+    {
+      "model_id": "claude-3-5-sonnet",
+      "name": "Claude 3.5 Sonnet (v2)",
+      "provider": "Anthropic",
+      "release_date": "2024-10-22",
+      "architecture": "Dense Transformer",
+      "parameter_count_b": 150.0,
+      "context_window": 200000,
+      "license": "Proprietary",
+      "is_open_weights": false,
+      "pricing_input_per_m": 3.0,
+      "pricing_output_per_m": 15.0
+    },
+    {
+      "model_id": "gpt-4o",
+      "name": "GPT-4o (Omni)",
+      "provider": "OpenAI",
+      "release_date": "2024-05-13",
+      "architecture": "Multimodal Transformer",
+      "parameter_count_b": 220.0,
+      "context_window": 128000,
+      "license": "Proprietary",
+      "is_open_weights": false,
+      "pricing_input_per_m": 2.5,
+      "pricing_output_per_m": 10.0
+    },
+    {
+      "model_id": "gpt-4o-mini",
+      "name": "GPT-4o mini",
+      "provider": "OpenAI",
+      "release_date": "2024-07-18",
+      "architecture": "Distilled Multimodal Transformer",
+      "parameter_count_b": 15.0,
+      "context_window": 128000,
+      "license": "Proprietary",
+      "is_open_weights": false,
+      "pricing_input_per_m": 0.15,
+      "pricing_output_per_m": 0.6
+    },
+    {
+      "model_id": "gemini-1-5-pro",
+      "name": "Gemini 1.5 Pro",
+      "provider": "Google",
+      "release_date": "2024-05-14",
+      "architecture": "Sparse MoE Multimodal Transformer",
+      "parameter_count_b": 300.0,
+      "context_window": 2097152,
+      "license": "Proprietary",
+      "is_open_weights": false,
+      "pricing_input_per_m": 1.25,
+      "pricing_output_per_m": 5.0
+    },
+    {
+      "model_id": "gemini-2-flash",
+      "name": "Gemini 2.0 Flash",
+      "provider": "Google",
+      "release_date": "2024-12-11",
+      "architecture": "Next-Gen Native Multimodal Transformer",
+      "parameter_count_b": 45.0,
+      "context_window": 1048576,
+      "license": "Proprietary",
+      "is_open_weights": false,
+      "pricing_input_per_m": 0.1,
+      "pricing_output_per_m": 0.4
+    },
+    {
+      "model_id": "llama-3-3-70b-instruct",
+      "name": "Llama 3.3 70B Instruct",
+      "provider": "Meta",
+      "release_date": "2024-12-06",
+      "architecture": "Dense Transformer (GQA 8 heads)",
+      "parameter_count_b": 70.6,
+      "context_window": 128000,
+      "license": "Llama 3.3 Community",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.23,
+      "pricing_output_per_m": 0.4
+    },
+    {
+      "model_id": "llama-3-1-405b-instruct",
+      "name": "Llama 3.1 405B Instruct",
+      "provider": "Meta",
+      "release_date": "2024-07-23",
+      "architecture": "Dense Transformer (126 layers)",
+      "parameter_count_b": 405.0,
+      "context_window": 128000,
+      "license": "Llama 3.1 Community",
+      "is_open_weights": true,
+      "pricing_input_per_m": 1.2,
+      "pricing_output_per_m": 3.0
+    },
+    {
+      "model_id": "deepseek-v3",
+      "name": "DeepSeek-V3 Base/Chat (671B)",
+      "provider": "DeepSeek",
+      "release_date": "2024-12-26",
+      "architecture": "Sparse MoE (37B active / 671B) + Multi-Head Latent Attention",
+      "parameter_count_b": 671.0,
+      "context_window": 128000,
+      "license": "MIT",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.14,
+      "pricing_output_per_m": 0.28
+    },
+    {
+      "model_id": "qwen-2-5-72b-instruct",
+      "name": "Qwen 2.5 72B Instruct",
+      "provider": "Alibaba Qwen",
+      "release_date": "2024-09-19",
+      "architecture": "Dense Transformer (SwiGLU)",
+      "parameter_count_b": 72.7,
+      "context_window": 131072,
+      "license": "Apache 2.0",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.35,
+      "pricing_output_per_m": 0.4
+    },
+    {
+      "model_id": "mistral-large-2",
+      "name": "Mistral Large 2 (123B)",
+      "provider": "Mistral AI",
+      "release_date": "2024-07-24",
+      "architecture": "Dense Transformer",
+      "parameter_count_b": 123.0,
+      "context_window": 128000,
+      "license": "Mistral Research License",
+      "is_open_weights": true,
+      "pricing_input_per_m": 2.0,
+      "pricing_output_per_m": 6.0
+    },
+    {
+      "model_id": "gemma-2-27b",
+      "name": "Gemma 2 27B",
+      "provider": "Google DeepMind",
+      "release_date": "2024-06-27",
+      "architecture": "Dense Transformer (Interleaved Sliding Attention)",
+      "parameter_count_b": 27.2,
+      "context_window": 8192,
+      "license": "Gemma Terms",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.15,
+      "pricing_output_per_m": 0.3
+    },
+    {
+      "model_id": "qwen-2-5-coder-32b",
+      "name": "Qwen 2.5 Coder 32B Instruct",
+      "provider": "Alibaba Qwen",
+      "release_date": "2024-11-12",
+      "architecture": "Dense Code Specialist",
+      "parameter_count_b": 32.5,
+      "context_window": 131072,
+      "license": "Apache 2.0",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.18,
+      "pricing_output_per_m": 0.35
+    },
+    {
+      "model_id": "deepseek-coder-v2",
+      "name": "DeepSeek-Coder-V2 (236B MoE)",
+      "provider": "DeepSeek",
+      "release_date": "2024-06-17",
+      "architecture": "Sparse MoE (21B active / 236B total)",
+      "parameter_count_b": 236.0,
+      "context_window": 128000,
+      "license": "DeepSeek License",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.14,
+      "pricing_output_per_m": 0.28
+    },
+    {
+      "model_id": "codestral-22b",
+      "name": "Codestral 22B",
+      "provider": "Mistral AI",
+      "release_date": "2024-05-29",
+      "architecture": "Dense Code Transformer",
+      "parameter_count_b": 22.2,
+      "context_window": 32768,
+      "license": "MNCL",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.2,
+      "pricing_output_per_m": 0.6
+    },
+    {
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "name": "DeepSeek-R1-Distill-Qwen-32B",
+      "provider": "DeepSeek / Open Community",
+      "release_date": "2025-01-20",
+      "architecture": "Dense Distilled RL Transformer",
+      "parameter_count_b": 32.5,
+      "context_window": 128000,
+      "license": "MIT",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.2,
+      "pricing_output_per_m": 0.4
+    },
+    {
+      "model_id": "deepseek-r1-distill-llama-70b",
+      "name": "DeepSeek-R1-Distill-Llama-70B",
+      "provider": "DeepSeek / Open Community",
+      "release_date": "2025-01-20",
+      "architecture": "Dense Distilled RL Transformer",
+      "parameter_count_b": 70.6,
+      "context_window": 128000,
+      "license": "MIT",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.35,
+      "pricing_output_per_m": 0.7
+    },
+    {
+      "model_id": "deepseek-r1-distill-qwen-14b",
+      "name": "DeepSeek-R1-Distill-Qwen-14B",
+      "provider": "DeepSeek / Open Community",
+      "release_date": "2025-01-20",
+      "architecture": "Dense Distilled RL Transformer",
+      "parameter_count_b": 14.7,
+      "context_window": 128000,
+      "license": "MIT",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.1,
+      "pricing_output_per_m": 0.2
+    },
+    {
+      "model_id": "microsoft-phi-4",
+      "name": "Microsoft Phi-4 (14B)",
+      "provider": "Microsoft",
+      "release_date": "2024-12-12",
+      "architecture": "Dense High-Quality Synthetic Transformer",
+      "parameter_count_b": 14.0,
+      "context_window": 16384,
+      "license": "MIT",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.1,
+      "pricing_output_per_m": 0.25
+    },
+    {
+      "model_id": "llama-3-2-3b-instruct",
+      "name": "Llama 3.2 3B Instruct",
+      "provider": "Meta",
+      "release_date": "2024-09-25",
+      "architecture": "Edge Lightweight Transformer",
+      "parameter_count_b": 3.21,
+      "context_window": 128000,
+      "license": "Llama 3.2 Community",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.05,
+      "pricing_output_per_m": 0.1
+    },
+    {
+      "model_id": "smollm2-1-7b",
+      "name": "SmolLM2 1.7B",
+      "provider": "Hugging Face",
+      "release_date": "2024-11-04",
+      "architecture": "Ultra-Compact On-Device Transformer",
+      "parameter_count_b": 1.71,
+      "context_window": 8192,
+      "license": "Apache 2.0",
+      "is_open_weights": true,
+      "pricing_input_per_m": 0.02,
+      "pricing_output_per_m": 0.05
+    }
+  ],
+  "benchmarks": [
+    {
+      "benchmark_id": "swe_bench_verified",
+      "name": "SWE-bench Verified",
+      "evaluation_metric": "Pass@1 (%)",
+      "task_type": "Real-World Software Engineering Issues"
+    },
+    {
+      "benchmark_id": "gpqa_diamond",
+      "name": "GPQA Diamond",
+      "evaluation_metric": "Accuracy (%)",
+      "task_type": "Graduate-Level Physics, Chemistry & Biology Reasoning"
+    },
+    {
+      "benchmark_id": "math_500",
+      "name": "MATH-500",
+      "evaluation_metric": "Pass@1 (%)",
+      "task_type": "Challenging High School & Olympiad Mathematics"
+    },
+    {
+      "benchmark_id": "mmlu_pro",
+      "name": "MMLU-Pro",
+      "evaluation_metric": "Accuracy (%)",
+      "task_type": "Multi-discipline Advanced Reasoning & Reasoning Depth"
+    },
+    {
+      "benchmark_id": "humaneval",
+      "name": "HumanEval",
+      "evaluation_metric": "Pass@1 (%)",
+      "task_type": "Python Function Synthesis & Unit Test Satisfaction"
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "name": "LiveCodeBench",
+      "evaluation_metric": "Pass@1 (%)",
+      "task_type": "Contamination-Free LeetCode/Codeforces Challenges"
+    },
+    {
+      "benchmark_id": "arc_agi",
+      "name": "ARC-AGI",
+      "evaluation_metric": "Accuracy (%)",
+      "task_type": "Visual Abstraction & Pure Few-Shot Generalization"
+    },
+    {
+      "benchmark_id": "ifeval",
+      "name": "IFEval (Instruction Following)",
+      "evaluation_metric": "Strict Prompt Accuracy (%)",
+      "task_type": "Constraint Satisfaction & Verifiable Formatting"
+    }
+  ],
+  "evaluations": [
+    {
+      "eval_id": "eval_1",
+      "model_id": "openai-o1",
+      "benchmark_id": "swe_bench_verified",
+      "score": 48.9,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1 (Agentic search)"
+    },
+    {
+      "eval_id": "eval_2",
+      "model_id": "openai-o1",
+      "benchmark_id": "gpqa_diamond",
+      "score": 78.4,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_3",
+      "model_id": "openai-o1",
+      "benchmark_id": "math_500",
+      "score": 96.4,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_4",
+      "model_id": "openai-o1",
+      "benchmark_id": "mmlu_pro",
+      "score": 84.4,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_5",
+      "model_id": "openai-o1",
+      "benchmark_id": "humaneval",
+      "score": 92.4,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_6",
+      "model_id": "openai-o1",
+      "benchmark_id": "livecodebench",
+      "score": 63.4,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1 (2024-08 to 2024-11 subset)"
+    },
+    {
+      "eval_id": "eval_7",
+      "model_id": "openai-o1",
+      "benchmark_id": "arc_agi",
+      "score": 32.4,
+      "eval_date": "2025-01-28",
+      "methodology": "Consensus@64"
+    },
+    {
+      "eval_id": "eval_8",
+      "model_id": "openai-o1",
+      "benchmark_id": "ifeval",
+      "score": 88.6,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_9",
+      "model_id": "openai-o3-mini",
+      "benchmark_id": "swe_bench_verified",
+      "score": 49.8,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1 (High reasoning effort)"
+    },
+    {
+      "eval_id": "eval_10",
+      "model_id": "openai-o3-mini",
+      "benchmark_id": "gpqa_diamond",
+      "score": 79.7,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_11",
+      "model_id": "openai-o3-mini",
+      "benchmark_id": "math_500",
+      "score": 97.9,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_12",
+      "model_id": "openai-o3-mini",
+      "benchmark_id": "mmlu_pro",
+      "score": 85.2,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_13",
+      "model_id": "openai-o3-mini",
+      "benchmark_id": "humaneval",
+      "score": 94.1,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_14",
+      "model_id": "openai-o3-mini",
+      "benchmark_id": "livecodebench",
+      "score": 65.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_15",
+      "model_id": "openai-o3-mini",
+      "benchmark_id": "arc_agi",
+      "score": 34.0,
+      "eval_date": "2025-01-28",
+      "methodology": "Consensus@64"
+    },
+    {
+      "eval_id": "eval_16",
+      "model_id": "openai-o3-mini",
+      "benchmark_id": "ifeval",
+      "score": 90.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_17",
+      "model_id": "deepseek-r1",
+      "benchmark_id": "swe_bench_verified",
+      "score": 49.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1 (Internal scaffold)"
+    },
+    {
+      "eval_id": "eval_18",
+      "model_id": "deepseek-r1",
+      "benchmark_id": "gpqa_diamond",
+      "score": 71.5,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_19",
+      "model_id": "deepseek-r1",
+      "benchmark_id": "math_500",
+      "score": 97.3,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_20",
+      "model_id": "deepseek-r1",
+      "benchmark_id": "mmlu_pro",
+      "score": 84.0,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_21",
+      "model_id": "deepseek-r1",
+      "benchmark_id": "humaneval",
+      "score": 96.1,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_22",
+      "model_id": "deepseek-r1",
+      "benchmark_id": "livecodebench",
+      "score": 65.9,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_23",
+      "model_id": "deepseek-r1",
+      "benchmark_id": "arc_agi",
+      "score": 30.5,
+      "eval_date": "2025-01-28",
+      "methodology": "Consensus@64"
+    },
+    {
+      "eval_id": "eval_24",
+      "model_id": "deepseek-r1",
+      "benchmark_id": "ifeval",
+      "score": 87.4,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_25",
+      "model_id": "claude-3-7-sonnet-thinking",
+      "benchmark_id": "swe_bench_verified",
+      "score": 70.3,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1 (Claude Code Scaffold)"
+    },
+    {
+      "eval_id": "eval_26",
+      "model_id": "claude-3-7-sonnet-thinking",
+      "benchmark_id": "gpqa_diamond",
+      "score": 84.8,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_27",
+      "model_id": "claude-3-7-sonnet-thinking",
+      "benchmark_id": "math_500",
+      "score": 96.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_28",
+      "model_id": "claude-3-7-sonnet-thinking",
+      "benchmark_id": "mmlu_pro",
+      "score": 88.4,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_29",
+      "model_id": "claude-3-7-sonnet-thinking",
+      "benchmark_id": "humaneval",
+      "score": 96.8,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_30",
+      "model_id": "claude-3-7-sonnet-thinking",
+      "benchmark_id": "livecodebench",
+      "score": 70.3,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_31",
+      "model_id": "claude-3-7-sonnet-thinking",
+      "benchmark_id": "arc_agi",
+      "score": 41.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_32",
+      "model_id": "claude-3-7-sonnet-thinking",
+      "benchmark_id": "ifeval",
+      "score": 92.5,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_33",
+      "model_id": "claude-3-5-sonnet",
+      "benchmark_id": "swe_bench_verified",
+      "score": 49.0,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1 (Agentic)"
+    },
+    {
+      "eval_id": "eval_34",
+      "model_id": "claude-3-5-sonnet",
+      "benchmark_id": "gpqa_diamond",
+      "score": 65.0,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot CoT"
+    },
+    {
+      "eval_id": "eval_35",
+      "model_id": "claude-3-5-sonnet",
+      "benchmark_id": "math_500",
+      "score": 78.3,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot CoT"
+    },
+    {
+      "eval_id": "eval_36",
+      "model_id": "claude-3-5-sonnet",
+      "benchmark_id": "mmlu_pro",
+      "score": 78.0,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_37",
+      "model_id": "claude-3-5-sonnet",
+      "benchmark_id": "humaneval",
+      "score": 93.7,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot"
+    },
+    {
+      "eval_id": "eval_38",
+      "model_id": "claude-3-5-sonnet",
+      "benchmark_id": "livecodebench",
+      "score": 40.5,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_39",
+      "model_id": "claude-3-5-sonnet",
+      "benchmark_id": "arc_agi",
+      "score": 21.0,
+      "eval_date": "2025-01-28",
+      "methodology": "Few-shot"
+    },
+    {
+      "eval_id": "eval_40",
+      "model_id": "claude-3-5-sonnet",
+      "benchmark_id": "ifeval",
+      "score": 88.0,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_41",
+      "model_id": "gpt-4o",
+      "benchmark_id": "swe_bench_verified",
+      "score": 38.8,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_42",
+      "model_id": "gpt-4o",
+      "benchmark_id": "gpqa_diamond",
+      "score": 53.6,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot CoT"
+    },
+    {
+      "eval_id": "eval_43",
+      "model_id": "gpt-4o",
+      "benchmark_id": "math_500",
+      "score": 74.6,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot CoT"
+    },
+    {
+      "eval_id": "eval_44",
+      "model_id": "gpt-4o",
+      "benchmark_id": "mmlu_pro",
+      "score": 72.6,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_45",
+      "model_id": "gpt-4o",
+      "benchmark_id": "humaneval",
+      "score": 90.2,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot"
+    },
+    {
+      "eval_id": "eval_46",
+      "model_id": "gpt-4o",
+      "benchmark_id": "livecodebench",
+      "score": 33.8,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_47",
+      "model_id": "gpt-4o",
+      "benchmark_id": "arc_agi",
+      "score": 18.5,
+      "eval_date": "2025-01-28",
+      "methodology": "Few-shot"
+    },
+    {
+      "eval_id": "eval_48",
+      "model_id": "gpt-4o",
+      "benchmark_id": "ifeval",
+      "score": 84.3,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_49",
+      "model_id": "llama-3-3-70b-instruct",
+      "benchmark_id": "swe_bench_verified",
+      "score": 37.8,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_50",
+      "model_id": "llama-3-3-70b-instruct",
+      "benchmark_id": "gpqa_diamond",
+      "score": 50.5,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_51",
+      "model_id": "llama-3-3-70b-instruct",
+      "benchmark_id": "math_500",
+      "score": 73.0,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_52",
+      "model_id": "llama-3-3-70b-instruct",
+      "benchmark_id": "mmlu_pro",
+      "score": 72.4,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_53",
+      "model_id": "llama-3-3-70b-instruct",
+      "benchmark_id": "humaneval",
+      "score": 88.4,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot"
+    },
+    {
+      "eval_id": "eval_54",
+      "model_id": "llama-3-3-70b-instruct",
+      "benchmark_id": "livecodebench",
+      "score": 34.0,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_55",
+      "model_id": "llama-3-3-70b-instruct",
+      "benchmark_id": "arc_agi",
+      "score": 15.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Few-shot"
+    },
+    {
+      "eval_id": "eval_56",
+      "model_id": "llama-3-3-70b-instruct",
+      "benchmark_id": "ifeval",
+      "score": 87.5,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_57",
+      "model_id": "llama-3-1-405b-instruct",
+      "benchmark_id": "swe_bench_verified",
+      "score": 41.6,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_58",
+      "model_id": "llama-3-1-405b-instruct",
+      "benchmark_id": "gpqa_diamond",
+      "score": 51.1,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_59",
+      "model_id": "llama-3-1-405b-instruct",
+      "benchmark_id": "math_500",
+      "score": 73.8,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_60",
+      "model_id": "llama-3-1-405b-instruct",
+      "benchmark_id": "mmlu_pro",
+      "score": 73.3,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_61",
+      "model_id": "llama-3-1-405b-instruct",
+      "benchmark_id": "humaneval",
+      "score": 89.0,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot"
+    },
+    {
+      "eval_id": "eval_62",
+      "model_id": "llama-3-1-405b-instruct",
+      "benchmark_id": "livecodebench",
+      "score": 35.8,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_63",
+      "model_id": "llama-3-1-405b-instruct",
+      "benchmark_id": "arc_agi",
+      "score": 17.0,
+      "eval_date": "2025-01-28",
+      "methodology": "Few-shot"
+    },
+    {
+      "eval_id": "eval_64",
+      "model_id": "llama-3-1-405b-instruct",
+      "benchmark_id": "ifeval",
+      "score": 88.6,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_65",
+      "model_id": "deepseek-v3",
+      "benchmark_id": "swe_bench_verified",
+      "score": 42.0,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_66",
+      "model_id": "deepseek-v3",
+      "benchmark_id": "gpqa_diamond",
+      "score": 59.1,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_67",
+      "model_id": "deepseek-v3",
+      "benchmark_id": "math_500",
+      "score": 89.3,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_68",
+      "model_id": "deepseek-v3",
+      "benchmark_id": "mmlu_pro",
+      "score": 75.9,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_69",
+      "model_id": "deepseek-v3",
+      "benchmark_id": "humaneval",
+      "score": 90.2,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot"
+    },
+    {
+      "eval_id": "eval_70",
+      "model_id": "deepseek-v3",
+      "benchmark_id": "livecodebench",
+      "score": 42.1,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_71",
+      "model_id": "deepseek-v3",
+      "benchmark_id": "arc_agi",
+      "score": 19.8,
+      "eval_date": "2025-01-28",
+      "methodology": "Few-shot"
+    },
+    {
+      "eval_id": "eval_72",
+      "model_id": "deepseek-v3",
+      "benchmark_id": "ifeval",
+      "score": 86.1,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_73",
+      "model_id": "qwen-2-5-72b-instruct",
+      "benchmark_id": "swe_bench_verified",
+      "score": 38.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_74",
+      "model_id": "qwen-2-5-72b-instruct",
+      "benchmark_id": "gpqa_diamond",
+      "score": 49.8,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_75",
+      "model_id": "qwen-2-5-72b-instruct",
+      "benchmark_id": "math_500",
+      "score": 83.1,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_76",
+      "model_id": "qwen-2-5-72b-instruct",
+      "benchmark_id": "mmlu_pro",
+      "score": 71.6,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_77",
+      "model_id": "qwen-2-5-72b-instruct",
+      "benchmark_id": "humaneval",
+      "score": 86.0,
+      "eval_date": "2025-01-28",
+      "methodology": "0-shot"
+    },
+    {
+      "eval_id": "eval_78",
+      "model_id": "qwen-2-5-72b-instruct",
+      "benchmark_id": "livecodebench",
+      "score": 33.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_79",
+      "model_id": "qwen-2-5-72b-instruct",
+      "benchmark_id": "arc_agi",
+      "score": 14.8,
+      "eval_date": "2025-01-28",
+      "methodology": "Few-shot"
+    },
+    {
+      "eval_id": "eval_80",
+      "model_id": "qwen-2-5-72b-instruct",
+      "benchmark_id": "ifeval",
+      "score": 85.0,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_81",
+      "model_id": "qwen-2-5-coder-32b",
+      "benchmark_id": "swe_bench_verified",
+      "score": 41.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1 (Code scaffold)"
+    },
+    {
+      "eval_id": "eval_82",
+      "model_id": "qwen-2-5-coder-32b",
+      "benchmark_id": "gpqa_diamond",
+      "score": 44.5,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_83",
+      "model_id": "qwen-2-5-coder-32b",
+      "benchmark_id": "math_500",
+      "score": 81.2,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_84",
+      "model_id": "qwen-2-5-coder-32b",
+      "benchmark_id": "mmlu_pro",
+      "score": 64.8,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_85",
+      "model_id": "qwen-2-5-coder-32b",
+      "benchmark_id": "humaneval",
+      "score": 92.7,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_86",
+      "model_id": "qwen-2-5-coder-32b",
+      "benchmark_id": "livecodebench",
+      "score": 40.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_87",
+      "model_id": "qwen-2-5-coder-32b",
+      "benchmark_id": "arc_agi",
+      "score": 12.0,
+      "eval_date": "2025-01-28",
+      "methodology": "Few-shot"
+    },
+    {
+      "eval_id": "eval_88",
+      "model_id": "qwen-2-5-coder-32b",
+      "benchmark_id": "ifeval",
+      "score": 79.4,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_89",
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "benchmark_id": "swe_bench_verified",
+      "score": 43.1,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_90",
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "benchmark_id": "gpqa_diamond",
+      "score": 65.2,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_91",
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "benchmark_id": "math_500",
+      "score": 94.3,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_92",
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "benchmark_id": "mmlu_pro",
+      "score": 80.5,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_93",
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "benchmark_id": "humaneval",
+      "score": 93.3,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_94",
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "benchmark_id": "livecodebench",
+      "score": 57.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_95",
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "benchmark_id": "arc_agi",
+      "score": 24.1,
+      "eval_date": "2025-01-28",
+      "methodology": "Consensus@64"
+    },
+    {
+      "eval_id": "eval_96",
+      "model_id": "deepseek-r1-distill-qwen-32b",
+      "benchmark_id": "ifeval",
+      "score": 84.9,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    },
+    {
+      "eval_id": "eval_97",
+      "model_id": "microsoft-phi-4",
+      "benchmark_id": "swe_bench_verified",
+      "score": 26.5,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_98",
+      "model_id": "microsoft-phi-4",
+      "benchmark_id": "gpqa_diamond",
+      "score": 41.4,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_99",
+      "model_id": "microsoft-phi-4",
+      "benchmark_id": "math_500",
+      "score": 80.4,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_100",
+      "model_id": "microsoft-phi-4",
+      "benchmark_id": "mmlu_pro",
+      "score": 62.5,
+      "eval_date": "2025-01-28",
+      "methodology": "5-shot CoT"
+    },
+    {
+      "eval_id": "eval_101",
+      "model_id": "microsoft-phi-4",
+      "benchmark_id": "humaneval",
+      "score": 84.1,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_102",
+      "model_id": "microsoft-phi-4",
+      "benchmark_id": "livecodebench",
+      "score": 29.8,
+      "eval_date": "2025-01-28",
+      "methodology": "Pass@1"
+    },
+    {
+      "eval_id": "eval_103",
+      "model_id": "microsoft-phi-4",
+      "benchmark_id": "arc_agi",
+      "score": 11.5,
+      "eval_date": "2025-01-28",
+      "methodology": "Few-shot"
+    },
+    {
+      "eval_id": "eval_104",
+      "model_id": "microsoft-phi-4",
+      "benchmark_id": "ifeval",
+      "score": 81.2,
+      "eval_date": "2025-01-28",
+      "methodology": "Strict prompt"
+    }
+  ],
+  "tools": [
+    {
+      "tool_id": "tool_vllm",
+      "name": "vLLM",
+      "category": "Inference Engine",
+      "repo_url": "https://github.com/vllm-project/vllm",
+      "release_version": "0.7.3",
+      "ecosystem_role": "High-throughput serving with PagedAttention, MLA kernel optimization, and FP8 Hopper acceleration."
+    },
+    {
+      "tool_id": "tool_sglang",
+      "name": "SGLang",
+      "category": "Inference Engine",
+      "repo_url": "https://github.com/sgl-project/sglang",
+      "release_version": "0.4.2",
+      "ecosystem_role": "RadixAttention KV cache reuse engine for high-density reasoning, multi-turn chat, and agentic loop workloads."
+    },
+    {
+      "tool_id": "tool_mcp",
+      "name": "Model Context Protocol (MCP)",
+      "category": "Agent Protocol",
+      "repo_url": "https://modelcontextprotocol.io",
+      "release_version": "1.0",
+      "ecosystem_role": "Open standard enabling AI agents to connect securely to local file systems, databases, developer tools, and external APIs."
+    },
+    {
+      "tool_id": "tool_langgraph",
+      "name": "LangGraph",
+      "category": "Orchestration Framework",
+      "repo_url": "https://github.com/langchain-ai/langgraph",
+      "release_version": "0.2.68",
+      "ecosystem_role": "Cyclic stateful graph orchestration framework supporting durable human-in-the-loop multi-agent execution."
+    },
+    {
+      "tool_id": "tool_dspy",
+      "name": "DSPy",
+      "category": "Optimization Framework",
+      "repo_url": "https://github.com/stanfordnlp/dspy",
+      "release_version": "2.5.43",
+      "ecosystem_role": "Declarative programming framework for algorithmically optimizing LM prompts and weight tuning via MIPROv2."
+    },
+    {
+      "tool_id": "tool_tensorrt_llm",
+      "name": "TensorRT-LLM",
+      "category": "Inference Runtime",
+      "repo_url": "https://github.com/NVIDIA/TensorRT-LLM",
+      "release_version": "0.17.0",
+      "ecosystem_role": "NVIDIA enterprise runtime delivering maximum tokens/sec through deep tensor parallelism and FP4/FP8 quantization."
+    },
+    {
+      "tool_id": "tool_ollama",
+      "name": "Ollama",
+      "category": "Local Execution Runtime",
+      "repo_url": "https://github.com/ollama/ollama",
+      "release_version": "0.5.7",
+      "ecosystem_role": "Cross-platform developer CLI and background daemon for one-command local execution of GGUF quantized models."
+    },
+    {
+      "tool_id": "tool_unsloth",
+      "name": "Unsloth",
+      "category": "Fine-Tuning Engine",
+      "repo_url": "https://github.com/unslothai/unsloth",
+      "release_version": "2025.1",
+      "ecosystem_role": "Memory-efficient fine-tuning framework providing 2-5x faster LoRA and QLoRA training on standard consumer GPUs."
+    },
+    {
+      "tool_id": "tool_agy_sdk",
+      "name": "Google Antigravity SDK",
+      "category": "Multi-Agent System",
+      "repo_url": "https://antigravity.google",
+      "release_version": "2.0.0",
+      "ecosystem_role": "Autonomous agent runtime supporting reactive wakeups, sidecars, and background task isolation."
+    }
+  ],
+  "developments": [
+    {
+      "development_id": "dev_1",
+      "title": "OpenAI Launches o3-mini with Configurable Reasoning Effort",
+      "summary": "OpenAI unveils o3-mini delivering 49.8% on SWE-bench Verified and 97.9% on MATH-500 with tiered reasoning controls (low, medium, high), matching o1 performance at 10x lower inference cost.",
+      "category": "Frontier Models",
+      "date": "2025-01-31",
+      "confidence_level": "EVALUATED",
+      "impact_score": 9.6,
+      "source_url": "https://openai.com/index/openai-o3-mini/"
+    },
+    {
+      "development_id": "dev_2",
+      "title": "DeepSeek Releases DeepSeek-R1 Open Reasoning Weights & MIT Distillations",
+      "summary": "DeepSeek releases full 671B MoE reasoning weights and 6 distilled dense models (1.5B to 70B) under permissive MIT license, matching commercial frontier reasoning models on mathematics and code.",
+      "category": "Open Source Weights",
+      "date": "2025-01-20",
+      "confidence_level": "PEER_REVIEWED",
+      "impact_score": 9.9,
+      "source_url": "https://arxiv.org/abs/2501.12948"
+    },
+    {
+      "development_id": "dev_3",
+      "title": "vLLM 0.7.3 Ships Native Multi-Head Latent Attention (MLA) Kernels",
+      "summary": "vLLM introduces specialized Triton and CUDA kernels accelerating DeepSeek-V3/R1 Multi-Head Latent Attention and FP8 block-wise quantization on Hopper architectures.",
+      "category": "Inference Infrastructure",
+      "date": "2025-01-23",
+      "confidence_level": "EVALUATED",
+      "impact_score": 9.2,
+      "source_url": "https://github.com/vllm-project/vllm/releases/tag/v0.7.3"
+    },
+    {
+      "development_id": "dev_4",
+      "title": "Anthropic Unveils Claude 3.7 Sonnet Hybrid Architecture with Thinking Mode",
+      "summary": "Anthropic releases Claude 3.7 Sonnet introducing user-configurable test-time compute, setting a record 70.3% on SWE-bench Verified when paired with Claude Code.",
+      "category": "Frontier Models",
+      "date": "2025-02-24",
+      "confidence_level": "EVALUATED",
+      "impact_score": 9.8,
+      "source_url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+    },
+    {
+      "development_id": "dev_5",
+      "title": "Meta Ships Llama 3.3 70B Matching Previous 405B Frontier Scores",
+      "summary": "Meta releases Llama 3.3 70B Instruct utilizing improved online synthetic data generation and distillation, matching Llama 3.1 405B capabilities at a fraction of compute.",
+      "category": "Open Source Weights",
+      "date": "2024-12-06",
+      "confidence_level": "EVALUATED",
+      "impact_score": 9.1,
+      "source_url": "https://ai.meta.com/blog/llama-3-3/"
+    },
+    {
+      "development_id": "dev_6",
+      "title": "Model Context Protocol (MCP) Adopted as Universal Agent Standard",
+      "summary": "Anthropic's open-source MCP protocol reaches widespread adoption across developer environments, unifying tool calling and context exchange across enterprise agents.",
+      "category": "Agent Protocols",
+      "date": "2024-11-25",
+      "confidence_level": "EVALUATED",
+      "impact_score": 9.4,
+      "source_url": "https://modelcontextprotocol.io"
+    }
+  ],
+  "relationships": [
+    {
+      "rel_id": "rel_1",
+      "source_entity_id": "deepseek-r1",
+      "target_entity_id": "tool_vllm",
+      "relationship_type": "DEPLOYED_ON",
+      "strength": 1.0
+    },
+    {
+      "rel_id": "rel_2",
+      "source_entity_id": "deepseek-r1",
+      "target_entity_id": "tool_sglang",
+      "relationship_type": "ACCELERATED_BY",
+      "strength": 1.0
+    },
+    {
+      "rel_id": "rel_3",
+      "source_entity_id": "deepseek-r1",
+      "target_entity_id": "deepseek-r1-distill-qwen-32b",
+      "relationship_type": "DISTILLED_INTO",
+      "strength": 1.0
+    },
+    {
+      "rel_id": "rel_4",
+      "source_entity_id": "deepseek-r1",
+      "target_entity_id": "deepseek-r1-distill-llama-70b",
+      "relationship_type": "DISTILLED_INTO",
+      "strength": 1.0
+    },
+    {
+      "rel_id": "rel_5",
+      "source_entity_id": "claude-3-7-sonnet-thinking",
+      "target_entity_id": "tool_mcp",
+      "relationship_type": "SUPPORTS_PROTOCOL",
+      "strength": 1.0
+    },
+    {
+      "rel_id": "rel_6",
+      "source_entity_id": "openai-o3-mini",
+      "target_entity_id": "swe_bench_verified",
+      "relationship_type": "EVALUATED_ON",
+      "strength": 1.0
+    },
+    {
+      "rel_id": "rel_7",
+      "source_entity_id": "llama-3-3-70b-instruct",
+      "target_entity_id": "tool_unsloth",
+      "relationship_type": "FINE_TUNABLE_WITH",
+      "strength": 1.0
+    },
+    {
+      "rel_id": "rel_8",
+      "source_entity_id": "qwen-2-5-coder-32b",
+      "target_entity_id": "tool_vllm",
+      "relationship_type": "SUPPORTED_BY",
+      "strength": 1.0
+    }
+  ]
+}

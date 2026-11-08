@@ -1,0 +1,31 @@
+{
+  "experiment_id": "EXP-033",
+  "name": "Candidate v12: Probabilistic 1x-Regime Mixture Inverter",
+  "full_points": 38.90806240443457,
+  "tuning_points": 38.70346842367808,
+  "audit_points": 39.142658930429015,
+  "full_loss_ratio": 0.542096837830749,
+  "by_condition": {
+    "stable": 0.5268810021217205,
+    "short_history": 0.5917782726039093,
+    "drift": 0.5846385560205999,
+    "shared_change": 0.4650895205767665
+  },
+  "gain_vs_v11": {
+    "delta_full": 0.16066240443456792,
+    "delta_tuning": 0.06476842367808189,
+    "delta_audit": 0.26815893042901706,
+    "bootstrap_ci95": [
+      0.16125546061102672,
+      0.5944525734525526
+    ]
+  },
+  "gain_vs_v10": {
+    "delta_full": 0.40736240443456495,
+    "delta_audit": 0.5378589304290173,
+    "bootstrap_ci95": [
+      0.24113759877120627,
+      0.7992433091697021
+    ]
+  }
+}

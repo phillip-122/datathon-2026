@@ -1,0 +1,329 @@
+[
+  {
+    "id": "EVAL-SIG-001",
+    "question": "What are the most significant AI developments in the last 30 days grouped by category?",
+    "category": "recent_developments",
+    "difficulty": "EASY",
+    "expected_tables": [
+      "silver_developments"
+    ],
+    "expected_sql_structure": "SELECT category, COUNT(*) FROM silver_developments WHERE date >= CURRENT_DATE - INTERVAL 30 DAY GROUP BY category ORDER BY COUNT(*) DESC",
+    "golden_response_criteria": {
+      "must_include_categories": ["model_release", "agent_framework", "research_breakthrough", "benchmark"],
+      "must_filter_time_window": "date >= CURRENT_DATE - INTERVAL 30 DAY",
+      "aggregation_required": "COUNT(*) grouped by category",
+      "temporal_field_used": "date (announcement or release date, NOT extraction_timestamp)"
+    },
+    "pitfalls": [
+      "Filtering on extraction_timestamp or ingestion_timestamp instead of development date",
+      "Omitting group by or sorting randomly"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-002",
+    "question": "What has actually changed in the AI agent ecosystem over the last 30 days?",
+    "category": "agent_ecosystem",
+    "difficulty": "HARD",
+    "expected_tables": [
+      "silver_developments",
+      "silver_tools",
+      "silver_relationships",
+      "silver_evidence"
+    ],
+    "expected_sql_structure": "JOIN silver_developments with silver_tools on primary_entity_id = tool_id, filter category = 'agent_framework' and date >= 30 days, join relationships for integration count",
+    "golden_response_criteria": {
+      "must_identify_agent_tools": ["langgraph", "crewai", "autogen", "dspy"],
+      "must_distinguish_versions": "Show latest release tags and release dates",
+      "must_include_evidence": "Preserve source_url and confidence level",
+      "must_quantify_momentum": "Include GitHub stars and inbound ecosystem integrations"
+    },
+    "pitfalls": [
+      "Treating generic LLM announcements as agent framework developments",
+      "Conflating GitHub star count alone with recent velocity"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-003",
+    "question": "Compare Claude 3.5 Sonnet and DeepSeek R1 across comparable standardized benchmarks.",
+    "category": "model_comparison",
+    "difficulty": "MEDIUM",
+    "expected_tables": [
+      "silver_models",
+      "silver_evaluations",
+      "silver_benchmarks"
+    ],
+    "expected_sql_structure": "SELECT m.name, b.name, ev.score, ev.methodology FROM silver_models m JOIN silver_evaluations ev ON m.model_id = ev.model_id JOIN silver_benchmarks b ON ev.benchmark_id = b.benchmark_id WHERE m.model_id IN ('claude-3-5-sonnet', 'deepseek-r1') AND b.benchmark_id IN ('swe_bench_verified', 'mmlu_pro')",
+    "golden_response_criteria": {
+      "must_match_benchmarks": ["swe_bench_verified", "mmlu_pro"],
+      "must_verify_methodology": "Methodology conditions must match (e.g., 0-shot CoT or standard scaffold)",
+      "apples_to_apples": "Never compare 0-shot pass@1 against agentic scaffolded pass@1 without explicit callout"
+    },
+    "pitfalls": [
+      "Averaging scores across incompatible benchmarks",
+      "Ignoring evaluation methodology discrepancies",
+      "Comparing different parameter versions of the same model family without labeling"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-004",
+    "question": "Which developer tools and agent frameworks integrate with or depend on DeepSeek-R1?",
+    "category": "tool_integration",
+    "difficulty": "MEDIUM",
+    "expected_tables": [
+      "silver_relationships",
+      "silver_tools",
+      "silver_evidence"
+    ],
+    "expected_sql_structure": "SELECT t.name, t.category, r.relationship_type, ev.claim_text FROM silver_relationships r JOIN silver_tools t ON r.source_entity_id = t.tool_id LEFT JOIN silver_evidence ev ON r.evidence_id = ev.evidence_id WHERE r.target_entity_id = 'deepseek-r1' AND r.relationship_type IN ('depends_on', 'integrated_with', 'implements')",
+    "golden_response_criteria": {
+      "must_identify_frameworks": ["vllm", "langgraph", "sglang", "ollama"],
+      "must_specify_relationship": "Must distinguish inference engine support ('implements'/'serves') from agent integration ('depends_on')",
+      "must_provide_evidence": "Include source_url or commit claim"
+    },
+    "pitfalls": [
+      "Reversing graph edge direction (querying where source_entity_id = deepseek-r1 instead of target_entity_id)",
+      "Assuming all tools integrate without checking relationship table"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-005",
+    "question": "Trace research publications on test-time compute to downstream models and developer tools.",
+    "category": "research_to_product",
+    "difficulty": "HARD",
+    "expected_tables": [
+      "silver_developments",
+      "silver_evidence",
+      "silver_relationships",
+      "silver_models",
+      "silver_tools"
+    ],
+    "expected_sql_structure": "Multi-hop join: research paper -> model (implements) -> tool (depends_on / serves)",
+    "golden_response_criteria": {
+      "must_identify_paper": "DeepSeek-R1 technical report or test-time compute paper",
+      "must_trace_to_model": "deepseek-r1 or o1",
+      "must_trace_to_tools": "vllm, sglang, langgraph",
+      "provenance_chain": "Include publication_date, model release date, and tool integration evidence"
+    },
+    "pitfalls": [
+      "Claiming a direct paper-to-tool link without connecting through the intermediate model entity",
+      "Ignoring paper publication date relative to model release"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-006",
+    "question": "Which developments in the dataset are vendor announcements versus independently evaluated results?",
+    "category": "evidence_confidence",
+    "difficulty": "EASY",
+    "expected_tables": [
+      "silver_developments"
+    ],
+    "expected_sql_structure": "SELECT confidence_level, COUNT(*), ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1) FROM silver_developments GROUP BY confidence_level",
+    "golden_response_criteria": {
+      "must_group_confidence_levels": ["ANNOUNCEMENT", "EVALUATED", "PEER_REVIEWED", "EMPIRICAL"],
+      "must_compute_metrics": "Show counts and percentage distributions",
+      "epistemic_integrity": "Clearly articulate that vendor announcements lack third-party replication"
+    },
+    "pitfalls": [
+      "Treating ANNOUNCEMENT as verified truth",
+      "Omitting peer-reviewed publications from the confidence breakdown"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-007",
+    "question": "Which AI capabilities have received the most new research and implementation attention?",
+    "category": "capability_evolution",
+    "difficulty": "MEDIUM",
+    "expected_tables": [
+      "silver_capabilities",
+      "silver_relationships",
+      "silver_developments"
+    ],
+    "expected_sql_structure": "SELECT c.name, COUNT(DISTINCT r.source_entity_id), COUNT(DISTINCT d.development_id) FROM silver_capabilities c LEFT JOIN silver_relationships r ON c.capability_id = r.target_entity_id LEFT JOIN silver_developments d ON r.source_entity_id = d.primary_entity_id GROUP BY c.capability_id, c.name ORDER BY 2 DESC",
+    "golden_response_criteria": {
+      "top_capabilities": ["cap_test_time_compute", "cap_agent_planning", "cap_code_gen"],
+      "must_link_to_entities": "Associate capabilities with the specific models/tools implementing them"
+    },
+    "pitfalls": [
+      "Confusing high-level domains (e.g. 'AI') with specific technical capabilities (e.g. 'cap_test_time_compute')",
+      "Double counting developments with multiple entity tags"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-008",
+    "question": "What is the release chronology and architectural evolution of open-weight reasoning models?",
+    "category": "temporal_analysis",
+    "difficulty": "MEDIUM",
+    "expected_tables": [
+      "silver_models"
+    ],
+    "expected_sql_structure": "SELECT name, provider, architecture, parameter_count, release_date FROM silver_models WHERE architecture LIKE '%MoE%' OR name LIKE '%R1%' ORDER BY release_date ASC",
+    "golden_response_criteria": {
+      "chronological_order": "Sorted strictly ascending by release_date",
+      "architectural_attributes": "Include parameter_count, architecture (MoE vs Dense), context_window, license",
+      "temporal_delta": "Calculate days between successive releases"
+    },
+    "pitfalls": [
+      "Confusing model announcement date with weight release date",
+      "Omitting parameter counts or conflating active parameters with total parameters"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-009",
+    "question": "Identify any score discrepancies or conflicting claims between self-reported vendor scores and independent benchmark audits.",
+    "category": "conflicting_claims",
+    "difficulty": "HARD",
+    "expected_tables": [
+      "silver_evaluations",
+      "silver_evidence",
+      "silver_models",
+      "silver_benchmarks"
+    ],
+    "expected_sql_structure": "Self-join silver_evaluations on model_id, benchmark_id comparing source confidence 'ANNOUNCEMENT' vs 'EVALUATED'/'PEER_REVIEWED'",
+    "golden_response_criteria": {
+      "discrepancy_identification": "Highlight cases where vendor score differs from independent evaluation",
+      "methodology_audit": "Check if different prompting strategies (e.g. 5-shot vs 0-shot) explain the gap",
+      "source_attribution": "Cite URLs for both the vendor claim and the audit"
+    },
+    "pitfalls": [
+      "Assuming vendor scores are always fraudulent rather than checking prompt methodology",
+      "Comparing different versions or dates without normalization"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-010",
+    "question": "Trace the complete evidence trail and source provenance for development record 'dev_deepseek_r1_release'.",
+    "category": "evidence_provenance",
+    "difficulty": "EASY",
+    "expected_tables": [
+      "silver_developments",
+      "silver_evidence"
+    ],
+    "expected_sql_structure": "SELECT d.*, e.* FROM silver_developments d LEFT JOIN silver_evidence e ON d.source_id = e.source_id WHERE d.primary_entity_id = 'deepseek-r1'",
+    "golden_response_criteria": {
+      "full_provenance": "Must retrieve source_id, source_type, source_url, publication_date, and claim_text",
+      "audit_completeness": "Must demonstrate verifiable connection between headline summary and original artifact"
+    },
+    "pitfalls": [
+      "Omitting source_url or raw_ref",
+      "Returning mock summary without provenance fields"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-011",
+    "question": "Which models and tools have the highest degree centrality (most inbound integrations) across the ecosystem?",
+    "category": "ecosystem_centrality",
+    "difficulty": "MEDIUM",
+    "expected_tables": [
+      "silver_relationships",
+      "silver_models",
+      "silver_tools"
+    ],
+    "expected_sql_structure": "Aggregate silver_relationships by target_entity_id with DENSE_RANK()",
+    "golden_response_criteria": {
+      "top_nodes": ["deepseek-r1", "langgraph", "vllm", "claude-3-5-sonnet"],
+      "integration_quantification": "Count inbound relationships ('depends_on', 'integrated_with', 'implements')",
+      "ranking": "Rank entities by total verified graph edges"
+    },
+    "pitfalls": [
+      "Only counting tools or only counting models rather than entire ecosystem",
+      "Treating self-loops or duplicate edges as multiple integrations"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-012",
+    "question": "Which agent orchestration frameworks support multiple foundation model providers?",
+    "category": "tool_integration",
+    "difficulty": "MEDIUM",
+    "expected_tables": [
+      "silver_tools",
+      "silver_relationships",
+      "silver_models"
+    ],
+    "expected_sql_structure": "SELECT t.name, COUNT(DISTINCT m.provider) FROM silver_tools t JOIN silver_relationships r ON t.tool_id = r.source_entity_id JOIN silver_models m ON r.target_entity_id = m.model_id WHERE t.category = 'agent_orchestration' GROUP BY t.name HAVING COUNT(DISTINCT m.provider) > 1",
+    "golden_response_criteria": {
+      "multi_provider_frameworks": ["langgraph", "autogen", "crewai"],
+      "provider_breakdown": "List supported providers (e.g. Anthropic, OpenAI, DeepSeek, Meta)"
+    },
+    "pitfalls": [
+      "Omitting the HAVING COUNT(DISTINCT provider) > 1 condition",
+      "Including single-vendor proprietary harnesses"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-013",
+    "question": "What is the distribution of open-weights versus proprietary API licenses among tracked foundation models?",
+    "category": "model_governance",
+    "difficulty": "EASY",
+    "expected_tables": [
+      "silver_models"
+    ],
+    "expected_sql_structure": "SELECT CASE WHEN license LIKE '%Open%' OR license LIKE '%MIT%' OR license LIKE '%Apache%' OR license LIKE '%Community%' THEN 'Open Weights' ELSE 'Proprietary / API' END AS license_class, COUNT(*), ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1) FROM silver_models GROUP BY 1",
+    "golden_response_criteria": {
+      "license_classes": ["Open Weights", "Proprietary / API"],
+      "accurate_classification": "Llama 3.3 and DeepSeek R1 classified as Open Weights, Claude 3.5 Sonnet as Proprietary / API",
+      "percentages": "Sum to 100%"
+    },
+    "pitfalls": [
+      "Treating community open-weights licenses with commercial caps as unrestricted Apache 2.0 without distinction",
+      "Classifying API-only models as open"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-014",
+    "question": "Which benchmarks have the highest coverage across evaluated models?",
+    "category": "benchmark_coverage",
+    "difficulty": "EASY",
+    "expected_tables": [
+      "silver_benchmarks",
+      "silver_evaluations"
+    ],
+    "expected_sql_structure": "SELECT b.name, b.task_type, b.evaluation_metric, COUNT(DISTINCT ev.model_id) AS evaluated_models_count FROM silver_benchmarks b JOIN silver_evaluations ev ON b.benchmark_id = ev.benchmark_id GROUP BY b.benchmark_id, b.name, b.task_type, b.evaluation_metric ORDER BY evaluated_models_count DESC",
+    "golden_response_criteria": {
+      "top_benchmarks": ["mmlu_pro", "swe_bench_verified", "gpqa_diamond", "humaneval"],
+      "coverage_metric": "Distinct model count evaluated per benchmark",
+      "domain_identification": "Task types properly identified (Reasoning, Coding, General)"
+    },
+    "pitfalls": [
+      "Counting total evaluation runs instead of DISTINCT model_id",
+      "Including deprecated benchmarks without notice"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-015",
+    "question": "What is the calculated 30-day velocity score for top agent orchestration frameworks?",
+    "category": "momentum_metrics",
+    "difficulty": "HARD",
+    "expected_tables": [
+      "v_agent_trends"
+    ],
+    "expected_sql_structure": "SELECT name, release_version, stars, developments_last_30d, total_integrations, momentum_score, velocity_category FROM v_agent_trends ORDER BY momentum_score DESC",
+    "golden_response_criteria": {
+      "velocity_categories": ["ACCELERATING", "STEADY", "MATURE", "EMERGING"],
+      "momentum_formula": "Combines GitHub stars, 30-day developments, and knowledge graph integration edges",
+      "frameworks_present": ["LangGraph", "AutoGen", "CrewAI", "DSPy"]
+    },
+    "pitfalls": [
+      "Asserting momentum without stating the mathematical components or observation period",
+      "Conflating historical stars with 30-day release velocity"
+    ]
+  },
+  {
+    "id": "EVAL-SIG-016",
+    "question": "Are there any orphan developments or unverified entities lacking evidence records?",
+    "category": "data_quality_audit",
+    "difficulty": "MEDIUM",
+    "expected_tables": [
+      "silver_developments",
+      "silver_evidence"
+    ],
+    "expected_sql_structure": "SELECT d.development_id, d.title, d.source_id FROM silver_developments d LEFT JOIN silver_evidence e ON d.source_id = e.source_id WHERE e.evidence_id IS NULL",
+    "golden_response_criteria": {
+      "data_quality_assertion": "Audit query returns 0 rows in a healthy Silver layer",
+      "provenance_invariant": "Every silver development MUST join to a valid silver evidence record"
+    },
+    "pitfalls": [
+      "Allowing developments into Silver without Bronze evidence linkage",
+      "Ignoring dangling foreign keys"
+    ]
+  }
+]

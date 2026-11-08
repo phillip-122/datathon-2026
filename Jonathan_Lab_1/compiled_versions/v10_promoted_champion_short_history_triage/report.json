@@ -21,6 +21,7 @@
     ]
   },
   "sha256": "d7cb86b1c4b6639e48752865040f10297459439bfccded4f53b70dbdb810272d",
+  "submission_zip_sha256": "d131bf3d28cf066ff3488a9d19585b50380a1a1671fcc5c2721cc950153b76d3",
   "reproduction_diff": 0.0,
   "execution_time_sec": 7.95,
   "databricks_priorities_implemented": [

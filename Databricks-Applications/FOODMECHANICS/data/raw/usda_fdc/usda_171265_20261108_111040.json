@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_171265",
+  "captured_at": "2026-11-08T11:10:40.118553+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/171265",
+    "payload": {
+      "fdcId": 171265,
+      "description": "Milk, whole, 3.25% milkfat, with added vitamin D",
+      "foodCategory": "Dairy and Egg Products",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 3.15
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 3.25
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 61.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T11:10:40.118544+00:00"
+  }
+}

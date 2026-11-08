@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_170859",
+  "captured_at": "2026-11-08T09:52:21.008094+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/170859",
+    "payload": {
+      "fdcId": 170859,
+      "description": "Cream, fluid, heavy whipping",
+      "foodCategory": "Dairy and Egg Products",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 2.84
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 36.1
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 340.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T09:52:21.008088+00:00"
+  }
+}

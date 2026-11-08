@@ -1,0 +1,49 @@
+{
+  "source_name": "scientific_lit",
+  "item_id": "crossref_10.1016_j.foodhyd.2005.03.014",
+  "captured_at": "2026-11-08T10:54:59.560893+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.crossref.org/works/10.1016/j.foodhyd.2005.03.014",
+    "payload": {
+      "status": "ok",
+      "message-type": "work",
+      "message": {
+        "DOI": "10.1016/j.foodhyd.2005.03.014",
+        "title": [
+          "Factors determining the physical properties of protein foams"
+        ],
+        "author": [
+          {
+            "family": "Foegeding",
+            "given": "E. Allen"
+          },
+          {
+            "family": "Luck",
+            "given": "P. J."
+          },
+          {
+            "family": "Davis",
+            "given": "Jack P."
+          }
+        ],
+        "container-title": [
+          "Food Hydrocolloids"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "volume": "20",
+        "issue": "2-3",
+        "page": "284-292",
+        "is-referenced-by-count": 520
+      }
+    },
+    "fetched_at": "2026-11-08T10:54:59.560883+00:00"
+  }
+}

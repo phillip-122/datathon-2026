@@ -1,0 +1,45 @@
+{
+  "source_name": "scientific_lit",
+  "item_id": "crossref_10.1177_1082013219890696",
+  "captured_at": "2026-11-08T15:04:48.515823+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.crossref.org/works/10.1177/1082013219890696",
+    "payload": {
+      "status": "ok",
+      "message-type": "work",
+      "message": {
+        "DOI": "10.1177/1082013219890696",
+        "title": [
+          "Aquafaba, a promising plant-based functional alternative to egg white: A review"
+        ],
+        "author": [
+          {
+            "family": "Mustapha",
+            "given": "Aisha"
+          },
+          {
+            "family": "Stathopoulos",
+            "given": "Costas"
+          }
+        ],
+        "container-title": [
+          "Food Science and Technology International"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "volume": "26",
+        "issue": "4",
+        "page": "312-324",
+        "is-referenced-by-count": 185
+      }
+    },
+    "fetched_at": "2026-11-08T15:04:48.515761+00:00"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "manifest_version": "1.0.0",
+  "started_at": "2026-11-08T09:47:52.781262+00:00",
+  "mode": "live",
+  "sources": {
+    "arxiv": {
+      "status": "SUCCESS",
+      "record_count": 10,
+      "output_dir": "/Users/jonathankalsky/Developer/Datathon26/datathon-2026/Databricks-Applications/SIGNAL/data/raw/arxiv",
+      "timestamp": "2026-11-08T09:47:52.896876+00:00"
+    },
+    "huggingface": {
+      "status": "SUCCESS",
+      "record_count": 10,
+      "output_dir": "/Users/jonathankalsky/Developer/Datathon26/datathon-2026/Databricks-Applications/SIGNAL/data/raw/huggingface",
+      "timestamp": "2026-11-08T09:47:53.150766+00:00"
+    },
+    "github": {
+      "status": "SUCCESS",
+      "record_count": 9,
+      "output_dir": "/Users/jonathankalsky/Developer/Datathon26/datathon-2026/Databricks-Applications/SIGNAL/data/raw/github",
+      "timestamp": "2026-11-08T09:47:59.781860+00:00"
+    }
+  },
+  "summary": {
+    "total_records": 29,
+    "successful_sources": 3,
+    "failed_sources": 0
+  },
+  "finished_at": "2026-11-08T09:47:59.782770+00:00",
+  "duration_seconds": 7.001508
+}

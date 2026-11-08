@@ -1,0 +1,1535 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "generated_at": "2025-02-01T12:00:00Z",
+    "source": "USDA FoodData Central + Peer-Reviewed Literature"
+  },
+  "ingredients": [
+    {
+      "id": "ing_egg_white_raw",
+      "common_name": "Egg White (Liquid, Raw)",
+      "scientific_name": "Gallus gallus albumen",
+      "category": "Poultry & Egg Products",
+      "physical_state": "Liquid (aqueous colloid)",
+      "density_g_per_ml": 1.035,
+      "volume_conversions": {
+        "1_large_egg_white_g": 33.0,
+        "1_tablespoon_g": 15.2,
+        "1_cup_g": 243.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 52.0,
+        "water_g": 87.57,
+        "protein_g": 10.9,
+        "total_fat_g": 0.17,
+        "saturated_fat_g": 0.0,
+        "monounsaturated_fat_g": 0.0,
+        "polyunsaturated_fat_g": 0.0,
+        "carbohydrates_g": 0.73,
+        "sugars_g": 0.71,
+        "dietary_fiber_g": 0.0,
+        "ash_g": 0.63,
+        "calcium_mg": 7.0,
+        "iron_mg": 0.08,
+        "magnesium_mg": 12.0,
+        "phosphorus_mg": 15.0,
+        "potassium_mg": 163.0,
+        "sodium_mg": 166.0,
+        "cholesterol_mg": 0.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 600.0,
+          "typical": 750.0,
+          "max": 950.0
+        },
+        "foam_stability_half_life_min": 45.0,
+        "drainage_rate_ml_per_10min": 1.8,
+        "emulsion_capacity_g_oil_per_g_protein": 42.0,
+        "gelation_temperature_c": {
+          "onset": 62.0,
+          "peak": 65.0,
+          "firm": 71.0
+        },
+        "heat_denaturation_threshold_c": 61.0,
+        "isoelectric_point_ph": 4.6,
+        "ambient_ph": 9.0,
+        "interfacial_tension_reduction_mn_m": 22.5
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_ovalbumin",
+          "mass_fraction_pct_of_protein": 54.0
+        },
+        {
+          "compound_id": "comp_ovotransferrin",
+          "mass_fraction_pct_of_protein": 12.0
+        },
+        {
+          "compound_id": "comp_ovomucoid",
+          "mass_fraction_pct_of_protein": 11.0
+        },
+        {
+          "compound_id": "comp_ovomucin",
+          "mass_fraction_pct_of_protein": 3.5
+        },
+        {
+          "compound_id": "comp_lysozyme",
+          "mass_fraction_pct_of_protein": 3.4
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_protein_mechanical_denaturation",
+        "mech_fat_interference_foam_disruption",
+        "mech_acid_electrostatic_stabilization"
+      ],
+      "evidence": {
+        "source_id": "usda:172183",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172183/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_172183_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_egg_white_dried",
+      "common_name": "Egg White Powder (Dried Albumen)",
+      "scientific_name": "Gallus gallus albumen desiccatus",
+      "category": "Poultry & Egg Products",
+      "physical_state": "Solid (fine powder)",
+      "density_g_per_ml": 0.45,
+      "volume_conversions": {
+        "1_tablespoon_g": 6.8,
+        "1_cup_g": 108.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 382.0,
+        "water_g": 5.8,
+        "protein_g": 82.4,
+        "total_fat_g": 0.04,
+        "saturated_fat_g": 0.0,
+        "monounsaturated_fat_g": 0.0,
+        "polyunsaturated_fat_g": 0.0,
+        "carbohydrates_g": 4.47,
+        "sugars_g": 0.0,
+        "dietary_fiber_g": 0.0,
+        "ash_g": 7.29,
+        "calcium_mg": 78.0,
+        "iron_mg": 0.24,
+        "magnesium_mg": 88.0,
+        "phosphorus_mg": 880.0,
+        "potassium_mg": 1180.0,
+        "sodium_mg": 1150.0,
+        "cholesterol_mg": 0.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 700.0,
+          "typical": 880.0,
+          "max": 1100.0
+        },
+        "foam_stability_half_life_min": 60.0,
+        "drainage_rate_ml_per_10min": 1.1,
+        "emulsion_capacity_g_oil_per_g_protein": 48.0,
+        "gelation_temperature_c": {
+          "onset": 63.0,
+          "peak": 66.0,
+          "firm": 72.0
+        },
+        "heat_denaturation_threshold_c": 62.0,
+        "isoelectric_point_ph": 4.6,
+        "ambient_ph": 7.2,
+        "interfacial_tension_reduction_mn_m": 25.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_ovalbumin",
+          "mass_fraction_pct_of_protein": 54.0
+        },
+        {
+          "compound_id": "comp_ovotransferrin",
+          "mass_fraction_pct_of_protein": 12.0
+        },
+        {
+          "compound_id": "comp_ovomucoid",
+          "mass_fraction_pct_of_protein": 11.0
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_protein_mechanical_denaturation",
+        "mech_sugar_drainage_retardation"
+      ],
+      "evidence": {
+        "source_id": "usda:172186",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172186/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_172186_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_whole_egg_raw",
+      "common_name": "Whole Egg (Liquid, Raw)",
+      "scientific_name": "Gallus gallus ovum",
+      "category": "Poultry & Egg Products",
+      "physical_state": "Liquid (natural emulsion/colloid)",
+      "density_g_per_ml": 1.028,
+      "volume_conversions": {
+        "1_large_egg_g": 50.0,
+        "1_cup_g": 243.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 143.0,
+        "water_g": 76.15,
+        "protein_g": 12.56,
+        "total_fat_g": 9.51,
+        "saturated_fat_g": 3.126,
+        "monounsaturated_fat_g": 3.658,
+        "polyunsaturated_fat_g": 1.911,
+        "carbohydrates_g": 0.72,
+        "sugars_g": 0.37,
+        "dietary_fiber_g": 0.0,
+        "ash_g": 1.06,
+        "calcium_mg": 56.0,
+        "iron_mg": 1.75,
+        "magnesium_mg": 12.0,
+        "phosphorus_mg": 198.0,
+        "potassium_mg": 138.0,
+        "sodium_mg": 142.0,
+        "cholesterol_mg": 372.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 150.0,
+          "typical": 250.0,
+          "max": 350.0
+        },
+        "foam_stability_half_life_min": 18.0,
+        "drainage_rate_ml_per_10min": 5.4,
+        "emulsion_capacity_g_oil_per_g_protein": 78.0,
+        "gelation_temperature_c": {
+          "onset": 65.0,
+          "peak": 69.0,
+          "firm": 74.0
+        },
+        "heat_denaturation_threshold_c": 64.0,
+        "isoelectric_point_ph": 5.5,
+        "ambient_ph": 7.6,
+        "interfacial_tension_reduction_mn_m": 31.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_ovalbumin",
+          "mass_fraction_pct_of_protein": 35.0
+        },
+        {
+          "compound_id": "comp_phospholipids",
+          "mass_fraction_pct_of_lipid": 28.0
+        },
+        {
+          "compound_id": "comp_triglycerides",
+          "mass_fraction_pct_of_lipid": 65.0
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_fat_interference_foam_disruption",
+        "mech_protein_mechanical_denaturation"
+      ],
+      "evidence": {
+        "source_id": "usda:171287",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171287/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_171287_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_heavy_cream",
+      "common_name": "Heavy Whipping Cream (36% Milkfat)",
+      "scientific_name": "Emulsio lipidorum lactis",
+      "category": "Dairy Products",
+      "physical_state": "Liquid oil-in-water emulsion",
+      "density_g_per_ml": 0.994,
+      "volume_conversions": {
+        "1_tablespoon_g": 14.9,
+        "1_cup_g": 238.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 340.0,
+        "water_g": 57.71,
+        "protein_g": 2.84,
+        "total_fat_g": 36.1,
+        "saturated_fat_g": 23.03,
+        "monounsaturated_fat_g": 9.38,
+        "polyunsaturated_fat_g": 1.25,
+        "carbohydrates_g": 2.69,
+        "sugars_g": 2.89,
+        "dietary_fiber_g": 0.0,
+        "ash_g": 0.66,
+        "calcium_mg": 65.0,
+        "iron_mg": 0.06,
+        "magnesium_mg": 7.0,
+        "phosphorus_mg": 59.0,
+        "potassium_mg": 75.0,
+        "sodium_mg": 38.0,
+        "cholesterol_mg": 137.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 90.0,
+          "typical": 115.0,
+          "max": 135.0
+        },
+        "foam_stability_half_life_min": 180.0,
+        "drainage_rate_ml_per_10min": 0.2,
+        "emulsion_capacity_g_oil_per_g_protein": 95.0,
+        "gelation_temperature_c": {
+          "onset": 4.0,
+          "peak": 12.0,
+          "firm": 18.0
+        },
+        "heat_denaturation_threshold_c": 78.0,
+        "isoelectric_point_ph": 4.6,
+        "ambient_ph": 6.6,
+        "interfacial_tension_reduction_mn_m": 18.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_triglycerides",
+          "mass_fraction_pct_of_lipid": 98.0
+        },
+        {
+          "compound_id": "comp_casein_micelle",
+          "mass_fraction_pct_of_protein": 80.0
+        },
+        {
+          "compound_id": "comp_beta_lactoglobulin",
+          "mass_fraction_pct_of_protein": 10.0
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_cream_partial_coalescence"
+      ],
+      "evidence": {
+        "source_id": "usda:170859",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/170859/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_170859_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_whole_milk",
+      "common_name": "Whole Cow Milk (3.25% Fat)",
+      "scientific_name": "Lac bovinum",
+      "category": "Dairy Products",
+      "physical_state": "Liquid emulsion/colloid",
+      "density_g_per_ml": 1.032,
+      "volume_conversions": {
+        "1_cup_g": 244.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 61.0,
+        "water_g": 88.13,
+        "protein_g": 3.15,
+        "total_fat_g": 3.25,
+        "saturated_fat_g": 1.865,
+        "monounsaturated_fat_g": 0.812,
+        "polyunsaturated_fat_g": 0.195,
+        "carbohydrates_g": 4.8,
+        "sugars_g": 5.05,
+        "dietary_fiber_g": 0.0,
+        "ash_g": 0.67,
+        "calcium_mg": 113.0,
+        "iron_mg": 0.03,
+        "magnesium_mg": 10.0,
+        "phosphorus_mg": 84.0,
+        "potassium_mg": 132.0,
+        "sodium_mg": 43.0,
+        "cholesterol_mg": 10.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 25.0,
+          "typical": 40.0,
+          "max": 65.0
+        },
+        "foam_stability_half_life_min": 6.0,
+        "drainage_rate_ml_per_10min": 12.0,
+        "emulsion_capacity_g_oil_per_g_protein": 35.0,
+        "gelation_temperature_c": {
+          "onset": 80.0,
+          "peak": 85.0,
+          "firm": 90.0
+        },
+        "heat_denaturation_threshold_c": 78.0,
+        "isoelectric_point_ph": 4.6,
+        "ambient_ph": 6.7,
+        "interfacial_tension_reduction_mn_m": 15.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_casein_micelle",
+          "mass_fraction_pct_of_protein": 80.0
+        },
+        {
+          "compound_id": "comp_beta_lactoglobulin",
+          "mass_fraction_pct_of_protein": 10.0
+        },
+        {
+          "compound_id": "comp_triglycerides",
+          "mass_fraction_pct_of_lipid": 98.0
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_fat_interference_foam_disruption"
+      ],
+      "evidence": {
+        "source_id": "usda:171265",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171265/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_171265_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_skim_milk",
+      "common_name": "Skim Milk (Nonfat)",
+      "scientific_name": "Lac bovinum defatigatum",
+      "category": "Dairy Products",
+      "physical_state": "Liquid aqueous solution/colloid",
+      "density_g_per_ml": 1.035,
+      "volume_conversions": {
+        "1_cup_g": 245.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 34.0,
+        "water_g": 90.84,
+        "protein_g": 3.37,
+        "total_fat_g": 0.08,
+        "saturated_fat_g": 0.05,
+        "monounsaturated_fat_g": 0.02,
+        "polyunsaturated_fat_g": 0.01,
+        "carbohydrates_g": 4.96,
+        "sugars_g": 4.96,
+        "dietary_fiber_g": 0.0,
+        "ash_g": 0.75,
+        "calcium_mg": 122.0,
+        "iron_mg": 0.03,
+        "magnesium_mg": 11.0,
+        "phosphorus_mg": 101.0,
+        "potassium_mg": 156.0,
+        "sodium_mg": 42.0,
+        "cholesterol_mg": 2.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 120.0,
+          "typical": 180.0,
+          "max": 240.0
+        },
+        "foam_stability_half_life_min": 12.0,
+        "drainage_rate_ml_per_10min": 8.5,
+        "emulsion_capacity_g_oil_per_g_protein": 38.0,
+        "gelation_temperature_c": {
+          "onset": 82.0,
+          "peak": 88.0,
+          "firm": 92.0
+        },
+        "heat_denaturation_threshold_c": 78.0,
+        "isoelectric_point_ph": 4.6,
+        "ambient_ph": 6.7,
+        "interfacial_tension_reduction_mn_m": 19.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_casein_micelle",
+          "mass_fraction_pct_of_protein": 82.0
+        },
+        {
+          "compound_id": "comp_beta_lactoglobulin",
+          "mass_fraction_pct_of_protein": 11.0
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_protein_mechanical_denaturation",
+        "mech_hydrocolloid_yield_stress_stabilization"
+      ],
+      "evidence": {
+        "source_id": "usda:171269",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171269/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_171269_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_aquafaba_liquid",
+      "common_name": "Aquafaba (Chickpea Cooking Liquid)",
+      "scientific_name": "Cicer arietinum extractum",
+      "category": "Legumes & Plant Extracts",
+      "physical_state": "Liquid (aqueous polymer solution)",
+      "density_g_per_ml": 1.018,
+      "volume_conversions": {
+        "1_tablespoon_g": 15.0,
+        "1_cup_g": 240.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 18.0,
+        "water_g": 93.8,
+        "protein_g": 1.15,
+        "total_fat_g": 0.12,
+        "saturated_fat_g": 0.02,
+        "monounsaturated_fat_g": 0.03,
+        "polyunsaturated_fat_g": 0.05,
+        "carbohydrates_g": 3.1,
+        "sugars_g": 0.4,
+        "dietary_fiber_g": 0.85,
+        "ash_g": 0.98,
+        "calcium_mg": 14.0,
+        "iron_mg": 0.45,
+        "magnesium_mg": 16.0,
+        "phosphorus_mg": 28.0,
+        "potassium_mg": 145.0,
+        "sodium_mg": 110.0,
+        "cholesterol_mg": 0.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 400.0,
+          "typical": 520.0,
+          "max": 650.0
+        },
+        "foam_stability_half_life_min": 25.0,
+        "drainage_rate_ml_per_10min": 3.6,
+        "emulsion_capacity_g_oil_per_g_protein": 36.0,
+        "gelation_temperature_c": {
+          "onset": 75.0,
+          "peak": 82.0,
+          "firm": 88.0
+        },
+        "heat_denaturation_threshold_c": 72.0,
+        "isoelectric_point_ph": 4.5,
+        "ambient_ph": 6.2,
+        "interfacial_tension_reduction_mn_m": 24.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_saponin_complex",
+          "mass_fraction_pct_of_dry_matter": 8.0
+        },
+        {
+          "compound_id": "comp_legume_globulins",
+          "mass_fraction_pct_of_dry_matter": 18.0
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_protein_mechanical_denaturation",
+        "mech_sugar_drainage_retardation",
+        "mech_acid_electrostatic_stabilization"
+      ],
+      "evidence": {
+        "source_id": "doi:10.1177/1082013219890696",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1177/1082013219890696",
+        "publication_date": "2020-05-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1177_1082013219890696_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_sucrose_granulated",
+      "common_name": "Granulated White Sugar (Sucrose)",
+      "scientific_name": "alpha-D-glucopyranosyl-(1->2)-beta-D-fructofuranoside",
+      "category": "Sweeteners & Carbohydrates",
+      "physical_state": "Crystalline solid",
+      "density_g_per_ml": 0.85,
+      "volume_conversions": {
+        "1_tablespoon_g": 12.5,
+        "1_cup_g": 200.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 387.0,
+        "water_g": 0.02,
+        "protein_g": 0.0,
+        "total_fat_g": 0.0,
+        "saturated_fat_g": 0.0,
+        "monounsaturated_fat_g": 0.0,
+        "polyunsaturated_fat_g": 0.0,
+        "carbohydrates_g": 99.98,
+        "sugars_g": 99.8,
+        "dietary_fiber_g": 0.0,
+        "ash_g": 0.01,
+        "calcium_mg": 1.0,
+        "iron_mg": 0.01,
+        "magnesium_mg": 0.0,
+        "phosphorus_mg": 0.0,
+        "potassium_mg": 2.0,
+        "sodium_mg": 1.0,
+        "cholesterol_mg": 0.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 0.0,
+          "typical": 0.0,
+          "max": 0.0
+        },
+        "foam_stability_half_life_min": 0.0,
+        "drainage_rate_ml_per_10min": 0.0,
+        "emulsion_capacity_g_oil_per_g_protein": 0.0,
+        "gelation_temperature_c": {
+          "onset": 160.0,
+          "peak": 186.0,
+          "firm": 200.0
+        },
+        "heat_denaturation_threshold_c": 160.0,
+        "isoelectric_point_ph": null,
+        "ambient_ph": 7.0,
+        "interfacial_tension_reduction_mn_m": 0.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_sucrose",
+          "mass_fraction_pct_of_dry_matter": 99.9
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_sugar_drainage_retardation"
+      ],
+      "evidence": {
+        "source_id": "usda:169655",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169655/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_169655_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_xanthan_gum",
+      "common_name": "Xanthan Gum (E415)",
+      "scientific_name": "Polysaccharide e Xanthomonas campestris",
+      "category": "Hydrocolloids & Stabilizers",
+      "physical_state": "Solid powder",
+      "density_g_per_ml": 0.65,
+      "volume_conversions": {
+        "1_teaspoon_g": 3.0,
+        "1_tablespoon_g": 9.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 350.0,
+        "water_g": 11.0,
+        "protein_g": 6.8,
+        "total_fat_g": 0.2,
+        "saturated_fat_g": 0.0,
+        "monounsaturated_fat_g": 0.0,
+        "polyunsaturated_fat_g": 0.0,
+        "carbohydrates_g": 81.0,
+        "sugars_g": 0.0,
+        "dietary_fiber_g": 78.0,
+        "ash_g": 8.0,
+        "calcium_mg": 45.0,
+        "iron_mg": 0.5,
+        "magnesium_mg": 70.0,
+        "phosphorus_mg": 120.0,
+        "potassium_mg": 350.0,
+        "sodium_mg": 2900.0,
+        "cholesterol_mg": 0.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 0.0,
+          "typical": 0.0,
+          "max": 0.0
+        },
+        "foam_stability_half_life_min": 240.0,
+        "drainage_rate_ml_per_10min": 0.05,
+        "emulsion_capacity_g_oil_per_g_protein": 0.0,
+        "gelation_temperature_c": {
+          "onset": 90.0,
+          "peak": 95.0,
+          "firm": 100.0
+        },
+        "heat_denaturation_threshold_c": 95.0,
+        "isoelectric_point_ph": null,
+        "ambient_ph": 7.0,
+        "interfacial_tension_reduction_mn_m": 0.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_xanthan_polysaccharide",
+          "mass_fraction_pct_of_dry_matter": 95.0
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_hydrocolloid_yield_stress_stabilization"
+      ],
+      "evidence": {
+        "source_id": "doi:10.1016/j.cocis.2007.07.009",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.cocis.2007.07.009",
+        "publication_date": "2007-08-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_cocis_2007_07_009_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_gelatin_powder",
+      "common_name": "Unflavored Gelatin Powder (Type A / Type B)",
+      "scientific_name": "Collagenum hydrolysatum",
+      "category": "Hydrocolloids & Gelling Agents",
+      "physical_state": "Solid granules/powder",
+      "density_g_per_ml": 0.68,
+      "volume_conversions": {
+        "1_packet_g": 7.2,
+        "1_tablespoon_g": 9.5
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 335.0,
+        "water_g": 13.0,
+        "protein_g": 85.6,
+        "total_fat_g": 0.1,
+        "saturated_fat_g": 0.04,
+        "monounsaturated_fat_g": 0.02,
+        "polyunsaturated_fat_g": 0.01,
+        "carbohydrates_g": 0.0,
+        "sugars_g": 0.0,
+        "dietary_fiber_g": 0.0,
+        "ash_g": 1.3,
+        "calcium_mg": 55.0,
+        "iron_mg": 1.11,
+        "magnesium_mg": 22.0,
+        "phosphorus_mg": 39.0,
+        "potassium_mg": 16.0,
+        "sodium_mg": 196.0,
+        "cholesterol_mg": 0.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 100.0,
+          "typical": 300.0,
+          "max": 500.0
+        },
+        "foam_stability_half_life_min": 360.0,
+        "drainage_rate_ml_per_10min": 0.02,
+        "emulsion_capacity_g_oil_per_g_protein": 30.0,
+        "gelation_temperature_c": {
+          "onset": 15.0,
+          "peak": 20.0,
+          "firm": 35.0
+        },
+        "heat_denaturation_threshold_c": 35.0,
+        "isoelectric_point_ph": 7.5,
+        "ambient_ph": 5.5,
+        "interfacial_tension_reduction_mn_m": 12.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_gelatin_polypeptide",
+          "mass_fraction_pct_of_protein": 100.0
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_hydrocolloid_yield_stress_stabilization"
+      ],
+      "evidence": {
+        "source_id": "usda:172189",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172189/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_172189_20261108_094810.json"
+      }
+    },
+    {
+      "id": "ing_cream_of_tartar",
+      "common_name": "Cream of Tartar (Potassium Bitartrate)",
+      "scientific_name": "Kalii hydrogenotartras",
+      "category": "Culinary Acidulants & Buffers",
+      "physical_state": "Solid crystalline powder",
+      "density_g_per_ml": 0.85,
+      "volume_conversions": {
+        "1_teaspoon_g": 3.0,
+        "1_tablespoon_g": 9.0
+      },
+      "nutritional_profile_per_100g": {
+        "energy_kcal": 258.0,
+        "water_g": 0.6,
+        "protein_g": 0.0,
+        "total_fat_g": 0.0,
+        "saturated_fat_g": 0.0,
+        "monounsaturated_fat_g": 0.0,
+        "polyunsaturated_fat_g": 0.0,
+        "carbohydrates_g": 61.5,
+        "sugars_g": 0.0,
+        "dietary_fiber_g": 0.2,
+        "ash_g": 36.8,
+        "calcium_mg": 8.0,
+        "iron_mg": 3.72,
+        "magnesium_mg": 2.0,
+        "phosphorus_mg": 5.0,
+        "potassium_mg": 16500.0,
+        "sodium_mg": 52.0,
+        "cholesterol_mg": 0.0
+      },
+      "functional_properties": {
+        "foam_expansion_overrun_pct": {
+          "min": 0.0,
+          "typical": 0.0,
+          "max": 0.0
+        },
+        "foam_stability_half_life_min": 0.0,
+        "drainage_rate_ml_per_10min": 0.0,
+        "emulsion_capacity_g_oil_per_g_protein": 0.0,
+        "gelation_temperature_c": null,
+        "heat_denaturation_threshold_c": null,
+        "isoelectric_point_ph": null,
+        "ambient_ph": 3.5,
+        "interfacial_tension_reduction_mn_m": 0.0
+      },
+      "constituent_compounds": [
+        {
+          "compound_id": "comp_potassium_bitartrate",
+          "mass_fraction_pct_of_dry_matter": 99.5
+        }
+      ],
+      "dominant_mechanisms": [
+        "mech_acid_electrostatic_stabilization"
+      ],
+      "evidence": {
+        "source_id": "usda:173473",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173473/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_173473_20261108_094810.json"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "compound_id": "comp_ovalbumin",
+      "name": "Ovalbumin",
+      "formula": "Polypeptide (385 aa)",
+      "molecular_weight_da": 44500.0,
+      "uniprot_id": "P01012",
+      "structure_type": "Phosphoglycoprotein (Serpin family)",
+      "biological_source": "Egg white (Gallus gallus albumen, 54% of total protein)",
+      "functional_classification": "STRUCTURAL_FOAMING_PROTEIN",
+      "solubility": "Freely soluble in neutral and mildly alkaline water",
+      "isoelectric_point": 4.5,
+      "denaturation_temp_c": 84.5,
+      "chemical_rationale": "High proportion of hydrophobic residues in the interior that unfold irreversibly upon shear stress at the air-water interface, presenting hydrophobic side chains toward the gas phase and hydrophilic residues toward the lamellar water, producing an elastic 2D viscoelastic network.",
+      "evidence": {
+        "source_id": "doi:10.1016/j.foodhyd.2005.03.014",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.foodhyd.2005.03.014",
+        "publication_date": "2006-03-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_foodhyd_2005_03_014_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_ovotransferrin",
+      "name": "Ovotransferrin (Conalbumin)",
+      "formula": "Polypeptide (686 aa)",
+      "molecular_weight_da": 76000.0,
+      "uniprot_id": "P02789",
+      "structure_type": "Iron-binding globular glycoprotein",
+      "biological_source": "Egg white (Gallus gallus albumen, 12% of total protein)",
+      "functional_classification": "STRUCTURAL_PROTEIN / HEAT_SENSITIVE_CROSS_LINKER",
+      "solubility": "Aqueous soluble",
+      "isoelectric_point": 6.0,
+      "denaturation_temp_c": 61.0,
+      "chemical_rationale": "Lowest thermal denaturation threshold among major egg albumen proteins (61\u00b0C); binds Fe3+ and Cu2+; rapidly forms disulfide-mediated aggregates that seed early custard and meringue setting.",
+      "evidence": {
+        "source_id": "doi:10.1016/j.foodhyd.2005.03.014",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.foodhyd.2005.03.014",
+        "publication_date": "2006-03-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_foodhyd_2005_03_014_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_ovomucin",
+      "name": "Ovomucin Complex",
+      "formula": "Heteropolysaccharide-protein complex (fibrous glycoprotein)",
+      "molecular_weight_da": 8300000.0,
+      "uniprot_id": "P39880",
+      "structure_type": "Sulfated filamentous glycoprotein complex",
+      "biological_source": "Thick egg white albumen (3.5% of total protein)",
+      "functional_classification": "FOAM_STABILIZER / INTERFACIAL_ELASTICITY_MODIFIER",
+      "solubility": "Insoluble in pure water; dispersible in salt solution at neutral/alkaline pH",
+      "isoelectric_point": 4.5,
+      "denaturation_temp_c": 75.0,
+      "chemical_rationale": "Forms massive fibrous networks with lysozyme that entrap fluid lamellae between bubbles, conferring extreme shear resistance and preventing rapid bubble drainage.",
+      "evidence": {
+        "source_id": "doi:10.1016/j.foodhyd.2005.03.014",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.foodhyd.2005.03.014",
+        "publication_date": "2006-03-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_foodhyd_2005_03_014_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_casein_micelle",
+      "name": "Casein Micellar Complex",
+      "formula": "Colloidal phosphoprotein assembly (alpha-s1, alpha-s2, beta, kappa caseins)",
+      "molecular_weight_da": 250000000.0,
+      "uniprot_id": "P02662_P02663_P02666_P02668",
+      "structure_type": "Spherical colloidal aggregate (50-300 nm) stabilized by colloidal calcium phosphate",
+      "biological_source": "Bovine milk (80% of total milk protein)",
+      "functional_classification": "COLLOIDAL_EMULSIFIER / STERIC_STABILIZER",
+      "solubility": "Colloidal suspension; stable to 140\u00b0C boiling at pH 6.7",
+      "isoelectric_point": 4.6,
+      "denaturation_temp_c": 140.0,
+      "chemical_rationale": "Kappa-casein C-terminal hydrophilic glycopeptide hairs protrude outward providing strong steric and electrostatic repulsion; collapses upon acidification to pH 4.6 or enzymatic chymosin cleavage, precipitating into curd.",
+      "evidence": {
+        "source_id": "doi:10.1016/j.foodchem.2010.02.046",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.foodchem.2010.02.046",
+        "publication_date": "2010-02-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_foodchem_2010_02_046_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_beta_lactoglobulin",
+      "name": "Beta-Lactoglobulin",
+      "formula": "Polypeptide (162 aa homodimer)",
+      "molecular_weight_da": 18367.0,
+      "uniprot_id": "P02754",
+      "structure_type": "Globular lipocalin protein with calyx binding pocket",
+      "biological_source": "Bovine whey (50% of total whey protein)",
+      "functional_classification": "STRUCTURAL_PROTEIN / EMULSION_STABILIZER",
+      "solubility": "High aqueous solubility across pH 2-9",
+      "isoelectric_point": 5.2,
+      "denaturation_temp_c": 78.0,
+      "chemical_rationale": "Contains a single buried free sulfhydryl group (Cys121). Upon heating past 78\u00b0C, the tertiary structure unfolds, exposing Cys121 to participate in thiol-disulfide exchange with other whey proteins or kappa-casein.",
+      "evidence": {
+        "source_id": "doi:10.1016/j.foodchem.2010.02.046",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.foodchem.2010.02.046",
+        "publication_date": "2010-02-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_foodchem_2010_02_046_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_whey_protein_isolate",
+      "name": "Whey Protein Isolate Complex",
+      "formula": "Protein complex (~70% beta-lactoglobulin, ~20% alpha-lactalbumin, ~10% BSA/IgG)",
+      "molecular_weight_da": 16000.0,
+      "uniprot_id": "P02754_P00711",
+      "structure_type": "Mixture of globular whey proteins",
+      "biological_source": "Cheese whey effluent, ultrafiltered and microfiltered",
+      "functional_classification": "STRUCTURAL_FOAMING_AGENT / GELLING_PROTEIN",
+      "solubility": "High aqueous solubility (>95%)",
+      "isoelectric_point": 5.1,
+      "denaturation_temp_c": 75.0,
+      "chemical_rationale": "High surface activity enables rapid adsorption at newly created interfaces, generating fine bubble dispersions with rapid film cross-linking upon heat curing.",
+      "evidence": {
+        "source_id": "doi:10.1111/j.1365-2621.2005.tb07150.x",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1111/j.1365-2621.2005.tb07150.x",
+        "publication_date": "2005-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1111_j_1365-2621_2005_tb07150_x_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_triglycerides",
+      "name": "Triacylglycerols (Triglycerides)",
+      "formula": "C51H98O6 (representative tripalmitin model)",
+      "molecular_weight_da": 807.3,
+      "cid": 11147,
+      "structure_type": "Glycerol esterified with three fatty acid chains",
+      "biological_source": "Milkfat and egg yolk lipid core",
+      "functional_classification": "HYDROPHOBIC_LIPID / INTERFACIAL_DISRUPTOR_OR_CRYSTAL_NETWORK",
+      "solubility": "Hydrophobic; insoluble in water (< 0.001 mg/L)",
+      "isoelectric_point": null,
+      "denaturation_temp_c": null,
+      "chemical_rationale": "When liquid/free, triglycerides spread competitively at air-water interfaces, displacing elastic protein films and collapsing egg white foams. When partially crystallized in refrigerated cream (4-8\u00b0C), solid fat needles pierce droplet membranes during shear, creating a coherent 3D fat-crystal continuous network that traps air bubbles.",
+      "evidence": {
+        "source_id": "doi:10.1016/S0927-7765(99)00042-9",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/S0927-7765(99)00042-9",
+        "publication_date": "1999-10-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_S0927-7765_99_00042-9_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_phospholipids",
+      "name": "Phospholipids (Phosphatidylcholine / Lecithin)",
+      "formula": "C42H82NO8P",
+      "molecular_weight_da": 760.08,
+      "cid": 439341,
+      "structure_type": "Amphiphilic glycerol backbone with two fatty acids and polar choline phosphodiester",
+      "biological_source": "Egg yolk (28% of yolk lipid) and soybean oil",
+      "functional_classification": "LOW_MW_SURFACTANT / EMULSIFIER",
+      "solubility": "Dispersible in water forming lamellar bilayer and liposomal phases",
+      "isoelectric_point": null,
+      "denaturation_temp_c": null,
+      "chemical_rationale": "Zwitterionic headgroup and hydrophobic tail grant intense surface activity, lowering oil-water interfacial tension to < 2 mN/m; competitively displaces slower proteins from droplet surfaces through Oris-Gibbs Marangoni effects.",
+      "evidence": {
+        "source_id": "pubchem:CID439341",
+        "source_type": "pubchem",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/compound/439341",
+        "publication_date": "2021-06-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/pubchem/pubchem_phosphatidylcholine_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_sucrose",
+      "name": "Sucrose",
+      "formula": "C12H22O11",
+      "molecular_weight_da": 342.3,
+      "cid": 5988,
+      "structure_type": "Non-reducing disaccharide (glucose + fructose)",
+      "biological_source": "Sugar cane / sugar beet extract",
+      "functional_classification": "BULKING_AGENT / VISCOSITY_BUILDER / HYDRATION_STABILIZER",
+      "solubility": "2000 g/L at 25\u00b0C in water",
+      "isoelectric_point": null,
+      "denaturation_temp_c": 160.0,
+      "chemical_rationale": "Forms eight hydrogen bonds with surrounding water molecules per molecule, raising aqueous phase viscosity exponentially and immobilizing bulk water, dramatically retarding capillary drainage from foam bubble lamellae.",
+      "evidence": {
+        "source_id": "pubchem:CID5988",
+        "source_type": "pubchem",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/compound/5988",
+        "publication_date": "2021-06-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/pubchem/pubchem_sucrose_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_xanthan_polysaccharide",
+      "name": "Xanthan Polysaccharide",
+      "formula": "(C35H49O29)n",
+      "molecular_weight_da": 2500000.0,
+      "structure_type": "Cellulosic beta-(1,4)-D-glucan backbone with trisaccharide side chains",
+      "biological_source": "Fermentation of Xanthomonas campestris",
+      "functional_classification": "HYDROCOLLOID / PSEUDOPLASTIC_THICKENER",
+      "solubility": "Cold and hot water soluble",
+      "isoelectric_point": null,
+      "denaturation_temp_c": 95.0,
+      "chemical_rationale": "Rigid 5-fold helical conformation in solution forms a dynamic 3D physical network with significant yield stress at low shear rates, halting liquid drainage between foam bubbles completely.",
+      "evidence": {
+        "source_id": "doi:10.1016/j.cocis.2007.07.009",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.cocis.2007.07.009",
+        "publication_date": "2007-08-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_cocis_2007_07_009_20261108_094810.json"
+      }
+    },
+    {
+      "compound_id": "comp_potassium_bitartrate",
+      "name": "Potassium Bitartrate",
+      "formula": "C4H5KO6",
+      "molecular_weight_da": 188.18,
+      "cid": 8875,
+      "structure_type": "Monopotassium salt of L-(+)-tartaric acid",
+      "biological_source": "Winemaking byproduct (argol / wine tartars)",
+      "functional_classification": "ACIDULANT / ELECTROSTATIC_BUFFER",
+      "solubility": "5.7 g/L at 20\u00b0C in water",
+      "isoelectric_point": null,
+      "denaturation_temp_c": null,
+      "chemical_rationale": "Partially dissociates in water releasing H+ ions to lower pH to 4.8-5.0, directly adjacent to the isoelectric point of ovalbumin (pI 4.5), diminishing negative carboxylate charge repulsion.",
+      "evidence": {
+        "source_id": "pubchem:CID8875",
+        "source_type": "pubchem",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/compound/8875",
+        "publication_date": "2021-06-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/pubchem/pubchem_potassium_bitartrate_20261108_094810.json"
+      }
+    }
+  ],
+  "mechanisms": [
+    {
+      "mechanism_id": "mech_protein_mechanical_denaturation",
+      "title": "Mechanical Denaturation of Globular Proteins at Air-Water Interfaces",
+      "summary": "Shear stress and continuous interfacial expansion uncoil compact globular proteins, exposing buried hydrophobic residues toward the gas phase and forming a contiguous viscoelastic film.",
+      "molecular_physics_rationale": "In native solution, globular proteins minimize free energy by burying non-polar amino acid residues (leucine, isoleucine, valine, phenylalanine) within a hydrophobic core while displaying hydrophilic residues to the aqueous solvent. When whipped, mechanical shear and air bubble incorporation generate huge surface area. At this non-polar gas-liquid interface, the thermodynamic balance shifts: the protein unfolds to place hydrophobic side chains directly into the air bubble cavity, while charged and polar groups remain immersed in the lamella. Adjoining unfolded polypeptide chains cross-link via non-covalent hydrophobic associations, hydrogen bonding, and disulfide exchange (thiol oxidation), creating a solid-like 2D elastic membrane that surrounds each air cell.",
+      "critical_factors": {
+        "beating_intensity": "High shear rate needed to exceed activation energy for globular unfolding",
+        "protein_concentration": "Threshold of 1-3% required for cohesive film formation; 10% provides dense packing",
+        "ionic_strength": "Low-to-moderate ionic strength (~0.05-0.1M) screens repulsive charges without salting out",
+        "temperature": "Ambient (20-25\u00b0C) optimal for mechanical flexibility; refrigeration slows unfolding kinetics"
+      },
+      "kinetics_and_thermodynamics": {
+        "adsorption_time_scale": "Milliseconds for initial collision and monolayer anchoring",
+        "unfolding_time_scale": "Seconds to minutes under sustained mechanical shear",
+        "surface_pressure_increase": "From 0 to 22-26 mN/m within 3 minutes of vigorous agitation",
+        "reversible_vs_irreversible": "Irreversible conformational shift once extensive intermolecular disulfide bridges form"
+      },
+      "culinary_applications": [
+        "Egg white meringue whipping",
+        "Souffle batter leavening",
+        "Angel food cake structure",
+        "Marshmallow foam aeration"
+      ],
+      "failure_modes": [
+        "Under-whipping: insufficient surface area and film thickness -> rapid bubble collapse",
+        "Over-whipping: excessive disulfide cross-linking forms brittle, curdled clumps that drain water ('weeping')",
+        "Contaminant lipid presence: competitive displacement before film cohesion is established"
+      ],
+      "evidence": {
+        "source_id": "doi:10.1016/j.foodhyd.2005.03.014",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.foodhyd.2005.03.014",
+        "publication_date": "2006-03-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_foodhyd_2005_03_014_20261108_094810.json"
+      }
+    },
+    {
+      "mechanism_id": "mech_fat_interference_foam_disruption",
+      "title": "Fat Globule Interference and Interfacial Film Disruption in Protein Foams",
+      "summary": "Non-polar liquid lipids competitively spread across the air-water interface, displacing cohesive protein networks and causing rapid film rupture and bubble coalescence.",
+      "molecular_physics_rationale": "Free triglycerides and non-polar lipid droplets possess lower surface energy than the hydrated protein film. When even trace liquid lipids (e.g. 0.05% egg yolk, dairy butterfat, or residual bowl grease) come into contact with an expanding air bubble, the lipid droplet enters the air-water interface and spreads rapidly driven by a positive spreading coefficient (S = gamma_water - gamma_oil - gamma_interfacial > 0). Unlike folded or denatured proteins, triglycerides cannot participate in intermolecular hydrogen bonding or covalent disulfide cross-linking. As the lipid spreads, it thins and ruptures the viscoelastic protein lamella via pseudo-emulsion film thinning, leading to immediate bubble coalescence and catastrophically reduced foam overrun.",
+      "critical_factors": {
+        "lipid_phase_state": "Liquid oil is severely disruptive; solid crystalline fat is much less destructive",
+        "concentration_threshold": "As little as 0.03-0.05% free egg yolk fat cuts egg white overrun by >70%",
+        "viscosity_mitigation": "High viscosity continuous phases (sugar, gums) can slow droplet diffusion to interface"
+      },
+      "kinetics_and_thermodynamics": {
+        "spreading_coefficient": "Positive (S > 0), causing spontaneous Marangoni spreading",
+        "rupture_velocity": "Milliseconds upon droplet contact with lamella",
+        "surface_tension_gradient": "Local depression of surface tension pulls surrounding fluid outward, creating film pinch-off"
+      },
+      "culinary_applications": [
+        "Rigorous bowl defatting (glass/copper/stainless steel, lemon juice/vinegar wipe)",
+        "Strict yolk-white separation technique",
+        "Defatted meringue stability"
+      ],
+      "failure_modes": [
+        "Meringue collapse upon yolk contamination",
+        "Inability to whip whole milk into stable cold foam without cooling or emulsifier engineering",
+        "Foam collapse upon premature butter addition"
+      ],
+      "evidence": {
+        "source_id": "doi:10.1016/S0927-7765(99)00042-9",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/S0927-7765(99)00042-9",
+        "publication_date": "1999-10-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_S0927-7765_99_00042-9_20261108_094810.json"
+      }
+    },
+    {
+      "mechanism_id": "mech_acid_electrostatic_stabilization",
+      "title": "Acid-Induced Protein Charge Reduction and Electrostatic Stabilization",
+      "summary": "Weak organic acids protonate carboxylate groups, shifting pH toward protein isoelectric points (pI ~4.5-5.0), reducing electrostatic repulsion and promoting compact, elastic interfacial packing.",
+      "molecular_physics_rationale": "Fresh egg white has an initial pH of 7.6, which climbs to 9.0-9.2 during egg aging as dissolved carbon dioxide escapes through shell pores. At pH 9.0, egg white proteins (ovalbumin pI 4.5, conalbumin pI 6.0, lysozyme pI 10.7) carry a strong net negative electrical charge. These like charges create powerful electrostatic repulsion between adjacent adsorbed protein chains, inhibiting tight molecular packing and making the interfacial film fragile and prone to over-coagulation. Adding a mild culinary acid like potassium bitartrate (cream of tartar, ~1/8 tsp per egg white) supplies hydronium ions (H+), lowering the pH to approximately 4.8-5.0. This brings the system directly into proximity with ovalbumin's isoelectric point (pI 4.5). The net surface charge approaches neutrality, minimizing repulsive barriers and allowing proteins to form a dense, uniform, supple 2D gel network that resists over-whipping and heat-induced syneresis.",
+      "critical_factors": {
+        "target_ph_window": "pH 4.6 to 5.2 (optimal elastic modulus without bulk acid precipitation)",
+        "acid_dissociation_constant": "Weak acid buffer (tartaric acid pKa1 = 2.98, pKa2 = 4.34) prevents drastic over-acidification",
+        "timing_of_addition": "Added early after initial frothing (soft foam stage) to establish uniform charge state"
+      },
+      "kinetics_and_thermodynamics": {
+        "zeta_potential_reduction": "Drops from -24 mV at pH 9.0 to -4 mV at pH 4.8",
+        "dilatational_modulus": "Increases by 35% compared to unbuffered alkaline egg white foam",
+        "over-whipping_resistance": "Extends allowable whipping window by 300% without curdle formation"
+      },
+      "culinary_applications": [
+        "Cream of tartar in French and Italian meringues",
+        "Lemon juice in chiffon cakes and macarons",
+        "Copper bowl whipping (copper ions Cu2+ form stabilizing chelates with conalbumin mimicking acid stabilization)"
+      ],
+      "failure_modes": [
+        "Excess acid (pH < 4.0): premature acid precipitation and curdling of albumen proteins",
+        "Omission of acid in aged eggs (pH 9.2): coarse, fragile bubbles prone to weeping upon baking"
+      ],
+      "evidence": {
+        "source_id": "doi:10.1111/j.1365-2621.2005.tb07150.x",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1111/j.1365-2621.2005.tb07150.x",
+        "publication_date": "2005-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1111_j_1365-2621_2005_tb07150_x_20261108_094810.json"
+      }
+    },
+    {
+      "mechanism_id": "mech_sugar_drainage_retardation",
+      "title": "Sugar-Induced Liquid Viscosity Increase and Foam Drainage Retardation",
+      "summary": "Dissolved sucrose immobilizes free water via hydrogen bonding, drastically increasing lamellar liquid viscosity and arresting capillary drainage according to Plateau border mechanics.",
+      "molecular_physics_rationale": "Gravitational drainage of liquid from the foam lamellae into Plateau borders is driven by capillary suction (Laplace pressure delta_P = 2*gamma/r) and gravity. According to the Stokes and Navier-Stokes drainage formulation, the drainage velocity v is inversely proportional to liquid viscosity: v = (rho * g * d^2) / (12 * eta). When granulated sugar (sucrose) is dissolved in the aqueous lamella, the multi-hydroxy sugar molecules form dense hydrogen bonds with bulk water, raising dynamic viscosity eta from ~1 mPa*s (pure water) to over 50-200 mPa*s at high sugar concentrations. This 50x-200x viscosity surge slows liquid drainage down bubble walls to a near standstill. Furthermore, sugar hygroscopic properties reduce water evaporation and delay protein thermal aggregation during baking, ensuring smooth glossy cell structure.",
+      "critical_factors": {
+        "sugar_addition_timing": "Critical: adding sugar before foam formation impedes protein adsorption and suppresses initial overrun; adding gradually after soft peaks allows full aeration followed by maximal viscosity stabilization",
+        "solubility_saturation": "Granule size (superfine/caster sugar) ensures rapid complete dissolution into cold albumen",
+        "sugar_to_egg_white_ratio": "Standard hard meringue uses 2:1 sugar-to-white by mass; soft meringue uses 1:1"
+      },
+      "kinetics_and_thermodynamics": {
+        "drainage_half_life": "Extends foam half-life from 45 min (plain white) to >240 min (meringue batter)",
+        "bubble_wall_thickness": "Maintained at >50 nm preventing lamella rupture via van der Waals forces",
+        "thermal_protection": "Shifts ovalbumin thermal denaturation peak from 84.5\u00b0C to >92\u00b0C, preventing rapid gas expansion bursting"
+      },
+      "culinary_applications": [
+        "French, Swiss, and Italian meringues",
+        "Macaron batter (macaronage process)",
+        "Glossy royal icing",
+        "Marshmallow syrup whipping"
+      ],
+      "failure_modes": [
+        "Premature sugar dumping: restricts foam expansion to <200% overrun",
+        "Undissolved sugar crystals: act as localized defect sites causing syrup weeping during baking ('beading')",
+        "Excessive sugar: heavy syrup prevents bubble wall stretch, producing gummy texture"
+      ],
+      "evidence": {
+        "source_id": "doi:10.1016/j.cocis.2007.07.009",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.cocis.2007.07.009",
+        "publication_date": "2007-08-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_cocis_2007_07_009_20261108_094810.json"
+      }
+    },
+    {
+      "mechanism_id": "mech_cream_partial_coalescence",
+      "title": "Partial Coalescence and Fat Crystal Network Bridging in Whipped Emulsions",
+      "summary": "Refrigerated shear forces partially crystallized fat globules to breach protective membranes and fuse into an interconnected 3D crystal matrix that supports air bubbles.",
+      "molecular_physics_rationale": "In heavy cream (36% milkfat), fat droplets are shielded by the natural milk fat globule membrane (MFGM) composed of glycoproteins and polar phospholipids. When chilled to 4-8\u00b0C, a significant fraction of high-melting triglycerides crystallizes into sharp needle-like beta-prime polymorphic crystals. During whipping, mechanical shear drives droplets into collision. Fat crystals pierce adjacent globule membranes, causing true partial coalescence: the droplets merge into rigid branched clusters without fully coalescing into liquid oil. These interconnected clusters attach directly to air-bubble interfaces, forming a solid colloidal scaffolding that physically locks air cells into place. Because stability relies on solid fat crystal bridging, warmth above the fat melting point (~32-35\u00b0C) liquefies crystals, inducing phase inversion into butter.",
+      "critical_factors": {
+        "temperature": "Strictly 4-8\u00b0C; above 15\u00b0C crystals melt causing rapid collapse; above 20\u00b0C churns into butter",
+        "fat_content": "Minimum 30% milkfat for continuous network; 36-40% delivers optimal overrun and firmness",
+        "shear_rate": "Moderate continuous shear; excess shear drives full coalescence into butter grains"
+      },
+      "kinetics_and_thermodynamics": {
+        "overrun_envelope": "Self-limiting to 100-130% due to dense fat network viscosity",
+        "drainage_stability": "Virtually zero drainage for >3 hours when maintained below 10\u00b0C",
+        "phase_inversion_boundary": "Reversible up to 25\u00b0C; irreversibly collapses if milkfat completely melts"
+      },
+      "culinary_applications": [
+        "Chantilly whipped cream",
+        "Pastry mousse and bavarois folding",
+        "Ice cream overrun and scoopability stabilization"
+      ],
+      "failure_modes": [
+        "Whipping warm cream (>15\u00b0C): droplets fail to link, producing greasy liquid or weeping",
+        "Over-whipping: total coalescence separates buttermilk from yellow butter solids"
+      ],
+      "evidence": {
+        "source_id": "doi:10.1016/S0927-7765(99)00042-9",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/S0927-7765(99)00042-9",
+        "publication_date": "1999-10-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_S0927-7765_99_00042-9_20261108_094810.json"
+      }
+    },
+    {
+      "mechanism_id": "mech_hydrocolloid_yield_stress_stabilization",
+      "title": "Polymer Entanglements and Yield Stress Immobilization in Hydrocolloid Foams",
+      "summary": "Anionic rigid polysaccharide chains entangle in solution to create a physical yield stress, immobilizing fluid in Plateau borders without requiring fat or high protein levels.",
+      "molecular_physics_rationale": "Hydrocolloids such as xanthan gum form rigid 5-fold helical conformations in aqueous solution that associate into weak ordered intermolecular networks. Unlike proteins or surfactants, xanthan does not need to adsorb at the gas-liquid boundary. Instead, it creates an enormous zero-shear viscosity (tau_0 > 1-5 Pa) and strong pseudoplastic shear-thinning behavior. During aeration (high shear), viscosity drops dramatically, allowing rapid air incorporation. Once whipping ceases (zero shear), the polymer chains re-entangle instantly, establishing a finite yield stress that halts gravitational liquid drainage and bubble disproportionation (Ostwald ripening). This enables fat-free, low-protein liquids (such as skim milk or fruit juices) to sustain foam stability comparable to whipped cream.",
+      "critical_factors": {
+        "dosage": "0.1% to 0.35% w/w provides yield stress without slimy mouthfeel",
+        "temperature_insensitivity": "Retains viscosity from 0\u00b0C to 90\u00b0C, providing heat-tolerant foam",
+        "ph_electrolyte_robustness": "Stable across pH 2.0 to 11.0 and in high salt environments"
+      },
+      "kinetics_and_thermodynamics": {
+        "zero_shear_viscosity": ">100,000 mPa*s at rest",
+        "yield_stress": "1.2 to 4.5 Pa, sufficient to support bubble buoyant forces",
+        "recovery_time": "Thixotropic recovery within milliseconds upon cessation of shear"
+      },
+      "culinary_applications": [
+        "Modernist culinary airs and espumas",
+        "Low-fat barista plant milk foams",
+        "Dietary dessert foams with skim milk base"
+      ],
+      "failure_modes": [
+        "Under-dispersion: clumping (fish eyes) if added without sugar or high-shear shear blending",
+        "Over-concentration (>0.5%): unpleasantly gummy, pseudoplastic stringy texture"
+      ],
+      "evidence": {
+        "source_id": "doi:10.1016/j.cocis.2007.07.009",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.cocis.2007.07.009",
+        "publication_date": "2007-08-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_cocis_2007_07_009_20261108_094810.json"
+      }
+    }
+  ],
+  "formulation_comparisons": [
+    {
+      "formulation_id": "FORM-001",
+      "title": "Standard Egg-White French Meringue",
+      "category": "High-Overrun Protein Foam",
+      "description": "The benchmark culinary protein foam utilizing mechanical denaturation of albumen, buffered near its isoelectric point with potassium bitartrate, and stabilized against lamellar drainage with sucrose.",
+      "ingredients_formula": [
+        {
+          "ingredient_id": "ing_egg_white_raw",
+          "mass_g": 100.0,
+          "baker_percentage": 100.0,
+          "role": "Interfacial foaming proteins (ovalbumin, ovotransferrin)"
+        },
+        {
+          "ingredient_id": "ing_sucrose_granulated",
+          "mass_g": 100.0,
+          "baker_percentage": 100.0,
+          "role": "Viscosity builder, water immobilizer, thermal protector"
+        },
+        {
+          "ingredient_id": "ing_cream_of_tartar",
+          "mass_g": 0.8,
+          "baker_percentage": 0.8,
+          "role": "Acidulant (pH 4.8 buffer, charge neutralizer)"
+        }
+      ],
+      "target_attributes": {
+        "foam_expansion_overrun_pct": 720.0,
+        "foam_stability_half_life_min": 180.0,
+        "drainage_rate_ml_per_10min": 0.15,
+        "foam_density_g_ml": 0.14,
+        "bubble_size_d32_um": 42.0,
+        "firmness_yield_stress_pa": 85.0,
+        "thermal_stability_c": 110.0,
+        "fat_sensitivity": "HIGHLY_VULNERABLE (disrupted by >0.05% lipid)"
+      },
+      "mechanism_interactions": [
+        "mech_protein_mechanical_denaturation",
+        "mech_acid_electrostatic_stabilization",
+        "mech_sugar_drainage_retardation"
+      ],
+      "performance_tradeoffs": "Maximum volume expansion and high crispness when dried; extremely sensitive to fat contamination; requires gradual sugar addition to avoid restricting initial foam overrun.",
+      "evidence": {
+        "source_id": "doi:10.1016/j.foodhyd.2005.03.014",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.foodhyd.2005.03.014",
+        "publication_date": "2006-03-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_foodhyd_2005_03_014_20261108_094810.json"
+      }
+    },
+    {
+      "formulation_id": "FORM-002",
+      "title": "Chantilly Whipped Heavy Cream Foam",
+      "category": "Fat-Crystal Stabilized Emulsion Foam",
+      "description": "Rich dairy emulsion foam stabilized by shear-induced partial coalescence of solid milkfat globules around air bubbles at refrigerated temperatures.",
+      "ingredients_formula": [
+        {
+          "ingredient_id": "ing_heavy_cream",
+          "mass_g": 100.0,
+          "baker_percentage": 100.0,
+          "role": "36% milkfat emulsion base providing partially crystalline globules"
+        },
+        {
+          "ingredient_id": "ing_sucrose_granulated",
+          "mass_g": 10.0,
+          "baker_percentage": 10.0,
+          "role": "Mild sweetener and palatability modifier"
+        }
+      ],
+      "target_attributes": {
+        "foam_expansion_overrun_pct": 115.0,
+        "foam_stability_half_life_min": 240.0,
+        "drainage_rate_ml_per_10min": 0.05,
+        "foam_density_g_ml": 0.46,
+        "bubble_size_d32_um": 28.0,
+        "firmness_yield_stress_pa": 140.0,
+        "thermal_stability_c": 15.0,
+        "fat_sensitivity": "FAT_DEPENDENT (relies strictly on 35-38% lipid content)"
+      },
+      "mechanism_interactions": [
+        "mech_cream_partial_coalescence"
+      ],
+      "performance_tradeoffs": "Luxurious, dense, melt-in-mouth texture with zero drainage; modest overrun (115%); strictly temperature-sensitive (collapses above 18-20\u00b0C as fat crystals melt).",
+      "evidence": {
+        "source_id": "doi:10.1016/S0927-7765(99)00042-9",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/S0927-7765(99)00042-9",
+        "publication_date": "1999-10-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_S0927-7765_99_00042-9_20261108_094810.json"
+      }
+    },
+    {
+      "formulation_id": "FORM-003",
+      "title": "Reduced-Fat Milk + Hydrocolloid Dessert Foam",
+      "category": "Engineered Low-Fat Hydrocolloid Foam",
+      "description": "Fat-free, calorie-reduced dessert foam achieving high stability through xanthan gum yield stress rheology combined with skim milk casein and whey surface adsorption.",
+      "ingredients_formula": [
+        {
+          "ingredient_id": "ing_skim_milk",
+          "mass_g": 100.0,
+          "baker_percentage": 100.0,
+          "role": "Aqueous protein continuous phase (casein micelles & beta-lactoglobulin)"
+        },
+        {
+          "ingredient_id": "ing_xanthan_gum",
+          "mass_g": 0.25,
+          "baker_percentage": 0.25,
+          "role": "Pseudoplastic thickener providing continuous phase yield stress"
+        },
+        {
+          "ingredient_id": "ing_sucrose_granulated",
+          "mass_g": 20.0,
+          "baker_percentage": 20.0,
+          "role": "Sweetness, body, and supplementary viscosity enhancement"
+        }
+      ],
+      "target_attributes": {
+        "foam_expansion_overrun_pct": 320.0,
+        "foam_stability_half_life_min": 150.0,
+        "drainage_rate_ml_per_10min": 0.3,
+        "foam_density_g_ml": 0.24,
+        "bubble_size_d32_um": 55.0,
+        "firmness_yield_stress_pa": 65.0,
+        "thermal_stability_c": 60.0,
+        "fat_sensitivity": "RESISTANT (fat-free formulation, tolerant to incidental lipids)"
+      },
+      "mechanism_interactions": [
+        "mech_protein_mechanical_denaturation",
+        "mech_hydrocolloid_yield_stress_stabilization",
+        "mech_sugar_drainage_retardation"
+      ],
+      "performance_tradeoffs": "85% fewer calories than heavy cream with good overrun (320%); maintains stability at room temperature; slightly more elastic / pseudo-gelled mouthfeel than dairy cream.",
+      "evidence": {
+        "source_id": "doi:10.1016/j.cocis.2007.07.009",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1016/j.cocis.2007.07.009",
+        "publication_date": "2007-08-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_cocis_2007_07_009_20261108_094810.json"
+      }
+    },
+    {
+      "formulation_id": "FORM-004",
+      "title": "Vegan Aquafaba Meringue",
+      "category": "Plant-Based Legume Foam",
+      "description": "Plant-based egg-free meringue utilizing legume globulins and saponins from chickpea cooking liquid, stabilized by cream of tartar and sucrose.",
+      "ingredients_formula": [
+        {
+          "ingredient_id": "ing_aquafaba_liquid",
+          "mass_g": 100.0,
+          "baker_percentage": 100.0,
+          "role": "Plant protein and saponin aqueous foaming extract"
+        },
+        {
+          "ingredient_id": "ing_sucrose_granulated",
+          "mass_g": 90.0,
+          "baker_percentage": 90.0,
+          "role": "Viscosity enhancer, drainage retarder, and structural stabilizer"
+        },
+        {
+          "ingredient_id": "ing_cream_of_tartar",
+          "mass_g": 0.6,
+          "baker_percentage": 0.6,
+          "role": "Acidulant (pH 4.5) to compact legume globulin film"
+        }
+      ],
+      "target_attributes": {
+        "foam_expansion_overrun_pct": 510.0,
+        "foam_stability_half_life_min": 120.0,
+        "drainage_rate_ml_per_10min": 0.45,
+        "foam_density_g_ml": 0.18,
+        "bubble_size_d32_um": 50.0,
+        "firmness_yield_stress_pa": 55.0,
+        "thermal_stability_c": 100.0,
+        "fat_sensitivity": "MODERATE (saponins offer slightly higher fat tolerance than egg white)"
+      },
+      "mechanism_interactions": [
+        "mech_protein_mechanical_denaturation",
+        "mech_sugar_drainage_retardation",
+        "mech_acid_electrostatic_stabilization"
+      ],
+      "performance_tradeoffs": "Fully vegan and allergen-free alternative to egg white; requires longer whipping time (9-12 min); somewhat softer texture before oven drying.",
+      "evidence": {
+        "source_id": "doi:10.1177/1082013219890696",
+        "source_type": "scientific_lit",
+        "source_url": "https://doi.org/10.1177/1082013219890696",
+        "publication_date": "2020-05-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1177_1082013219890696_20261108_094810.json"
+      }
+    },
+    {
+      "formulation_id": "FORM-005",
+      "title": "Whole Egg Sabayon Thermal Emulsion Foam",
+      "category": "Thermally Coagulated Emulsion Foam",
+      "description": "Warm culinary emulsion foam leavened over gentle water bath heat (65-68\u00b0C) to denature whole egg yolk and albumen proteins while trapping air and emulsifying lipid droplets.",
+      "ingredients_formula": [
+        {
+          "ingredient_id": "ing_whole_egg_raw",
+          "mass_g": 100.0,
+          "baker_percentage": 100.0,
+          "role": "Whole egg providing both foaming albumen and emulsifying yolk phospholipids"
+        },
+        {
+          "ingredient_id": "ing_sucrose_granulated",
+          "mass_g": 50.0,
+          "baker_percentage": 50.0,
+          "role": "Thermal stabilizer raising egg protein denaturation temperature to 68\u00b0C"
+        }
+      ],
+      "target_attributes": {
+        "foam_expansion_overrun_pct": 280.0,
+        "foam_stability_half_life_min": 60.0,
+        "drainage_rate_ml_per_10min": 1.2,
+        "foam_density_g_ml": 0.28,
+        "bubble_size_d32_um": 48.0,
+        "firmness_yield_stress_pa": 70.0,
+        "thermal_stability_c": 70.0,
+        "fat_sensitivity": "SELF_COMPENSATING (egg yolk lecithin self-emulsifies native fat globules)"
+      },
+      "mechanism_interactions": [
+        "mech_protein_mechanical_denaturation",
+        "mech_sugar_drainage_retardation"
+      ],
+      "performance_tradeoffs": "Rich custard-like mouthfeel; requires strict temperature control (65-70\u00b0C) over bain-marie; will scramble if heated beyond 72\u00b0C.",
+      "evidence": {
+        "source_id": "usda:171287",
+        "source_type": "usda_fdc",
+        "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171287/nutrients",
+        "publication_date": "2020-04-01",
+        "ingestion_timestamp": "2026-11-08T09:48:10Z",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_171287_20261108_094810.json"
+      }
+    }
+  ]
+}

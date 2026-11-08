@@ -1,0 +1,50 @@
+{
+  "experiment_id": "EXP-030",
+  "name": "The Analytical Two-Variable Physical Inverter",
+  "baseline_v10": {
+    "full_points": 38.50070189399767,
+    "tuning_points": 38.4107430765484,
+    "audit_points": 38.604844851171656,
+    "loss_ratio": 0.5584131469913307
+  },
+  "theoretical_ceilings": {
+    "oracle_full": {
+      "full_points": 60.0,
+      "loss_ratio": 1.9526884013880946e-18
+    },
+    "oracle_p0_ignorant_S": {
+      "full_points": 56.694118475413006,
+      "loss_ratio": 0.05831083741112726
+    }
+  },
+  "clean_sheet_inverter": {
+    "full_points": 31.94660213351522,
+    "tuning_points": 32.829672917046715,
+    "audit_points": 30.998225742126856,
+    "tuning_audit_spread": 1.8314471749198589,
+    "loss_ratio": 0.8781340109110987,
+    "by_condition": {
+      "stable": 0.8958327847110574,
+      "short_history": 0.9381078938252231,
+      "drift": 0.900775625573004,
+      "shared_change": 0.7778197395351102
+    },
+    "by_machine_type": {
+      "balanced": 0.8694331337920399,
+      "jackpot": 0.7336119806058734,
+      "steady": 0.9446042391337904
+    },
+    "brier_by_class": {
+      "class_0": 0.11286084828523142,
+      "class_1": 0.031718738598869915,
+      "class_2": 0.01819110684316184,
+      "class_5": 0.00508256268063256,
+      "class_20": 0.0004121885171862603
+    },
+    "bootstrap_gain_vs_v10_ci95": [
+      -9.276797028157421,
+      -6.149036921633485
+    ],
+    "adversarial_status": "Passed all adversarial checks."
+  }
+}

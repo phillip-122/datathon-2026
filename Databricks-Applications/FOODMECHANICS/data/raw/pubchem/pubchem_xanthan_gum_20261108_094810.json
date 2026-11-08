@@ -1,0 +1,22 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_xanthan_gum",
+  "captured_at": "2026-11-08T09:48:10.534540+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": null,
+      "cas_id": "11138-66-2",
+      "name": "Xanthan Gum",
+      "iupac_name": "Heteropolysaccharide cellulosic beta-(1,4)-D-glucan with trisaccharide side chains",
+      "formula": "(C35H49O29)n",
+      "molecular_weight": 2000000.0,
+      "classification": "HYDROCOLLOID / SHEAR_THINNING_THICKENER",
+      "functional_role": "Pseudoplastic rheology modifier; maintains high yield stress at rest to halt foam bubble drainage; thins under shear.",
+      "solubility": "Soluble in both cold and hot water; tolerant to high salt and wide pH (2-12)",
+      "isoelectric_point": null,
+      "denaturation_temp_c": 95.0,
+      "inchikey": "POLYSACCHARIDE_XANTHAN"
+    }
+  }
+}

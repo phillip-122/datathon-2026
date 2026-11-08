@@ -1,0 +1,36 @@
+{
+  "source_name": "openfoodfacts",
+  "item_id": "off_0857317005124",
+  "captured_at": "2026-11-08T10:56:51.567403+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://world.openfoodfacts.org/api/v2/product/0857317005124.json",
+    "payload": {
+      "code": "0857317005124",
+      "status": 1,
+      "status_verbose": "product found",
+      "product": {
+        "barcode": "0857317005124",
+        "product_name": "Pure Food Grade Xanthan Gum Powder",
+        "brand": "Anthony's Goods",
+        "ingredients_text": "Xanthan Gum.",
+        "additives_tags": [
+          "en:e415"
+        ],
+        "nova_group": 2,
+        "nutriments": {
+          "energy-kcal_100g": 353.0,
+          "proteins_100g": 7.0,
+          "fat_100g": 0.0,
+          "saturated-fat_100g": 0.0,
+          "carbohydrates_100g": 80.0,
+          "sugars_100g": 0.0,
+          "sodium_100g": 3.1,
+          "calcium_100g": 0.04
+        }
+      }
+    },
+    "fetched_at": "2026-11-08T10:56:51.567399+00:00"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_169655",
+  "captured_at": "2026-11-08T10:54:59.557788+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/169655",
+    "payload": {
+      "fdcId": 169655,
+      "description": "Sugars, granulated (sucrose)",
+      "foodCategory": "Sweets",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 0.0
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 0.0
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 387.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T10:54:59.557783+00:00"
+  }
+}

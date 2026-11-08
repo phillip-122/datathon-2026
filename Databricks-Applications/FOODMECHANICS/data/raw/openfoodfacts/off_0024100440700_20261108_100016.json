@@ -1,0 +1,34 @@
+{
+  "source_name": "openfoodfacts",
+  "item_id": "off_0024100440700",
+  "captured_at": "2026-11-08T10:00:16.388691+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://world.openfoodfacts.org/api/v2/product/0024100440700.json",
+    "payload": {
+      "code": "0024100440700",
+      "status": 1,
+      "status_verbose": "product found",
+      "product": {
+        "barcode": "0024100440700",
+        "product_name": "Organic Chickpeas in Water (Aquafaba source)",
+        "brand": "Simple Truth Organic",
+        "ingredients_text": "Organic Prepared Chickpeas, Water, Sea Salt.",
+        "additives_tags": [],
+        "nova_group": 3,
+        "nutriments": {
+          "energy-kcal_100g": 115.0,
+          "proteins_100g": 6.8,
+          "fat_100g": 2.0,
+          "saturated-fat_100g": 0.2,
+          "carbohydrates_100g": 17.5,
+          "sugars_100g": 1.2,
+          "sodium_100g": 0.14,
+          "calcium_100g": 0.045
+        }
+      }
+    },
+    "fetched_at": "2026-11-08T10:00:16.388687+00:00"
+  }
+}

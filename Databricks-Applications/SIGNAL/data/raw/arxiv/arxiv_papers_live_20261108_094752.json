@@ -1,0 +1,337 @@
+{
+  "metadata": {
+    "source_type": "arxiv",
+    "collection_timestamp": "2026-11-08T09:47:52.896876+00:00",
+    "mode": "live",
+    "record_count": 10,
+    "query_parameters": {
+      "query": "cat:cs.AI OR cat:cs.CL OR cat:cs.LG",
+      "max_results": 10,
+      "sort_by": "submittedDate",
+      "sort_order": "descending"
+    },
+    "collector_version": "1.0.0"
+  },
+  "records": [
+    {
+      "source_id": "arxiv:2611.08487",
+      "arxiv_id": "2611.08487",
+      "title": "User Embeddings are Superpositions of Interpretable Behavioral Modes",
+      "authors": [
+        "Jonathan Kozaczuk",
+        "Zheng Dong",
+        "Noyan Evirgen",
+        "Keivan Majidi",
+        "Eddie K. H. Ng",
+        "Chris Porter",
+        "Qi Zhao",
+        "Jia Geng",
+        "Changmao Li",
+        "Brandon R. Feng"
+      ],
+      "abstract": "User embeddings are central components of modern recommendation, personalization, and behavioral modeling systems. Though these embeddings can compactly encode rich behavioral information, they are inherently dense and opaque, limiting interpretability. To address this gap, we argue that user embeddings can be understood as sparse superpositions of interpretable behavioral modes. This structure is directly predicted by generative models of user behavior for linear embeddings and extends approximately to deep-learning representations by the superposition hypothesis. Superimposed modes can naturally be recovered by sparse dictionary learning methods, such as sparse autoencoders (SAEs), and recovered modes can be automatically named and queried in natural language. We validate mode recovery against known ground truth on synthetic data, where SAEs recover modes better than classical sparse baselines, including on transformer-encoded embeddings. We then apply the method to classical and transformer-based user embeddings from two real-world datasets. We also show how the corresponding natural-language labels enable zero-shot audience retrieval and characterization over embeddings never trained on text. The framework is post-hoc and model-agnostic, requiring no modification to the upstream embedding system.",
+      "published_date": "2026-11-05T18:59:42Z",
+      "updated_date": "2026-11-05T18:59:42Z",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08487v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08487v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08487",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08487v1",
+        "publication_date": "2026-11-05T18:59:42Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896420+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896420+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08487v1"
+      }
+    },
+    {
+      "source_id": "arxiv:2611.08483",
+      "arxiv_id": "2611.08483",
+      "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
+      "authors": [
+        "Qile Jiang",
+        "George Em Karniadakis"
+      ],
+      "abstract": "LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for each round and must repeat this generation many times to maintain population diversity. We present SwarmEvolve, a framework in which hundreds of low-cost agents per round work in swarms, reason in latent space without decoding to text, and share information by passing KV caches. Each swarm studies the problem from a different angle. A novelty filter keeps the most distinct agent ideas by directly measuring the distances between the agents' hidden state vectors. Crossover of ideas happens naturally in latent space, as a summarizer agent receives the combined KV caches of all swarm members. On 21 problems in mathematical discovery and scientific computing, SwarmEvolve gets the highest average score and needs a median of only 3 to 8 minutes to reach the best scores that other state-of-the-art frameworks reach in 60 minutes. On several problems, SwarmEvolve with Qwen3 8B improves on the solutions that AlphaEvolve first found with frontier LLMs. Our work shows that agent swarms that communicate in latent space offer a fast, low-cost approach to program search for scientific problems.",
+      "published_date": "2026-11-05T18:59:29Z",
+      "updated_date": "2026-11-05T18:59:29Z",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.NE"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08483v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08483v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08483",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08483v1",
+        "publication_date": "2026-11-05T18:59:29Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896445+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896445+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08483v1"
+      }
+    },
+    {
+      "source_id": "arxiv:2611.08478",
+      "arxiv_id": "2611.08478",
+      "title": "Scientist World: Grow a Research World for AI-Scientists",
+      "authors": [
+        "Taiming Lu",
+        "Sachin Konan",
+        "Zhuang Liu"
+      ],
+      "abstract": "AI-Scientists arrived, but a world for them to grow in did not. Human scientists take theirs for granted $-$ centuries of open problems and shared ideas, waiting in the scientific literature. To AI-Scientists, that world is readable but not runnable, so we build Scientist World for them: every research paper becomes an executable environment. Our autonomous pipeline extracts each paper's open-ended research question and reproduces its proposed method as the baseline; an AI-Scientist entering the environment is evaluated against what the human authors achieved. We release the first 1,000 verified environments. With the world as an evaluation, we found that frontier AI-Scientists can already surpass the human researchers 74% of the time. As a record of how AI does science, it contains 6,400 hours of research traces, with every idea, experiment, failure, and success. As a training ground, we are able to raise (+158%) a small model to match frontier models in research ideation. At last, AI-Scientists' own world has arrived, grown from and growing with science itself.",
+      "published_date": "2026-11-05T18:58:17Z",
+      "updated_date": "2026-11-05T18:58:17Z",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08478v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08478v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08478",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08478v1",
+        "publication_date": "2026-11-05T18:58:17Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896458+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896458+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08478v1"
+      }
+    },
+    {
+      "source_id": "arxiv:2611.08472",
+      "arxiv_id": "2611.08472",
+      "title": "XStack: A Benchmark for ML Repo Migration",
+      "authors": [
+        "Linrong Cai",
+        "Taiming Lu",
+        "Haozhe Chen",
+        "Zhuang Liu"
+      ],
+      "abstract": "ML code should run where researchers choose, not where it was first written. Today, machine learning code mainly lives in two ecosystems, PyTorch on NVIDIA GPUs and JAX on Google TPUs. Migrating repositories between them means building and testing across frameworks and hardware. This migration is (1) a practical need, since it unlocks different hardware for researchers, and (2) a natural benchmark: it involves different frameworks and hardware, covers whole repositories, and is long-horizon and challenging. We introduce XStack, a benchmark that evaluates agents on migrating ML repositories between these two ecosystems. Each agent receives a PyTorch repository and a clean TPU machine and must deliver a JAX repository. Its output passes if it meets our grading criteria, based on the source repository's published result, authenticated and calibrated by us. Migration by agents remains unreliable: Claude Opus 5 passes 75%, GPT-5.6-sol 45%, and every other agent at most 40%. XStack is a step toward freeing ML code from its ecosystem. We release XStack to make progress toward reliable migration across frameworks and hardware measurable.",
+      "published_date": "2026-11-05T18:55:54Z",
+      "updated_date": "2026-11-05T18:55:54Z",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08472v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08472v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08472",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08472v1",
+        "publication_date": "2026-11-05T18:55:54Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896469+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896469+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08472v1"
+      }
+    },
+    {
+      "source_id": "arxiv:2611.08469",
+      "arxiv_id": "2611.08469",
+      "title": "Same Behavior, Different Mechanism: What Finite Experiments Can Certify About Integrated Information",
+      "authors": [
+        "Linqian Wu",
+        "Diaoxuan He"
+      ],
+      "abstract": "Interpretability, AI auditing and assessments of machine consciousness increasingly rest on mechanism-level quantities: functionals of a system's causal transition law that describe how it computes, not what it outputs. Experiments see that law only through finite, partial and noisy interventions. We ask when such a quantity is identifiable from an experiment's access, continuous in the mechanism and certifiable from finite data, and answer exactly for a deliberately demanding case - the integrated information $\\varphi$ of integrated information theory - in stochastic networks of four and five units with known ground truth. Behavior can be silent: a recurrent and a feed-forward network with identical input-output laws at their response delay carry 0.28 and 0 bits, yet internal recordings separate them within 4-53 trials. Partial access can be just as blind: in our examples, units left out of a one-step recording impose precision floors of 0.30-1.02 bits that no sample size lowers, and in all-but-self parity networks, recordings of any length see several hidden units only through the product of their fidelities - a symmetry that one intervention broke in exact checks. The measure has sharp edges: because $\\varphi$ selects a partition, and the cause and effect it specifies, by one criterion and reports another, infinitesimal changes of mechanism that cross an edge change it by 25-100% at 99% of the edges we found in random networks, and about 1% of surrogate models that fit interventional data almost perfectly misreport it by more than 20%. One-sided claims survive: the same data certify a lower bound on both sides of an edge, and we prove $\\varphi>1.004$ bits throughout a 64-dimensional region of mechanisms and certify it from about $10^7$ controlled transitions with false-certificate probability at most $α$. Measurability is thus a design question with computable answers.",
+      "published_date": "2026-11-05T18:55:31Z",
+      "updated_date": "2026-11-05T18:55:31Z",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-bio.NC"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08469v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08469v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08469",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08469v1",
+        "publication_date": "2026-11-05T18:55:31Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896487+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896487+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08469v1"
+      }
+    },
+    {
+      "source_id": "arxiv:2611.08465",
+      "arxiv_id": "2611.08465",
+      "title": "Towards interpreting any residual stream direction by scaling activation inversion",
+      "authors": [
+        "Celeste De Schamphelaere",
+        "Juan J. Vazquez",
+        "Ari Spiesberger",
+        "Tomáš Gavenčiak",
+        "Gavin Leech",
+        "Euan Ong",
+        "Jiahai Feng"
+      ],
+      "abstract": "To interpret a direction in a language model's residual stream, we can look for text that strongly activates it. But when such text is found by scanning a corpus, it is limited to what that corpus contains. We develop Maximally-Activating Example Metamodels (MAEMs), language models which map residual stream directions from a subject model to text exemplars that strongly activate those directions. Our objective is to maximise the cosine similarity of a supplied residual stream direction with the activations of the text generated by the MAEM. This label-free RL objective helps to scale MAEMs on diverse sources of residual stream directions. Empirically, we find the resultant metamodel produces informative exemplars: a Qwen3.6-27B MAEM inverts held-out activations better than corpus search or a natural-language autoencoder (NLA), beats corpus search (at 10M tokens) on a majority of held-out languages/domains, and activates 89% of held-out SAE features. It also identifies concepts behind steering vectors about as well as NLAs, recovers the payloads of LoRA backdoors more often than corpus search, and can even verbalise some model workspace inner monologue. Unlike explanations produced by other metamodels (e.g. NLAs), MAEM exemplars can be verified with a forward pass on the subject model, making the MAEM objective a grounded alternative for scaling the training of metamodels.",
+      "published_date": "2026-11-05T18:54:40Z",
+      "updated_date": "2026-11-05T18:54:40Z",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08465v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08465v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08465",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08465v1",
+        "publication_date": "2026-11-05T18:54:40Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896500+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896500+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08465v1"
+      }
+    },
+    {
+      "source_id": "arxiv:2611.08457",
+      "arxiv_id": "2611.08457",
+      "title": "Adversarial Training with Large Step Sizes: Implicit Bias, Optimization, and Sharpness",
+      "authors": [
+        "Yi Feng",
+        "Andrea Paudice"
+      ],
+      "abstract": "Adversarial Training (AT) is an important method for improving model robustness. We study the dynamics of deterministic Gradient Descent (GD) in AT. Most existing works in this direction focus on the small or vanishing step sizes regime, where GD resembles a continuous-time flow. However, such step sizes can make training inefficient and are rarely used in practice. In this paper, we study the AT dynamics of GD with large constant step sizes. We first study GD in adversarial linear logistic regression, focusing on two aspects: where the model parameters converge (implicit bias) and how quickly the losses decrease (optimization). We then turn to neural networks training and study how the sharpness of losses evolve during AT. Our results advance the understanding of the behaviors of GD with large step sizes in AT and highlight three key differences from its behavior in Standard Training (ST): (i) the implicit bias gap between AT and ST, previously established only for small step sizes, persists for arbitrarily large constant step sizes, (ii) different from ST, there is no uniform rate of convergence for the optimization error in AT, and (iii) sharpness can exhibit two-stage dynamics that differ from the Edge-of-Stability behavior observed in ST.",
+      "published_date": "2026-11-05T18:48:50Z",
+      "updated_date": "2026-11-05T18:48:50Z",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "math.OC"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08457v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08457v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08457",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08457v1",
+        "publication_date": "2026-11-05T18:48:50Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896509+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896509+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08457v1"
+      }
+    },
+    {
+      "source_id": "arxiv:2611.08453",
+      "arxiv_id": "2611.08453",
+      "title": "Unpacking the Compute Efficiency of Strong-to-Weak OPD against GRPO",
+      "authors": [
+        "Zeyu Leo Liu",
+        "Yang Li",
+        "Bo Pang",
+        "Emre Can Acikgoz",
+        "Xuan-Phi Nguyen",
+        "Anurag Koul",
+        "Srijan Bansal",
+        "Erik Nijkamp",
+        "Shafiq Joty",
+        "Semih Yavuz"
+      ],
+      "abstract": "On-policy distillation (OPD) trains a student on its own rollouts under a frozen teacher's per-token supervision. Does this dense signal reduce the training FLOPs needed to reach a target accuracy compared with reinforcement learning? We systematically compare vanilla reverse-KL OPD with Group Relative Policy Optimization (GRPO) across task difficulty, student and teacher size, domain, and optimization choices, measuring held-out accuracy against training FLOPs. With an external post-trained teacher, OPD generally loses to GRPO in accuracy per training FLOP at matched settings, even when the teacher is further trained with GRPO, and often suffers response-length inflation. Yet a different teacher changes the picture: when the teacher is the student's own GRPO checkpoint, OPD recovers that checkpoint's accuracy on math with $50\\times$ fewer distillation FLOPs than GRPO needs to reach the same accuracy. Following the same teacher setting, we consistently observe this high efficiency with a larger student, on code, and in a second model family. On a single domain, however, the GRPO checkpoint is already the desired model, so distilling it adds to total compute. Across domains, separate GRPO checkpoints hold different capabilities, and no single checkpoint serves every domain. Multi-teacher OPD (DeepSeek-AI, 2026) consolidates per-domain GRPO experts into a single student that matches each expert's accuracy, with the distillation stage costing only 5.2% (on 2 domains) and 8.0% (on 4 domains) of the specialist training FLOPs. Counting specialist training and distillation together, this pipeline reaches joint GRPO's performance on the 2-domain mix with 42.0% fewer total FLOPs.",
+      "published_date": "2026-11-05T18:47:05Z",
+      "updated_date": "2026-11-05T18:47:05Z",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08453v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08453v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08453",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08453v1",
+        "publication_date": "2026-11-05T18:47:05Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896523+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896523+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08453v1"
+      }
+    },
+    {
+      "source_id": "arxiv:2611.08452",
+      "arxiv_id": "2611.08452",
+      "title": "ReproBridge: Building Reproducibility into ML Research Artifacts",
+      "authors": [
+        "Yubo Wang",
+        "Rui Meng",
+        "Jaehyun Nam",
+        "Tomas Pfister",
+        "Jinsung Yoon"
+      ],
+      "abstract": "Reproducing machine learning experiments requires reconstructing procedures from information scattered across papers, released code, and supporting artifacts. For coding agents, reproduction success can therefore depend on their ability to fill in missing details, rather than on the released artifacts alone. We ask whether preserving recovered procedures and decisions improves subsequent independent reproduction. We define a standardized artifact design comprising a refined codebase, environment setup, experiment launchers, and a reproduction guide, and introduce ReproBridge, an agent workflow for constructing these refined reproducible artifacts. ReproBridge-Bench provides 1,029 tasks from 387 experiments across 36 papers, anchored by five human-verified reference scores per task. Agents attempt tasks in fresh sessions with raw code or refined artifacts; a separate Auditor checks execution evidence. Across four evaluated models, refined artifacts raise mean reproduction success from 76.4% to 92.6% and reduce downstream API spending by 19.7% on average. The cross-model success-rate spread narrows from 21.6 to 3.9 percentage points, with all four models achieving mean success rates above 90%. Removing any component reduces success in the ablation study, with the largest losses from code and environment removal. These results suggest that preserving execution knowledge helps even models with lower raw-code success reproduce experiments more reliably and at lower API cost.",
+      "published_date": "2026-11-05T18:45:36Z",
+      "updated_date": "2026-11-05T18:45:36Z",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08452v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08452v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08452",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08452v1",
+        "publication_date": "2026-11-05T18:45:36Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896534+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896534+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08452v1"
+      }
+    },
+    {
+      "source_id": "arxiv:2611.08445",
+      "arxiv_id": "2611.08445",
+      "title": "A Hidden Markov Preference Model for Online Prediction of Adversary Actions",
+      "authors": [
+        "Angel Daruna",
+        "Michael Cogswell",
+        "Tixiao Shan",
+        "Yi Yao",
+        "Han-Pang Chiu",
+        "Ajay Divakaran"
+      ],
+      "abstract": "A defender anticipating an attacker needs a probability distribution over the attacker's next action from information available before that action occurs. Two structures complicate this: the attacker's behavioral regime persists and can switch within an episode, and each action combines an operation with state-dependent arguments whose feasible values change over time. We capture both with a hidden Markov model whose latent state is the active regime and whose regime-conditioned action law is defined on a feasibility-masked tree of executable actions. The same likelihood forms the next-action distribution and updates the regime belief once the action is seen, and a partially observed prefix contributes its resolved local factors. Estimation separates into convex logistic fits that Baum-Welch reuses when regimes are unlabeled. We derive a reach-weighted nodewise KL expression for regime information, a sequence-wise log-loss bound for switching regime paths, and a uniform fallback guarantee. On the CAGE 2 cyber defense benchmark the filtered latent state is worth 0.8 nats per step, and after a controller switch the loss begins to fall in three steps against ten for a recurrent baseline.",
+      "published_date": "2026-11-05T18:37:07Z",
+      "updated_date": "2026-11-05T18:37:07Z",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.08445v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08445v1",
+      "evidence": {
+        "source_id": "arxiv:2611.08445",
+        "source_type": "arxiv",
+        "source_url": "https://arxiv.org/abs/2611.08445v1",
+        "publication_date": "2026-11-05T18:37:07Z",
+        "ingestion_timestamp": "2026-11-08T09:47:52.896545+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:52.896545+00:00",
+        "evidence_confidence": "PEER_REVIEWED",
+        "raw_payload_ref": "http://arxiv.org/abs/2611.08445v1"
+      }
+    }
+  ]
+}

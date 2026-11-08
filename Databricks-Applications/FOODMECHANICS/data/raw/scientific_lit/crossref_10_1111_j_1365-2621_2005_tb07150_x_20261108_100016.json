@@ -1,0 +1,41 @@
+{
+  "source_name": "scientific_lit",
+  "item_id": "crossref_10.1111_j.1365-2621.2005.tb07150.x",
+  "captured_at": "2026-11-08T10:00:16.391086+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.crossref.org/works/10.1111/j.1365-2621.2005.tb07150.x",
+    "payload": {
+      "status": "ok",
+      "message-type": "work",
+      "message": {
+        "DOI": "10.1111/j.1365-2621.2005.tb07150.x",
+        "title": [
+          "Protein stabilization of emulsions and foams"
+        ],
+        "author": [
+          {
+            "family": "Damodaran",
+            "given": "Srinivasan"
+          }
+        ],
+        "container-title": [
+          "Journal of Food Science"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2005
+            ]
+          ]
+        },
+        "volume": "70",
+        "issue": "3",
+        "page": "R54-R66",
+        "is-referenced-by-count": 890
+      }
+    },
+    "fetched_at": "2026-11-08T10:00:16.391080+00:00"
+  }
+}

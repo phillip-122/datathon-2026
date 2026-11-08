@@ -1,0 +1,22 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_ovalbumin",
+  "captured_at": "2026-11-08T10:57:52.875696+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": null,
+      "uniprot_id": "P01012",
+      "name": "Ovalbumin",
+      "iupac_name": "Egg white major serpin glycoprotein",
+      "formula": "Polypeptide (385 aa)",
+      "molecular_weight": 44500.0,
+      "classification": "STRUCTURAL_PROTEIN / FOAMING_AGENT",
+      "functional_role": "Accounts for 54% of egg white protein; uncoils mechanically at air-water interface to form cohesive viscoelastic network; heat denatures at 84.5°C.",
+      "solubility": "Freely soluble in neutral and mildly alkaline aqueous solutions",
+      "isoelectric_point": 4.5,
+      "denaturation_temp_c": 84.5,
+      "inchikey": "PROTEIN_OVALBUMIN_GALLUS"
+    }
+  }
+}

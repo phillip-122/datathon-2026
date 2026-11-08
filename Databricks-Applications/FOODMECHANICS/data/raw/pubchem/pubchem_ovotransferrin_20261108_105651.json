@@ -1,0 +1,22 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_ovotransferrin",
+  "captured_at": "2026-11-08T10:56:51.568304+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": null,
+      "uniprot_id": "P02789",
+      "name": "Ovotransferrin (Conalbumin)",
+      "iupac_name": "Iron-binding transferrin family glycoprotein",
+      "formula": "Polypeptide (686 aa)",
+      "molecular_weight": 76000.0,
+      "classification": "STRUCTURAL_PROTEIN / FOAMING_AGENT",
+      "functional_role": "Accounts for 12% of egg white; most heat-sensitive egg white protein; forms cross-linked network starting at 61°C.",
+      "solubility": "Soluble in water",
+      "isoelectric_point": 6.0,
+      "denaturation_temp_c": 61.0,
+      "inchikey": "PROTEIN_OVOTRANSFERRIN_GALLUS"
+    }
+  }
+}

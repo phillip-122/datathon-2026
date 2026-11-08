@@ -1,0 +1,22 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_beta_lactoglobulin",
+  "captured_at": "2026-11-08T13:57:44.049837+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": null,
+      "uniprot_id": "P02754",
+      "name": "Beta-Lactoglobulin",
+      "iupac_name": "Major bovine whey lipocalin protein",
+      "formula": "Polypeptide (162 aa dimer)",
+      "molecular_weight": 18367.0,
+      "classification": "STRUCTURAL_PROTEIN / EMULSIFIER",
+      "functional_role": "Dominant protein in whey (~50%); unfolds at 78°C exposing free Cys121 thiol group for disulfide cross-linking.",
+      "solubility": "High aqueous solubility across pH 2-9",
+      "isoelectric_point": 5.2,
+      "denaturation_temp_c": 78.0,
+      "inchikey": "PROTEIN_BETALACTOGLOBULIN_BOVINE"
+    }
+  }
+}

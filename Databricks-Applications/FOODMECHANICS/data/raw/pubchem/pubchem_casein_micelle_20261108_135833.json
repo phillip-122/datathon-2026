@@ -1,0 +1,22 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_casein_micelle",
+  "captured_at": "2026-11-08T13:58:33.822110+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": null,
+      "uniprot_id": "P02662_P02663_P02666_P02668",
+      "name": "Casein Micellar Complex (alpha-s1, alpha-s2, beta, kappa)",
+      "iupac_name": "Colloidal phosphoprotein calcium phosphate aggregate",
+      "formula": "Colloidal aggregate diameter 50-300 nm",
+      "molecular_weight": 250000000.0,
+      "classification": "COLLOIDAL_EMULSIFIER / BUFFER",
+      "functional_role": "Forms protective steric stabilization layer on homogenized milkfat globules; precipitates when pH reaches 4.6.",
+      "solubility": "Colloidal suspension; stable to boiling at neutral pH",
+      "isoelectric_point": 4.6,
+      "denaturation_temp_c": 140.0,
+      "inchikey": "COLLOID_CASEIN_MICELLE"
+    }
+  }
+}

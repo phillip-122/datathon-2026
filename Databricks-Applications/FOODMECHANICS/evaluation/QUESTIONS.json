@@ -1,0 +1,303 @@
+[
+  {
+    "id": "FM-EVAL-001",
+    "question": "Compare the nutritional composition of egg whites, whole milk, and heavy whipping cream on a standardized 100g basis.",
+    "category": "Nutritional Normalization",
+    "difficulty": "Easy",
+    "target_tables": ["workspace.foodmechanics_silver.ingredients", "workspace.foodmechanics_silver.nutritional_profiles"],
+    "expected_sql_keywords": ["JOIN", "WHERE", "is_100g_normalized = TRUE", "protein_g", "fat_total_g"],
+    "golden_sql": "SELECT i.common_name, np.serving_basis, np.calories_kcal, np.protein_g, np.fat_total_g, np.carbohydrates_g, np.water_g FROM workspace.foodmechanics_silver.ingredients i JOIN workspace.foodmechanics_silver.nutritional_profiles np ON i.ingredient_id = np.ingredient_id WHERE np.is_100g_normalized = TRUE AND i.ingredient_id IN ('ING_EGG_WHITE', 'ING_WHOLE_MILK', 'ING_HEAVY_CREAM') ORDER BY np.protein_g DESC;",
+    "ground_truth_criteria": {
+      "egg_white_protein_per_100g": 10.9,
+      "egg_white_fat_per_100g": 0.17,
+      "heavy_cream_fat_per_100g": 36.1,
+      "heavy_cream_protein_per_100g": 2.1,
+      "whole_milk_protein_per_100g": 3.3,
+      "whole_milk_fat_per_100g": 3.3
+    },
+    "semantic_distinctions": "Must NOT compare 1 cup of cream to 1 egg white. Comparing by volumetric portion introduces severe mass and density artifacts.",
+    "expected_explanation_elements": [
+      "Egg white is a concentrated protein-in-water solution (~88% water, ~11% protein, virtually zero lipid).",
+      "Heavy cream is a high-fat oil-in-water emulsion (~36% fat, ~2% protein, ~58% water).",
+      "Whole milk is a balanced emulsion (~88% water, ~3.3% protein, ~3.3% fat)."
+    ]
+  },
+  {
+    "id": "FM-EVAL-002",
+    "question": "What molecular properties make egg whites uniquely suited for rapid foam formation and overrun?",
+    "category": "Foam Physics & Mechanisms",
+    "difficulty": "Medium",
+    "target_tables": ["workspace.foodmechanics_silver.ingredients", "workspace.foodmechanics_silver.functional_properties", "workspace.foodmechanics_silver.chemical_compounds"],
+    "expected_sql_keywords": ["JOIN", "molecular_weight_kda", "denaturation_temp_c", "Foam Formation", "overrun"],
+    "golden_sql": "SELECT c.compound_name, c.molecular_weight_kda, c.isoelectric_point_pi, c.denaturation_temp_c, c.functional_role, fp.quantitative_value AS overrun_percent FROM workspace.foodmechanics_silver.ingredients i JOIN workspace.foodmechanics_silver.functional_properties fp ON i.ingredient_id = fp.ingredient_id JOIN workspace.foodmechanics_silver.chemical_compounds c ON fp.compound_id = c.compound_id WHERE i.ingredient_id = 'ING_EGG_WHITE' AND fp.property_category = 'Foam Formation' ORDER BY c.molecular_weight_kda ASC;",
+    "ground_truth_criteria": {
+      "key_proteins": ["Ovalbumin", "Ovotransferrin (Conalbumin)", "Ovomucin"],
+      "measured_overrun_range": "600% - 900%",
+      "rapid_adsorption_agent": "Ovotransferrin and globulins (lower molecular weight, surface flexible)",
+      "structural_gel_agent": "Ovomucin (high molecular weight fibrous glycoprotein)"
+    },
+    "semantic_distinctions": "Distinguish foaming capacity (overrun/volume, driven by fast diffusion of smaller globular proteins) from foam stability (drainage resistance, driven by ovomucin viscosity and interfacial crosslinking).",
+    "expected_explanation_elements": [
+      "Globular proteins unfold at the air-water interface during shear.",
+      "Hydrophobic groups orient toward the air phase; hydrophilic groups orient toward the water phase.",
+      "Forms a continuous viscoelastic cohesive interfacial film preventing bubble coalescence."
+    ]
+  },
+  {
+    "id": "FM-EVAL-003",
+    "question": "Explain the difference in stabilization mechanisms between fat-stabilized foam (whipped cream) and protein-stabilized foam (meringue).",
+    "category": "Foam Physics & Mechanisms",
+    "difficulty": "Hard",
+    "target_tables": ["workspace.foodmechanics_silver.mechanism_relationships", "workspace.foodmechanics_silver.food_mechanisms", "workspace.foodmechanics_silver.ingredients"],
+    "expected_sql_keywords": ["JOIN", "MECH_FAT_PARTIAL_COALESCENCE", "MECH_PROTEIN_DENATURATION_INTERFACE", "relationship_type"],
+    "golden_sql": "SELECT i.common_name, m.mechanism_name, m.mechanism_class, m.primary_stabilizing_agent, m.structural_outcome, m.temperature_sensitivity, mr.relationship_type, mr.impact_summary FROM workspace.foodmechanics_silver.mechanism_relationships mr JOIN workspace.foodmechanics_silver.ingredients i ON mr.ingredient_id = i.ingredient_id JOIN workspace.foodmechanics_silver.food_mechanisms m ON mr.mechanism_id = m.mechanism_id WHERE i.ingredient_id IN ('ING_EGG_WHITE', 'ING_HEAVY_CREAM') ORDER BY i.ingredient_id;",
+    "ground_truth_criteria": {
+      "meringue_mechanism": "Interfacial protein denaturation and cohesive viscoelastic film formation",
+      "cream_mechanism": "Partial coalescence of solid fat globules forming a 3D structural skeleton around bubbles",
+      "temperature_dependence_cream": "Requires chilled temperatures (4-8°C) so fat remains partially crystalline",
+      "temperature_dependence_egg": "Can be whipped at room temperature (20°C); thermal baking sets the protein gel"
+    },
+    "semantic_distinctions": "In cream, fat IS the structural stabilizer. In egg white foam, free fat is an interfacial DESTABILIZER that destroys bubbles.",
+    "expected_explanation_elements": [
+      "Cream requires crystalline fat platelets to pierce adjoining globule membranes during whipping, creating a rigid network.",
+      "Meringue relies on unfolded ovalbumin, lysozyme, and ovomucin creating surface elasticity without any fat skeleton."
+    ]
+  },
+  {
+    "id": "FM-EVAL-004",
+    "question": "Why does free lipid or egg yolk contaminate and collapse egg white foam, while fat is essential to whipped cream?",
+    "category": "Foam Physics & Mechanisms",
+    "difficulty": "Hard",
+    "target_tables": ["workspace.foodmechanics_silver.mechanism_relationships", "workspace.foodmechanics_silver.food_mechanisms", "workspace.foodmechanics_silver.ingredients"],
+    "expected_sql_keywords": ["DESTABILIZES", "MECH_LIPID_INTERFERENCE_PROTEIN_FOAM", "impact_summary"],
+    "golden_sql": "SELECT i.common_name, m.mechanism_name, mr.relationship_type, mr.impact_summary, m.description FROM workspace.foodmechanics_silver.mechanism_relationships mr JOIN workspace.foodmechanics_silver.food_mechanisms m ON mr.mechanism_id = m.mechanism_id JOIN workspace.foodmechanics_silver.ingredients i ON mr.ingredient_id = i.ingredient_id WHERE mr.relationship_type = 'DESTABILIZES' OR m.mechanism_id = 'MECH_LIPID_INTERFERENCE_PROTEIN_FOAM';",
+    "ground_truth_criteria": {
+      "lipid_action_on_protein": "Spreads over air-water interface faster than proteins, displacing viscoelastic protein films without providing mechanical cohesion",
+      "result_in_egg_foam": "Premature lamella rupture and bubble collapse",
+      "contrast_with_cream": "In cream, lipids are contained in discrete globular membranes that partially coalesce into a protective matrix at low temperatures"
+    },
+    "semantic_distinctions": "Free lipid spreading vs discrete membrane-bound fat globule aggregation.",
+    "expected_explanation_elements": [
+      "Triglycerides have low surface tension and high mobility.",
+      "Displaced protein films lose dilatational elasticity.",
+      "Even 0.1% yolk lipid reduces egg white overrun by more than 70%."
+    ]
+  },
+  {
+    "id": "FM-EVAL-005",
+    "question": "What mechanisms and hydrocolloid stabilizers prevent foam drainage, and what is their empirical drainage half-life?",
+    "category": "Rheology & Stabilizers",
+    "difficulty": "Medium",
+    "target_tables": ["workspace.foodmechanics_silver.functional_properties", "workspace.foodmechanics_silver.ingredients", "workspace.foodmechanics_silver.food_mechanisms"],
+    "expected_sql_keywords": ["JOIN", "MECH_DRAINAGE_RETARDATION_VISCOSITY", "drainage_half_life_min", "quantitative_value", "Foam Stability"],
+    "golden_sql": "SELECT i.common_name, i.category, fp.property_name, fp.quantitative_value AS drainage_half_life_min, fp.unit_of_measure, fp.test_conditions, m.mechanism_name, m.structural_outcome FROM workspace.foodmechanics_silver.ingredients i JOIN workspace.foodmechanics_silver.functional_properties fp ON i.ingredient_id = fp.ingredient_id JOIN workspace.foodmechanics_silver.mechanism_relationships mr ON i.ingredient_id = mr.ingredient_id JOIN workspace.foodmechanics_silver.food_mechanisms m ON mr.mechanism_id = m.mechanism_id WHERE fp.property_category = 'Foam Stability' AND m.mechanism_id = 'MECH_DRAINAGE_RETARDATION_VISCOSITY' ORDER BY fp.quantitative_value DESC;",
+    "ground_truth_criteria": {
+      "xanthan_drainage_t_half": ">= 180 minutes at 0.5% concentration",
+      "egg_white_baseline_t_half": "40 - 65 minutes without added stabilizers",
+      "viscosity_mechanism": "Steric hindrance and high zero-shear viscosity retarding liquid drainage through Plateau borders (Stokes' Law)"
+    },
+    "semantic_distinctions": "Distinguish thermodynamic bubble stabilization (preventing coalescence) from kinetic drainage retardation (slowing gravity syneresis via continuous-phase viscosity).",
+    "expected_explanation_elements": [
+      "Stokes' law dictates drainage velocity is inversely proportional to liquid viscosity.",
+      "Xanthan gum forms an entangled polymer mesh in the aqueous lamellae.",
+      "Prevents thinning of liquid films between air bubbles."
+    ]
+  },
+  {
+    "id": "FM-EVAL-006",
+    "question": "What happens nutritionally and structurally if egg white is replaced with skim milk and xanthan gum in an aerated dessert?",
+    "category": "Ingredient Substitution",
+    "difficulty": "Complex",
+    "target_tables": ["workspace.foodmechanics_silver.ingredients", "workspace.foodmechanics_silver.nutritional_profiles", "workspace.foodmechanics_silver.functional_properties"],
+    "expected_sql_keywords": ["WITH", "UNION ALL", "ING_EGG_WHITE", "ING_SKIM_MILK", "ING_XANTHAN_GUM", "is_100g_normalized"],
+    "golden_sql": "WITH baseline AS (SELECT i.ingredient_id, i.common_name, np.protein_g, np.fat_total_g, np.carbohydrates_g, np.calories_kcal, MAX(CASE WHEN fp.property_category = 'Foam Formation' THEN fp.quantitative_value END) AS overrun_pct, MAX(CASE WHEN fp.property_category = 'Foam Stability' THEN fp.quantitative_value END) AS drainage_t_half FROM workspace.foodmechanics_silver.ingredients i JOIN workspace.foodmechanics_silver.nutritional_profiles np ON i.ingredient_id = np.ingredient_id AND np.is_100g_normalized = TRUE LEFT JOIN workspace.foodmechanics_silver.functional_properties fp ON i.ingredient_id = fp.ingredient_id WHERE i.ingredient_id IN ('ING_EGG_WHITE', 'ING_SKIM_MILK', 'ING_XANTHAN_GUM') GROUP BY i.ingredient_id, i.common_name, np.protein_g, np.fat_total_g, np.carbohydrates_g, np.calories_kcal) SELECT 'Egg White' AS system, protein_g, fat_total_g, carbohydrates_g, calories_kcal, overrun_pct, drainage_t_half FROM baseline WHERE ingredient_id = 'ING_EGG_WHITE' UNION ALL SELECT 'Skim Milk (99.5%) + Xanthan (0.5%)' AS system, ROUND((m.protein_g * 0.995) + (x.protein_g * 0.005), 2), ROUND((m.fat_total_g * 0.995) + (x.fat_total_g * 0.005), 2), ROUND((m.carbohydrates_g * 0.995) + (x.carbohydrates_g * 0.005), 2), ROUND((m.calories_kcal * 0.995) + (x.calories_kcal * 0.005), 1), ROUND(m.overrun_pct * 0.65, 1), ROUND(x.drainage_t_half * 1.15, 1) FROM (SELECT * FROM baseline WHERE ingredient_id = 'ING_SKIM_MILK') m CROSS JOIN (SELECT * FROM baseline WHERE ingredient_id = 'ING_XANTHAN_GUM') x;",
+    "ground_truth_criteria": {
+      "nutritional_shift": "Protein drops from ~10.9g to ~3.4g per 100g (~68% reduction); carbohydrates rise due to lactose in milk (~5g/100g); calories drop slightly or remain comparable (~50 kcal vs ~37 kcal)",
+      "structural_shift": "Overrun is significantly lower (skim milk + xanthan reaches ~250-400% vs 800% for egg white); drainage stability is maintained or improved via xanthan viscosity; heat-setting ability is lost (cannot bake into rigid meringue)"
+    },
+    "semantic_distinctions": "A substitution may match room-temperature stability (drainage) without matching baking coagulability (thermal denaturation).",
+    "expected_explanation_elements": [
+      "Milk proteins (casein micelles) lack the rapid surface expansion of ovalbumin.",
+      "Xanthan gum compensates for drainage by thickening water, but cannot form covalent disulfide bridges upon heating."
+    ]
+  },
+  {
+    "id": "FM-EVAL-007",
+    "question": "Which ingredients contain proteins with measured foam overrun exceeding 400%?",
+    "category": "Ingredient Functional Screening",
+    "difficulty": "Medium",
+    "target_tables": ["workspace.foodmechanics_silver.ingredients", "workspace.foodmechanics_silver.functional_properties", "workspace.foodmechanics_silver.chemical_compounds"],
+    "expected_sql_keywords": ["JOIN", "Foam Formation", ">= 400", "quantitative_value", "overrun"],
+    "golden_sql": "SELECT i.common_name, c.compound_name AS active_protein, fp.property_name, fp.quantitative_value AS overrun_percent, fp.unit_of_measure, fp.test_conditions FROM workspace.foodmechanics_silver.ingredients i JOIN workspace.foodmechanics_silver.functional_properties fp ON i.ingredient_id = fp.ingredient_id JOIN workspace.foodmechanics_silver.chemical_compounds c ON fp.compound_id = c.compound_id WHERE fp.property_category = 'Foam Formation' AND fp.quantitative_value >= 400.0 ORDER BY fp.quantitative_value DESC;",
+    "ground_truth_criteria": {
+      "top_ingredient": "Egg White (Albumen) with overrun ~850%",
+      "active_proteins": ["Ovalbumin", "Ovotransferrin (Conalbumin)"]
+    },
+    "semantic_distinctions": "Differentiate foaming overrun (volume increase during aeration) from emulsion capacity or gel firmness.",
+    "expected_explanation_elements": [
+      "High overrun requires high surface hydrophobicity and conformational flexibility to rapidly reduce interfacial tension at the newly created air boundary."
+    ]
+  },
+  {
+    "id": "FM-EVAL-008",
+    "question": "Trace the mechanism of interfacial protein denaturation back to its supporting peer-reviewed scientific publications and DOIs.",
+    "category": "Scientific Provenance",
+    "difficulty": "Medium",
+    "target_tables": ["workspace.foodmechanics_silver.food_mechanisms", "workspace.foodmechanics_silver.scientific_evidence"],
+    "expected_sql_keywords": ["JOIN", "MECH_PROTEIN_DENATURATION_INTERFACE", "doi_or_url", "publication_year", "authors"],
+    "golden_sql": "SELECT m.mechanism_name, m.mechanism_class, se.title, se.authors, se.journal_or_book, se.publication_year, se.doi_or_url, se.study_methodology, se.key_findings, se.evidence_confidence FROM workspace.foodmechanics_silver.food_mechanisms m JOIN workspace.foodmechanics_silver.scientific_evidence se ON m.mechanism_id = se.mechanism_id WHERE m.mechanism_id = 'MECH_PROTEIN_DENATURATION_INTERFACE' ORDER BY se.publication_year DESC;",
+    "ground_truth_criteria": {
+      "key_citation_author": "Foegeding, E. A. or Dickinson, E. or Belitz, H.-D.",
+      "publication_venue": "Food Hydrocolloids or Journal of Agricultural and Food Chemistry or Food Chemistry",
+      "methodology": "Interfacial dilatational rheology and drop shape tensiometry",
+      "doi_format": "Valid DOI link starting with 10."
+    },
+    "semantic_distinctions": "Citing peer-reviewed journal papers versus general culinary rules of thumb.",
+    "expected_explanation_elements": [
+      "Studies quantify the elastic storage modulus of the protein layer at the air-water boundary.",
+      "Confirms irreversible mechanical unfolding during shearing."
+    ]
+  },
+  {
+    "id": "FM-EVAL-009",
+    "question": "What peer-reviewed evidence demonstrates that partial coalescence of fat globules stabilizes dairy foams?",
+    "category": "Scientific Provenance",
+    "difficulty": "Medium",
+    "target_tables": ["workspace.foodmechanics_silver.food_mechanisms", "workspace.foodmechanics_silver.scientific_evidence"],
+    "expected_sql_keywords": ["JOIN", "MECH_FAT_PARTIAL_COALESCENCE", "doi_or_url", "journal_or_book"],
+    "golden_sql": "SELECT m.mechanism_name, se.title, se.authors, se.journal_or_book, se.publication_year, se.doi_or_url, se.key_findings, se.study_methodology FROM workspace.foodmechanics_silver.food_mechanisms m JOIN workspace.foodmechanics_silver.scientific_evidence se ON m.mechanism_id = se.mechanism_id WHERE m.mechanism_id = 'MECH_FAT_PARTIAL_COALESCENCE';",
+    "ground_truth_criteria": {
+      "cited_researchers": "Walstra, P. or Goff, H. D. or Fredrick, E.",
+      "key_finding": "Solid fat crystal platelets protruding from milk fat globules pierce neighboring membranes, forming an interconnected network at low temperatures (4-8°C)"
+    },
+    "semantic_distinctions": "Complete coalescence produces bulk butter/liquid oil (catastrophic foam collapse); partial coalescence creates a rigid structural scaffolding.",
+    "expected_explanation_elements": [
+      "Temperature must remain below triglyceride melting points (~15-20°C).",
+      "Partial coalescence provides high yield stress and stiffness to whipped cream."
+    ]
+  },
+  {
+    "id": "FM-EVAL-010",
+    "question": "How does cooking temperature affect the structural properties of egg white proteins, and at what temperatures do ovalbumin and ovotransferrin denature?",
+    "category": "Food Chemistry & Thermodynamics",
+    "difficulty": "Medium",
+    "target_tables": ["workspace.foodmechanics_silver.chemical_compounds"],
+    "expected_sql_keywords": ["denaturation_temp_c", "CMP_OVALBUMIN", "CMP_OVOTRANSFERRIN", "molecular_weight_kda"],
+    "golden_sql": "SELECT compound_id, compound_name, compound_class, molecular_weight_kda, denaturation_temp_c, functional_role FROM workspace.foodmechanics_silver.chemical_compounds WHERE compound_id IN ('CMP_OVALBUMIN', 'CMP_OVOTRANSFERRIN', 'CMP_OVOMUCIN') ORDER BY denaturation_temp_c ASC;",
+    "ground_truth_criteria": {
+      "ovotransferrin_denaturation_temp": "61.0°C - 65.0°C",
+      "ovalbumin_denaturation_temp": "84.0°C - 84.5°C",
+      "functional_significance": "Ovotransferrin coagulates first, initiating foam setting; ovalbumin provides final rigid crumb structure during baking at >80°C"
+    },
+    "semantic_distinctions": "Ovalbumin is resistant to thermal denaturation at room temp and requires baking heat to fully crosslink, whereas mechanical shear unfolds it at the air interface.",
+    "expected_explanation_elements": [
+      "Thermal denaturation exposes free sulfhydryl (-SH) groups that form covalent disulfide (-S-S-) crosslinks.",
+      "Transforms a transient wet foam into a solid porous meringue matrix."
+    ]
+  },
+  {
+    "id": "FM-EVAL-011",
+    "question": "Compare the recipe-level macronutrient density and calories per 100g of classic meringue against traditional whipped cream.",
+    "category": "Recipe Formulation",
+    "difficulty": "Hard",
+    "target_tables": ["workspace.foodmechanics_silver.recipes", "workspace.foodmechanics_silver.recipe_ingredients", "workspace.foodmechanics_silver.nutritional_profiles"],
+    "expected_sql_keywords": ["JOIN", "GROUP BY", "calories_per_100g", "protein_per_100g", "fat_per_100g", "SUM"],
+    "golden_sql": "SELECT r.recipe_name, ROUND(SUM(ri.quantity_g), 1) AS batch_mass_g, ROUND((SUM(ri.quantity_g * (np.calories_kcal / 100.0)) / SUM(ri.quantity_g)) * 100, 1) AS calories_per_100g, ROUND((SUM(ri.quantity_g * (np.protein_g / 100.0)) / SUM(ri.quantity_g)) * 100, 2) AS protein_per_100g, ROUND((SUM(ri.quantity_g * (np.fat_total_g / 100.0)) / SUM(ri.quantity_g)) * 100, 2) AS fat_per_100g, ROUND((SUM(ri.quantity_g * (np.carbohydrates_g / 100.0)) / SUM(ri.quantity_g)) * 100, 2) AS carbs_per_100g FROM workspace.foodmechanics_silver.recipes r JOIN workspace.foodmechanics_silver.recipe_ingredients ri ON r.recipe_id = ri.recipe_id JOIN workspace.foodmechanics_silver.nutritional_profiles np ON ri.ingredient_id = np.ingredient_id AND np.is_100g_normalized = TRUE WHERE r.recipe_id IN ('RCP_CLASSIC_MERINGUE', 'RCP_WHIPPED_CREAM_TOPPING') GROUP BY r.recipe_id, r.recipe_name ORDER BY calories_per_100g DESC;",
+    "ground_truth_criteria": {
+      "whipped_cream_calories_per_100g": "300 - 360 kcal/100g (dominated by fat ~32-36%)",
+      "meringue_calories_per_100g": "200 - 240 kcal/100g (dominated by sucrose carbs ~50%, fat ~0.1%, protein ~4-5%)",
+      "fat_difference": "Whipped cream is >30g fat/100g; meringue has <0.2g fat/100g"
+    },
+    "semantic_distinctions": "Meringue is virtually fat-free but carb-dense due to added sucrose; whipped cream is fat-dense with minimal carbohydrate.",
+    "expected_explanation_elements": [
+      "Formulation macros reflect the physical stabilization agents: lipid network vs sugar-stabilized protein lamellae."
+    ]
+  },
+  {
+    "id": "FM-EVAL-012",
+    "question": "Which food science mechanisms or interactions in our database have limited evidence or are classified as untested hypotheses?",
+    "category": "Evidence Gaps",
+    "difficulty": "Hard",
+    "target_tables": ["workspace.foodmechanics_silver.food_mechanisms", "workspace.foodmechanics_silver.scientific_evidence", "workspace.foodmechanics_silver.mechanism_relationships"],
+    "expected_sql_keywords": ["LEFT JOIN", "COUNT", "GROUP BY", "is_hypothesized = TRUE", "scientific_grounding_status"],
+    "golden_sql": "SELECT m.mechanism_id, m.mechanism_name, m.evidence_confidence, COUNT(se.evidence_id) AS citations_count, COUNT(CASE WHEN mr.is_hypothesized = TRUE THEN 1 END) AS hypotheses_count, CASE WHEN COUNT(se.evidence_id) = 0 THEN 'NO_EVIDENCE' WHEN COUNT(se.evidence_id) < 2 THEN 'LIMITED_EVIDENCE' ELSE 'ROBUST' END AS evidence_status FROM workspace.foodmechanics_silver.food_mechanisms m LEFT JOIN workspace.foodmechanics_silver.scientific_evidence se ON m.mechanism_id = se.mechanism_id LEFT JOIN workspace.foodmechanics_silver.mechanism_relationships mr ON m.mechanism_id = mr.mechanism_id GROUP BY m.mechanism_id, m.mechanism_name, m.evidence_confidence HAVING COUNT(se.evidence_id) < 2 OR COUNT(CASE WHEN mr.is_hypothesized = TRUE THEN 1 END) > 0;",
+    "ground_truth_criteria": {
+      "identified_gaps": "Highlights novel hydrocolloid synergy hypotheses or poorly documented culinary folk mechanisms (e.g. copper bowl ion stabilization nuances vs modern pasteurized whites)",
+      "adherence_to_rules": "Complies with Data Rules 5, 7, and 8: distinguishing hypothesis from established finding"
+    },
+    "semantic_distinctions": "Do not treat absence of evidence as evidence of absence; recommend specific experimental assays needed.",
+    "expected_explanation_elements": [
+      "Clarify what experimental data would be necessary to substantiate the hypothesis."
+    ]
+  },
+  {
+    "id": "FM-EVAL-013",
+    "question": "How does whipping temperature impact the drainage half-life and success rate of heavy cream foams in experimental trials?",
+    "category": "Processing & Physics",
+    "difficulty": "Medium",
+    "target_tables": ["workspace.foodmechanics_silver.food_experiments", "workspace.foodmechanics_silver.processing_methods", "workspace.foodmechanics_silver.ingredients"],
+    "expected_sql_keywords": ["JOIN", "temperature_range_c", "drainage_half_life_min", "is_successful", "overrun_percent"],
+    "golden_sql": "SELECT e.experiment_name, pm.process_name, pm.temperature_range_c, e.overrun_percent, e.drainage_half_life_min, e.bubble_size_mean_um, e.is_successful, e.conclusion FROM workspace.foodmechanics_silver.food_experiments e JOIN workspace.foodmechanics_silver.processing_methods pm ON e.process_id = pm.process_id JOIN workspace.foodmechanics_silver.ingredients i ON e.ingredient_id = i.ingredient_id WHERE i.ingredient_id = 'ING_HEAVY_CREAM' ORDER BY pm.temperature_range_c ASC;",
+    "ground_truth_criteria": {
+      "chilled_condition (4-8C)": "Successful: Overrun ~110%, high drainage stability (t1/2 > 240 min), small uniform bubbles (~18-25 um)",
+      "warm_condition (>20C)": "Failed: Catastrophic churn/phase separation into butter or thin runny emulsion, low overrun, rapid collapse"
+    },
+    "semantic_distinctions": "Liquid fat destroys foaming; semi-solid crystalline fat stabilizes foaming.",
+    "expected_explanation_elements": [
+      "At 4°C, solid fat content of milk fat is ~40-50%, optimal for partial coalescence.",
+      "At 22°C, solid fat content drops below 15%, causing complete coalescence or spreading."
+    ]
+  },
+  {
+    "id": "FM-EVAL-014",
+    "question": "Why does adding sugar early during egg white whipping delay foam expansion, while adding it late preserves overrun?",
+    "category": "Food Chemistry & Processing",
+    "difficulty": "Hard",
+    "target_tables": ["workspace.foodmechanics_silver.food_mechanisms", "workspace.foodmechanics_silver.mechanism_relationships", "workspace.foodmechanics_silver.chemical_compounds"],
+    "expected_sql_keywords": ["MECH_SUCROSE_DELAYED_WHIPPING", "CMP_SUCROSE", "DRIVES", "ENHANCES"],
+    "golden_sql": "SELECT m.mechanism_name, m.structural_outcome, mr.impact_summary, c.compound_name, se.key_findings FROM workspace.foodmechanics_silver.food_mechanisms m JOIN workspace.foodmechanics_silver.mechanism_relationships mr ON m.mechanism_id = mr.mechanism_id JOIN workspace.foodmechanics_silver.chemical_compounds c ON mr.compound_id = c.compound_id LEFT JOIN workspace.foodmechanics_silver.scientific_evidence se ON m.mechanism_id = se.mechanism_id WHERE c.compound_id = 'CMP_SUCROSE';",
+    "ground_truth_criteria": {
+      "early_addition_effect": "Sucrose binds water, increases bulk viscosity, and stabilizes native protein conformations, drastically slowing the rate of protein unfolding at the air interface; requires longer whipping time and lowers final overrun",
+      "late_addition_effect": "Added after initial foam network forms; sugar dissolves into lamellae, increases continuous-phase viscosity, prevents water evaporation, and stabilizes the formed foam against syneresis"
+    },
+    "semantic_distinctions": "Sucrose is an overrun inhibitor during initial aeration, but a stability enhancer in the mature foam.",
+    "expected_explanation_elements": [
+      "Timing of sucrose addition represents a kinetic trade-off between expansion rate and foam stability."
+    ]
+  },
+  {
+    "id": "FM-EVAL-015",
+    "question": "What is the measured overrun and stability of egg white foams across varying whipping durations?",
+    "category": "Processing & Physics",
+    "difficulty": "Medium",
+    "target_tables": ["workspace.foodmechanics_silver.food_experiments", "workspace.foodmechanics_silver.processing_methods"],
+    "expected_sql_keywords": ["JOIN", "duration_seconds", "overrun_percent", "drainage_half_life_min"],
+    "golden_sql": "SELECT e.experiment_id, e.experiment_name, pm.duration_seconds, e.overrun_percent, e.drainage_half_life_min, e.bubble_size_mean_um, e.sensory_texture_score, e.conclusion FROM workspace.foodmechanics_silver.food_experiments e JOIN workspace.foodmechanics_silver.processing_methods pm ON e.process_id = pm.process_id WHERE e.ingredient_id = 'ING_EGG_WHITE' ORDER BY pm.duration_seconds ASC;",
+    "ground_truth_criteria": {
+      "underwhipped": "Low overrun, large loose bubbles, poor drainage half-life",
+      "optimal (soft/stiff peaks)": "Max overrun (~800-900%), small uniform bubble diameter, high elasticity",
+      "overwhipped": "Coagulation into clumps, syneresis/graininess, bubble rupture due to protein over-aggregation"
+    },
+    "semantic_distinctions": "Excessive mechanical shear causes excessive protein insolubilization and clumping (grainy texture).",
+    "expected_explanation_elements": [
+      "Optimal whipping balances interfacial area with cohesive lamellar strength."
+    ]
+  },
+  {
+    "id": "FM-EVAL-016",
+    "question": "Query the Gold analytical view v_mechanism_evidence to list all documented mechanisms and their peer-reviewed literature citations.",
+    "category": "Scientific Provenance",
+    "difficulty": "Easy",
+    "target_tables": ["workspace.foodmechanics_gold.v_mechanism_evidence"],
+    "expected_sql_keywords": ["SELECT", "FROM workspace.foodmechanics_gold.v_mechanism_evidence", "ORDER BY"],
+    "golden_sql": "SELECT mechanism_name, mechanism_class, active_compound, ingredient_name, relationship_type, paper_title, authors, journal_name, publication_year, doi FROM workspace.foodmechanics_gold.v_mechanism_evidence ORDER BY mechanism_name, publication_year DESC;",
+    "ground_truth_criteria": {
+      "row_count": ">= 6 distinct mechanism-evidence links",
+      "required_columns": ["mechanism_name", "paper_title", "authors", "journal_name", "doi"]
+    },
+    "semantic_distinctions": "Demonstrates use of curated Gold analytical views for direct Genie agent consumption.",
+    "expected_explanation_elements": [
+      "Provides rapid end-to-end provenance traceability from culinary outcome to peer-reviewed science."
+    ]
+  }
+]

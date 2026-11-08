@@ -1,0 +1,38 @@
+{
+  "source_name": "openfoodfacts",
+  "item_id": "off_0852697001056",
+  "captured_at": "2026-11-08T10:00:16.388451+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://world.openfoodfacts.org/api/v2/product/0852697001056.json",
+    "payload": {
+      "code": "0852697001056",
+      "status": 1,
+      "status_verbose": "product found",
+      "product": {
+        "barcode": "0852697001056",
+        "product_name": "Barista Edition Oat Foamable Beverage",
+        "brand": "Oatly",
+        "ingredients_text": "Oat base (water, oats), low erucic acid rapeseed oil, dipotassium phosphate, calcium carbonate, tricalcium phosphate, sea salt, dicalcium phosphate.",
+        "additives_tags": [
+          "en:e340ii",
+          "en:e170",
+          "en:e341ii"
+        ],
+        "nova_group": 4,
+        "nutriments": {
+          "energy-kcal_100g": 59.0,
+          "proteins_100g": 1.0,
+          "fat_100g": 3.0,
+          "saturated-fat_100g": 0.3,
+          "carbohydrates_100g": 6.7,
+          "sugars_100g": 4.1,
+          "sodium_100g": 0.045,
+          "calcium_100g": 0.12
+        }
+      }
+    },
+    "fetched_at": "2026-11-08T10:00:16.388446+00:00"
+  }
+}

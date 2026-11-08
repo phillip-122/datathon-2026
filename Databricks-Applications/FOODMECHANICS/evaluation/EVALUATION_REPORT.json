@@ -1,0 +1,294 @@
+{
+  "timestamp": "2026-11-08T03:53:52Z",
+  "total_tests": 28,
+  "total_passed": 28,
+  "overall_percent": 100.0,
+  "example_queries": {
+    "suite": "EXAMPLE_QUERIES",
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "details": [
+      {
+        "index": 1,
+        "title": "QUERY 1: Standardized 100g Nutritional Comparison",
+        "status": "PASSED",
+        "duration_ms": 1.6151668969541788,
+        "row_count": 3,
+        "error": ""
+      },
+      {
+        "index": 2,
+        "title": "QUERY 2: Molecular Drivers of Egg White Foaming Capacity",
+        "status": "PASSED",
+        "duration_ms": 0.8547500474378467,
+        "row_count": 2,
+        "error": ""
+      },
+      {
+        "index": 3,
+        "title": "QUERY 3: Fat-Stabilized (Cream) vs. Protein-Stabilized (Meringue) Mechanisms",
+        "status": "PASSED",
+        "duration_ms": 1.2334169587120414,
+        "row_count": 3,
+        "error": ""
+      },
+      {
+        "index": 4,
+        "title": "QUERY 4: Mechanisms and Stabilizers Retarding Foam Drainage (Syneresis)",
+        "status": "PASSED",
+        "duration_ms": 0.9945000056177378,
+        "row_count": 1,
+        "error": ""
+      },
+      {
+        "index": 5,
+        "title": "QUERY 5: Substitution Trade-off: Egg White vs. Milk + Hydrocolloid (Xanthan Gum)",
+        "status": "PASSED",
+        "duration_ms": 2.3981250124052167,
+        "row_count": 2,
+        "error": ""
+      },
+      {
+        "index": 6,
+        "title": "QUERY 6: Protein Screening for High Overrun (> 400% Foaming Capacity)",
+        "status": "PASSED",
+        "duration_ms": 0.8799589704722166,
+        "row_count": 1,
+        "error": ""
+      },
+      {
+        "index": 7,
+        "title": "QUERY 7: Scientific Provenance Trace: Mechanisms to Literature and DOIs",
+        "status": "PASSED",
+        "duration_ms": 0.7483749650418758,
+        "row_count": 4,
+        "error": ""
+      },
+      {
+        "index": 8,
+        "title": "QUERY 8: Thermal Denaturation Thresholds & Heat-Induced Structural Transitions",
+        "status": "PASSED",
+        "duration_ms": 0.4532500170171261,
+        "row_count": 3,
+        "error": ""
+      },
+      {
+        "index": 9,
+        "title": "QUERY 9: Recipe-Level Formulation Nutritional Comparison (per 100g)",
+        "status": "PASSED",
+        "duration_ms": 1.809834036976099,
+        "row_count": 3,
+        "error": ""
+      },
+      {
+        "index": 10,
+        "title": "QUERY 10: Evidence Certainty & Research Gap Identification",
+        "status": "PASSED",
+        "duration_ms": 0.999417039565742,
+        "row_count": 5,
+        "error": ""
+      },
+      {
+        "index": 11,
+        "title": "QUERY 11: Experimental Processing Conditions vs. Overrun & Stability",
+        "status": "PASSED",
+        "duration_ms": 0.7073750020936131,
+        "row_count": 4,
+        "error": ""
+      },
+      {
+        "index": 12,
+        "title": "QUERY 12: Analytical Gold View Exploration: v_ingredient_comparisons",
+        "status": "PASSED",
+        "duration_ms": 2.261374960653484,
+        "row_count": 8,
+        "error": ""
+      }
+    ]
+  },
+  "benchmark_questions": {
+    "suite": "BENCHMARK_QUESTIONS",
+    "total": 16,
+    "passed": 16,
+    "failed": 0,
+    "details": [
+      {
+        "id": "FM-EVAL-001",
+        "question": "Compare the nutritional composition of egg whites, whole milk, and heavy whipping cream on a standardized 100g basis.",
+        "category": "Nutritional Normalization",
+        "difficulty": "Easy",
+        "status": "PASSED",
+        "duration_ms": 0.7090420695021749,
+        "row_count": 3,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-002",
+        "question": "What molecular properties make egg whites uniquely suited for rapid foam formation and overrun?",
+        "category": "Foam Physics & Mechanisms",
+        "difficulty": "Medium",
+        "status": "PASSED",
+        "duration_ms": 0.6402919534593821,
+        "row_count": 1,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-003",
+        "question": "Explain the difference in stabilization mechanisms between fat-stabilized foam (whipped cream) and protein-stabilized foam (meringue).",
+        "category": "Foam Physics & Mechanisms",
+        "difficulty": "Hard",
+        "status": "PASSED",
+        "duration_ms": 0.8880000095814466,
+        "row_count": 3,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-004",
+        "question": "Why does free lipid or egg yolk contaminate and collapse egg white foam, while fat is essential to whipped cream?",
+        "category": "Foam Physics & Mechanisms",
+        "difficulty": "Hard",
+        "status": "PASSED",
+        "duration_ms": 0.7031250279396772,
+        "row_count": 1,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-005",
+        "question": "What mechanisms and hydrocolloid stabilizers prevent foam drainage, and what is their empirical drainage half-life?",
+        "category": "Rheology & Stabilizers",
+        "difficulty": "Medium",
+        "status": "PASSED",
+        "duration_ms": 0.9780410910025239,
+        "row_count": 1,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-006",
+        "question": "What happens nutritionally and structurally if egg white is replaced with skim milk and xanthan gum in an aerated dessert?",
+        "category": "Ingredient Substitution",
+        "difficulty": "Complex",
+        "status": "PASSED",
+        "duration_ms": 2.3147090105339885,
+        "row_count": 2,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-007",
+        "question": "Which ingredients contain proteins with measured foam overrun exceeding 400%?",
+        "category": "Ingredient Functional Screening",
+        "difficulty": "Medium",
+        "status": "PASSED",
+        "duration_ms": 0.7882079808041453,
+        "row_count": 1,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-008",
+        "question": "Trace the mechanism of interfacial protein denaturation back to its supporting peer-reviewed scientific publications and DOIs.",
+        "category": "Scientific Provenance",
+        "difficulty": "Medium",
+        "status": "PASSED",
+        "duration_ms": 0.5487080197781324,
+        "row_count": 2,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-009",
+        "question": "What peer-reviewed evidence demonstrates that partial coalescence of fat globules stabilizes dairy foams?",
+        "category": "Scientific Provenance",
+        "difficulty": "Medium",
+        "status": "PASSED",
+        "duration_ms": 0.4421669291332364,
+        "row_count": 1,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-010",
+        "question": "How does cooking temperature affect the structural properties of egg white proteins, and at what temperatures do ovalbumin and ovotransferrin denature?",
+        "category": "Food Chemistry & Thermodynamics",
+        "difficulty": "Medium",
+        "status": "PASSED",
+        "duration_ms": 0.2825409173965454,
+        "row_count": 3,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-011",
+        "question": "Compare the recipe-level macronutrient density and calories per 100g of classic meringue against traditional whipped cream.",
+        "category": "Recipe Formulation",
+        "difficulty": "Hard",
+        "status": "PASSED",
+        "duration_ms": 1.353000057861209,
+        "row_count": 2,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-012",
+        "question": "Which food science mechanisms or interactions in our database have limited evidence or are classified as untested hypotheses?",
+        "category": "Evidence Gaps",
+        "difficulty": "Hard",
+        "status": "PASSED",
+        "duration_ms": 0.8948750328272581,
+        "row_count": 4,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-013",
+        "question": "How does whipping temperature impact the drainage half-life and success rate of heavy cream foams in experimental trials?",
+        "category": "Processing & Physics",
+        "difficulty": "Medium",
+        "status": "PASSED",
+        "duration_ms": 0.7474590092897415,
+        "row_count": 2,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-014",
+        "question": "Why does adding sugar early during egg white whipping delay foam expansion, while adding it late preserves overrun?",
+        "category": "Food Chemistry & Processing",
+        "difficulty": "Hard",
+        "status": "PASSED",
+        "duration_ms": 0.7403329946100712,
+        "row_count": 1,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-015",
+        "question": "What is the measured overrun and stability of egg white foams across varying whipping durations?",
+        "category": "Processing & Physics",
+        "difficulty": "Medium",
+        "status": "PASSED",
+        "duration_ms": 0.5204579792916775,
+        "row_count": 1,
+        "notes": [],
+        "error": ""
+      },
+      {
+        "id": "FM-EVAL-016",
+        "question": "Query the Gold analytical view v_mechanism_evidence to list all documented mechanisms and their peer-reviewed literature citations.",
+        "category": "Scientific Provenance",
+        "difficulty": "Easy",
+        "status": "PASSED",
+        "duration_ms": 1.1259170714765787,
+        "row_count": 6,
+        "notes": [],
+        "error": ""
+      }
+    ]
+  }
+}

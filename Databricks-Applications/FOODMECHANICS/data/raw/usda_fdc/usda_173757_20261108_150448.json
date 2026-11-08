@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_173757",
+  "captured_at": "2026-11-08T15:04:48.512350+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/173757",
+    "payload": {
+      "fdcId": 173757,
+      "description": "Chickpea cooking broth / aquafaba liquid",
+      "foodCategory": "Legumes and Legume Products",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 1.15
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 0.12
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 18.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T15:04:48.512345+00:00"
+  }
+}

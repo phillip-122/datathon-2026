@@ -1,0 +1,41 @@
+{
+  "source_name": "scientific_lit",
+  "item_id": "crossref_10.1016_S0927-7765(99)00042-9",
+  "captured_at": "2026-11-08T11:10:40.123074+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.crossref.org/works/10.1016/S0927-7765(99)00042-9",
+    "payload": {
+      "status": "ok",
+      "message-type": "work",
+      "message": {
+        "DOI": "10.1016/S0927-7765(99)00042-9",
+        "title": [
+          "Adsorbed protein layers at fluid interfaces: interactions, structure and surface rheology"
+        ],
+        "author": [
+          {
+            "family": "Dickinson",
+            "given": "Eric"
+          }
+        ],
+        "container-title": [
+          "Colloids and Surfaces B: Biointerfaces"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1999
+            ]
+          ]
+        },
+        "volume": "15",
+        "issue": "2",
+        "page": "161-176",
+        "is-referenced-by-count": 680
+      }
+    },
+    "fetched_at": "2026-11-08T11:10:40.123067+00:00"
+  }
+}

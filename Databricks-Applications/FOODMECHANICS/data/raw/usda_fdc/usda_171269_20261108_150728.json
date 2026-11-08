@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_171269",
+  "captured_at": "2026-11-08T15:07:28.713886+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/171269",
+    "payload": {
+      "fdcId": 171269,
+      "description": "Milk, nonfat, fluid, with added vitamin A and vitamin D",
+      "foodCategory": "Dairy and Egg Products",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 3.37
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 0.08
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 34.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T15:07:28.713877+00:00"
+  }
+}

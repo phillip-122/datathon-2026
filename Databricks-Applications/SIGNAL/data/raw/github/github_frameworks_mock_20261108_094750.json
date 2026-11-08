@@ -1,0 +1,449 @@
+{
+  "metadata": {
+    "source_type": "github",
+    "collection_timestamp": "2026-11-08T09:47:50.271659+00:00",
+    "mode": "mock",
+    "record_count": 9,
+    "query_parameters": {
+      "repos": [
+        "langchain-ai/langgraph",
+        "crewAIInc/crewAI",
+        "microsoft/autogen",
+        "vllm-project/vllm",
+        "ollama/ollama",
+        "run-llama/llama_index",
+        "huggingface/smolagents",
+        "stanfordnlp/dspy",
+        "jxnl/instructor"
+      ],
+      "fetch_releases": true,
+      "limit": 9
+    },
+    "collector_version": "1.0.0"
+  },
+  "records": [
+    {
+      "source_id": "github:langchain-ai/langgraph",
+      "repo_slug": "langchain-ai/langgraph",
+      "name": "langgraph",
+      "full_name": "langchain-ai/langgraph",
+      "owner": "langchain-ai",
+      "framework_category": "Agent Orchestration & State Graphs",
+      "description": "Build resilient language agents as graphs. Native persistence, human-in-the-loop, streaming, and multi-agent workflows.",
+      "html_url": "https://github.com/langchain-ai/langgraph",
+      "stars_count": 18950,
+      "forks_count": 2580,
+      "open_issues_count": 310,
+      "license": "MIT",
+      "topics": [
+        "agents",
+        "langchain",
+        "state-machine",
+        "multi-agent",
+        "human-in-the-loop",
+        "llm"
+      ],
+      "created_at": "2024-01-16T15:00:00Z",
+      "updated_at": "2025-01-24T18:40:00Z",
+      "latest_release": {
+        "tag_name": "v0.2.74",
+        "name": "v0.2.74 - Enhanced Subgraph Streaming & Dynamic Interrupts",
+        "published_at": "2025-01-20T19:22:00Z",
+        "html_url": "https://github.com/langchain-ai/langgraph/releases/tag/v0.2.74",
+        "body_snippet": "Adds support for structured streaming across nested subgraphs and simplifies dynamic breakpoints."
+      },
+      "supported_protocols": [
+        "Model Context Protocol (MCP)",
+        "OpenAI Tool Calling",
+        "LangSmith Tracing"
+      ],
+      "primary_language": "Python",
+      "evidence": {
+        "source_id": "github:langchain-ai/langgraph",
+        "source_type": "github",
+        "source_url": "https://github.com/langchain-ai/langgraph",
+        "publication_date": "2025-01-20T19:22:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271647+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271647+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "langchain-ai/langgraph"
+      }
+    },
+    {
+      "source_id": "github:crewAIInc/crewAI",
+      "repo_slug": "crewAIInc/crewAI",
+      "name": "crewAI",
+      "full_name": "crewAIInc/crewAI",
+      "owner": "crewAIInc",
+      "framework_category": "Role-Playing Autonomous Multi-Agent Teams",
+      "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly to tackle complex tasks.",
+      "html_url": "https://github.com/crewAIInc/crewAI",
+      "stars_count": 31400,
+      "forks_count": 4200,
+      "open_issues_count": 285,
+      "license": "MIT",
+      "topics": [
+        "agents",
+        "ai-agents",
+        "crewai",
+        "collaboration",
+        "automation",
+        "multi-agent-systems"
+      ],
+      "created_at": "2023-11-23T20:00:00Z",
+      "updated_at": "2025-01-24T14:10:00Z",
+      "latest_release": {
+        "tag_name": "v0.105.0",
+        "name": "v0.105.0 - Hierarchical Process Telemetry & Memory Embeddings",
+        "published_at": "2025-01-18T16:45:00Z",
+        "html_url": "https://github.com/crewAIInc/crewAI/releases/tag/v0.105.0",
+        "body_snippet": "Introduces persistent contextual memory vectors and distributed task delegation across agent crews."
+      },
+      "supported_protocols": [
+        "OpenAI API",
+        "Anthropic Claude",
+        "Ollama",
+        "CrewAI Flow"
+      ],
+      "primary_language": "Python",
+      "evidence": {
+        "source_id": "github:crewAIInc/crewAI",
+        "source_type": "github",
+        "source_url": "https://github.com/crewAIInc/crewAI",
+        "publication_date": "2025-01-18T16:45:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271650+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271650+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "crewAIInc/crewAI"
+      }
+    },
+    {
+      "source_id": "github:microsoft/autogen",
+      "repo_slug": "microsoft/autogen",
+      "name": "autogen",
+      "full_name": "microsoft/autogen",
+      "owner": "microsoft",
+      "framework_category": "Multi-Agent Conversation & Agentic AI",
+      "description": "A programming framework for agentic AI. Next-generation AutoGen 0.4 architecture providing event-driven, scalable multi-agent applications.",
+      "html_url": "https://github.com/microsoft/autogen",
+      "stars_count": 38700,
+      "forks_count": 5580,
+      "open_issues_count": 420,
+      "license": "CC-BY-4.0",
+      "topics": [
+        "agents",
+        "autogen",
+        "multi-agent",
+        "conversational-ai",
+        "microsoft-research"
+      ],
+      "created_at": "2023-08-18T10:00:00Z",
+      "updated_at": "2025-01-24T20:15:00Z",
+      "latest_release": {
+        "tag_name": "v0.4.7",
+        "name": "AutoGen 0.4.7 Core Architecture Overhaul",
+        "published_at": "2025-01-22T21:00:00Z",
+        "html_url": "https://github.com/microsoft/autogen/releases/tag/v0.4.7",
+        "body_snippet": "Major release introducing asynchronous actor model, clean event bus, and declarative studio configuration."
+      },
+      "supported_protocols": [
+        "OpenAI Assistants API",
+        "Semantic Kernel",
+        "Docker Code Execution Sandbox"
+      ],
+      "primary_language": "Python",
+      "evidence": {
+        "source_id": "github:microsoft/autogen",
+        "source_type": "github",
+        "source_url": "https://github.com/microsoft/autogen",
+        "publication_date": "2025-01-22T21:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271651+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271651+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "microsoft/autogen"
+      }
+    },
+    {
+      "source_id": "github:vllm-project/vllm",
+      "repo_slug": "vllm-project/vllm",
+      "name": "vllm",
+      "full_name": "vllm-project/vllm",
+      "owner": "vllm-project",
+      "framework_category": "High-Throughput LLM Serving & Inference",
+      "description": "A high-throughput and memory-efficient inference and serving engine for LLMs. Features PagedAttention, continuous batching, chunked prefill, and FP8/AWQ quantization.",
+      "html_url": "https://github.com/vllm-project/vllm",
+      "stars_count": 42500,
+      "forks_count": 6800,
+      "open_issues_count": 890,
+      "license": "Apache-2.0",
+      "topics": [
+        "llm-serving",
+        "inference",
+        "paged-attention",
+        "cuda",
+        "vllm",
+        "deepseek-r1-serving"
+      ],
+      "created_at": "2023-04-20T12:00:00Z",
+      "updated_at": "2025-01-25T01:30:00Z",
+      "latest_release": {
+        "tag_name": "v0.7.3",
+        "name": "v0.7.3 - Native DeepSeek-R1 / V3 Multi-Head Latent Attention & FlashAttention-3",
+        "published_at": "2025-01-23T12:00:00Z",
+        "html_url": "https://github.com/vllm-project/vllm/releases/tag/v0.7.3",
+        "body_snippet": "Optimized MLA kernels for DeepSeek 671B MoE serving, Hopper FP8 support, and speculative decoding."
+      },
+      "supported_protocols": [
+        "OpenAI Compatible REST API",
+        "gRPC",
+        "Triton Server Backend"
+      ],
+      "primary_language": "Python/C++",
+      "evidence": {
+        "source_id": "github:vllm-project/vllm",
+        "source_type": "github",
+        "source_url": "https://github.com/vllm-project/vllm",
+        "publication_date": "2025-01-23T12:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271652+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271652+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "vllm-project/vllm"
+      }
+    },
+    {
+      "source_id": "github:ollama/ollama",
+      "repo_slug": "ollama/ollama",
+      "name": "ollama",
+      "full_name": "ollama/ollama",
+      "owner": "ollama",
+      "framework_category": "Local LLM Runtime & Package Manager",
+      "description": "Get up and running with Llama 3.3, DeepSeek-R1, Mistral, and other large language models locally on macOS, Linux, and Windows.",
+      "html_url": "https://github.com/ollama/ollama",
+      "stars_count": 118000,
+      "forks_count": 10500,
+      "open_issues_count": 520,
+      "license": "MIT",
+      "topics": [
+        "local-ai",
+        "llama",
+        "deepseek-r1",
+        "ollama",
+        "macos",
+        "cuda",
+        "rocm"
+      ],
+      "created_at": "2023-07-07T08:00:00Z",
+      "updated_at": "2025-01-24T23:50:00Z",
+      "latest_release": {
+        "tag_name": "v0.5.7",
+        "name": "v0.5.7 - DeepSeek-R1 Distill Models & Extended Context",
+        "published_at": "2025-01-22T18:00:00Z",
+        "html_url": "https://github.com/ollama/ollama/releases/tag/v0.5.7",
+        "body_snippet": "Adds one-click run for deepseek-r1:1.5b, 7b, 8b, 14b, 32b, 70b with automated GGUF quantization."
+      },
+      "supported_protocols": [
+        "Ollama REST API",
+        "OpenAI Compatible Endpoint"
+      ],
+      "primary_language": "Go",
+      "evidence": {
+        "source_id": "github:ollama/ollama",
+        "source_type": "github",
+        "source_url": "https://github.com/ollama/ollama",
+        "publication_date": "2025-01-22T18:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271654+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271654+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "ollama/ollama"
+      }
+    },
+    {
+      "source_id": "github:run-llama/llama_index",
+      "repo_slug": "run-llama/llama_index",
+      "name": "llama_index",
+      "full_name": "run-llama/llama_index",
+      "owner": "run-llama",
+      "framework_category": "Context Augmentation & RAG Framework",
+      "description": "LlamaIndex is a data framework for your LLM applications. Provides data connectors, document ingestion, query engines, and agent workflows.",
+      "html_url": "https://github.com/run-llama/llama_index",
+      "stars_count": 39200,
+      "forks_count": 5400,
+      "open_issues_count": 480,
+      "license": "MIT",
+      "topics": [
+        "rag",
+        "llm",
+        "knowledge-graphs",
+        "agents",
+        "vector-search",
+        "llamaindex"
+      ],
+      "created_at": "2022-11-04T16:00:00Z",
+      "updated_at": "2025-01-24T17:15:00Z",
+      "latest_release": {
+        "tag_name": "v0.12.12",
+        "name": "v0.12.12 - Workflows Engine & Event-Driven Multimodal RAG",
+        "published_at": "2025-01-19T20:30:00Z",
+        "html_url": "https://github.com/run-llama/llama_index/releases/tag/v0.12.12",
+        "body_snippet": "Adds native async Workflows engine replacing legacy DAG pipelines, with integrated OpenTelemetry spans."
+      },
+      "supported_protocols": [
+        "LlamaHub Connectors",
+        "OpenAI API",
+        "HuggingFace Datasets"
+      ],
+      "primary_language": "Python",
+      "evidence": {
+        "source_id": "github:run-llama/llama_index",
+        "source_type": "github",
+        "source_url": "https://github.com/run-llama/llama_index",
+        "publication_date": "2025-01-19T20:30:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271655+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271655+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "run-llama/llama_index"
+      }
+    },
+    {
+      "source_id": "github:huggingface/smolagents",
+      "repo_slug": "huggingface/smolagents",
+      "name": "smolagents",
+      "full_name": "huggingface/smolagents",
+      "owner": "huggingface",
+      "framework_category": "Code-First Lightweight Agent Framework",
+      "description": "A bare-bones library for building agents in plain Python code actions rather than JSON tool-calling envelopes.",
+      "html_url": "https://github.com/huggingface/smolagents",
+      "stars_count": 14200,
+      "forks_count": 1150,
+      "open_issues_count": 92,
+      "license": "Apache-2.0",
+      "topics": [
+        "code-agents",
+        "smolagents",
+        "python",
+        "huggingface",
+        "llm-agents"
+      ],
+      "created_at": "2024-12-01T12:00:00Z",
+      "updated_at": "2025-01-24T19:00:00Z",
+      "latest_release": {
+        "tag_name": "v1.5.0",
+        "name": "v1.5.0 - Multi-Step Code Execution Sandbox & DuckDuckGo Tool",
+        "published_at": "2025-01-16T15:00:00Z",
+        "html_url": "https://github.com/huggingface/smolagents/releases/tag/v1.5.0",
+        "body_snippet": "Executes complex tool calling as executable Python programs, drastically reducing token overhead."
+      },
+      "supported_protocols": [
+        "Hugging Face Hub",
+        "E2B Code Sandbox"
+      ],
+      "primary_language": "Python",
+      "evidence": {
+        "source_id": "github:huggingface/smolagents",
+        "source_type": "github",
+        "source_url": "https://github.com/huggingface/smolagents",
+        "publication_date": "2025-01-16T15:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271655+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271655+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "huggingface/smolagents"
+      }
+    },
+    {
+      "source_id": "github:stanfordnlp/dspy",
+      "repo_slug": "stanfordnlp/dspy",
+      "name": "dspy",
+      "full_name": "stanfordnlp/dspy",
+      "owner": "stanfordnlp",
+      "framework_category": "Prompt Optimization & Algorithmic Compilation",
+      "description": "DSPy: Programming—not prompting—Foundation Models. Replaces brittle hand-written prompts with composable modules and automated optimizers.",
+      "html_url": "https://github.com/stanfordnlp/dspy",
+      "stars_count": 21800,
+      "forks_count": 1950,
+      "open_issues_count": 170,
+      "license": "MIT",
+      "topics": [
+        "dspy",
+        "prompt-optimization",
+        "nlp",
+        "llm-programming",
+        "stanford"
+      ],
+      "created_at": "2023-01-15T09:00:00Z",
+      "updated_at": "2025-01-23T22:00:00Z",
+      "latest_release": {
+        "tag_name": "v2.5.43",
+        "name": "v2.5.43 - MIPROv2 Optimizer and Multi-Task Signatures",
+        "published_at": "2025-01-14T11:00:00Z",
+        "html_url": "https://github.com/stanfordnlp/dspy/releases/tag/v2.5.43",
+        "body_snippet": "Introduces MIPROv2 Bayesian prompt and few-shot instruction optimization with 3x faster convergence."
+      },
+      "supported_protocols": [
+        "LiteLLM",
+        "OpenAI",
+        "Anthropic",
+        "vLLM"
+      ],
+      "primary_language": "Python",
+      "evidence": {
+        "source_id": "github:stanfordnlp/dspy",
+        "source_type": "github",
+        "source_url": "https://github.com/stanfordnlp/dspy",
+        "publication_date": "2025-01-14T11:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271657+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271657+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "stanfordnlp/dspy"
+      }
+    },
+    {
+      "source_id": "github:jxnl/instructor",
+      "repo_slug": "jxnl/instructor",
+      "name": "instructor",
+      "full_name": "jxnl/instructor",
+      "owner": "jxnl",
+      "framework_category": "Structured LLM Outputs & Pydantic Validation",
+      "description": "Structured outputs powered by Pydantic for LLMs. Simple, transparent, and user-friendly validation and retries.",
+      "html_url": "https://github.com/jxnl/instructor",
+      "stars_count": 8900,
+      "forks_count": 780,
+      "open_issues_count": 65,
+      "license": "MIT",
+      "topics": [
+        "structured-outputs",
+        "pydantic",
+        "instructor",
+        "function-calling",
+        "json-schema"
+      ],
+      "created_at": "2023-06-25T14:00:00Z",
+      "updated_at": "2025-01-22T16:00:00Z",
+      "latest_release": {
+        "tag_name": "v1.7.2",
+        "name": "v1.7.2 - Gemini 2.0 & DeepSeek-R1 Schema Adapters",
+        "published_at": "2025-01-21T18:00:00Z",
+        "html_url": "https://github.com/jxnl/instructor/releases/tag/v1.7.2",
+        "body_snippet": "Streamlined parsing of thinking blocks from reasoning models before validating target Pydantic schemas."
+      },
+      "supported_protocols": [
+        "Pydantic v2",
+        "OpenAI",
+        "Anthropic",
+        "Gemini",
+        "Cohere",
+        "Groq"
+      ],
+      "primary_language": "Python",
+      "evidence": {
+        "source_id": "github:jxnl/instructor",
+        "source_type": "github",
+        "source_url": "https://github.com/jxnl/instructor",
+        "publication_date": "2025-01-21T18:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271658+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271658+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "jxnl/instructor"
+      }
+    }
+  ]
+}

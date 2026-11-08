@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_172186",
+  "captured_at": "2026-11-08T09:48:10.372065+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/172186",
+    "payload": {
+      "fdcId": 172186,
+      "description": "Egg, white, dried, powder, glucose reduced",
+      "foodCategory": "Dairy and Egg Products",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 82.4
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 0.04
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 382.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T09:48:10.372056+00:00"
+  }
+}

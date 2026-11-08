@@ -1,0 +1,82 @@
+[
+  {
+    "source_id": "pubchem:cid_ovalbumin",
+    "source_type": "pubchem",
+    "compound_id": "cmp_ovalbumin",
+    "name": "Ovalbumin",
+    "molecular_formula": "C2037H3209N537O629S15",
+    "pubchem_cid": "53477714",
+    "compound_class": "globular_protein",
+    "role_in_food": "Major egg albumen phosphoglycoprotein (54% of albumen protein, MW ~45 kDa). Undergoes rapid conformational change and denaturation under mechanical shear at air-water interfaces, establishing a viscoelastic cohesive elastic film."
+  },
+  {
+    "source_id": "pubchem:cid_ovomucin",
+    "source_type": "pubchem",
+    "compound_id": "cmp_ovomucin",
+    "name": "Ovomucin",
+    "molecular_formula": "Polypeptide glycoprotein",
+    "pubchem_cid": "131954316",
+    "compound_class": "fibrous_glycoprotein",
+    "role_in_food": "High molecular weight insoluble fibrous glycoprotein (3.5% of egg albumen protein) that provides native structural thickness to thick egg white and maintains foam cell wall rigidity."
+  },
+  {
+    "source_id": "pubchem:cid_casein",
+    "source_type": "pubchem",
+    "compound_id": "cmp_casein_micelle",
+    "name": "Casein Micelle Complex (alpha-s1, alpha-s2, beta, kappa)",
+    "molecular_formula": "Colloidal phosphoprotein calcium phosphate complex",
+    "pubchem_cid": "16132398",
+    "compound_class": "phosphoprotein",
+    "role_in_food": "Colloidal aggregate of phosphorylated dairy proteins (80% of bovine milk protein). Sterically stabilized by kappa-casein 'hairy' brush layer; poor foam overrun compared to whey/egg proteins unless concentrated or acidified."
+  },
+  {
+    "source_id": "pubchem:cid_beta_lactoglobulin",
+    "source_type": "pubchem",
+    "compound_id": "cmp_beta_lactoglobulin",
+    "name": "Beta-Lactoglobulin",
+    "molecular_formula": "C841H1384N218O261S9",
+    "pubchem_cid": "71309852",
+    "compound_class": "whey_globular_protein",
+    "role_in_food": "Primary whey protein (50% of whey). Contains free thiol group (-SH) exposed during heat denaturation (>70°C) which crosslinks via disulfide exchange with kappa-casein, modifying foaming and gelling behavior."
+  },
+  {
+    "source_id": "pubchem:cid_5988",
+    "source_type": "pubchem",
+    "compound_id": "cmp_sucrose",
+    "name": "Sucrose (alpha-D-glucopyranosyl-(1->2)-beta-D-fructofuranoside)",
+    "molecular_formula": "C12H22O11",
+    "pubchem_cid": "5988",
+    "compound_class": "disaccharide",
+    "role_in_food": "Lowers water activity, increases bulk continuous phase liquid viscosity by orders of magnitude, slows lamella liquid drainage via Plateau borders, and protects native protein structure from premature aggregation."
+  },
+  {
+    "source_id": "pubchem:cid_23685335",
+    "source_type": "pubchem",
+    "compound_id": "cmp_tartaric_acid_salt",
+    "name": "Potassium Bitartrate (Cream of Tartar)",
+    "molecular_formula": "KC4H5O6",
+    "pubchem_cid": "23685335",
+    "compound_class": "organic_acid_salt",
+    "role_in_food": "Buffers albumen solution to pH ~6.8-7.2. Approaching the ovalbumin isoelectric point (pI 4.5-4.8) minimizes net negative surface charges, allowing closer protein-protein intermolecular association at bubble interfaces without collapse."
+  },
+  {
+    "source_id": "pubchem:cid_triacylglycerol",
+    "source_type": "pubchem",
+    "compound_id": "cmp_milk_fat_triglycerides",
+    "name": "Milk Fat Triacylglycerols",
+    "molecular_formula": "Glycerol tri-esters of C4-C18 fatty acids",
+    "pubchem_cid": "5460224",
+    "compound_class": "lipid_triglyceride",
+    "role_in_food": "At cold temperatures (<10°C), partially crystallized fat globules partially coalesce to form a continuous structural matrix that traps air bubbles. At room temperature (>25°C), liquid oil spreads on protein bubble films causing rapid foam collapse (antifoam bridging)."
+  },
+  {
+    "source_id": "pubchem:cid_gelatin_collagen",
+    "source_type": "pubchem",
+    "compound_id": "cmp_hydrolyzed_collagen",
+    "name": "Type A/B Gelatin Polypeptides",
+    "molecular_formula": "Gly-Pro-Hyp repeating polypeptides",
+    "pubchem_cid": "11953835",
+    "compound_class": "polypeptide_hydrocolloid",
+    "role_in_food": "Forms thermo-reversible physical triple-helical junction zones below 35°C, transforming liquid continuous lamellae into a semi-solid gel that completely arrests gravitational drainage."
+  }
+]

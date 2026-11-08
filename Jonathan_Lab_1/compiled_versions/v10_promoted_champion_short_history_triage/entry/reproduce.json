@@ -1,4 +1,11 @@
 {
-  "command": "python predict.py --model-dir . --data public --out submission.csv",
-  "output": "submission.csv"
+  "image": "python",
+  "command": [
+    "python",
+    "predict.py",
+    "--data",
+    "/data",
+    "--out",
+    "/output/submission.csv"
+  ]
 }

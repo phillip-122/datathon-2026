@@ -1,30 +1,74 @@
-# Candidate v10: Short History Subpopulation Triage Solution
+# TAMU Datathon 2026: House Edge Payout Forecaster (Active Champion V12)
 
-## Architecture & Scientific Blueprint
-Candidate v10 is the production embodiment of the Databricks subpopulation triage discoveries.
-It routes queries based on pre-cutoff history topology:
-- **Long History ($N \ge 192$ ticks pre-cutoff, $n_{\text{past}} > 100$):**
-  Uses the Active Champion `v8_routed` adaptive mixture pipeline.
-  - `stable`: $R = 0.5462$
-  - `drift`: $R = 0.5986$
-  - `shared_change`: $R = 0.4710$
-- **Short History (Topology $N = 64$ ticks pre-cutoff, $n_{\text{past}} \le 100$):**
-  Routes to the Databricks Triage Specialist (`models_v25` + hierarchical logit calibration):
-  1. **Priority 1 (Floor Bankroll Coupling in Last 40 Ticks):** Inverted-U peer payout curve for balanced and jackpot machines (peaking at ~330 coins, dropping in Q1 and Q4) and monotonically increasing curve for steady machines.
-  2. **Priority 2 (Jackpot Cold Streak Piecewise Hazard):** Corrects inverted linear hazard with piecewise suppression (-75% high payout probability when cold streak $\ge 9$ zeros).
-  3. **Priority 3 (Bayesian Small-Sample Shrinkage):** Empirical frequency shrinkage $\alpha = \frac{64}{64 + 150}$ pulling noisy small-sample histograms toward nominal stable base rates.
-  - Result: `short_history` error ratio drops from $0.6242$ down to **$0.6178$** (All-time best in the lab).
+## 1. Quickstart: How to Run on New Data (For Judges)
 
-## Contest Verification Metrics
-- **Full Score:** **38.5007 / 60 points** (Active Champion v8: 38.4611 pts, **+0.0396 gain**)
-- **Audit Gate Score:** **38.6048 / 60 points** (Active Champion v8: 38.4249 pts, **+0.1799 gain**)
-- **Tuning Score:** **38.4107 / 60 points**
-- **Loss Ratio:** **0.5584** (44.16% error reduction over baseline)
-- **Paired Bootstrap 95% Confidence Interval vs v8_routed:** **`[+0.1130, +0.2458]`** (100% strictly positive)
+To evaluate on unseen test data, run a single command from inside the unzipped archive directory:
 
-## Artifact & Container Integrity
-- **Offline Predictor:** `entry/predict.py`
-- **Reproduction Max Diff:** **0.0** (bit-for-bit exact)
-- **Execution Time:** **7.95 seconds** (< 60s limit)
-- **Submission SHA-256:** `d7cb86b1c4b6639e48752865040f10297459439bfccded4f53b70dbdb810272d`
-- **ZIP Package:** `submission_entry.zip` (32 MB)
+```bash
+python predict.py --data /path/to/data --out /path/to/submission.csv
+```
+
+### Parameter Specification
+- `--data`: Path to the input dataset directory. The script automatically handles all standard folder layouts:
+  - Docker container mount: `/data` (where `queries.csv` and `history.csv` are in `/data` or `/data/test`)
+  - Starter pack path: `.../research_environment/public`
+  - Direct folder containing `queries.csv` and `history.csv`
+- `--out`: Output destination path for the generated predictions CSV (e.g., `/output/submission.csv`).
+
+### Example Execution
+```bash
+python predict.py --data /data --out /output/submission.csv
+```
+
+### Official Starter Pack Verification
+To verify formatting and valid probabilities against the official contest checker:
+```bash
+python check_submission.py submission.csv --data /path/to/data
+```
+
+---
+
+## 2. Docker & Air-Gap Reproduction Specification (`reproduce.json`)
+
+```json
+{
+  "image": "python",
+  "command": [
+    "python",
+    "predict.py",
+    "--data",
+    "/data",
+    "--out",
+    "/output/submission.csv"
+  ]
+}
+```
+
+- **Execution Time:** **~5.4 seconds** for all 1,536 test queries (well within the 30-minute evaluation limit).
+- **RAM Usage:** **< 450 MB RAM** (limit is 16 GiB).
+- **Environment:** Standard Python 3.10+ / 3.11+ scientific stack (`numpy`, `scipy`, `scikit-learn`, `joblib`).
+- **Air-Gap Compliance:** 100% offline, zero network requests, self-contained pre-trained model weights.
+
+---
+
+## 3. Scientific Architecture & Mathematical Discovery
+
+Candidate V12 achieves **38.9081 Full Points** (Audit Gate: **39.1427 Points**, Loss Ratio $R = 0.5421$, representing a **45.79% error reduction** over baseline).
+
+The model unites temporal sequence modeling with verified physical data generator symmetries:
+1. **Physical Reel Simplex Invariant:** Multipliers $(p_2, p_5, p_{20})$ follow hardcoded physical reel constants with zero variance ($\sigma \le 10^{-16}$ across all targets):
+   - Steady: $(c_2, c_5, c_{20}) = (200/250, 49/250, 1/250)$
+   - Balanced: $(c_2, c_5, c_{20}) = (16/23, 6/23, 1/23)$
+   - Jackpot: $(c_2, c_5, c_{20}) = (7/19, 9/19, 3/19)$
+2. **Discrete 1x-Regime Mixture:** Payout ratio $p_1 / (p_2 + p_5 + p_{20})$ takes strictly two values per machine type ($\Delta \ln R = 1.3000$). V12 uses a regularized logistic classifier ($C=0.50$, fit strictly on the tuning fold) to predict regime probability $\pi$, softly averaging expected payout distributions without hard threshold penalties.
+3. **Temporal Sequence & Floor Bankroll Coupling:** Models 2-tick autoregressive n-grams ($y_{t-1}, y_{t-2}$), fast exponential recency decay ($hl = 2, 4$), peer-machine synchronized floor surges, and piecewise jackpot cold streak hazard suppression.
+
+---
+
+## 4. Verification Checksums
+
+| File | Size | SHA-256 Checksum |
+| :--- | :--- | :--- |
+| `submission.csv` | 200 KB | `a327727770292f29ee85b6e075c724dacafaa4a12bac380583e78437b0c7da12` |
+| `submission_entry.zip` | 31.8 MB | `a2394a65d8794209fe0484ddd45081529d2e5ac9b0eea5c7c6f32d1a84efb1b1` |
+| `validation_predictions.csv` | 200 KB | `b36c3a6e7e4d0f963b73eecf9f253d35f654eea6816ef36fe3fb57206f357341` |

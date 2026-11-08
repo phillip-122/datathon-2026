@@ -251,6 +251,60 @@
       "decision": "BENCHMARK",
       "notes": "Passed gates vs v5; conceded head-to-head to EXP-019.",
       "timestamp": "2026-11-08T00:52:00.000000"
+    },
+    {
+      "id": "EXP-025",
+      "hypothesis": "Short History Subpopulation Triage (Peer bankroll coupling + piecewise jackpot cold hazard + empirical Bayes shrinkage)",
+      "author": "Databricks Specialist / Engineering Team",
+      "tuning_points": 38.4107,
+      "audit_points": 38.6048,
+      "full_points": 38.5007,
+      "mean_loss_ratio": 0.5584,
+      "by_condition": {
+        "stable": 0.5462,
+        "short_history": 0.6178,
+        "drift": 0.5986,
+        "shared_change": 0.471
+      },
+      "decision": "CHAMPION",
+      "notes": "Promoted to Active Champion v10.",
+      "timestamp": "2026-11-08T02:40:00.000000"
+    },
+    {
+      "id": "EXP-027",
+      "hypothesis": "Physical Reel Simplex Invariant Projection (Exact Integer Multiplier Geometry 200:49:1, 16:6:1, 7:9:3)",
+      "author": "Parent Agent / Physical Reverse-Engineering",
+      "tuning_points": 38.6387,
+      "audit_points": 38.8745,
+      "full_points": 38.7474,
+      "mean_loss_ratio": 0.5544,
+      "by_condition": {
+        "stable": 0.54,
+        "short_history": 0.6007,
+        "drift": 0.589,
+        "shared_change": 0.4642
+      },
+      "decision": "BENCHMARK",
+      "notes": "Candidate v11. Exact algebraic projection onto Candidate v10.",
+      "timestamp": "2026-11-08T04:20:00.000000"
+    },
+    {
+      "id": "EXP-033",
+      "hypothesis": "Probabilistic 1x-Regime Mixture Inverter + Physical Reel Simplex Projection",
+      "author": "Primary Coordinator / Datathon Lab",
+      "tuning_points": 38.7035,
+      "audit_points": 39.1427,
+      "full_points": 38.9081,
+      "mean_loss_ratio": 0.5421,
+      "by_condition": {
+        "stable": 0.5269,
+        "short_history": 0.5918,
+        "drift": 0.5846,
+        "shared_change": 0.4651
+      },
+      "decision": "CHAMPION",
+      "notes": "Passed all gates. First model to cross 39 on Audit (39.1427). Promoted to ACTIVE CHAMPION v12 (FINAL SUBMISSION).",
+      "timestamp": "2026-11-08T05:44:00.000000"
     }
   ]
 }

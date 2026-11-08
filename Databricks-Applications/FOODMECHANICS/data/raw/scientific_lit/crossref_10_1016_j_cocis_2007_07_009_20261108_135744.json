@@ -1,0 +1,41 @@
+{
+  "source_name": "scientific_lit",
+  "item_id": "crossref_10.1016_j.cocis.2007.07.009",
+  "captured_at": "2026-11-08T13:57:44.051152+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.crossref.org/works/10.1016/j.cocis.2007.07.009",
+    "payload": {
+      "status": "ok",
+      "message-type": "work",
+      "message": {
+        "DOI": "10.1016/j.cocis.2007.07.009",
+        "title": [
+          "Stabilization of foams and emulsions by mixtures of surface active food components"
+        ],
+        "author": [
+          {
+            "family": "Murray",
+            "given": "Brent S."
+          }
+        ],
+        "container-title": [
+          "Current Opinion in Colloid & Interface Science"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2007
+            ]
+          ]
+        },
+        "volume": "12",
+        "issue": "4-5",
+        "page": "232-241",
+        "is-referenced-by-count": 410
+      }
+    },
+    "fetched_at": "2026-11-08T13:57:44.051146+00:00"
+  }
+}

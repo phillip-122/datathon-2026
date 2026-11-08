@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGNAL — AI Landscape Observatory // TAMU Datathon 2026</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* View switcher tabs */
+    .view-switcher-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 0 1.5rem;
+    }
+    .view-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .view-btn:hover {
+      border-color: var(--border-medium);
+      color: #fff;
+    }
+    .view-btn.active {
+      background: var(--bg-surface-elevated);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.15);
+    }
+
+    /* Pareto Frontier Panel */
+    .pareto-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin: 0 1.5rem 1.5rem 1.5rem;
+    }
+    .pareto-table-wrap {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-top: 12px;
+    }
+
+    /* Databricks Studio Modal */
+    .studio-modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    .studio-modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .studio-modal {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      width: 92%;
+      max-width: 1000px;
+      max-height: 88vh;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      overflow: hidden;
+      color: #c9d1d9;
+    }
+    .studio-header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .studio-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .sql-editor-box {
+      font-family: var(--font-mono);
+      background: #010409;
+      color: #58a6ff;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 12px 0;
+      font-size: 13px;
+      min-height: 80px;
+      border: 1px solid #30363d;
+      width: 100%;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Observatory Header -->
+  <header class="observatory-header">
+    <div class="header-top">
+      <div class="brand-block">
+        <div class="radar-logo">
+          <div class="radar-sweep"></div>
+          <div class="radar-core"></div>
+        </div>
+        <div class="brand-text">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <h1>SIGNAL</h1>
+            <span style="background:rgba(6,182,212,0.15); border:1px solid rgba(6,182,212,0.3); color:var(--accent-cyan); font-family:var(--font-mono); font-size:10px; font-weight:700; padding:2px 6px; border-radius:4px;">OBSERVATORY</span>
+            <span style="background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.3); color:#f59e0b; font-family:var(--font-mono); font-size:10px; font-weight:700; padding:2px 6px; border-radius:4px;">TAMU DATATHON 2026</span>
+          </div>
+          <p>Frontier Model Reasoning, Inference Runtime & Protocol Intelligence</p>
+        </div>
+      </div>
+
+      <div class="header-search-wrap">
+        <input type="text" class="search-input" id="globalSearchInput" placeholder="Search 26 models, 9 runtimes, 104 benchmark runs..." autocomplete="off">
+        <span class="search-badge">⌘K</span>
+      </div>
+
+      <div class="header-actions">
+        <!-- Databricks Governed Studio Trigger -->
+        <button onclick="openStudioModal()" class="genie-open-btn" style="background:rgba(6,182,212,0.12); border-color:var(--accent-cyan); color:var(--accent-cyan);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+          ⚡ Databricks Lakehouse & SQL Studio
+        </button>
+      </div>
+    </div>
+
+    <!-- Telemetry Ticker Strip -->
+    <div class="telemetry-strip" id="telemetryStrip">
+      <span class="telemetry-item"><span class="telemetry-tag">[INGESTION]</span> <strong id="telIngestion">Live Automated</strong></span>
+      <span class="telemetry-item"><span class="telemetry-tag">[ACTIVE MODELS]</span> <strong id="telModels">—</strong></span>
+      <span class="telemetry-item"><span class="telemetry-tag">[RUNTIMES & PROTOCOLS]</span> <strong id="telTools">—</strong></span>
+      <span class="telemetry-item"><span class="telemetry-tag">[BENCHMARK EVALUATIONS]</span> <strong id="telEvals">—</strong></span>
+      <span class="telemetry-item"><span class="telemetry-tag">[SPARK SYNTHETIC RUNS]</span> <strong id="telSynthetic" style="color:var(--accent-amber);">—</strong></span>
+      <span class="telemetry-item"><span class="telemetry-tag">[DATABRICKS SERVERLESS]</span> <strong id="telEngine" style="color:var(--accent-emerald);">Connecting...</strong></span>
+    </div>
+  </header>
+
+  <!-- VIEW SWITCHER BAR -->
+  <div class="view-switcher-bar">
+    <button class="view-btn active" id="viewBtnIngest" onclick="switchSignalView('ingest')">
+      <span>⚡</span> Market Shock Simulator ("What-If Release")
+    </button>
+    <button class="view-btn" id="viewBtnAdvisor" onclick="switchSignalView('advisor')">
+      <span>🎯</span> Enterprise Cascade Advisor
+    </button>
+    <button class="view-btn" id="viewBtnObservatory" onclick="switchSignalView('observatory')">
+      <span>🔭</span> Frontier Observatory & Battleground
+    </button>
+    <button class="view-btn" id="viewBtnMedallion" onclick="switchSignalView('medallion')">
+      <span>🏛️</span> Databricks Lakehouse & DLT Governance
+    </button>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- VIEW 1: LIVE INGESTION & IMPACT RADIUS SIMULATOR ("WHAT-IF")   -->
+  <!-- ============================================================== -->
+  <div id="ingestView" style="padding: 0 1.5rem 1.5rem 1.5rem;">
+    <div class="pareto-panel">
+      
+      <!-- Panel Header -->
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;">
+        <div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-family:var(--font-mono); font-size:10px; color:var(--accent-cyan); text-transform:uppercase; font-weight:700;">DYNAMIC AI GRAPH SIMULATOR</span>
+            <span style="font-family:var(--font-mono); font-size:10px; background:rgba(6,182,212,0.1); border:1px solid var(--accent-cyan); color:var(--accent-cyan); padding:2px 6px; border-radius:4px; font-weight:700;">
+              POWERED BY DATABRICKS SERVERLESS
+            </span>
+          </div>
+          <h2 style="font-size:1.35rem; color:#fff; margin:6px 0 2px 0;">
+            Research Ingestion & Ecosystem Ripple Radius Tracer
+          </h2>
+          <p style="font-size:12px; color:var(--text-secondary); margin:0;">
+            Simulate or ingest any new model release or research breakthrough into the Databricks AI Graph. Recalculates the Pareto Frontier in real-time and traverses dependency edges to evaluate downstream impacts on inference runtimes, quantizations, and competitor displacement.
+          </p>
+        </div>
+        <div id="ingest-status-pill" style="font-family:var(--font-mono); font-size:11px; background:rgba(16,185,129,0.1); border:1px solid var(--accent-emerald); color:var(--accent-emerald); padding:6px 12px; border-radius:6px; font-weight:700; white-space:nowrap;">
+          ● Graph Active (26 Models + 9 Runtimes)
+        </div>
+      </div>
+
+      <!-- Quick-Load Announcement Presets -->
+      <div style="margin-bottom:16px;">
+        <div style="font-family:var(--font-mono); font-size:10px; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:6px;">
+          1-Click Release Presets for Benchmark Evaluation:
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <button onclick="applyIngestPreset('deepseek_r2')" class="ctrl-btn" style="padding:6px 12px; font-size:11px;">
+            ⚡ DeepSeek-R2 Preview (671B MoE, $0.15/M, 65.2% SWE-bench)
+          </button>
+          <button onclick="applyIngestPreset('claude_37_sonnet')" class="ctrl-btn" style="padding:6px 12px; font-size:11px;">
+            ⚡ Claude 3.7 Sonnet (Hybrid Reasoning, $15.00/M, 70.3% SWE)
+          </button>
+          <button onclick="applyIngestPreset('llama4_scout')" class="ctrl-btn" style="padding:6px 12px; font-size:11px;">
+            ⚡ Llama-4-Scout (100B Open Weights, $0.35/M, 52.4% SWE)
+          </button>
+          <button onclick="applyIngestPreset('openai_o3_full')" class="ctrl-btn" style="padding:6px 12px; font-size:11px;">
+            ⚡ OpenAI o3 Full (Autonomous Reasoning, $12.00/M, 71.8% SWE)
+          </button>
+        </div>
+      </div>
+
+      <!-- Ingestion Split Grid -->
+      <div style="display:grid; grid-template-columns:360px 1fr; gap:20px;">
+        
+        <!-- Left: Model Release Configuration Form -->
+        <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-subtle); border-radius:8px; padding:18px;">
+          <h4 style="margin:0 0 14px 0; font-size:11px; text-transform:uppercase; color:var(--accent-cyan); font-family:var(--font-mono);">
+            1. Model Specifications & Benchmark Claims
+          </h4>
+
+          <div style="margin-bottom:10px;">
+            <label style="font-size:11px; font-weight:700; display:block; margin-bottom:4px; color:#c9d1d9;">Model Name:</label>
+            <input type="text" id="sim-model-name" value="DeepSeek-R2 Preview" style="width:100%; background:#010409; border:1px solid var(--border-medium); border-radius:4px; padding:8px; color:#fff; font-size:12px; box-sizing:border-box;">
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+            <div>
+              <label style="font-size:11px; font-weight:700; display:block; margin-bottom:4px; color:#c9d1d9;">Provider / Lab:</label>
+              <input type="text" id="sim-provider" value="DeepSeek AI" style="width:100%; background:#010409; border:1px solid var(--border-medium); border-radius:4px; padding:8px; color:#fff; font-size:12px; box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="font-size:11px; font-weight:700; display:block; margin-bottom:4px; color:#c9d1d9;">Architecture:</label>
+              <input type="text" id="sim-arch" value="MoE 671B / MLA v2" style="width:100%; background:#010409; border:1px solid var(--border-medium); border-radius:4px; padding:8px; color:#fff; font-size:12px; box-sizing:border-box;">
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+            <div>
+              <label style="font-size:11px; font-weight:700; display:block; margin-bottom:4px; color:#c9d1d9;">Parameters (B):</label>
+              <input type="number" id="sim-params" value="671" style="width:100%; background:#010409; border:1px solid var(--border-medium); border-radius:4px; padding:8px; color:#fff; font-size:12px; box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="font-size:11px; font-weight:700; display:block; margin-bottom:4px; color:#c9d1d9;">Context (k):</label>
+              <input type="number" id="sim-context" value="1000" style="width:100%; background:#010409; border:1px solid var(--border-medium); border-radius:4px; padding:8px; color:#fff; font-size:12px; box-sizing:border-box;">
+            </div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:4px;">
+              <label style="font-weight:700; color:#c9d1d9;">Output Pricing ($/1M tokens):</label>
+              <span id="sim-pricing-val" style="font-family:var(--font-mono); color:var(--accent-amber); font-weight:700;">$0.15</span>
+            </div>
+            <input type="range" id="sim-pricing" min="0.05" max="30.0" step="0.05" value="0.15" oninput="document.getElementById('sim-pricing-val').innerText = '$' + parseFloat(this.value).toFixed(2)" style="width:100%;">
+          </div>
+
+          <div style="margin-bottom:10px;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:4px;">
+              <label style="font-weight:700; color:#c9d1d9;">SWE-bench Verified (%):</label>
+              <span id="sim-swe-val" style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700;">65.2%</span>
+            </div>
+            <input type="range" id="sim-swe" min="20" max="95" step="0.1" value="65.2" oninput="document.getElementById('sim-swe-val').innerText = this.value + '%'" style="width:100%;">
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:4px;">
+              <label style="font-weight:700; color:#c9d1d9;">MATH-500 (%):</label>
+              <span id="sim-math-val" style="font-family:var(--font-mono); color:var(--accent-emerald); font-weight:700;">98.4%</span>
+            </div>
+            <input type="range" id="sim-math" min="40" max="100" step="0.1" value="98.4" oninput="document.getElementById('sim-math-val').innerText = this.value + '%'" style="width:100%;">
+          </div>
+
+          <button onclick="runIngestSimulation()" class="ctrl-btn" style="width:100%; background:var(--accent-cyan); color:#000; font-weight:700; border:none; padding:12px; font-size:13px; cursor:pointer; display:flex; justify-content:center; align-items:center; gap:8px;">
+            <span>⚡</span> Run Databricks Ingestion & Impact Analysis
+          </button>
+        </div>
+
+        <!-- Right: Ingestion Impact Results -->
+        <div id="ingest-results-container">
+          <div style="background:var(--bg-surface-elevated); border:1px dashed var(--border-subtle); border-radius:8px; padding:36px; text-align:center; color:var(--text-muted); font-size:13px;">
+            <div style="font-size:28px; margin-bottom:8px;">⚡</div>
+            Click <strong>"Run Databricks Ingestion & Impact Analysis"</strong> to evaluate Pareto Frontier displacement and traverse ecosystem dependency edges.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- VIEW 2: ENTERPRISE ARCHITECTURE ADVISOR                        -->
+  <!-- ============================================================== -->
+  <div id="advisorView" style="display:none; padding: 0 1.5rem 1.5rem 1.5rem;">
+    <div class="pareto-panel">
+      
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;">
+        <div>
+          <span style="font-family:var(--font-mono); font-size:10px; color:var(--accent-emerald); text-transform:uppercase; font-weight:700;">ENTERPRISE ARCHITECTURE ADVISOR</span>
+          <h2 style="font-size:1.35rem; color:#fff; margin:6px 0 2px 0;">LLM Deployment Cascade & Cost Optimizer</h2>
+          <p style="font-size:12px; color:var(--text-secondary); margin:0;">
+            Specify your enterprise monthly budget, token consumption, and reasoning accuracy thresholds. Databricks Serverless queries the full benchmark matrix to engineer an optimal dual-tier deployment cascade and calculate projected savings vs proprietary baselines.
+          </p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:360px 1fr; gap:20px;">
+        <!-- Left: Requirements Input -->
+        <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-subtle); border-radius:8px; padding:18px;">
+          <h4 style="margin:0 0 14px 0; font-size:11px; text-transform:uppercase; color:var(--accent-emerald); font-family:var(--font-mono);">
+            Enterprise Constraints
+          </h4>
+
+          <div style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:4px;">
+              <label style="font-weight:700; color:#c9d1d9;">Monthly LLM Budget ($):</label>
+              <span id="adv-budget-val" style="font-family:var(--font-mono); color:var(--accent-amber); font-weight:700;">$500</span>
+            </div>
+            <input type="range" id="adv-budget" min="50" max="5000" step="50" value="500" oninput="document.getElementById('adv-budget-val').innerText = '$' + this.value" style="width:100%;">
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:4px;">
+              <label style="font-weight:700; color:#c9d1d9;">Monthly Token Volume (Millions):</label>
+              <span id="adv-tokens-val" style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700;">50M</span>
+            </div>
+            <input type="range" id="adv-tokens" min="5" max="300" step="5" value="50" oninput="document.getElementById('adv-tokens-val').innerText = this.value + 'M'" style="width:100%;">
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:4px;">
+              <label style="font-weight:700; color:#c9d1d9;">Min SWE-bench Verified (%):</label>
+              <span id="adv-swe-val" style="font-family:var(--font-mono); color:var(--accent-emerald); font-weight:700;">40%</span>
+            </div>
+            <input type="range" id="adv-swe" min="20" max="70" step="1" value="40" oninput="document.getElementById('adv-swe-val').innerText = this.value + '%'" style="width:100%;">
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:4px;">
+              <label style="font-weight:700; color:#c9d1d9;">Min MATH-500 (%):</label>
+              <span id="adv-math-val" style="font-family:var(--font-mono); color:var(--accent-emerald); font-weight:700;">85%</span>
+            </div>
+            <input type="range" id="adv-math" min="50" max="98" step="1" value="85" oninput="document.getElementById('adv-math-val').innerText = this.value + '%'" style="width:100%;">
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:12px; color:#c9d1d9; cursor:pointer;">
+              <input type="checkbox" id="adv-open-weights"> Require Open Weights (Self-Hosted Privacy)
+            </label>
+          </div>
+
+          <button onclick="runAdvisorMatch()" class="ctrl-btn" style="width:100%; background:var(--accent-emerald); color:#000; font-weight:700; border:none; padding:12px; font-size:13px; cursor:pointer; display:flex; justify-content:center; align-items:center; gap:8px;">
+            <span>🎯</span> Match Optimal Architecture
+          </button>
+        </div>
+
+        <!-- Right: Advisor Recommendations -->
+        <div id="advisor-results-container">
+          <div style="background:var(--bg-surface-elevated); border:1px dashed var(--border-subtle); border-radius:8px; padding:36px; text-align:center; color:var(--text-muted); font-size:13px;">
+            Click <strong>"Match Optimal Architecture"</strong> to run multi-criteria optimization on Databricks Serverless.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- VIEW 3: HEAD-TO-HEAD BATTLEGROUND                              -->
+  <!-- ============================================================== -->
+  <div id="battleView" style="display:none; padding: 0 1.5rem 1.5rem 1.5rem;">
+    <div class="pareto-panel">
+      
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;">
+        <div>
+          <span style="font-family:var(--font-mono); font-size:10px; color:var(--accent-amber); text-transform:uppercase; font-weight:700;">HEAD-TO-HEAD ARCHITECTURAL ARENA</span>
+          <h2 style="font-size:1.35rem; color:#fff; margin:6px 0 2px 0;">Frontier Model Comparative Radar</h2>
+          <p style="font-size:12px; color:var(--text-secondary); margin:0;">
+            Direct side-by-side benchmark, cost, and architecture evaluation of any two models across the 26 tracked entities.
+          </p>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; align-items:center; margin-bottom:20px; background:var(--bg-surface-elevated); padding:16px; border-radius:8px; border:1px solid var(--border-subtle);">
+        <div style="flex:1;">
+          <label style="font-size:11px; font-weight:700; display:block; margin-bottom:4px; color:var(--accent-cyan);">Model A (Challenger):</label>
+          <select id="battle-model-a" style="width:100%; background:#010409; border:1px solid var(--border-medium); border-radius:4px; padding:8px; color:#fff; font-size:12px;">
+            <!-- Populated via JS -->
+          </select>
+        </div>
+
+        <div style="font-size:18px; font-weight:700; color:var(--text-muted); padding-top:16px;">VS</div>
+
+        <div style="flex:1;">
+          <label style="font-size:11px; font-weight:700; display:block; margin-bottom:4px; color:var(--accent-amber);">Model B (Benchmark):</label>
+          <select id="battle-model-b" style="width:100%; background:#010409; border:1px solid var(--border-medium); border-radius:4px; padding:8px; color:#fff; font-size:12px;">
+            <!-- Populated via JS -->
+          </select>
+        </div>
+
+        <div style="padding-top:16px;">
+          <button onclick="runHeadToHeadCompare()" class="ctrl-btn" style="background:var(--accent-amber); color:#000; font-weight:700; border:none; padding:10px 18px; font-size:12px;">
+            ⚔️ Compare Models
+          </button>
+        </div>
+      </div>
+
+      <div id="battle-results-container">
+        <!-- Rendered via JS -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAIN OBSERVATORY VIEWPORT -->
+  <main class="observatory-main" id="mainObservatoryView" style="display:none;">
+
+    <!-- UPPER SPLIT SECTION: RADAR + BENCHMARK MATRIX -->
+    <div class="split-observatory-grid">
+      
+      <!-- LEFT: ECOSYSTEM RELATIONSHIP RADAR -->
+      <section class="terminal-panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="panel-title-dot"></span>
+            Ecosystem Relationship Radar
+          </div>
+          <div class="panel-controls">
+            <button class="ctrl-btn active" data-graph-filter="all">All</button>
+            <button class="ctrl-btn" data-graph-filter="Model">Models</button>
+            <button class="ctrl-btn" data-graph-filter="Tool">Frameworks</button>
+            <button class="ctrl-btn" data-graph-filter="Research">Research</button>
+            <button class="ctrl-btn" id="resetGraphBtn">Reset</button>
+          </div>
+        </div>
+
+        <div class="graph-viewport" id="graphCanvasWrapper">
+          <svg id="ecosystemSvg"></svg>
+          
+          <!-- Node Inspector Overlay -->
+          <div class="graph-overlay-card" id="nodeDetailOverlay">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+              <div>
+                <div id="overlayType" style="font-family:var(--font-mono); font-size:10px; color:var(--accent-cyan); text-transform:uppercase; font-weight:700;"></div>
+                <div id="overlayTitle" style="font-size:14px; font-weight:700; color:#fff;"></div>
+              </div>
+              <button id="closeOverlayBtn" style="background:none; border:none; color:var(--text-muted); cursor:pointer;">✕</button>
+            </div>
+            <div id="overlayContent" style="font-size:11px; color:var(--text-secondary); margin-top:4px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: FRONTIER MODEL BENCHMARK MATRIX -->
+      <section class="terminal-panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="panel-title-dot" style="background:var(--accent-amber);"></span>
+            Frontier Model Benchmark Matrix
+          </div>
+          <div class="panel-controls" id="matrixFilterPills">
+            <button class="ctrl-btn active" id="btnFilterAll" onclick="filterMatrix('all', this)">All</button>
+            <button class="ctrl-btn" id="btnFilterReasoning" onclick="filterMatrix('reasoning', this)">Reasoning</button>
+            <button class="ctrl-btn" id="btnFilterOpen" onclick="filterMatrix('open', this)">Open Weights</button>
+            <button class="ctrl-btn" id="btnFilterCode" onclick="filterMatrix('code', this)">Coding</button>
+          </div>
+        </div>
+
+        <div class="matrix-viewport">
+          <table class="dense-table" id="comparisonTable">
+            <thead>
+              <tr id="matrixHeaderRow">
+                <th onclick="sortMatrix('model_name')" style="cursor:pointer;">Model ↕</th>
+                <th onclick="sortMatrix('architecture')" style="cursor:pointer;">Architecture ↕</th>
+                <th onclick="sortMatrix('swe_bench_verified')" style="cursor:pointer; color:var(--accent-cyan);">SWE-bench ↕</th>
+                <th onclick="sortMatrix('gpqa_diamond')" style="cursor:pointer;">GPQA ↕</th>
+                <th onclick="sortMatrix('math_500')" style="cursor:pointer; color:var(--accent-emerald);">MATH-500 ↕</th>
+                <th onclick="sortMatrix('pricing_output_per_m')" style="cursor:pointer; color:var(--accent-amber);">Cost $/M ↕</th>
+              </tr>
+            </thead>
+            <tbody id="matrixBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- LOWER SECTION: CHRONOLOGICAL INTELLIGENCE WIRE -->
+    <section class="terminal-panel" style="margin-top:1.5rem;">
+      <div class="panel-header">
+        <div class="panel-title">
+          <span class="panel-title-dot" style="background:var(--accent-emerald);"></span>
+          Chronological AI Intelligence Wire (Verified Developments)
+        </div>
+        <div class="panel-controls" id="categoryFilters">
+          <button class="ctrl-btn active" data-category="all">All Themes</button>
+          <button class="ctrl-btn" data-category="Frontier Models">Frontier Models</button>
+          <button class="ctrl-btn" data-category="Open Source Weights">Open Weights</button>
+          <button class="ctrl-btn" data-category="Inference Infrastructure">Infrastructure</button>
+          <button class="ctrl-btn" data-category="Agent Protocols">Protocols</button>
+        </div>
+      </div>
+
+      <div class="wire-stream" id="timelineList">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- PARETO EFFICIENCY FRONTIER VIEW                                -->
+  <!-- ============================================================== -->
+  <div id="paretoView" style="display:none;">
+    <div class="pareto-panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:12px;">
+        <div>
+          <span style="font-family:var(--font-mono); font-size:10px; color:var(--accent-cyan); text-transform:uppercase; font-weight:700;">EFFICIENCY FRONTIER DISRUPTION</span>
+          <h2 style="font-size:1.3rem; color:#fff; margin:4px 0 2px 0;">Reasoning Capability vs Output Pricing ($/1M Tokens)</h2>
+          <p style="font-size:12px; color:var(--text-secondary); margin:0;">
+            Demonstrating how DeepSeek-R1 ($2.19/M) and o3-mini ($4.40/M) disrupted the frontier Pareto curve relative to legacy models ($60/M).
+          </p>
+        </div>
+        <div style="font-family:var(--font-mono); font-size:11px; background:rgba(6,182,212,0.1); border:1px solid var(--accent-cyan); color:var(--accent-cyan); padding:6px 12px; border-radius:4px;">
+          Frontier Models Tracked: 26
+        </div>
+      </div>
+
+      <div class="pareto-table-wrap">
+        <table class="dense-table" style="width:100%;">
+          <thead>
+            <tr>
+              <th>Model Name</th>
+              <th>Provider</th>
+              <th>License</th>
+              <th>Output Cost / 1M</th>
+              <th>Tokens per $1</th>
+              <th>SWE-bench</th>
+              <th>GPQA Diamond</th>
+              <th>MATH-500</th>
+              <th>Reasoning Score</th>
+            </tr>
+          </thead>
+          <tbody id="paretoTableBody">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- DATABRICKS MEDALLION ARCHITECTURE VIEW                        -->
+  <!-- ============================================================== -->
+  <div id="medallionView" style="display:none; padding: 0 1.5rem 1.5rem 1.5rem;">
+    <div class="pareto-panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <div>
+          <span style="font-family:var(--font-mono); font-size:10px; color:var(--accent-amber); text-transform:uppercase; font-weight:700;">UNITY CATALOG MEDALLION PIPELINE</span>
+          <h2 style="font-size:1.3rem; color:#fff; margin:4px 0 2px 0;">Databricks Serverless Delta Lake Architecture</h2>
+          <p style="font-size:12px; color:var(--text-secondary); margin:0;">
+            Compute: <code>Databricks Serverless (Governed)</code> | Catalog: <code>workspace</code>
+          </p>
+        </div>
+        <button onclick="openStudioModal()" class="ctrl-btn" style="background:var(--accent-cyan); color:#000; font-weight:700; border:none; padding:6px 14px;">
+          Open SQL Studio
+        </button>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+        <!-- Bronze -->
+        <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); border-top:3px solid #b45309; padding:16px; border-radius:6px;">
+          <div style="font-family:var(--font-mono); font-size:10px; color:#b45309; text-transform:uppercase; font-weight:700;">BRONZE (RAW LANDING)</div>
+          <h4 style="color:#fff; margin:4px 0 6px 0;">workspace.signal_bronze</h4>
+          <p style="font-size:11px; color:var(--text-muted); line-height:1.4;">Unstructured ingestion from ArXiv API, Hugging Face model cards, and GitHub commit webhooks.</p>
+          <div style="font-family:var(--font-mono); font-size:10px; background:rgba(0,0,0,0.3); padding:8px; border-radius:4px; margin-top:8px;">
+            • bronze_arxiv_raw<br>• bronze_hf_cards_raw<br>• bronze_github_releases
+          </div>
+        </div>
+
+        <!-- Silver -->
+        <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); border-top:3px solid var(--accent-cyan); padding:16px; border-radius:6px;">
+          <div style="font-family:var(--font-mono); font-size:10px; color:var(--accent-cyan); text-transform:uppercase; font-weight:700;">SILVER (VALIDATED DELTA TABLES)</div>
+          <h4 style="color:#fff; margin:4px 0 6px 0;">workspace.signal_silver</h4>
+          <p style="font-size:11px; color:var(--text-muted); line-height:1.4;">Cleansed entity tables with methodology matching, foreign key relations, and evidence provenance.</p>
+          <div style="font-family:var(--font-mono); font-size:10px; background:rgba(0,0,0,0.3); padding:8px; border-radius:4px; margin-top:8px;">
+            • silver_models (26 rows)<br>• silver_tools (9 rows)<br>• silver_benchmarks (8 rows)<br>• silver_evaluations (104 rows)<br>• silver_developments (6 rows)
+          </div>
+        </div>
+
+        <!-- Gold -->
+        <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); border-top:3px solid var(--accent-emerald); padding:16px; border-radius:6px;">
+          <div style="font-family:var(--font-mono); font-size:10px; color:var(--accent-emerald); text-transform:uppercase; font-weight:700;">GOLD (ANALYTICAL & SYNTHETIC)</div>
+          <h4 style="color:#fff; margin:4px 0 6px 0;">workspace.signal_gold</h4>
+          <p style="font-size:11px; color:var(--text-muted); line-height:1.4;">Analytical matrix views and Spark SQL synthetic evaluation runs (195 Monte Carlo trials).</p>
+          <div style="font-family:var(--font-mono); font-size:10px; background:rgba(0,0,0,0.3); padding:8px; border-radius:4px; margin-top:8px;">
+            • v_model_comparisons (26 rows)<br>• v_recent_developments (6 rows)<br>• v_ecosystem_relationships (8 rows)<br>• gold_synthetic_benchmark_runs (195 rows)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- DATABRICKS LAKEHOUSE & SQL STUDIO MODAL                       -->
+  <!-- ============================================================== -->
+  <div class="studio-modal-backdrop" id="studioModalBackdrop" onclick="if(event.target===this) closeStudioModal()">
+    <div class="studio-modal">
+      <div class="studio-header">
+        <div>
+          <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent-cyan); text-transform:uppercase; font-weight:700;">DATABRICKS SERVERLESS SQL STUDIO</div>
+          <h3 style="margin:2px 0 0 0; font-size:1.15rem; color:#fff;">Governed Query & Lakehouse Inspector</h3>
+        </div>
+        <button onclick="closeStudioModal()" style="background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+
+      <div class="studio-body">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div style="font-size:12px; color:var(--text-secondary);">
+            Execute live DBSQL queries on Databricks Serverless Compute over <code>workspace.signal_*</code>.
+          </div>
+          <div id="queryLatencyPill" style="font-family:var(--font-mono); font-size:11px; background:rgba(6,182,212,0.1); border:1px solid var(--accent-cyan); color:var(--accent-cyan); padding:4px 8px; border-radius:4px;">
+            Latency: -- ms
+          </div>
+        </div>
+
+        <!-- 1-Click Preset Analytical Queries -->
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+          <span style="font-size:11px; font-weight:700; color:var(--text-muted); align-self:center;">Presets:</span>
+          <button onclick="loadPresetSignalSQL(1)" class="ctrl-btn" style="padding:4px 8px;">
+            1. Pareto Efficiency: MATH-500 vs $/1M
+          </button>
+          <button onclick="loadPresetSignalSQL(2)" class="ctrl-btn" style="padding:4px 8px;">
+            2. Open Weights SWE-bench Parity
+          </button>
+          <button onclick="loadPresetSignalSQL(3)" class="ctrl-btn" style="padding:4px 8px;">
+            3. Spark SQL Synthetic Runs (195 Trials)
+          </button>
+          <button onclick="loadPresetSignalSQL(4)" class="ctrl-btn" style="padding:4px 8px;">
+            4. Ecosystem Graph Relationship Audit
+          </button>
+        </div>
+
+        <textarea id="signalSqlInput" class="sql-editor-box" rows="4">SELECT model_name, provider, pricing_output_per_m, math_500, gpqa_diamond, swe_bench_verified FROM workspace.signal_gold.v_model_comparisons WHERE math_500 > 80 ORDER BY pricing_output_per_m ASC</textarea>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <button onclick="executeSignalSQL()" class="ctrl-btn" style="background:var(--accent-cyan); color:#000; font-weight:700; border:none; padding:8px 18px;">
+            ▶ Run Databricks SQL
+          </button>
+          <span id="signalRowCount" style="font-family:var(--font-mono); font-size:12px; color:var(--text-muted);">0 rows returned</span>
+        </div>
+
+        <!-- Query Output Results Table -->
+        <div id="signalQueryResults" style="max-height:280px; overflow-y:auto; border:1px solid var(--border-subtle); border-radius:6px; background:#010409;">
+          <div style="padding:20px; text-align:center; color:var(--text-muted); font-size:13px;">
+            Click <strong>"Run Databricks SQL"</strong> or choose a preset to query live Serverless Delta Lake tables.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Evidence Inspector Modal -->
+  <div class="evidence-modal" id="evidenceModal">
+    <div class="evidence-dialog">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:0.6rem; margin-bottom:1rem;">
+        <div style="font-family:var(--font-mono); font-size:12px; font-weight:700; color:var(--accent-cyan);">
+          EVIDENCE PROVENANCE AUDIT
+        </div>
+        <button onclick="closeEvidenceModal()" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:16px;">✕</button>
+      </div>
+      <div id="evidenceModalContent"></div>
+    </div>
+  </div>
+
+  <script src="/static/js/graph.js"></script>
+  <script src="/static/js/comparison.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

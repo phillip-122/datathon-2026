@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_172183",
+  "captured_at": "2026-11-08T13:57:44.046447+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/172183",
+    "payload": {
+      "fdcId": 172183,
+      "description": "Egg, white, raw, fresh",
+      "foodCategory": "Dairy and Egg Products",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 10.9
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 0.17
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 52.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T13:57:44.046419+00:00"
+  }
+}

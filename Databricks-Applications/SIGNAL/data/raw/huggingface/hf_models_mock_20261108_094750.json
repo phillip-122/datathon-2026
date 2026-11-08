@@ -1,0 +1,399 @@
+{
+  "metadata": {
+    "source_type": "huggingface",
+    "collection_timestamp": "2026-11-08T09:47:50.271242+00:00",
+    "mode": "mock",
+    "record_count": 10,
+    "query_parameters": {
+      "search": null,
+      "author": null,
+      "pipeline_tag": "text-generation",
+      "sort": "downloads",
+      "limit": 10
+    },
+    "collector_version": "1.0.0"
+  },
+  "records": [
+    {
+      "source_id": "hf:deepseek-ai/DeepSeek-R1",
+      "repo_id": "deepseek-ai/DeepSeek-R1",
+      "model_name": "DeepSeek-R1",
+      "author": "deepseek-ai",
+      "pipeline_tag": "text-generation",
+      "downloads": 4825900,
+      "likes": 22940,
+      "tags": [
+        "text-generation",
+        "reasoning",
+        "reinforcement-learning",
+        "deepseek",
+        "moe",
+        "license:mit",
+        "arxiv:2501.12948"
+      ],
+      "created_at": "2025-01-20T09:12:00Z",
+      "last_modified": "2025-01-24T18:30:00Z",
+      "license": "mit",
+      "architecture": "DeepseekV3ForCausalLM (MoE)",
+      "parameter_count_total_b": 671,
+      "parameter_count_active_b": 37,
+      "context_window_tokens": 128000,
+      "canonical_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+      "card_data": {
+        "base_model": "deepseek-ai/DeepSeek-V3-Base",
+        "license": "mit",
+        "language": [
+          "en",
+          "zh"
+        ]
+      },
+      "evidence": {
+        "source_id": "hf:deepseek-ai/DeepSeek-R1",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+        "publication_date": "2025-01-20T09:12:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271230+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271230+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "deepseek-ai/DeepSeek-R1"
+      }
+    },
+    {
+      "source_id": "hf:deepseek-ai/DeepSeek-V3",
+      "repo_id": "deepseek-ai/DeepSeek-V3",
+      "model_name": "DeepSeek-V3",
+      "author": "deepseek-ai",
+      "pipeline_tag": "text-generation",
+      "downloads": 3140200,
+      "likes": 11500,
+      "tags": [
+        "text-generation",
+        "deepseek",
+        "moe",
+        "multi-token-prediction",
+        "license:mit",
+        "arxiv:2412.19437"
+      ],
+      "created_at": "2024-12-26T04:00:00Z",
+      "last_modified": "2024-12-28T12:00:00Z",
+      "license": "mit",
+      "architecture": "DeepseekV3ForCausalLM (MoE)",
+      "parameter_count_total_b": 671,
+      "parameter_count_active_b": 37,
+      "context_window_tokens": 128000,
+      "canonical_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3",
+      "card_data": {
+        "license": "mit"
+      },
+      "evidence": {
+        "source_id": "hf:deepseek-ai/DeepSeek-V3",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3",
+        "publication_date": "2024-12-26T04:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271233+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271233+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "deepseek-ai/DeepSeek-V3"
+      }
+    },
+    {
+      "source_id": "hf:meta-llama/Llama-3.3-70B-Instruct",
+      "repo_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "model_name": "Llama-3.3-70B-Instruct",
+      "author": "meta-llama",
+      "pipeline_tag": "text-generation",
+      "downloads": 5821000,
+      "likes": 8450,
+      "tags": [
+        "text-generation",
+        "llama",
+        "llama-3.3",
+        "meta",
+        "license:llama3.3"
+      ],
+      "created_at": "2024-12-06T17:00:00Z",
+      "last_modified": "2024-12-10T11:20:00Z",
+      "license": "llama3.3",
+      "architecture": "LlamaForCausalLM (Dense)",
+      "parameter_count_total_b": 70,
+      "parameter_count_active_b": 70,
+      "context_window_tokens": 128000,
+      "canonical_url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
+      "card_data": {
+        "license": "llama3.3"
+      },
+      "evidence": {
+        "source_id": "hf:meta-llama/Llama-3.3-70B-Instruct",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
+        "publication_date": "2024-12-06T17:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271234+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271234+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "meta-llama/Llama-3.3-70B-Instruct"
+      }
+    },
+    {
+      "source_id": "hf:Qwen/Qwen2.5-72B-Instruct",
+      "repo_id": "Qwen/Qwen2.5-72B-Instruct",
+      "model_name": "Qwen2.5-72B-Instruct",
+      "author": "Qwen",
+      "pipeline_tag": "text-generation",
+      "downloads": 4120300,
+      "likes": 9820,
+      "tags": [
+        "text-generation",
+        "qwen",
+        "qwen2.5",
+        "alibaba",
+        "license:apache-2.0"
+      ],
+      "created_at": "2024-09-18T12:00:00Z",
+      "last_modified": "2024-10-15T09:00:00Z",
+      "license": "apache-2.0",
+      "architecture": "Qwen2ForCausalLM (Dense)",
+      "parameter_count_total_b": 72.7,
+      "parameter_count_active_b": 72.7,
+      "context_window_tokens": 131072,
+      "canonical_url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct",
+      "card_data": {
+        "license": "apache-2.0"
+      },
+      "evidence": {
+        "source_id": "hf:Qwen/Qwen2.5-72B-Instruct",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct",
+        "publication_date": "2024-09-18T12:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271235+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271235+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "Qwen/Qwen2.5-72B-Instruct"
+      }
+    },
+    {
+      "source_id": "hf:Qwen/Qwen2.5-Coder-32B-Instruct",
+      "repo_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "model_name": "Qwen2.5-Coder-32B-Instruct",
+      "author": "Qwen",
+      "pipeline_tag": "text-generation",
+      "downloads": 3890100,
+      "likes": 7650,
+      "tags": [
+        "text-generation",
+        "code",
+        "qwen",
+        "qwen2.5-coder",
+        "license:apache-2.0"
+      ],
+      "created_at": "2024-11-12T08:00:00Z",
+      "last_modified": "2024-11-20T14:10:00Z",
+      "license": "apache-2.0",
+      "architecture": "Qwen2ForCausalLM (Dense)",
+      "parameter_count_total_b": 32.5,
+      "parameter_count_active_b": 32.5,
+      "context_window_tokens": 131072,
+      "canonical_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct",
+      "card_data": {
+        "license": "apache-2.0"
+      },
+      "evidence": {
+        "source_id": "hf:Qwen/Qwen2.5-Coder-32B-Instruct",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct",
+        "publication_date": "2024-11-12T08:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271236+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271236+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "Qwen/Qwen2.5-Coder-32B-Instruct"
+      }
+    },
+    {
+      "source_id": "hf:mistralai/Mistral-Large-Instruct-2411",
+      "repo_id": "mistralai/Mistral-Large-Instruct-2411",
+      "model_name": "Mistral-Large-Instruct-2411",
+      "author": "mistralai",
+      "pipeline_tag": "text-generation",
+      "downloads": 1285000,
+      "likes": 4210,
+      "tags": [
+        "text-generation",
+        "mistral",
+        "mistral-large",
+        "function-calling",
+        "license:mistral-research"
+      ],
+      "created_at": "2024-11-18T10:00:00Z",
+      "last_modified": "2024-11-22T16:00:00Z",
+      "license": "mistral-research",
+      "architecture": "MistralForCausalLM (Dense)",
+      "parameter_count_total_b": 123,
+      "parameter_count_active_b": 123,
+      "context_window_tokens": 128000,
+      "canonical_url": "https://huggingface.co/mistralai/Mistral-Large-Instruct-2411",
+      "card_data": {
+        "license": "mistral-research"
+      },
+      "evidence": {
+        "source_id": "hf:mistralai/Mistral-Large-Instruct-2411",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/mistralai/Mistral-Large-Instruct-2411",
+        "publication_date": "2024-11-18T10:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271237+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271237+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "mistralai/Mistral-Large-Instruct-2411"
+      }
+    },
+    {
+      "source_id": "hf:microsoft/phi-4",
+      "repo_id": "microsoft/phi-4",
+      "model_name": "phi-4",
+      "author": "microsoft",
+      "pipeline_tag": "text-generation",
+      "downloads": 1920400,
+      "likes": 5600,
+      "tags": [
+        "text-generation",
+        "phi-4",
+        "microsoft",
+        "slm",
+        "math-reasoning",
+        "license:mit"
+      ],
+      "created_at": "2024-12-12T16:00:00Z",
+      "last_modified": "2024-12-18T09:30:00Z",
+      "license": "mit",
+      "architecture": "Phi3ForCausalLM (Dense)",
+      "parameter_count_total_b": 14,
+      "parameter_count_active_b": 14,
+      "context_window_tokens": 16384,
+      "canonical_url": "https://huggingface.co/microsoft/phi-4",
+      "card_data": {
+        "license": "mit"
+      },
+      "evidence": {
+        "source_id": "hf:microsoft/phi-4",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/microsoft/phi-4",
+        "publication_date": "2024-12-12T16:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271238+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271238+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "microsoft/phi-4"
+      }
+    },
+    {
+      "source_id": "hf:deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "repo_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "model_name": "DeepSeek-R1-Distill-Qwen-32B",
+      "author": "deepseek-ai",
+      "pipeline_tag": "text-generation",
+      "downloads": 2740000,
+      "likes": 8920,
+      "tags": [
+        "text-generation",
+        "distill",
+        "qwen",
+        "deepseek-r1",
+        "reasoning",
+        "license:mit"
+      ],
+      "created_at": "2025-01-20T10:00:00Z",
+      "last_modified": "2025-01-24T12:00:00Z",
+      "license": "mit",
+      "architecture": "Qwen2ForCausalLM (Dense)",
+      "parameter_count_total_b": 32.5,
+      "parameter_count_active_b": 32.5,
+      "context_window_tokens": 128000,
+      "canonical_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "card_data": {
+        "base_model": "Qwen/Qwen2.5-32B",
+        "license": "mit"
+      },
+      "evidence": {
+        "source_id": "hf:deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "publication_date": "2025-01-20T10:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271238+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271238+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
+      }
+    },
+    {
+      "source_id": "hf:google/gemma-2-27b-it",
+      "repo_id": "google/gemma-2-27b-it",
+      "model_name": "gemma-2-27b-it",
+      "author": "google",
+      "pipeline_tag": "text-generation",
+      "downloads": 2450000,
+      "likes": 6100,
+      "tags": [
+        "text-generation",
+        "gemma",
+        "google",
+        "gemma-2",
+        "license:gemma"
+      ],
+      "created_at": "2024-06-27T14:00:00Z",
+      "last_modified": "2024-07-15T11:00:00Z",
+      "license": "gemma",
+      "architecture": "Gemma2ForCausalLM (Dense)",
+      "parameter_count_total_b": 27.2,
+      "parameter_count_active_b": 27.2,
+      "context_window_tokens": 8192,
+      "canonical_url": "https://huggingface.co/google/gemma-2-27b-it",
+      "card_data": {
+        "license": "gemma"
+      },
+      "evidence": {
+        "source_id": "hf:google/gemma-2-27b-it",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/google/gemma-2-27b-it",
+        "publication_date": "2024-06-27T14:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271239+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271239+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "google/gemma-2-27b-it"
+      }
+    },
+    {
+      "source_id": "hf:meta-llama/Llama-3.1-405B-Instruct",
+      "repo_id": "meta-llama/Llama-3.1-405B-Instruct",
+      "model_name": "Llama-3.1-405B-Instruct",
+      "author": "meta-llama",
+      "pipeline_tag": "text-generation",
+      "downloads": 980000,
+      "likes": 5300,
+      "tags": [
+        "text-generation",
+        "llama",
+        "llama-3.1",
+        "flagship",
+        "license:llama3.1"
+      ],
+      "created_at": "2024-07-23T16:00:00Z",
+      "last_modified": "2024-08-01T15:00:00Z",
+      "license": "llama3.1",
+      "architecture": "LlamaForCausalLM (Dense)",
+      "parameter_count_total_b": 405,
+      "parameter_count_active_b": 405,
+      "context_window_tokens": 128000,
+      "canonical_url": "https://huggingface.co/meta-llama/Llama-3.1-405B-Instruct",
+      "card_data": {
+        "license": "llama3.1"
+      },
+      "evidence": {
+        "source_id": "hf:meta-llama/Llama-3.1-405B-Instruct",
+        "source_type": "huggingface",
+        "source_url": "https://huggingface.co/meta-llama/Llama-3.1-405B-Instruct",
+        "publication_date": "2024-07-23T16:00:00Z",
+        "ingestion_timestamp": "2026-11-08T09:47:50.271240+00:00",
+        "extraction_timestamp": "2026-11-08T09:47:50.271240+00:00",
+        "evidence_confidence": "EVALUATED",
+        "raw_payload_ref": "meta-llama/Llama-3.1-405B-Instruct"
+      }
+    }
+  ]
+}

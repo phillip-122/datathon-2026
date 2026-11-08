@@ -1,0 +1,62 @@
+[
+  {
+    "source_id": "mech_ref:interfacial_denaturation",
+    "source_type": "curated_culinary",
+    "mechanism_id": "mech_protein_interfacial_denaturation",
+    "title": "Protein Shear-Induced Interfacial Adsorption and Unfolding",
+    "mechanism_type": "foam_formation",
+    "scientific_summary": "During mechanical aeration, globular proteins rapidly migrate to newly created air-water interfaces driven by hydrophobic interactions. Once positioned at the interface, mechanical shear forces induce partial conformational unfolding, orienting hydrophobic amino acid residues towards the gas phase and hydrophilic residues towards the continuous aqueous phase. This creates a continuous, 2D viscoelastic network stabilized by intermolecular disulfide exchange and hydrophobic associations.",
+    "thermodynamic_or_kinetic_basis": "Thermodynamic minimization of interfacial free energy (Gibbs-Marangoni elasticity), creating a non-zero surface dilational modulus that resists local bubble film thinning.",
+    "key_variables": "shear_rate, whipping_time, temperature (optimal 20-22°C for egg white), ionic_strength, protein_conformation"
+  },
+  {
+    "source_id": "mech_ref:fat_partial_coalescence",
+    "source_type": "curated_culinary",
+    "mechanism_id": "mech_fat_partial_coalescence",
+    "title": "Fat Crystal Matrix Formation via Partial Coalescence",
+    "mechanism_type": "foam_formation",
+    "scientific_summary": "In high-fat dairy systems (>=30% fat), air cells are not stabilized primarily by protein films, but rather by fat globules. Controlled shear disrupts milk fat globule membranes, allowing solid fat crystals from neighboring globules to pierce through and sinter together. This forms a continuous, three-dimensional colloidal network of partially coalesced fat crystals that coats air bubbles and immobilizes fluid serum.",
+    "thermodynamic_or_kinetic_basis": "Aggregation kinetics driven by attractive van der Waals forces and crystal bridge sintering when the solid fat index (SFI) is between 40% and 60% (typically 4°C - 8°C).",
+    "key_variables": "temperature (<10°C mandatory), fat_content (>=30%), solid_fat_index, shear_intensity, shear_duration"
+  },
+  {
+    "source_id": "mech_ref:drainage_retardation",
+    "source_type": "curated_culinary",
+    "mechanism_id": "mech_viscous_drainage_retardation",
+    "title": "Continuous Phase Viscosity-Driven Drainage Retardation",
+    "mechanism_type": "foam_stabilization",
+    "scientific_summary": "Culinary foams naturally decay as gravitational force and Laplace capillary suction draw serum liquid out of the thin lamellae and into Plateau borders. Introducing soluble cosolutes (such as sucrose) or hydrocolloids dramatically elevates the dynamic shear viscosity of the lamellar liquid, inversely reducing the drainage rate governed by Darcy's and Poiseuille's laws.",
+    "thermodynamic_or_kinetic_basis": "Kinetic slowdown of volumetric liquid drainage rate dV/dt proportional to 1/eta (where eta is dynamic liquid viscosity), preventing lamellar thinning to critical rupture thickness (approx 10 nm).",
+    "key_variables": "solute_concentration, continuous_phase_viscosity, plateau_border_radius, gravitational_acceleration"
+  },
+  {
+    "source_id": "mech_ref:lipid_antifoam_bridging",
+    "source_type": "curated_culinary",
+    "mechanism_id": "mech_lipid_antifoam_bridging",
+    "title": "Lipid Antifoam Spreading and Lamella Rupture (Bridging-Dewetting)",
+    "mechanism_type": "foam_destabilization",
+    "scientific_summary": "When trace amounts of liquid lipids or emulsified fat droplets (such as from egg yolk or whole milk) enter a protein-stabilized aqueous foam, hydrophobic oil droplets enter the air-water interface and form an asymmetric bridge across the thin film. Because the interfacial tension of oil against air is lower than the aqueous protein film, oil rapidly spreads across the lamella (positive Harkins spreading coefficient), driving liquid away and causing catastrophic film thinning and rupture.",
+    "thermodynamic_or_kinetic_basis": "Thermodynamics of bridging-dewetting governed by positive spreading coefficient S = gamma_wa - (gamma_oa + gamma_wo) > 0 and entering coefficient E > 0.",
+    "key_variables": "lipid_phase_state (liquid vs crystalline), contact_angle, interfacial_tension, fat_fraction"
+  },
+  {
+    "source_id": "mech_ref:isoelectric_charge_modulation",
+    "source_type": "curated_culinary",
+    "mechanism_id": "mech_isoelectric_charge_modulation",
+    "title": "Electrostatic Charge Modulation Near Isoelectric Point",
+    "mechanism_type": "foam_stabilization",
+    "scientific_summary": "Native egg white albumen has an alkaline pH (~9.0), where ovalbumin and ovotransferrin carry substantial negative net charge, creating long-range electrostatic repulsion that limits close intermolecular packing. Introducing mild acids (potassium bitartrate / cream of tartar) drops the pH toward the isoelectric point (pI 4.5-5.0), reducing electrostatic repulsion and enabling denser intermolecular hydrogen bonding and disulfide crosslinking at the lamellar interface.",
+    "thermodynamic_or_kinetic_basis": "Reduction of Debye screening length and electrostatic repulsive potential (DLVO theory), increasing 2D film mechanical stiffness and resistance to bubble coalescence.",
+    "key_variables": "pH (optimal 6.5-7.2 for meringue), pI_distribution, ionic_strength, buffer_capacity"
+  },
+  {
+    "source_id": "mech_ref:hydrocolloid_gel_lock",
+    "source_type": "curated_culinary",
+    "mechanism_id": "mech_hydrocolloid_network_immobilization",
+    "title": "Hydrocolloid Polymeric Matrix Gel Immobilization",
+    "mechanism_type": "foam_stabilization",
+    "scientific_summary": "Incorporation of thermo-reversible polymers (gelatin) or shear-thinning polysaccharides (xanthan gum) creates a continuous physical entrapment network in the liquid serum between air cells. Upon cooling below the coil-to-helix transition temperature, gelatin molecules assemble into triple helices that form a rigid continuous gel skeleton, halting all liquid drainage permanently.",
+    "thermodynamic_or_kinetic_basis": "First-order sol-gel phase transition yielding finite equilibrium storage modulus G' > G'', transforming the liquid continuous phase into an elastic solid matrix.",
+    "key_variables": "gelatin_concentration (1.5-2.5%), temperature (<35°C), cooling_rate, polymer_molecular_weight"
+  }
+]

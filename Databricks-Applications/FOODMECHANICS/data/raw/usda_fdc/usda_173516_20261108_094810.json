@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_173516",
+  "captured_at": "2026-11-08T09:48:10.373054+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/173516",
+    "payload": {
+      "fdcId": 173516,
+      "description": "Xanthan gum, food grade",
+      "foodCategory": "Food Additives and Hydrocolloids",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 6.8
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 0.2
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 350.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T09:48:10.373043+00:00"
+  }
+}

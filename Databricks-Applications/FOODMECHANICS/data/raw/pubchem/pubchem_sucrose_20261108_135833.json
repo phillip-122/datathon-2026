@@ -1,0 +1,21 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_sucrose",
+  "captured_at": "2026-11-08T13:58:33.821313+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": 5988,
+      "name": "Sucrose",
+      "iupac_name": "(2R,3R,4S,5S,6R)-2-[(2S,3S,4S,5R)-3,4-dihydroxy-2,5-bis(hydroxymethyl)oxolan-2-yl]oxy-6-(hydroxymethyl)oxane-3,4,5-triol",
+      "formula": "C12H22O11",
+      "molecular_weight": 342.3,
+      "classification": "BULKING_AGENT / VISCOSITY_BUILDER",
+      "functional_role": "Increases lamellar viscosity, slows drainage in foams, stabilizes protein hydration shells against thermal aggregation.",
+      "solubility": "2000 g/L at 25°C in water",
+      "isoelectric_point": null,
+      "denaturation_temp_c": 160.0,
+      "inchikey": "CZMRCDWAGMRECN-UGDNZQRBSA-N"
+    }
+  }
+}

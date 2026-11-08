@@ -1,0 +1,21 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_potassium_bitartrate",
+  "captured_at": "2026-11-08T10:57:52.875227+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": 8875,
+      "name": "Potassium Bitartrate (Cream of Tartar)",
+      "iupac_name": "potassium;(2R,3R)-2,3,4-trihydroxy-4-oxobutanoate",
+      "formula": "C4H5KO6",
+      "molecular_weight": 188.18,
+      "classification": "ACIDULANT / BUFFER",
+      "functional_role": "Lowers egg white pH to ~4.8-5.0 near protein isoelectric point, reducing electrostatic repulsion and enabling elastic interfacial network.",
+      "solubility": "5.7 g/L at 20°C in water",
+      "isoelectric_point": null,
+      "denaturation_temp_c": null,
+      "inchikey": "LSDHHWODZZHGOC-WDSKDSINSA-M"
+    }
+  }
+}

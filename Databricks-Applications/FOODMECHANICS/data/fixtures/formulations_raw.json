@@ -1,0 +1,122 @@
+[
+  {
+    "source_id": "rec_raw:01",
+    "source_type": "curated_culinary",
+    "recipe_id": "rec_classic_meringue",
+    "name": "Classic French Meringue",
+    "category": "meringue",
+    "total_mass_g": 166.5,
+    "target_attribute": "Ultra-light airy foam with overrun > 600%, glossy stiff peaks, and high resistance to liquid drainage before baking.",
+    "instructions_summary": "Whip egg whites at room temperature with cream of tartar until soft peaks form. Gradually incorporate superfine sugar one tablespoon at a time until stiff glossy peaks appear.",
+    "items": [
+      {
+        "ingredient_id": "ing_egg_white",
+        "mass_g": 66.0
+      },
+      {
+        "ingredient_id": "ing_sucrose",
+        "mass_g": 100.0
+      },
+      {
+        "ingredient_id": "ing_cream_of_tartar",
+        "mass_g": 0.5
+      }
+    ]
+  },
+  {
+    "source_id": "rec_raw:02",
+    "source_type": "curated_culinary",
+    "recipe_id": "rec_whipped_heavy_cream",
+    "name": "Stabilized Chantilly Whipped Cream",
+    "category": "whipped_cream",
+    "total_mass_g": 265.0,
+    "target_attribute": "Rich, creamy, pipeable emulsion foam with overrun ~100% and high yield stress governed by 3D fat crystal network.",
+    "instructions_summary": "Chill bowl and beaters to 4°C. Whip heavy cream with sugar at medium-high speed until fat crystal network bridges and stiff peaks form. Do not over-whip into butter.",
+    "items": [
+      {
+        "ingredient_id": "ing_heavy_cream",
+        "mass_g": 240.0
+      },
+      {
+        "ingredient_id": "ing_sucrose",
+        "mass_g": 25.0
+      }
+    ]
+  },
+  {
+    "source_id": "rec_raw:03",
+    "source_type": "curated_culinary",
+    "recipe_id": "rec_hybrid_milk_foam",
+    "name": "Whole Milk Steamed Foam (Unstabilized)",
+    "category": "milk_foam",
+    "total_mass_g": 230.0,
+    "target_attribute": "Temporary microfoam with overrun ~80-100%, prone to rapid liquid drainage due to milk fat destabilization.",
+    "instructions_summary": "Aerate whole milk with steam wand to 60-65°C to denature whey proteins, sweeten with sugar, and serve immediately before drainage collapse occurs.",
+    "items": [
+      {
+        "ingredient_id": "ing_whole_milk",
+        "mass_g": 210.0
+      },
+      {
+        "ingredient_id": "ing_sucrose",
+        "mass_g": 20.0
+      }
+    ]
+  },
+  {
+    "source_id": "rec_raw:04",
+    "source_type": "curated_culinary",
+    "recipe_id": "rec_low_fat_stabilized_mousse",
+    "name": "Low-Fat Hydrocolloid-Stabilized Dessert Foam",
+    "category": "low_fat_dessert",
+    "total_mass_g": 225.0,
+    "target_attribute": "Light foam substituting 80g of milk and hydrocolloid for heavy cream, retaining structural stability with <2% total lipid content.",
+    "instructions_summary": "Hydrate gelatin in milk and gently warm to melt. Whip egg whites to soft peaks with sugar, then fold in cooled gelatin-milk mixture to set elastic triple-helix matrix.",
+    "items": [
+      {
+        "ingredient_id": "ing_egg_white",
+        "mass_g": 100.0
+      },
+      {
+        "ingredient_id": "ing_whole_milk",
+        "mass_g": 80.0
+      },
+      {
+        "ingredient_id": "ing_gelatin",
+        "mass_g": 5.0
+      },
+      {
+        "ingredient_id": "ing_sucrose",
+        "mass_g": 40.0
+      }
+    ]
+  },
+  {
+    "source_id": "rec_raw:05",
+    "source_type": "curated_culinary",
+    "recipe_id": "rec_vegan_aquafaba_meringue",
+    "name": "Vegan Aquafaba Meringue",
+    "category": "meringue",
+    "total_mass_g": 181.0,
+    "target_attribute": "Plant-based egg-free meringue utilizing legume polysaccharides and albumins with xanthan gum stabilization.",
+    "instructions_summary": "Whip reduced aquafaba with cream of tartar and xanthan gum until high volume stiff foam forms, slowly streaming in granulated sugar.",
+    "items": [
+      {
+        "ingredient_id": "ing_aquafaba",
+        "mass_g": 100.0
+      },
+      {
+        "ingredient_id": "ing_sucrose",
+        "mass_g": 80.0
+      },
+      {
+        "ingredient_id": "ing_cream_of_tartar",
+        "mass_g": 0.5
+      },
+      {
+        "ingredient_id": "ing_xanthan_gum",
+        "mass_g": 0.5
+      }
+    ]
+  }
+]

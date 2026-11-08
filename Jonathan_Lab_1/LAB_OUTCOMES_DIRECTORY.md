@@ -1,22 +1,22 @@
 # House Edge — Master Lab Outcomes & Directory Index
 
 **Challenge:** TAMU Datathon 2026 — House Edge (Slot Machine Forecasting)  
-**Main Round Score:** Champion v5 Promoted (**37.8683 Points**, Audit: **37.8495 Points**, Full $R = 0.5844$)  
-**Status:** Champion v5 active submission package compiled, cryptographically verified, and fully reproducible.
+**Main Round Score:** Champion v10 Promoted (**38.5007 Points**, Audit: **38.6048 Points**, Full $R = 0.5584$)  
+**Status:** Champion v10 active submission package compiled, cryptographically verified, and fully reproducible.
 
 ---
 
-## 1. Google Form Submission Package (CURRENT ACTIVE CHAMPION V6)
+## 1. Google Form Submission Package (CURRENT ACTIVE CHAMPION V10)
 
 All active submission files are consolidated into **one dedicated folder**:
 
 📁 **Directory:** [`compiled_versions/active_champion_submission/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/active_champion_submission/)  
-*(Champion v6 — EXP-019 at **37.9990 points**, Audit: **37.9948 points**, $R = 0.5790$)*
+*(Champion v10 — Short History Subpopulation Triage at **38.5007 points**, Audit: **38.6048 points**, $R = 0.5584$)*
 
 | Upload Item | Filename | Size | SHA-256 Hash |
 | :--- | :--- | :--- | :--- |
-| **Forecast CSV** | `submission.csv` | 201,036 bytes | `6256f6ba433c6981fae83069c9b5bfb1b702ec8c909e1e99813c9fb6475704a4` |
-| **Code ZIP** | `submission_entry.zip` | 10,432,608 bytes | `d0c8d1976a44547b7bb221d607e1124d776495df7b51ae5dcb4a4802c608f654` |
+| **Forecast CSV** | `submission.csv` | 201,581 bytes | `d7cb86b1c4b6639e48752865040f10297459439bfccded4f53b70dbdb810272d` |
+| **Code ZIP** | `submission_entry.zip` | 33,298,379 bytes | `d131bf3d28cf066ff3488a9d19585b50380a1a1671fcc5c2721cc950153b76d3` |
 
 *Official checker status:*
 ```text
@@ -39,13 +39,15 @@ Technical points formula: $\text{Points} = \frac{60}{1 + R}$, where $R = \frac{\
 | **Champion v3 (`EXP-013`)** | [`compiled_versions/v3_promoted_champion_exp013/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v3_promoted_champion_exp013/) | $0.6324$ | $36.76\%$ | **36.7561** | 36.6807 | 3-Seed HGB + Fast-HL |
 | **Champion v4 (`EXP-014`)** | [`compiled_versions/v4_promoted_champion_exp014/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v4_promoted_champion_exp014/) | $0.6008$ | $39.92\%$ | **37.4814** | 37.4764 | Hybrid Specialist |
 | **Champion v5 (`EXP-018`)** | [`compiled_versions/v5_promoted_champion_exp018/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v5_promoted_champion_exp018/) | $0.5844$ | $41.56\%$ | **37.8683** | 37.8495 | Previous Champion |
-| **Champion v6 (`EXP-019`)** | [`compiled_versions/v6_promoted_champion_exp019/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v6_promoted_champion_exp019/) | **$0.5790$** | **$42.10\%$** | **37.9990** | **37.9948** | **ACTIVE CHAMPION** |
+| **Champion v6 (`EXP-019`)** | [`compiled_versions/v6_promoted_champion_exp019/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v6_promoted_champion_exp019/) | $0.5790$ | $42.10\%$ | **37.9990** | 37.9948 | Prior Champion v6 |
+| **Champion v8 (`EXP-022`)** | [`compiled_versions/v8_candidate_solution_a/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v8_candidate_solution_a/) | $0.5616$ | $43.84\%$ | **38.4227** | 38.3854 | Adaptive Mixture v8 |
+| **Champion v10 (`EXP-025`)** | [`compiled_versions/active_champion_submission/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/active_champion_submission/) | **$0.5584$** | **$44.16\%$** | **38.5007** | **38.6048** | **ACTIVE CHAMPION v10** |
 
-### Condition Breakdown for Active Champion v6:
-- **`shared_change`**: $R = 0.4774$ (**52.26% error reduction**)
-- **`stable`**: $R = 0.5487$ (**45.13% error reduction**)
-- **`drift`**: $R = 0.6376$ (**36.24% error reduction**)
-- **`short_history`**: $R = 0.6522$ (**34.78% error reduction**)
+### Condition Breakdown for Active Champion v10:
+- **`shared_change`**: $R = 0.4710$ (**52.90% error reduction**)
+- **`stable`**: $R = 0.5462$ (**45.38% error reduction**)
+- **`drift`**: $R = 0.5986$ (**40.14% error reduction**)
+- **`short_history`**: $R = 0.6178$ (**38.22% error reduction — All-time Lab Record**)
 
 ### Machine Type Breakdown for Active Champion v5:
 - **`jackpot`**: $R = 0.5670$ (Brier: $0.064403$)

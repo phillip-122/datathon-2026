@@ -1,0 +1,1050 @@
+{
+  "timestamp": "2026-11-08T10:00:23.757584+00:00",
+  "runner_version": "1.0.0",
+  "suites": {
+    "example_queries": {
+      "suite": "GENIE_EXAMPLE_QUERIES",
+      "total_queries": 12,
+      "passed": 12,
+      "failed": 0,
+      "details": [
+        {
+          "query_number": 1,
+          "title": "Recent Developments in the Last 30 Days Grouped by Category",
+          "status": "PASS",
+          "rows_returned": 5,
+          "columns": [
+            "category",
+            "total_developments",
+            "peer_reviewed_count",
+            "independently_evaluated_count",
+            "vendor_announcements_count",
+            "latest_development_date"
+          ],
+          "sample_preview": [
+            {
+              "category": "agent_framework",
+              "total_developments": 2,
+              "peer_reviewed_count": 0,
+              "independently_evaluated_count": 0,
+              "vendor_announcements_count": 0,
+              "latest_development_date": "2026-11-03 00:00:00"
+            },
+            {
+              "category": "model_release",
+              "total_developments": 1,
+              "peer_reviewed_count": 1,
+              "independently_evaluated_count": 0,
+              "vendor_announcements_count": 0,
+              "latest_development_date": "2026-10-19 00:00:00"
+            },
+            {
+              "category": "research_breakthrough",
+              "total_developments": 1,
+              "peer_reviewed_count": 1,
+              "independently_evaluated_count": 0,
+              "vendor_announcements_count": 0,
+              "latest_development_date": "2026-10-19 00:00:00"
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 2,
+          "title": "What Has Changed in the AI Agent Ecosystem Over the Last 30 Days?",
+          "status": "PASS",
+          "rows_returned": 2,
+          "columns": [
+            "framework_name",
+            "release_version",
+            "development_date",
+            "milestone_title",
+            "confidence_level",
+            "ecosystem_role",
+            "github_stars",
+            "active_ecosystem_integrations",
+            "source_url"
+          ],
+          "sample_preview": [
+            {
+              "framework_name": "LangGraph",
+              "release_version": "v0.2.60",
+              "development_date": "2026-11-03 00:00:00",
+              "milestone_title": "LangGraph v0.2.60 Adds Stateful Graph Checkpoints",
+              "confidence_level": "EMPIRICAL",
+              "ecosystem_role": "Multi-Agent Graph Runtime",
+              "github_stars": 14200,
+              "active_ecosystem_integrations": 0,
+              "source_url": "https://github.com/langchain-ai/langgraph/releases/tag/v0.2.60"
+            },
+            {
+              "framework_name": "CrewAI",
+              "release_version": "v0.80.0",
+              "development_date": "2026-10-19 00:00:00",
+              "milestone_title": "CrewAI v0.80 Launches Hierarchical Agent Flows",
+              "confidence_level": "EMPIRICAL",
+              "ecosystem_role": "Role-Playing Autonomous Agent Framework",
+              "github_stars": 23500,
+              "active_ecosystem_integrations": 0,
+              "source_url": "https://github.com/crewAIInc/crewAI/releases/tag/v0.80"
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 3,
+          "title": "Apples-to-Apples Model Comparison on Standardized Benchmarks",
+          "status": "PASS",
+          "rows_returned": 8,
+          "columns": [
+            "model_name",
+            "provider",
+            "architecture",
+            "release_date",
+            "benchmark_name",
+            "evaluation_metric",
+            "score",
+            "methodology",
+            "eval_date",
+            "source_url"
+          ],
+          "sample_preview": [
+            {
+              "model_name": "DeepSeek R1",
+              "provider": "DeepSeek",
+              "architecture": "MoE (Reasoning / Test-Time Compute)",
+              "release_date": "2026-10-19 00:00:00",
+              "benchmark_name": "MMLU-Pro",
+              "evaluation_metric": "Accuracy (%)",
+              "score": 84.0,
+              "methodology": "0-shot CoT",
+              "eval_date": "2026-10-19 00:00:00",
+              "source_url": "https://arxiv.org/abs/2501.12948"
+            },
+            {
+              "model_name": "Claude 3.5 Sonnet",
+              "provider": "Anthropic",
+              "architecture": "Dense Transformer",
+              "release_date": "2026-08-10 00:00:00",
+              "benchmark_name": "MMLU-Pro",
+              "evaluation_metric": "Accuracy (%)",
+              "score": 78.2,
+              "methodology": "0-shot CoT",
+              "eval_date": "2026-08-10 00:00:00",
+              "source_url": "https://www.anthropic.com/news/claude-3-5-sonnet"
+            },
+            {
+              "model_name": "Llama 3.3 70B Instruct",
+              "provider": "Meta",
+              "architecture": "Dense Transformer",
+              "release_date": "2026-09-24 00:00:00",
+              "benchmark_name": "MMLU-Pro",
+              "evaluation_metric": "Accuracy (%)",
+              "score": 71.4,
+              "methodology": "5-shot CoT",
+              "eval_date": "2026-09-24 00:00:00",
+              "source_url": "https://ai.meta.com/blog/llama-3-3-70b"
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 4,
+          "title": "Tools Integrating With or Depending on a Specific Model Architecture",
+          "status": "PASS",
+          "rows_returned": 6,
+          "columns": [
+            "relationship_type",
+            "tool_name",
+            "tool_category",
+            "ecosystem_role",
+            "release_version",
+            "link_strength",
+            "integration_evidence",
+            "source_url"
+          ],
+          "sample_preview": [
+            {
+              "relationship_type": "implements",
+              "tool_name": "vLLM",
+              "tool_category": "serving_inference",
+              "ecosystem_role": "High-Throughput LLM Serving Engine",
+              "release_version": "v0.7.0",
+              "link_strength": 0.98,
+              "integration_evidence": "vLLM v0.7.0 adds optimized Multi-Head Latent Attention (MLA) and DeepSeek MoE kernels.",
+              "source_url": "https://github.com/vllm-project/vllm/releases/tag/v0.7.0"
+            },
+            {
+              "relationship_type": "depends_on",
+              "tool_name": "LangGraph",
+              "tool_category": "agent_orchestration",
+              "ecosystem_role": "Multi-Agent Graph Runtime",
+              "release_version": "v0.2.60",
+              "link_strength": 0.95,
+              "integration_evidence": "LangGraph v0.2.60 adds native support for deepseek reasoning streams and dynamic graph checkpoints.",
+              "source_url": "https://github.com/langchain-ai/langgraph/releases/tag/v0.2.60"
+            },
+            {
+              "relationship_type": "implements",
+              "tool_name": "SGLang",
+              "tool_category": "serving_inference",
+              "ecosystem_role": "Fast Serving Framework for Complex LLM Programs",
+              "release_version": "v0.4.2",
+              "link_strength": 0.95,
+              "integration_evidence": "vLLM v0.7.0 adds optimized Multi-Head Latent Attention (MLA) and DeepSeek MoE kernels.",
+              "source_url": "https://github.com/vllm-project/vllm/releases/tag/v0.7.0"
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 5,
+          "title": "Tracing Research Breakthroughs to Downstream Tools & Implementations",
+          "status": "PASS",
+          "rows_returned": 6,
+          "columns": [
+            "publication_id",
+            "paper_title",
+            "publication_date",
+            "implemented_model",
+            "model_provider",
+            "model_to_tool_rel",
+            "downstream_tool",
+            "tool_category",
+            "proof_source_url"
+          ],
+          "sample_preview": [
+            {
+              "publication_id": "arxiv:2501.12948",
+              "paper_title": "DeepSeek-R1 Architecture Technical Report Published",
+              "publication_date": "2026-10-19 10:00:00",
+              "implemented_model": "DeepSeek R1",
+              "model_provider": "DeepSeek",
+              "model_to_tool_rel": "depends_on",
+              "downstream_tool": "LangGraph",
+              "tool_category": "agent_orchestration",
+              "proof_source_url": "https://github.com/langchain-ai/langgraph/releases/tag/v0.2.60"
+            },
+            {
+              "publication_id": "arxiv:2501.12948",
+              "paper_title": "DeepSeek-R1 Architecture Technical Report Published",
+              "publication_date": "2026-10-19 10:00:00",
+              "implemented_model": "DeepSeek R1",
+              "model_provider": "DeepSeek",
+              "model_to_tool_rel": "integrated_with",
+              "downstream_tool": "CrewAI",
+              "tool_category": "agent_orchestration",
+              "proof_source_url": "https://github.com/crewAIInc/crewAI/releases/tag/v0.80"
+            },
+            {
+              "publication_id": "arxiv:2501.12948",
+              "paper_title": "DeepSeek-R1 Architecture Technical Report Published",
+              "publication_date": "2026-10-19 10:00:00",
+              "implemented_model": "DeepSeek R1",
+              "model_provider": "DeepSeek",
+              "model_to_tool_rel": "implements",
+              "downstream_tool": "vLLM",
+              "tool_category": "serving_inference",
+              "proof_source_url": "https://github.com/vllm-project/vllm/releases/tag/v0.7.0"
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 6,
+          "title": "Distinguish Announcements vs. Independently Evaluated Results",
+          "status": "PASS",
+          "rows_returned": 3,
+          "columns": [
+            "confidence_level",
+            "total_count",
+            "percentage_of_total",
+            "most_recent_date",
+            "oldest_date"
+          ],
+          "sample_preview": [
+            {
+              "confidence_level": "EMPIRICAL",
+              "total_count": 3,
+              "percentage_of_total": 50.0,
+              "most_recent_date": "2026-11-03 00:00:00",
+              "oldest_date": "2026-10-19 00:00:00"
+            },
+            {
+              "confidence_level": "PEER_REVIEWED",
+              "total_count": 2,
+              "percentage_of_total": 33.3,
+              "most_recent_date": "2026-10-19 00:00:00",
+              "oldest_date": "2026-10-19 00:00:00"
+            },
+            {
+              "confidence_level": "EVALUATED",
+              "total_count": 1,
+              "percentage_of_total": 16.7,
+              "most_recent_date": "2026-10-27 00:00:00",
+              "oldest_date": "2026-10-27 00:00:00"
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 7,
+          "title": "AI Capability Taxonomy & Tracking Ecosystem Growth",
+          "status": "PASS",
+          "rows_returned": 5,
+          "columns": [
+            "capability_id",
+            "capability_name",
+            "parent_capability_name",
+            "demonstrating_technologies_count",
+            "related_developments_count"
+          ],
+          "sample_preview": [
+            {
+              "capability_id": "cap_agent_planning",
+              "capability_name": "Agentic Multi-Step Planning",
+              "parent_capability_name": "Reasoning & Deductive Logic",
+              "demonstrating_technologies_count": 2,
+              "related_developments_count": 2
+            },
+            {
+              "capability_id": "cap_code_gen",
+              "capability_name": "Code Generation & Repair",
+              "parent_capability_name": "Top-Level Domain",
+              "demonstrating_technologies_count": 2,
+              "related_developments_count": 2
+            },
+            {
+              "capability_id": "cap_test_time_compute",
+              "capability_name": "Test-Time Compute Scaling",
+              "parent_capability_name": "Reasoning & Deductive Logic",
+              "demonstrating_technologies_count": 1,
+              "related_developments_count": 2
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 8,
+          "title": "Historical Evolution & Version Upgrades for Models and Tools",
+          "status": "PASS",
+          "rows_returned": 5,
+          "columns": [
+            "model_name",
+            "provider",
+            "architecture",
+            "release_date",
+            "parameter_count_billions",
+            "context_window",
+            "license",
+            "days_since_previous_release"
+          ],
+          "sample_preview": [
+            {
+              "model_name": "Claude 3.5 Sonnet",
+              "provider": "Anthropic",
+              "architecture": "Dense Transformer",
+              "release_date": "2026-08-10 00:00:00",
+              "parameter_count_billions": NaN,
+              "context_window": 200000,
+              "license": "Proprietary / API",
+              "days_since_previous_release": null
+            },
+            {
+              "model_name": "DeepSeek V3",
+              "provider": "DeepSeek",
+              "architecture": "MoE (Dense-Activated)",
+              "release_date": "2026-09-24 00:00:00",
+              "parameter_count_billions": 671.0,
+              "context_window": 128000,
+              "license": "Open Weights / MIT",
+              "days_since_previous_release": null
+            },
+            {
+              "model_name": "DeepSeek R1",
+              "provider": "DeepSeek",
+              "architecture": "MoE (Reasoning / Test-Time Compute)",
+              "release_date": "2026-10-19 00:00:00",
+              "parameter_count_billions": 671.0,
+              "context_window": 128000,
+              "license": "Open Weights / MIT",
+              "days_since_previous_release": 25
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 9,
+          "title": "Discrepancy & Conflicting Claims Detection (Vendor vs. Independent)",
+          "status": "PASS",
+          "rows_returned": 1,
+          "columns": [
+            "model_name",
+            "benchmark_name",
+            "evaluation_metric",
+            "vendor_score",
+            "vendor_methodology",
+            "independent_score",
+            "independent_methodology",
+            "claim_discrepancy",
+            "audit_status",
+            "vendor_source",
+            "independent_source"
+          ],
+          "sample_preview": [
+            {
+              "model_name": "Claude 3.5 Sonnet",
+              "benchmark_name": "SWE-bench Verified",
+              "evaluation_metric": "Resolved Rate (%)",
+              "vendor_score": 51.5,
+              "vendor_methodology": "0-shot CoT",
+              "independent_score": 49.0,
+              "independent_methodology": "0-shot CoT",
+              "claim_discrepancy": 2.5,
+              "audit_status": "VENDOR_OPTIMISTIC",
+              "vendor_source": "https://www.anthropic.com/news/claude-3-5-sonnet",
+              "independent_source": "https://scale.com/leaderboard/swe-bench"
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 10,
+          "title": "Complete Provenance Trail for a Specific AI Development",
+          "status": "PASS",
+          "rows_returned": 2,
+          "columns": [
+            "development_id",
+            "development_title",
+            "category",
+            "announcement_date",
+            "confidence_level",
+            "source_id",
+            "source_type",
+            "source_url",
+            "source_publication_date",
+            "extracted_claim",
+            "extraction_timestamp"
+          ],
+          "sample_preview": [
+            {
+              "development_id": "dev_006",
+              "development_title": "DeepSeek-R1 Architecture Technical Report Published",
+              "category": "research_breakthrough",
+              "announcement_date": "2026-10-19 00:00:00",
+              "confidence_level": "PEER_REVIEWED",
+              "source_id": "arxiv:2501.12948",
+              "source_type": "arxiv",
+              "source_url": "https://arxiv.org/abs/2501.12948",
+              "source_publication_date": "2026-10-19 10:00:00",
+              "extracted_claim": "DeepSeek-R1 achieves reasoning performance comparable to OpenAI-o1 across math and coding benchmarks via large-scale RL without prior SFT.",
+              "extraction_timestamp": "2026-11-08 10:00:23"
+            },
+            {
+              "development_id": "dev_001",
+              "development_title": "DeepSeek-R1 Open Reasoning Model Released",
+              "category": "model_release",
+              "announcement_date": "2026-10-19 00:00:00",
+              "confidence_level": "PEER_REVIEWED",
+              "source_id": "arxiv:2501.12948",
+              "source_type": "arxiv",
+              "source_url": "https://arxiv.org/abs/2501.12948",
+              "source_publication_date": "2026-10-19 10:00:00",
+              "extracted_claim": "DeepSeek-R1 achieves reasoning performance comparable to OpenAI-o1 across math and coding benchmarks via large-scale RL without prior SFT.",
+              "extraction_timestamp": "2026-11-08 10:00:23"
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 11,
+          "title": "High-Momentum Ecosystem Nodes (Ecosystem Centrality Ranking)",
+          "status": "PASS",
+          "rows_returned": 11,
+          "columns": [
+            "entity_id",
+            "entity_name",
+            "entity_type",
+            "total_connections",
+            "ecosystem_rank"
+          ],
+          "sample_preview": [
+            {
+              "entity_id": "deepseek-r1",
+              "entity_name": "DeepSeek R1",
+              "entity_type": "MODEL",
+              "total_connections": 8.0,
+              "ecosystem_rank": 1
+            },
+            {
+              "entity_id": "claude-3-5-sonnet",
+              "entity_name": "Claude 3.5 Sonnet",
+              "entity_type": "MODEL",
+              "total_connections": 4.0,
+              "ecosystem_rank": 2
+            },
+            {
+              "entity_id": "langgraph",
+              "entity_name": "LangGraph",
+              "entity_type": "TOOL / FRAMEWORK",
+              "total_connections": 3.0,
+              "ecosystem_rank": 3
+            }
+          ],
+          "error": null
+        },
+        {
+          "query_number": 12,
+          "title": "Model Provider vs. Agent Orchestration Compatibility Matrix",
+          "status": "PASS",
+          "rows_returned": 6,
+          "columns": [
+            "agent_framework",
+            "release_version",
+            "supported_provider",
+            "supported_models_count",
+            "integration_confidence",
+            "documentation_url"
+          ],
+          "sample_preview": [
+            {
+              "agent_framework": "CrewAI",
+              "release_version": "v0.80.0",
+              "supported_provider": "DeepSeek",
+              "supported_models_count": 1,
+              "integration_confidence": 0.9,
+              "documentation_url": "https://github.com/crewAIInc/crewAI/releases/tag/v0.80"
+            },
+            {
+              "agent_framework": "CrewAI",
+              "release_version": "v0.80.0",
+              "supported_provider": "Anthropic",
+              "supported_models_count": 1,
+              "integration_confidence": 0.92,
+              "documentation_url": "https://github.com/crewAIInc/crewAI/releases/tag/v0.80"
+            },
+            {
+              "agent_framework": "LangGraph",
+              "release_version": "v0.2.60",
+              "supported_provider": "Anthropic",
+              "supported_models_count": 1,
+              "integration_confidence": 0.95,
+              "documentation_url": "https://github.com/langchain-ai/langgraph/releases/tag/v0.2.60"
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    "questions_benchmark": {
+      "suite": "QUESTIONS_BENCHMARK_EVAL",
+      "total_questions": 16,
+      "passed": 16,
+      "failed": 0,
+      "details": [
+        {
+          "id": "EVAL-SIG-001",
+          "question": "What are the most significant AI developments in the last 30 days grouped by category?",
+          "category": "recent_developments",
+          "difficulty": "EASY",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (5 rows)."
+          ],
+          "rows_returned": 5,
+          "columns": [
+            "category",
+            "count_star()"
+          ],
+          "sample_output": [
+            {
+              "category": "agent_framework",
+              "count_star()": 2
+            },
+            {
+              "category": "model_release",
+              "count_star()": 1
+            }
+          ],
+          "criteria_evaluated": [
+            "must_include_categories",
+            "must_filter_time_window",
+            "aggregation_required",
+            "temporal_field_used"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-002",
+          "question": "What has actually changed in the AI agent ecosystem over the last 30 days?",
+          "category": "agent_ecosystem",
+          "difficulty": "HARD",
+          "status": "PASS",
+          "notes": [],
+          "criteria_evaluated": [
+            "must_identify_agent_tools",
+            "must_distinguish_versions",
+            "must_include_evidence",
+            "must_quantify_momentum"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-003",
+          "question": "Compare Claude 3.5 Sonnet and DeepSeek R1 across comparable standardized benchmarks.",
+          "category": "model_comparison",
+          "difficulty": "MEDIUM",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (6 rows)."
+          ],
+          "rows_returned": 6,
+          "columns": [
+            "name",
+            "name_1",
+            "score",
+            "methodology"
+          ],
+          "sample_output": [
+            {
+              "name": "DeepSeek R1",
+              "name_1": "SWE-bench Verified",
+              "score": 49.2,
+              "methodology": "0-shot CoT"
+            },
+            {
+              "name": "DeepSeek R1",
+              "name_1": "MMLU-Pro",
+              "score": 84.0,
+              "methodology": "0-shot CoT"
+            }
+          ],
+          "criteria_evaluated": [
+            "must_match_benchmarks",
+            "must_verify_methodology",
+            "apples_to_apples"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-004",
+          "question": "Which developer tools and agent frameworks integrate with or depend on DeepSeek-R1?",
+          "category": "tool_integration",
+          "difficulty": "MEDIUM",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (6 rows)."
+          ],
+          "rows_returned": 6,
+          "columns": [
+            "name",
+            "category",
+            "relationship_type",
+            "claim_text"
+          ],
+          "sample_output": [
+            {
+              "name": "LangGraph",
+              "category": "agent_orchestration",
+              "relationship_type": "depends_on",
+              "claim_text": "LangGraph v0.2.60 adds native support for deepseek reasoning streams and dynamic graph checkpoints."
+            },
+            {
+              "name": "Ollama",
+              "category": "serving_inference",
+              "relationship_type": "implements",
+              "claim_text": "vLLM v0.7.0 adds optimized Multi-Head Latent Attention (MLA) and DeepSeek MoE kernels."
+            }
+          ],
+          "criteria_evaluated": [
+            "must_identify_frameworks",
+            "must_specify_relationship",
+            "must_provide_evidence"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-005",
+          "question": "Trace research publications on test-time compute to downstream models and developer tools.",
+          "category": "research_to_product",
+          "difficulty": "HARD",
+          "status": "PASS",
+          "notes": [],
+          "criteria_evaluated": [
+            "must_identify_paper",
+            "must_trace_to_model",
+            "must_trace_to_tools",
+            "provenance_chain"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-006",
+          "question": "Which developments in the dataset are vendor announcements versus independently evaluated results?",
+          "category": "evidence_confidence",
+          "difficulty": "EASY",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (3 rows)."
+          ],
+          "rows_returned": 3,
+          "columns": [
+            "confidence_level",
+            "count_star()",
+            "round(((count_star() * 100.0) / sum(count_star()) OVER ()), 1)"
+          ],
+          "sample_output": [
+            {
+              "confidence_level": "PEER_REVIEWED",
+              "count_star()": 2,
+              "round(((count_star() * 100.0) / sum(count_star()) OVER ()), 1)": 33.3
+            },
+            {
+              "confidence_level": "EMPIRICAL",
+              "count_star()": 3,
+              "round(((count_star() * 100.0) / sum(count_star()) OVER ()), 1)": 50.0
+            }
+          ],
+          "criteria_evaluated": [
+            "must_group_confidence_levels",
+            "must_compute_metrics",
+            "epistemic_integrity"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-007",
+          "question": "Which AI capabilities have received the most new research and implementation attention?",
+          "category": "capability_evolution",
+          "difficulty": "MEDIUM",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (5 rows)."
+          ],
+          "rows_returned": 5,
+          "columns": [
+            "name",
+            "count(DISTINCT r.source_entity_id)",
+            "count(DISTINCT d.development_id)"
+          ],
+          "sample_output": [
+            {
+              "name": "Code Generation & Repair",
+              "count(DISTINCT r.source_entity_id)": 2,
+              "count(DISTINCT d.development_id)": 2
+            },
+            {
+              "name": "Agentic Multi-Step Planning",
+              "count(DISTINCT r.source_entity_id)": 2,
+              "count(DISTINCT d.development_id)": 2
+            }
+          ],
+          "criteria_evaluated": [
+            "top_capabilities",
+            "must_link_to_entities"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-008",
+          "question": "What is the release chronology and architectural evolution of open-weight reasoning models?",
+          "category": "temporal_analysis",
+          "difficulty": "MEDIUM",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (2 rows)."
+          ],
+          "rows_returned": 2,
+          "columns": [
+            "name",
+            "provider",
+            "architecture",
+            "parameter_count",
+            "release_date"
+          ],
+          "sample_output": [
+            {
+              "name": "DeepSeek V3",
+              "provider": "DeepSeek",
+              "architecture": "MoE (Dense-Activated)",
+              "parameter_count": 671000000000,
+              "release_date": "2026-09-24 00:00:00"
+            },
+            {
+              "name": "DeepSeek R1",
+              "provider": "DeepSeek",
+              "architecture": "MoE (Reasoning / Test-Time Compute)",
+              "parameter_count": 671000000000,
+              "release_date": "2026-10-19 00:00:00"
+            }
+          ],
+          "criteria_evaluated": [
+            "chronological_order",
+            "architectural_attributes",
+            "temporal_delta"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-009",
+          "question": "Identify any score discrepancies or conflicting claims between self-reported vendor scores and independent benchmark audits.",
+          "category": "conflicting_claims",
+          "difficulty": "HARD",
+          "status": "PASS",
+          "notes": [],
+          "criteria_evaluated": [
+            "discrepancy_identification",
+            "methodology_audit",
+            "source_attribution"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-010",
+          "question": "Trace the complete evidence trail and source provenance for development record 'dev_deepseek_r1_release'.",
+          "category": "evidence_provenance",
+          "difficulty": "EASY",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (2 rows)."
+          ],
+          "rows_returned": 2,
+          "columns": [
+            "development_id",
+            "title",
+            "summary",
+            "category",
+            "date",
+            "confidence_level",
+            "primary_entity_id",
+            "source_id",
+            "raw_ref",
+            "extraction_timestamp",
+            "evidence_id",
+            "source_id_1",
+            "source_type",
+            "source_url",
+            "publication_date",
+            "claim_text",
+            "confidence",
+            "extraction_timestamp_1"
+          ],
+          "sample_output": [
+            {
+              "development_id": "dev_006",
+              "title": "DeepSeek-R1 Architecture Technical Report Published",
+              "summary": "Academic paper detailing large-scale cold-start and multi-stage RL for reasoning.",
+              "category": "research_breakthrough",
+              "date": "2026-10-19 00:00:00",
+              "confidence_level": "PEER_REVIEWED",
+              "primary_entity_id": "deepseek-r1",
+              "source_id": "arxiv:2501.12948",
+              "raw_ref": "hash_006",
+              "extraction_timestamp": "2026-11-08 10:00:23",
+              "evidence_id": "ev_001",
+              "source_id_1": "arxiv:2501.12948",
+              "source_type": "arxiv",
+              "source_url": "https://arxiv.org/abs/2501.12948",
+              "publication_date": "2026-10-19 10:00:00",
+              "claim_text": "DeepSeek-R1 achieves reasoning performance comparable to OpenAI-o1 across math and coding benchmarks via large-scale RL without prior SFT.",
+              "confidence": "PEER_REVIEWED",
+              "extraction_timestamp_1": "2026-11-08 10:00:23"
+            },
+            {
+              "development_id": "dev_001",
+              "title": "DeepSeek-R1 Open Reasoning Model Released",
+              "summary": "DeepSeek introduces R1 with test-time compute reinforcement learning, challenging proprietary frontier models.",
+              "category": "model_release",
+              "date": "2026-10-19 00:00:00",
+              "confidence_level": "PEER_REVIEWED",
+              "primary_entity_id": "deepseek-r1",
+              "source_id": "arxiv:2501.12948",
+              "raw_ref": "hash_001",
+              "extraction_timestamp": "2026-11-08 10:00:23",
+              "evidence_id": "ev_001",
+              "source_id_1": "arxiv:2501.12948",
+              "source_type": "arxiv",
+              "source_url": "https://arxiv.org/abs/2501.12948",
+              "publication_date": "2026-10-19 10:00:00",
+              "claim_text": "DeepSeek-R1 achieves reasoning performance comparable to OpenAI-o1 across math and coding benchmarks via large-scale RL without prior SFT.",
+              "confidence": "PEER_REVIEWED",
+              "extraction_timestamp_1": "2026-11-08 10:00:23"
+            }
+          ],
+          "criteria_evaluated": [
+            "full_provenance",
+            "audit_completeness"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-011",
+          "question": "Which models and tools have the highest degree centrality (most inbound integrations) across the ecosystem?",
+          "category": "ecosystem_centrality",
+          "difficulty": "MEDIUM",
+          "status": "PASS",
+          "notes": [],
+          "criteria_evaluated": [
+            "top_nodes",
+            "integration_quantification",
+            "ranking"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-012",
+          "question": "Which agent orchestration frameworks support multiple foundation model providers?",
+          "category": "tool_integration",
+          "difficulty": "MEDIUM",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (3 rows)."
+          ],
+          "rows_returned": 3,
+          "columns": [
+            "name",
+            "count(DISTINCT m.provider)"
+          ],
+          "sample_output": [
+            {
+              "name": "LangGraph",
+              "count(DISTINCT m.provider)": 2
+            },
+            {
+              "name": "Microsoft AutoGen",
+              "count(DISTINCT m.provider)": 2
+            }
+          ],
+          "criteria_evaluated": [
+            "multi_provider_frameworks",
+            "provider_breakdown"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-013",
+          "question": "What is the distribution of open-weights versus proprietary API licenses among tracked foundation models?",
+          "category": "model_governance",
+          "difficulty": "EASY",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (2 rows)."
+          ],
+          "rows_returned": 2,
+          "columns": [
+            "license_class",
+            "count_star()",
+            "round(((count_star() * 100.0) / sum(count_star()) OVER ()), 1)"
+          ],
+          "sample_output": [
+            {
+              "license_class": "Proprietary / API",
+              "count_star()": 2,
+              "round(((count_star() * 100.0) / sum(count_star()) OVER ()), 1)": 40.0
+            },
+            {
+              "license_class": "Open Weights",
+              "count_star()": 3,
+              "round(((count_star() * 100.0) / sum(count_star()) OVER ()), 1)": 60.0
+            }
+          ],
+          "criteria_evaluated": [
+            "license_classes",
+            "accurate_classification",
+            "percentages"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-014",
+          "question": "Which benchmarks have the highest coverage across evaluated models?",
+          "category": "benchmark_coverage",
+          "difficulty": "EASY",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (3 rows)."
+          ],
+          "rows_returned": 3,
+          "columns": [
+            "name",
+            "task_type",
+            "evaluation_metric",
+            "evaluated_models_count"
+          ],
+          "sample_output": [
+            {
+              "name": "SWE-bench Verified",
+              "task_type": "Autonomous Software Engineering",
+              "evaluation_metric": "Resolved Rate (%)",
+              "evaluated_models_count": 3
+            },
+            {
+              "name": "MMLU-Pro",
+              "task_type": "Reasoning & Knowledge",
+              "evaluation_metric": "Accuracy (%)",
+              "evaluated_models_count": 3
+            }
+          ],
+          "criteria_evaluated": [
+            "top_benchmarks",
+            "coverage_metric",
+            "domain_identification"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-015",
+          "question": "What is the calculated 30-day velocity score for top agent orchestration frameworks?",
+          "category": "momentum_metrics",
+          "difficulty": "HARD",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (6 rows)."
+          ],
+          "rows_returned": 6,
+          "columns": [
+            "name",
+            "release_version",
+            "stars",
+            "developments_last_30d",
+            "total_integrations",
+            "momentum_score",
+            "velocity_category"
+          ],
+          "sample_output": [
+            {
+              "name": "Ollama",
+              "release_version": "v0.5.7",
+              "stars": 104000,
+              "developments_last_30d": 0,
+              "total_integrations": 1,
+              "momentum_score": 46.6,
+              "velocity_category": "MATURE"
+            },
+            {
+              "name": "CrewAI",
+              "release_version": "v0.80.0",
+              "stars": 23500,
+              "developments_last_30d": 1,
+              "total_integrations": 3,
+              "momentum_score": 39.4,
+              "velocity_category": "STEADY"
+            }
+          ],
+          "criteria_evaluated": [
+            "velocity_categories",
+            "momentum_formula",
+            "frameworks_present"
+          ]
+        },
+        {
+          "id": "EVAL-SIG-016",
+          "question": "Are there any orphan developments or unverified entities lacking evidence records?",
+          "category": "data_quality_audit",
+          "difficulty": "MEDIUM",
+          "status": "PASS",
+          "notes": [
+            "SQL parsed and executed successfully (0 rows)."
+          ],
+          "rows_returned": 0,
+          "columns": [
+            "development_id",
+            "title",
+            "source_id"
+          ],
+          "sample_output": [],
+          "criteria_evaluated": [
+            "data_quality_assertion",
+            "provenance_invariant"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOODMECHANICS // Colloid Dynamics & Formulation Studio</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Tab Navigation */
+    .app-nav-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 8px;
+      overflow-x: auto;
+    }
+    .app-tab-btn {
+      background: none;
+      border: 1px solid transparent;
+      padding: 8px 16px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .app-tab-btn:hover {
+      background: rgba(0,0,0,0.03);
+      color: var(--text-primary);
+    }
+    .app-tab-btn.active {
+      background: #fff;
+      border-color: var(--border-medium);
+      color: var(--color-primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    /* System Selector Cards Grid */
+    .systems-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .system-choice-card {
+      background: #fff;
+      border: 2px solid var(--border-light);
+      border-radius: 8px;
+      padding: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+    .system-choice-card:hover {
+      border-color: var(--border-medium);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .system-choice-card.active {
+      border-color: var(--color-primary);
+      background: #fdfbf7;
+      box-shadow: 0 4px 12px rgba(180, 83, 9, 0.08);
+    }
+    .system-icon {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+    .system-card-title {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .system-card-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* Sandbox Styling */
+    .sandbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media(max-width: 900px) {
+      .sandbox-grid { grid-template-columns: 1fr; }
+    }
+    .sandbox-panel {
+      background: #fff;
+      border: 1px solid var(--border-medium);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    /* Databricks Studio Modal */
+    .studio-modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    .studio-modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .studio-modal {
+      background: #fff;
+      width: 92%;
+      max-width: 1000px;
+      max-height: 88vh;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+    .studio-header {
+      background: #1e293b;
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .studio-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .sql-editor-box {
+      font-family: var(--font-mono);
+      background: #0f172a;
+      color: #38bdf8;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 12px 0;
+      font-size: 13px;
+      min-height: 80px;
+      border: 1px solid #334155;
+      width: 100%;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+  </style>
+</head>
+<body class="lab-body">
+
+  <!-- TOP APP BAR -->
+  <header class="lab-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <div class="brand-mark">FM</div>
+        <div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <h1 class="brand-title">FOODMECHANICS</h1>
+            <span class="brand-tag">COLLOID DYNAMICS STUDIO</span>
+            <span style="background:#e0e7ff; color:#3730a3; font-size:10px; font-weight:700; padding:2px 6px; border-radius:4px; font-family:var(--font-mono);">TAMU DATATHON 2026</span>
+          </div>
+          <p class="brand-sub">Thermodynamic Food Formulation & Rheology Simulator backed by Databricks Serverless Delta Lake</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Live Databricks Serverless Indicator -->
+        <div class="engine-badge" id="engine-badge" style="background:#ecfdf5; border-color:#a7f3d0; color:#065f46; cursor:pointer;" onclick="openStudioModal()">
+          <span class="status-dot live" style="background:#10b981;"></span>
+          <span id="engine-label" style="font-weight:700;">● Databricks Serverless (Active)</span>
+        </div>
+
+        <!-- Governed Studio Trigger -->
+        <button class="btn-genie-open" onclick="openStudioModal()" style="background:#0f172a; color:#f8fafc; border:none; padding:8px 16px; border-radius:6px; font-weight:600; display:flex; align-items:center; gap:8px; cursor:pointer;">
+          <span>⚡</span>
+          <span>Databricks Lakehouse & SQL Studio</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN VIEWPORT -->
+  <main class="lab-main">
+
+    <!-- PRIMARY NAVIGATION TABS -->
+    <nav class="app-nav-tabs">
+      <button class="app-tab-btn active" onclick="switchMainTab('optimizer')">
+        <span>⚡</span> Formulation Studio & Lakehouse AI
+      </button>
+      <button class="app-tab-btn" onclick="switchMainTab('substitution')">
+        <span>🔄</span> Any-to-Any Ingredient Substitution
+      </button>
+      <button class="app-tab-btn" onclick="switchMainTab('catalog')">
+        <span>📋</span> USDA 100g Ingredient Matrix (46 Items) & Colloid Laws
+      </button>
+      <button class="app-tab-btn" onclick="switchMainTab('governance')">
+        <span>🏛️</span> Databricks Lakehouse & DLT Governance
+      </button>
+    </nav>
+
+    <!-- ============================================================== -->
+    <!-- TAB 1: AI FORMULATION OPTIMIZER (DYNAMIC INVERSE SOLVER)       -->
+    <!-- ============================================================== -->
+    <section class="tab-pane active" id="pane-optimizer">
+      <div style="background:#fff; border:1px solid var(--border-medium); border-radius:8px; padding:20px; margin-bottom:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;">
+          <div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="badge-engineered" style="font-size:11px; font-weight:700;">DYNAMIC INVERSE FORMULATION SOLVER</span>
+              <span style="font-family:var(--font-mono); font-size:10px; background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; padding:2px 6px; border-radius:4px; font-weight:700;">
+                POWERED BY DATABRICKS SERVERLESS AI (LLAMA 3.3 70B)
+              </span>
+            </div>
+            <h2 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--text-primary); margin:6px 0 4px 0;">
+              Colloid Formulation & Hydrodynamic Stability Studio
+            </h2>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin:0;">
+              Enter any culinary challenge or adjust physical constraints below. Databricks executes in-lakehouse Foundation Model inference via <code>ai_query</code>, searches 46 USDA 100g ingredients, solves multi-component mass balance, and renders animated 24-hour Stokes' Law drainage kinetics.
+            </p>
+          </div>
+          <div id="optimizer-status-pill" style="font-family:var(--font-mono); font-size:11px; background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; padding:6px 12px; border-radius:6px; font-weight:700; white-space:nowrap;">
+            ● Solver Ready (46 Ingredients + 120 Sweeps)
+          </div>
+        </div>
+
+        <!-- In-Lakehouse AI Formulation Prompt Bar -->
+        <div style="background:#f8fafc; border:2px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:20px;">
+          <label style="font-weight:700; font-size:13px; color:#1e293b; display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+            <span style="font-size:16px;">✨</span> Databricks Lakehouse AI Formulation Prompt (Describe Any Goal):
+          </label>
+          <div style="display:flex; gap:10px;">
+            <input type="text" id="opt-custom-prompt" placeholder="e.g. Formulate a 99% lower-fat whipped dessert stable for 24h, or design an eggless plant mayo with high shear stability..." style="flex:1; padding:10px 14px; border:1px solid #cbd5e1; border-radius:6px; font-size:13px; font-family:var(--font-sans);">
+            <button onclick="runInverseOptimizer()" style="background:#16a34a; color:#fff; border:none; padding:10px 20px; border-radius:6px; font-weight:700; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:6px; white-space:nowrap;">
+              <span>⚡</span> Formulate on Databricks
+            </button>
+          </div>
+        </div>
+
+        <!-- 1-Click Goal Presets -->
+        <div style="margin-bottom:16px;">
+          <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">
+            1-Click Benchmark Goal Presets:
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <button onclick="applyOptimizerPreset('defatted_whipped')" style="background:#f8fafc; border:1px solid var(--border-medium); padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer;">
+              🍨 99.8% Defatted Chantilly Foam
+            </button>
+            <button onclick="applyOptimizerPreset('vegan_meringue')" style="background:#f8fafc; border:1px solid var(--border-medium); padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer;">
+              🌱 Zero-Fat Vegan Meringue (Aquafaba)
+            </button>
+            <button onclick="applyOptimizerPreset('gluten_free_loaf')" style="background:#f8fafc; border:1px solid var(--border-medium); padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer;">
+              🍞 Gluten-Free Viscoelastic Bread
+            </button>
+            <button onclick="applyOptimizerPreset('plant_mayo')" style="background:#f8fafc; border:1px solid var(--border-medium); padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer;">
+              🥑 Plant-Based Mayonnaise (0mg Cholesterol)
+            </button>
+            <button onclick="applyOptimizerPreset('low_sugar_jam')" style="background:#f8fafc; border:1px solid var(--border-medium); padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer;">
+              🍓 Low-Sugar Amidated Pectin Matrix
+            </button>
+          </div>
+        </div>
+
+        <!-- Optimizer Workbench Split -->
+        <div style="display:grid; grid-template-columns:360px 1fr; gap:24px;">
+          
+          <!-- Left: User Constraint Controls -->
+          <div style="background:#fafafa; border:1px solid var(--border-medium); border-radius:8px; padding:18px;">
+            <h4 style="margin:0 0 14px 0; font-size:12px; text-transform:uppercase; color:var(--text-muted); font-family:var(--font-mono);">
+              1. Custom Formulation Constraints
+            </h4>
+
+            <div style="margin-bottom:12px;">
+              <label style="font-size:12px; font-weight:700; display:block; margin-bottom:4px;">Target Colloidal Architecture:</label>
+              <select id="opt-target-system" style="width:100%; padding:8px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+                <option value="whipped_foam">Whipped Dessert Foam (Aerated Emulsion)</option>
+                <option value="viscoelastic_dough">Viscoelastic Dough (Gas Retentive Crumb)</option>
+                <option value="plant_mayo_emulsion">High-Internal Phase Emulsion (Condiment)</option>
+                <option value="calcium_spherification">Calcium Hydrogel Capsule (Spherification)</option>
+                <option value="low_sugar_pectin_matrix">Low-Sugar Fruit Jam Matrix (20° Brix)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom:12px;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
+                <label style="font-weight:700;">Max Lipid / Fat Limit:</label>
+                <span id="opt-fat-val" style="font-family:var(--font-mono); font-weight:700; color:#dc2626;">1.0g</span>
+              </div>
+              <input type="range" id="opt-fat" min="0" max="40" step="0.5" value="1.0" oninput="document.getElementById('opt-fat-val').innerText = this.value + 'g'" style="width:100%;">
+              <div style="font-size:10px; color:var(--text-muted);">per 100g standard mass basis</div>
+            </div>
+
+            <div style="margin-bottom:12px;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
+                <label style="font-weight:700;">Target Minimum Protein:</label>
+                <span id="opt-prot-val" style="font-family:var(--font-mono); font-weight:700; color:#16a34a;">3.0g</span>
+              </div>
+              <input type="range" id="opt-protein" min="0" max="25" step="0.5" value="3.0" oninput="document.getElementById('opt-prot-val').innerText = this.value + 'g'" style="width:100%;">
+              <div style="font-size:10px; color:var(--text-muted);">per 100g standard mass basis</div>
+            </div>
+
+            <div style="margin-bottom:12px;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
+                <label style="font-weight:700;">Target Volume Overrun:</label>
+                <span id="opt-overrun-val" style="font-family:var(--font-mono); font-weight:700; color:var(--color-primary);">380%</span>
+              </div>
+              <input type="range" id="opt-overrun" min="50" max="800" step="10" value="380" oninput="document.getElementById('opt-overrun-val').innerText = this.value + '%'" style="width:100%;">
+              <div style="font-size:10px; color:var(--text-muted);">Volumetric aeration expansion</div>
+            </div>
+
+            <div style="margin-bottom:14px;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
+                <label style="font-weight:700;">Min Syneresis Stability:</label>
+                <span id="opt-stab-val" style="font-family:var(--font-mono); font-weight:700; color:var(--color-primary);">24h</span>
+              </div>
+              <input type="range" id="opt-stability" min="1" max="48" step="1" value="24" oninput="document.getElementById('opt-stab-val').innerText = this.value + 'h'" style="width:100%;">
+              <div style="font-size:10px; color:var(--text-muted);">Hours before lamellar fluid separation</div>
+            </div>
+
+            <!-- Dietary Filters -->
+            <div style="margin-bottom:16px; border-top:1px solid var(--border-light); padding-top:10px;">
+              <label style="font-size:11px; font-weight:700; text-transform:uppercase; color:var(--text-muted); font-family:var(--font-mono); display:block; margin-bottom:6px;">
+                Dietary & Allergen Exclusions:
+              </label>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:12px;">
+                <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                  <input type="checkbox" id="opt-flag-vegan"> 🌱 100% Vegan
+                </label>
+                <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                  <input type="checkbox" id="opt-flag-gluten-free"> 🌾 Gluten-Free
+                </label>
+                <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                  <input type="checkbox" id="opt-flag-dairy-free"> 🥛 Dairy-Free
+                </label>
+                <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                  <input type="checkbox" id="opt-flag-low-sugar"> 🍬 Low-Sugar
+                </label>
+              </div>
+            </div>
+
+            <button id="btn-run-optimizer" onclick="runInverseOptimizer()" style="width:100%; background:#0f172a; color:#fff; padding:12px; border:none; border-radius:6px; font-weight:700; font-size:13px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
+              <span>⚡</span> Solve Formulation on Databricks
+            </button>
+          </div>
+
+          <!-- Right: Solved Recipe, Stokes' Law Kinetics & Proof -->
+          <div id="optimizer-results-container">
+            <div style="background:#fafafa; border:1px dashed var(--border-medium); border-radius:8px; padding:32px; text-align:center; color:var(--text-muted);">
+              <div style="font-size:28px; margin-bottom:8px;">⚡</div>
+              Click <strong>"Solve Formulation on Databricks"</strong> to execute multi-objective parameter search across 120 Databricks Serverless Gold simulation points.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 2: ANY-TO-ANY INGREDIENT SUBSTITUTION STUDIO              -->
+    <!-- ============================================================== -->
+    <section class="tab-pane" id="pane-substitution" style="display:none;">
+      <div style="background:#fff; border:1px solid var(--border-medium); border-radius:8px; padding:20px; margin-bottom:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;">
+          <div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="badge-engineered" style="font-size:11px; font-weight:700;">ANY-TO-ANY SUBSTITUTION WORKBENCH</span>
+              <span style="font-family:var(--font-mono); font-size:10px; background:#e0e7ff; color:#3730a3; border:1px solid #c7d2fe; padding:2px 6px; border-radius:4px; font-weight:700;">
+                DELTA LAKE NUTRITIONAL TENSORS
+              </span>
+            </div>
+            <h2 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--text-primary); margin:6px 0 4px 0;">
+              Precision Food Ingredient Substitution Studio
+            </h2>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin:0;">
+              Select any culinary baseline recipe, swap any constituent for an alternative from the 33 USDA Foundation items, and let Databricks compute nutritional shifts, rheology risk, and compensatory biopolymer mechanics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Substitution Config Form -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; background:#f8fafc; border:1px solid var(--border-medium); border-radius:8px; padding:16px; margin-bottom:20px;">
+          
+          <div>
+            <label style="font-size:12px; font-weight:700; display:block; margin-bottom:4px;">1. Base Culinary Recipe:</label>
+            <select id="sub-recipe-select" onchange="onSubRecipeChanged()" style="width:100%; padding:8px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+              <!-- Populated dynamically via GET /api/recipes -->
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size:12px; font-weight:700; display:block; margin-bottom:4px;">2. Ingredient to Replace:</label>
+            <select id="sub-target-select" style="width:100%; padding:8px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+              <!-- Populated dynamically based on chosen recipe -->
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size:12px; font-weight:700; display:block; margin-bottom:4px;">3. Substitute Ingredient (from 33 USDA):</label>
+            <select id="sub-replacement-select" style="width:100%; padding:8px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+              <!-- Populated dynamically with all 33 USDA ingredients -->
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size:12px; font-weight:700; display:block; margin-bottom:4px;">4. Hydrocolloid Compensator (Optional):</label>
+            <select id="sub-compensator-select" style="width:100%; padding:8px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+              <option value="">None (Plain 1-to-1 Substitution)</option>
+              <option value="ing_xanthan_gum" selected>Xanthan Gum (Continuous Yield Stress)</option>
+              <option value="ing_gelatin_250bloom">Gelatin (Thermo-reversible Network)</option>
+              <option value="ing_agar_agar">Agar Agar (Galactan Scaffold)</option>
+              <option value="ing_psyllium_husk">Psyllium Husk (Arabinoxylan Microfibrils)</option>
+            </select>
+          </div>
+
+          <div style="display:flex; align-items:flex-end;">
+            <button onclick="runSubstitutionAnalysis()" style="width:100%; background:var(--color-primary); color:#fff; border:none; padding:10px 16px; border-radius:6px; font-weight:700; font-size:13px; cursor:pointer; display:flex; justify-content:center; align-items:center; gap:6px;">
+              <span>⚡</span> Run Substitution Analysis
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Substitution Results Panel -->
+        <div id="substitution-results-container">
+          <div style="background:#fafafa; border:1px dashed var(--border-medium); border-radius:8px; padding:32px; text-align:center; color:var(--text-muted); font-size:13px;">
+            Configure your substitution above and click <strong>"Run Substitution Analysis"</strong> to evaluate Δ nutritional and rheological balance.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 3: 5 FORMULATION SYSTEMS (BENCHMARK vs ENGINEERED)        -->
+    <!-- ============================================================== -->
+    <section class="tab-pane" id="pane-systems" style="display:none;">
+      
+      <!-- System Cards Selector (Populated dynamically via GET /api/systems) -->
+      <div class="section-label" style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:8px;">
+        Select Food Architecture Challenge (Live Databricks Benchmark Suite):
+      </div>
+      <div class="systems-selector-grid" id="systemsSelectorGrid">
+        <div style="padding:16px; font-size:12px; color:var(--text-muted);">Loading systems catalog from Databricks Serverless...</div>
+      </div>
+
+      <!-- Active System Detail View (Populated dynamically via GET /api/systems/{id}) -->
+      <div id="activeSystemContainer">
+        <div style="background:#fff; border:1px solid var(--border-medium); border-radius:8px; padding:36px; text-align:center; color:var(--text-muted); font-size:13px;">
+          <div style="font-size:24px; margin-bottom:8px;">⏳</div>
+          Connecting to Databricks Serverless Compute and querying formulation benchmarks...
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 2: CUSTOM COLLOID SANDBOX (MULTI-COMPONENT BUILDER)        -->
+    <!-- ============================================================== -->
+    <section class="tab-pane" id="pane-sandbox" style="display:none;">
+      <div style="background:#fff; border:1px solid var(--border-medium); border-radius:8px; padding:20px; margin-bottom:20px;">
+        <h2 style="font-family:var(--font-serif); font-size:1.3rem; margin:0 0 4px 0;">Multi-Component Colloid Formulation Sandbox</h2>
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin:0 0 16px 0;">
+          Compose an engineered food formulation by selecting ingredients across functional classes, configuring mass fractions, and querying Databricks Delta Lake synthetic simulation sweeps for real-time rheology predictions.
+        </p>
+
+        <div class="sandbox-grid">
+          <!-- Left: Formulation Component Picker -->
+          <div class="sandbox-panel">
+            <h4 style="margin:0 0 12px 0; font-size:13px; text-transform:uppercase; color:var(--text-muted); font-family:var(--font-mono);">1. Select Recipe Components</h4>
+            
+            <div style="margin-bottom:12px;">
+              <label style="font-size:12px; font-weight:700; display:block; margin-bottom:4px;">Continuous Phase Base (Liquid Matrix):</label>
+              <select id="sb-base" style="width:100%; padding:8px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+                <option value="ing_skim_milk_defatted">Skim Milk Defatted (0.08% Fat) - 90% Water</option>
+                <option value="ing_whole_milk">Whole Milk (3.25% Fat)</option>
+                <option value="ing_buttermilk">Cultured Buttermilk (Low-Fat, MFGM Polar Lipids)</option>
+                <option value="ing_heavy_cream_36">Heavy Whipping Cream (36% Fat Benchmark)</option>
+              </select>
+              <div style="display:flex; justify-content:space-between; font-size:11px; margin-top:2px;">
+                <span>Mass Fraction:</span>
+                <span id="sb-base-val" style="font-weight:700;">80%</span>
+              </div>
+              <input type="range" id="sb-base-pct" min="50" max="98" step="1" value="80" oninput="updateSandboxTotals()" style="width:100%;">
+            </div>
+
+            <div style="margin-bottom:12px;">
+              <label style="font-size:12px; font-weight:700; display:block; margin-bottom:4px;">Yield Stress / Viscosity Stabilizer (Hydrocolloid):</label>
+              <select id="sb-stabilizer" style="width:100%; padding:8px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+                <option value="ing_xanthan_gum">Xanthan Gum (4.5 Pa Yield Stress, Pseudoplastic)</option>
+                <option value="ing_gelatin_250bloom">Gelatin 250 Bloom (Triple-Helix Gel, 35°C Melt)</option>
+                <option value="ing_agar_agar">Agar Agar (Red Algae Galactan, 50°C Hysteresis)</option>
+                <option value="ing_sodium_alginate">Sodium Alginate (Ca²⁺ Crosslink Spherification)</option>
+                <option value="ing_pectin_lm">Low-Methoxyl Pectin (Amidated Ca²⁺ Gelation)</option>
+                <option value="ing_psyllium_husk">Psyllium Husk Arabinoxylan (Viscoelastic Network)</option>
+              </select>
+              <div style="display:flex; justify-content:space-between; font-size:11px; margin-top:2px;">
+                <span>Mass Fraction:</span>
+                <span id="sb-stab-val" style="font-weight:700;">0.5%</span>
+              </div>
+              <input type="range" id="sb-stab-pct" min="0.05" max="3.0" step="0.05" value="0.5" oninput="updateSandboxTotals()" style="width:100%;">
+            </div>
+
+            <div style="margin-bottom:12px;">
+              <label style="font-size:12px; font-weight:700; display:block; margin-bottom:4px;">Interfacial Surfactant / Foaming Protein:</label>
+              <select id="sb-surfactant" style="width:100%; padding:8px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+                <option value="ing_egg_white">Egg White Albumen (750% Overrun, Viscoelastic Film)</option>
+                <option value="ing_aquafaba">Chickpea Aquafaba (520% Overrun, Vegan Saponins)</option>
+                <option value="ing_egg_yolk">Egg Yolk LDL (Benchmark Mayonnaise Emulsifier)</option>
+                <option value="ing_soy_lecithin">Soy Lecithin Phospholipids (HLB 8.0)</option>
+                <option value="ing_mustard_powder">Mustard Mucilage (Pickering Solid Microgels)</option>
+              </select>
+              <div style="display:flex; justify-content:space-between; font-size:11px; margin-top:2px;">
+                <span>Mass Fraction:</span>
+                <span id="sb-surf-val" style="font-weight:700;">5.0%</span>
+              </div>
+              <input type="range" id="sb-surf-pct" min="0.5" max="25" step="0.5" value="5" oninput="updateSandboxTotals()" style="width:100%;">
+            </div>
+
+            <div style="margin-bottom:16px;">
+              <label style="font-size:12px; font-weight:700; display:block; margin-bottom:4px;">Sweetener / Osmotic Lamellae Stabilizer:</label>
+              <select id="sb-sweetener" style="width:100%; padding:8px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+                <option value="ing_granulated_sugar">Granulated Sucrose (Viscosity & Water Activity Control)</option>
+                <option value="ing_allulose">D-Allulose Rare Sugar (0.4 kcal/g, Non-Crystallizing)</option>
+                <option value="ing_honey_pure">Pure Clover Honey (Invert Fructose/Glucose Humectant)</option>
+              </select>
+              <div style="display:flex; justify-content:space-between; font-size:11px; margin-top:2px;">
+                <span>Mass Fraction:</span>
+                <span id="sb-sweet-val" style="font-weight:700;">14.5%</span>
+              </div>
+              <input type="range" id="sb-sweet-pct" min="0" max="30" step="0.5" value="14.5" oninput="updateSandboxTotals()" style="width:100%;">
+            </div>
+
+            <button onclick="runSandboxSimulation()" style="width:100%; background:var(--color-primary); color:#fff; border:none; padding:12px; border-radius:6px; font-weight:700; font-size:14px; cursor:pointer; display:flex; justify-content:center; align-items:center; gap:8px;">
+              <span>⚡</span> Run Databricks Simulation & Rheology Calculation
+            </button>
+          </div>
+
+          <!-- Right: Calculated Rheology & Nutrition Output -->
+          <div class="sandbox-panel" id="sandbox-results-panel">
+            <h4 style="margin:0 0 12px 0; font-size:13px; text-transform:uppercase; color:var(--text-muted); font-family:var(--font-mono);">2. Predicted Colloid Kinetics & 100g USDA Profile</h4>
+            
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px;">
+                <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Predicted Overrun</div>
+                <div id="sb-res-overrun" style="font-family:var(--font-mono); font-size:24px; font-weight:700; color:#16a34a;">410%</div>
+                <div style="font-size:10px; color:var(--text-muted);">Volumetric Expansion</div>
+              </div>
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px;">
+                <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Drainage Half-Life</div>
+                <div id="sb-res-drainage" style="font-family:var(--font-mono); font-size:24px; font-weight:700; color:var(--color-primary);">960m</div>
+                <div style="font-size:10px; color:#16a34a; font-weight:700;">24h+ Syneresis Stable</div>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px;">
+                <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Yield Stress (τ₀)</div>
+                <div id="sb-res-yield" style="font-family:var(--font-mono); font-size:18px; font-weight:700; color:var(--text-primary);">9.0 Pa</div>
+                <div style="font-size:10px; color:var(--text-muted);">Stokes' Law Drainage Arrest</div>
+              </div>
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px;">
+                <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Continuous Viscosity</div>
+                <div id="sb-res-visc" style="font-family:var(--font-mono); font-size:18px; font-weight:700; color:var(--text-primary);">1.61 Pa·s</div>
+                <div style="font-size:10px; color:var(--text-muted);">Pseudoplastic Shear-Thinning</div>
+              </div>
+            </div>
+
+            <!-- 100g USDA Nutritional Profile Breakdown -->
+            <div style="border-top:1px solid var(--border-light); padding-top:14px;">
+              <div style="font-size:11px; font-family:var(--font-mono); color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:8px;">
+                Normalized 100g USDA Nutritional Balance:
+              </div>
+              <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; font-size:12px;">
+                <div style="background:#fafafa; padding:6px 10px; border-radius:4px;">
+                  <span style="color:var(--text-muted);">Energy:</span> <strong id="sb-nut-energy">86.2 kcal</strong>
+                </div>
+                <div style="background:#fafafa; padding:6px 10px; border-radius:4px;">
+                  <span style="color:var(--text-muted);">Protein:</span> <strong id="sb-nut-protein">3.6g</strong>
+                </div>
+                <div style="background:#fafafa; padding:6px 10px; border-radius:4px;">
+                  <span style="color:var(--text-muted);">Fat Total:</span> <strong id="sb-nut-fat" style="color:#16a34a;">0.1g</strong>
+                </div>
+                <div style="background:#fafafa; padding:6px 10px; border-radius:4px;">
+                  <span style="color:var(--text-muted);">Sat. Fat:</span> <strong id="sb-nut-satfat">0.05g</strong>
+                </div>
+                <div style="background:#fafafa; padding:6px 10px; border-radius:4px;">
+                  <span style="color:var(--text-muted);">Net Carbs:</span> <strong id="sb-nut-carbs">18.2g</strong>
+                </div>
+                <div style="background:#fafafa; padding:6px 10px; border-radius:4px;">
+                  <span style="color:var(--text-muted);">Sodium:</span> <strong id="sb-nut-sodium">52mg</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 3: 100g USDA INGREDIENT MATRIX (33 ITEMS)                 -->
+    <!-- ============================================================== -->
+    <section class="tab-pane" id="pane-catalog" style="display:none;">
+      <div style="background:#fff; border:1px solid var(--border-medium); border-radius:8px; padding:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <div>
+            <h2 style="font-family:var(--font-serif); font-size:1.3rem; margin:0 0 4px 0;">100g USDA Normalized Ingredient Library</h2>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin:0;">
+              All nutritional quantities normalized to standard 100g basis per USDA FoodData Central Foundation Foods and peer-reviewed literature.
+            </p>
+          </div>
+          <!-- Category Filter & Search -->
+          <div style="display:flex; gap:8px;">
+            <input type="text" id="ing-search-input" placeholder="Search 33 ingredients..." oninput="filterIngredientsTable()" style="padding:6px 12px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px; width:220px;">
+            <select id="ing-cat-filter" onchange="filterIngredientsTable()" style="padding:6px 12px; border:1px solid var(--border-medium); border-radius:6px; font-size:13px;">
+              <option value="All">All Categories (33)</option>
+              <option value="Hydrocolloids & Gelling Agents">Hydrocolloids & Gelling (10)</option>
+              <option value="Dairy & Fats">Dairy & Fats (5)</option>
+              <option value="Flours & Starches">Flours & Starches (5)</option>
+              <option value="Plant Proteins & Surfactants">Proteins & Surfactants (5)</option>
+              <option value="Fats & Oils">Fats & Oils (2)</option>
+              <option value="Sweets & Sugars">Sweets & Sugars (3)</option>
+              <option value="Acidulants & Salts">Acidulants & Salts (3)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:13px; text-align:left;">
+            <thead>
+              <tr style="border-bottom:2px solid var(--border-medium); font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--text-muted);">
+                <th style="padding:8px;">Common Name</th>
+                <th style="padding:8px;">Category</th>
+                <th style="padding:8px;">Energy</th>
+                <th style="padding:8px;">Protein</th>
+                <th style="padding:8px;">Total Fat</th>
+                <th style="padding:8px;">Carbs</th>
+                <th style="padding:8px;">Overrun %</th>
+                <th style="padding:8px;">Stability (min)</th>
+                <th style="padding:8px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="ingredients-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 4: COLLOID PHYSICS & THERMODYNAMIC LAWS                    -->
+    <!-- ============================================================== -->
+    <section class="tab-pane" id="pane-mechanisms" style="display:none;">
+      <div style="background:#fff; border:1px solid var(--border-medium); border-radius:8px; padding:20px;">
+        <h2 style="font-family:var(--font-serif); font-size:1.3rem; margin:0 0 4px 0;">Governing Physical Colloid Chemistry & Thermodynamic Laws</h2>
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin:0 0 20px 0;">
+          Rigorous physical models explaining interfacial energy minimization, continuous-phase drainage kinetics, and conformational polymer phase transitions.
+        </p>
+
+        <div id="mechanisms-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:16px;">
+          <!-- Dynamically populated from API -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 5: DATABRICKS MEDALLION ARCHITECTURE                      -->
+    <!-- ============================================================== -->
+    <section class="tab-pane" id="pane-medallion" style="display:none;">
+      <div style="background:#fff; border:1px solid var(--border-medium); border-radius:8px; padding:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <div>
+            <span class="badge-engineered" style="font-size:11px; font-weight:700;">UNITY CATALOG ARCHITECTURE</span>
+            <h2 style="font-family:var(--font-serif); font-size:1.3rem; margin:4px 0;">Databricks Delta Lake Medallion Pipeline</h2>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin:0;">
+              Live data engineering pipeline deployed on Databricks Serverless Compute under catalog <code>workspace</code>.
+            </p>
+          </div>
+          <button onclick="openStudioModal()" style="background:#0f172a; color:#fff; border:none; padding:8px 16px; border-radius:6px; font-weight:600; cursor:pointer;">
+            Open SQL Studio
+          </button>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-top:20px;">
+          <!-- Bronze Tier -->
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; border-top:4px solid #b45309; border-radius:8px; padding:16px;">
+            <div style="font-family:var(--font-mono); font-size:11px; font-weight:700; color:#b45309; text-transform:uppercase;">BRONZE TIER (RAW INGESTION)</div>
+            <h4 style="margin:4px 0 8px 0;">workspace.foodmechanics_bronze</h4>
+            <p style="font-size:12px; color:var(--text-secondary); line-height:1.4;">
+              Immutable raw landing zone capturing external USDA FoodData Central JSON payloads, unstructured food literature DOIs, and empirical rheology measurements.
+            </p>
+            <div style="font-size:11px; font-family:var(--font-mono); background:#fff; border:1px solid #e2e8f0; padding:8px; border-radius:4px;">
+              • bronze_usda_fdc_raw<br>
+              • bronze_scientific_papers_raw<br>
+              • bronze_rheology_logs
+            </div>
+          </div>
+
+          <!-- Silver Tier -->
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; border-top:4px solid #64748b; border-radius:8px; padding:16px;">
+            <div style="font-family:var(--font-mono); font-size:11px; font-weight:700; color:#475569; text-transform:uppercase;">SILVER TIER (CLEANSED DELTA TABLES)</div>
+            <h4 style="margin:4px 0 8px 0;">workspace.foodmechanics_silver</h4>
+            <p style="font-size:12px; color:var(--text-secondary); line-height:1.4;">
+              Typed, deduplicated Delta tables normalized to 100g USDA basis with verified peer-reviewed evidence attribution.
+            </p>
+            <div style="font-size:11px; font-family:var(--font-mono); background:#fff; border:1px solid #e2e8f0; padding:8px; border-radius:4px;">
+              • silver_ingredients (33 rows)<br>
+              • silver_nutritional_profiles (33 rows)<br>
+              • silver_functional_properties (14 rows)<br>
+              • silver_food_mechanisms (6 rows)<br>
+              • silver_scientific_evidence (5 rows)
+            </div>
+          </div>
+
+          <!-- Gold Tier -->
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; border-top:4px solid #f59e0b; border-radius:8px; padding:16px;">
+            <div style="font-family:var(--font-mono); font-size:11px; font-weight:700; color:#d97706; text-transform:uppercase;">GOLD TIER (ANALYTICAL & SIMULATION)</div>
+            <h4 style="margin:4px 0 8px 0;">workspace.foodmechanics_gold</h4>
+            <p style="font-size:12px; color:var(--text-secondary); line-height:1.4;">
+              Aggregated analytical views and Spark SQL Monte Carlo simulation sweeps generating 120+ formulation permutations across concentration gradients.
+            </p>
+            <div style="font-size:11px; font-family:var(--font-mono); background:#fff; border:1px solid #e2e8f0; padding:8px; border-radius:4px;">
+              • v_ingredient_comparisons (33 rows)<br>
+              • gold_formulation_simulations (120 rows)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- DATABRICKS LAKEHOUSE & SQL STUDIO MODAL                       -->
+  <!-- ============================================================== -->
+  <div class="studio-modal-backdrop" id="studio-modal-backdrop" onclick="if(event.target===this) closeStudioModal()">
+    <div class="studio-modal">
+      <div class="studio-header">
+        <div>
+          <div style="font-family:var(--font-mono); font-size:11px; color:#38bdf8; text-transform:uppercase; font-weight:700;">DATABRICKS SERVERLESS SQL STUDIO</div>
+          <h3 style="margin:2px 0 0 0; font-family:var(--font-sans); font-size:1.1rem;">Governed Query & Lakehouse Inspector</h3>
+        </div>
+        <button onclick="closeStudioModal()" style="background:none; border:none; color:#94a3b8; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+
+      <div class="studio-body">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div style="font-size:12px; color:var(--text-secondary);">
+            Execute live SQL against Databricks Serverless Compute over Unity Catalog tables.
+          </div>
+          <div id="query-latency-pill" style="font-family:var(--font-mono); font-size:11px; background:#f1f5f9; padding:4px 8px; border-radius:4px; font-weight:700; color:#0284c7;">
+            Latency: -- ms
+          </div>
+        </div>
+
+        <!-- 1-Click Preset Analytical Queries -->
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+          <span style="font-size:11px; font-weight:700; color:var(--text-muted); align-self:center;">Presets:</span>
+          <button onclick="loadPresetQuery(1)" style="font-size:11px; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 10px; border-radius:4px; cursor:pointer;">
+            1. Low-Fat High-Overrun Foams
+          </button>
+          <button onclick="loadPresetQuery(2)" style="font-size:11px; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 10px; border-radius:4px; cursor:pointer;">
+            2. Hydrocolloid Yield Stress Ranking
+          </button>
+          <button onclick="loadPresetQuery(3)" style="font-size:11px; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 10px; border-radius:4px; cursor:pointer;">
+            3. Spark SQL Synthetic Sweep (120 Runs)
+          </button>
+          <button onclick="loadPresetQuery(4)" style="font-size:11px; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 10px; border-radius:4px; cursor:pointer;">
+            4. 100g USDA Full Nutrition Matrix
+          </button>
+        </div>
+
+        <textarea id="studio-sql-input" class="sql-editor-box" rows="4">SELECT common_name, category, energy_kcal, fat_total_g, overrun_pct, drainage_half_life_min FROM workspace.foodmechanics_gold.v_ingredient_comparisons WHERE overrun_pct > 150 ORDER BY overrun_pct DESC</textarea>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <button onclick="executeStudioSQL()" style="background:#0284c7; color:#fff; border:none; padding:8px 18px; border-radius:6px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px;">
+            <span>▶</span> Run Databricks SQL
+          </button>
+          <span id="query-row-count" style="font-family:var(--font-mono); font-size:12px; color:var(--text-muted);">0 rows returned</span>
+        </div>
+
+        <!-- Query Output Results Table -->
+        <div id="studio-query-results" style="max-height:280px; overflow-y:auto; border:1px solid var(--border-medium); border-radius:6px; background:#fafafa;">
+          <div style="padding:20px; text-align:center; color:var(--text-muted); font-size:13px;">
+            Click <strong>"Run Databricks SQL"</strong> or choose a preset query to execute directly on Serverless Compute.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ingredient Deep-Dive Modal -->
+  <div class="studio-modal-backdrop" id="ingredient-modal-backdrop" onclick="if(event.target===this) closeIngModal()">
+    <div class="studio-modal" style="max-width:680px;">
+      <div class="studio-header">
+        <div>
+          <div style="font-family:var(--font-mono); font-size:11px; color:#38bdf8; text-transform:uppercase;" id="modal-ing-category">Category</div>
+          <h3 style="margin:2px 0 0 0; font-size:1.2rem;" id="modal-ing-name">Ingredient Name</h3>
+        </div>
+        <button onclick="closeIngModal()" style="background:none; border:none; color:#94a3b8; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+      <div class="studio-body" id="modal-ing-body">
+        <!-- Populated via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

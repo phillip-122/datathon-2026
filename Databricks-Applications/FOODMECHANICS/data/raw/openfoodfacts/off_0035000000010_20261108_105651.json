@@ -1,0 +1,34 @@
+{
+  "source_name": "openfoodfacts",
+  "item_id": "off_0035000000010",
+  "captured_at": "2026-11-08T10:56:51.566995+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://world.openfoodfacts.org/api/v2/product/0035000000010.json",
+    "payload": {
+      "code": "0035000000010",
+      "status": 1,
+      "status_verbose": "product found",
+      "product": {
+        "barcode": "0035000000010",
+        "product_name": "Liquid Egg Whites 100% Pure",
+        "brand": "Eggland's Best",
+        "ingredients_text": "100% Pasteurized Liquid Egg Whites. No added preservatives.",
+        "additives_tags": [],
+        "nova_group": 1,
+        "nutriments": {
+          "energy-kcal_100g": 48.0,
+          "proteins_100g": 10.5,
+          "fat_100g": 0.0,
+          "saturated-fat_100g": 0.0,
+          "carbohydrates_100g": 0.8,
+          "sugars_100g": 0.7,
+          "sodium_100g": 0.165,
+          "calcium_100g": 0.008
+        }
+      }
+    },
+    "fetched_at": "2026-11-08T10:56:51.566987+00:00"
+  }
+}

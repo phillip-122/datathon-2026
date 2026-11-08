@@ -1,0 +1,36 @@
+{
+  "source_name": "openfoodfacts",
+  "item_id": "off_0041271000123",
+  "captured_at": "2026-11-08T15:07:28.715575+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://world.openfoodfacts.org/api/v2/product/0041271000123.json",
+    "payload": {
+      "code": "0041271000123",
+      "status": 1,
+      "status_verbose": "product found",
+      "product": {
+        "barcode": "0041271000123",
+        "product_name": "Organic Heavy Whipping Cream 36% Milkfat",
+        "brand": "Horizon Organic",
+        "ingredients_text": "Organic Grade A Heavy Cream, Gellan Gum.",
+        "additives_tags": [
+          "en:e418"
+        ],
+        "nova_group": 3,
+        "nutriments": {
+          "energy-kcal_100g": 345.0,
+          "proteins_100g": 2.2,
+          "fat_100g": 36.5,
+          "saturated-fat_100g": 22.8,
+          "carbohydrates_100g": 2.8,
+          "sugars_100g": 2.8,
+          "sodium_100g": 0.035,
+          "calcium_100g": 0.065
+        }
+      }
+    },
+    "fetched_at": "2026-11-08T15:07:28.715565+00:00"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "source_name": "scientific_lit",
+  "item_id": "crossref_10.1016_j.foodchem.2010.02.046",
+  "captured_at": "2026-11-08T13:59:01.497806+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.crossref.org/works/10.1016/j.foodchem.2010.02.046",
+    "payload": {
+      "status": "ok",
+      "message-type": "work",
+      "message": {
+        "DOI": "10.1016/j.foodchem.2010.02.046",
+        "title": [
+          "Milk heat treatment: Effects on the heat stability of milk proteins and the rheological properties of milk gels"
+        ],
+        "author": [
+          {
+            "family": "Raikos",
+            "given": "Vassilios"
+          }
+        ],
+        "container-title": [
+          "Food Chemistry"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "volume": "122",
+        "issue": "1",
+        "page": "1-10",
+        "is-referenced-by-count": 340
+      }
+    },
+    "fetched_at": "2026-11-08T13:59:01.497798+00:00"
+  }
+}

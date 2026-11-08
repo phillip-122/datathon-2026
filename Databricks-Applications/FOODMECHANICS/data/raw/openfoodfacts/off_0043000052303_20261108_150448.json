@@ -1,0 +1,36 @@
+{
+  "source_name": "openfoodfacts",
+  "item_id": "off_0043000052303",
+  "captured_at": "2026-11-08T15:04:48.513412+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://world.openfoodfacts.org/api/v2/product/0043000052303.json",
+    "payload": {
+      "code": "0043000052303",
+      "status": 1,
+      "status_verbose": "product found",
+      "product": {
+        "barcode": "0043000052303",
+        "product_name": "Original Unflavored Gelatin",
+        "brand": "Knox",
+        "ingredients_text": "Gelatin.",
+        "additives_tags": [
+          "en:e441"
+        ],
+        "nova_group": 2,
+        "nutriments": {
+          "energy-kcal_100g": 335.0,
+          "proteins_100g": 85.0,
+          "fat_100g": 0.0,
+          "saturated-fat_100g": 0.0,
+          "carbohydrates_100g": 0.0,
+          "sugars_100g": 0.0,
+          "sodium_100g": 0.19,
+          "calcium_100g": 0.05
+        }
+      }
+    },
+    "fetched_at": "2026-11-08T15:04:48.513407+00:00"
+  }
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "source_id": "doi:10.1111/j.1365-2621.2005.tb07172.x",
+    "source_type": "crossref",
+    "source_url": "https://doi.org/10.1111/j.1365-2621.2005.tb07172.x",
+    "publication_date": "2005-03-01",
+    "evidence_id": "ev_damodaran_2005",
+    "doi_or_citation": "10.1111/j.1365-2621.2005.tb07172.x",
+    "publication_year": 2005,
+    "journal": "Journal of Food Science",
+    "title": "Protein Stabilization of Emulsions and Foams: Physical Chemistry Principles",
+    "evidence_grade": "PEER_REVIEWED",
+    "findings_summary": "Demonstrated that globular protein foaming capacity depends on rapid interfacial adsorption and partial unfolding (denaturation) at air-water interfaces, establishing viscoelastic cohesive 2D films through intermolecular disulfide bonds and hydrophobic interactions."
+  },
+  {
+    "source_id": "doi:10.1016/j.foodhyd.2010.04.009",
+    "source_type": "crossref",
+    "source_url": "https://doi.org/10.1016/j.foodhyd.2010.04.009",
+    "publication_date": "2010-10-01",
+    "evidence_id": "ev_dickinson_2010",
+    "doi_or_citation": "10.1016/j.foodhyd.2010.04.009",
+    "publication_year": 2010,
+    "journal": "Food Hydrocolloids",
+    "title": "Food emulsions and foams: Stabilization by particles and hydrocolloids",
+    "evidence_grade": "META_ANALYSIS",
+    "findings_summary": "Investigated synergistic stabilization of air bubbles by polysaccharides (xanthan, guar) through bulk continuous phase thickening, showing that increasing viscosity reduces gravitational Plateau border drainage by a factor of 10 to 50."
+  },
+  {
+    "source_id": "doi:10.17221/3312-CJFS",
+    "source_type": "crossref",
+    "source_url": "https://doi.org/10.17221/3312-CJFS",
+    "publication_date": "2006-04-15",
+    "evidence_id": "ev_lomakina_2006",
+    "doi_or_citation": "10.17221/3312-CJFS",
+    "publication_year": 2006,
+    "journal": "Czech Journal of Food Sciences",
+    "title": "A study of the factors affecting the foaming properties of egg white: pH, temperature, and sucrose additions",
+    "evidence_grade": "PEER_REVIEWED",
+    "findings_summary": "Egg white overrun exceeded 650% with whipping time of 3 minutes. Addition of sucrose at early stages reduced initial overrun but increased foam drainage half-life from 18 minutes to over 120 minutes by elevating liquid viscosity."
+  },
+  {
+    "source_id": "doi:10.1016/S1359-0294(02)00085-7",
+    "source_type": "crossref",
+    "source_url": "https://doi.org/10.1016/S1359-0294(02)00085-7",
+    "publication_date": "2002-12-01",
+    "evidence_id": "ev_van_vliet_2002",
+    "doi_or_citation": "10.1016/S1359-0294(02)00085-7",
+    "publication_year": 2002,
+    "journal": "Current Opinion in Colloid & Interface Science",
+    "title": "Mechanisms involved in the formation and stabilization of food foams",
+    "evidence_grade": "TEXTBOOK_CANONICAL",
+    "findings_summary": "Identified the three primary thermodynamic instability drivers in culinary foams: drainage driven by gravity and Laplace capillary pressure in Plateau borders, bubble disproportionation via Ostwald ripening, and bubble coalescence through film rupture."
+  },
+  {
+    "source_id": "doi:10.3168/jds.S0022-0302(97)76059-6",
+    "source_type": "crossref",
+    "source_url": "https://doi.org/10.3168/jds.S0022-0302(97)76059-6",
+    "publication_date": "1997-05-01",
+    "evidence_id": "ev_goff_1997",
+    "doi_or_citation": "10.3168/jds.S0022-0302(97)76059-6",
+    "publication_year": 1997,
+    "journal": "Journal of Dairy Science",
+    "title": "Instability and Partial Coalescence in Whippable Dairy Emulsions",
+    "evidence_grade": "PEER_REVIEWED",
+    "findings_summary": "Whipped heavy cream stability relies on partial coalescence of partially crystalline fat globules that bridge at the air-water interface to form a rigid 3D fat-crystal continuous network. Excess liquid oil or temperature above fat melting point causes complete foam collapse."
+  },
+  {
+    "source_id": "doi:10.1016/j.jfoodeng.2018.03.018",
+    "source_type": "crossref",
+    "source_url": "https://doi.org/10.1016/j.jfoodeng.2018.03.018",
+    "publication_date": "2018-08-01",
+    "evidence_id": "ev_shim_2018",
+    "doi_or_citation": "10.1016/j.jfoodeng.2018.03.018",
+    "publication_year": 2018,
+    "journal": "Journal of Food Engineering",
+    "title": "Composition and properties of aquafaba: Water extract from chickpea cooking and its culinary application",
+    "evidence_grade": "PEER_REVIEWED",
+    "findings_summary": "Aquafaba foaming properties are governed by soluble protein fractions (~1.5 wt%) and arabinogalactan polysaccharides that retard liquid drainage. Produces overrun of 400-500% with drainage stability comparable to egg white when stabilized with acid."
+  }
+]

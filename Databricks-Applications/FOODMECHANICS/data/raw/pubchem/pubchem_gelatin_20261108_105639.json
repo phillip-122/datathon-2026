@@ -1,0 +1,22 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_gelatin",
+  "captured_at": "2026-11-08T10:56:39.933052+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": null,
+      "cas_id": "9000-70-8",
+      "name": "Gelatin (Type A / Type B)",
+      "iupac_name": "Partially hydrolyzed triple-helical collagen polypeptide",
+      "formula": "(Gly-Pro-Hyp)n repetitive motif",
+      "molecular_weight": 65000.0,
+      "classification": "GELLING_AGENT / FOAM_STABILIZER",
+      "functional_role": "Undergoes reversible coil-to-helix transition; forms thermoreversible aqueous gel matrix below 35°C trapping water and bubbles.",
+      "solubility": "Swells in cold water; dissolves in hot water (>40°C)",
+      "isoelectric_point": 8.0,
+      "denaturation_temp_c": 35.0,
+      "inchikey": "HYDROLYSATE_COLLAGEN_GELATIN"
+    }
+  }
+}

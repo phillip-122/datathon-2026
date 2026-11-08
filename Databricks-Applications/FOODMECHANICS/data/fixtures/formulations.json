@@ -1,0 +1,242 @@
+[
+  {
+    "formulation_id": "FORM-001",
+    "title": "Standard Egg-White French Meringue",
+    "category": "High-Overrun Protein Foam",
+    "description": "The benchmark culinary protein foam utilizing mechanical denaturation of albumen, buffered near its isoelectric point with potassium bitartrate, and stabilized against lamellar drainage with sucrose.",
+    "ingredients_formula": [
+      {
+        "ingredient_id": "ing_egg_white_raw",
+        "mass_g": 100.0,
+        "baker_percentage": 100.0,
+        "role": "Interfacial foaming proteins (ovalbumin, ovotransferrin)"
+      },
+      {
+        "ingredient_id": "ing_sucrose_granulated",
+        "mass_g": 100.0,
+        "baker_percentage": 100.0,
+        "role": "Viscosity builder, water immobilizer, thermal protector"
+      },
+      {
+        "ingredient_id": "ing_cream_of_tartar",
+        "mass_g": 0.8,
+        "baker_percentage": 0.8,
+        "role": "Acidulant (pH 4.8 buffer, charge neutralizer)"
+      }
+    ],
+    "target_attributes": {
+      "foam_expansion_overrun_pct": 720.0,
+      "foam_stability_half_life_min": 180.0,
+      "drainage_rate_ml_per_10min": 0.15,
+      "foam_density_g_ml": 0.14,
+      "bubble_size_d32_um": 42.0,
+      "firmness_yield_stress_pa": 85.0,
+      "thermal_stability_c": 110.0,
+      "fat_sensitivity": "HIGHLY_VULNERABLE (disrupted by >0.05% lipid)"
+    },
+    "mechanism_interactions": [
+      "mech_protein_mechanical_denaturation",
+      "mech_acid_electrostatic_stabilization",
+      "mech_sugar_drainage_retardation"
+    ],
+    "performance_tradeoffs": "Maximum volume expansion and high crispness when dried; extremely sensitive to fat contamination; requires gradual sugar addition to avoid restricting initial foam overrun.",
+    "evidence": {
+      "source_id": "doi:10.1016/j.foodhyd.2005.03.014",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1016/j.foodhyd.2005.03.014",
+      "publication_date": "2006-03-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_foodhyd_2005_03_014_20261108_094810.json"
+    }
+  },
+  {
+    "formulation_id": "FORM-002",
+    "title": "Chantilly Whipped Heavy Cream Foam",
+    "category": "Fat-Crystal Stabilized Emulsion Foam",
+    "description": "Rich dairy emulsion foam stabilized by shear-induced partial coalescence of solid milkfat globules around air bubbles at refrigerated temperatures.",
+    "ingredients_formula": [
+      {
+        "ingredient_id": "ing_heavy_cream",
+        "mass_g": 100.0,
+        "baker_percentage": 100.0,
+        "role": "36% milkfat emulsion base providing partially crystalline globules"
+      },
+      {
+        "ingredient_id": "ing_sucrose_granulated",
+        "mass_g": 10.0,
+        "baker_percentage": 10.0,
+        "role": "Mild sweetener and palatability modifier"
+      }
+    ],
+    "target_attributes": {
+      "foam_expansion_overrun_pct": 115.0,
+      "foam_stability_half_life_min": 240.0,
+      "drainage_rate_ml_per_10min": 0.05,
+      "foam_density_g_ml": 0.46,
+      "bubble_size_d32_um": 28.0,
+      "firmness_yield_stress_pa": 140.0,
+      "thermal_stability_c": 15.0,
+      "fat_sensitivity": "FAT_DEPENDENT (relies strictly on 35-38% lipid content)"
+    },
+    "mechanism_interactions": [
+      "mech_cream_partial_coalescence"
+    ],
+    "performance_tradeoffs": "Luxurious, dense, melt-in-mouth texture with zero drainage; modest overrun (115%); strictly temperature-sensitive (collapses above 18-20\u00b0C as fat crystals melt).",
+    "evidence": {
+      "source_id": "doi:10.1016/S0927-7765(99)00042-9",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1016/S0927-7765(99)00042-9",
+      "publication_date": "1999-10-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_S0927-7765_99_00042-9_20261108_094810.json"
+    }
+  },
+  {
+    "formulation_id": "FORM-003",
+    "title": "Reduced-Fat Milk + Hydrocolloid Dessert Foam",
+    "category": "Engineered Low-Fat Hydrocolloid Foam",
+    "description": "Fat-free, calorie-reduced dessert foam achieving high stability through xanthan gum yield stress rheology combined with skim milk casein and whey surface adsorption.",
+    "ingredients_formula": [
+      {
+        "ingredient_id": "ing_skim_milk",
+        "mass_g": 100.0,
+        "baker_percentage": 100.0,
+        "role": "Aqueous protein continuous phase (casein micelles & beta-lactoglobulin)"
+      },
+      {
+        "ingredient_id": "ing_xanthan_gum",
+        "mass_g": 0.25,
+        "baker_percentage": 0.25,
+        "role": "Pseudoplastic thickener providing continuous phase yield stress"
+      },
+      {
+        "ingredient_id": "ing_sucrose_granulated",
+        "mass_g": 20.0,
+        "baker_percentage": 20.0,
+        "role": "Sweetness, body, and supplementary viscosity enhancement"
+      }
+    ],
+    "target_attributes": {
+      "foam_expansion_overrun_pct": 320.0,
+      "foam_stability_half_life_min": 150.0,
+      "drainage_rate_ml_per_10min": 0.3,
+      "foam_density_g_ml": 0.24,
+      "bubble_size_d32_um": 55.0,
+      "firmness_yield_stress_pa": 65.0,
+      "thermal_stability_c": 60.0,
+      "fat_sensitivity": "RESISTANT (fat-free formulation, tolerant to incidental lipids)"
+    },
+    "mechanism_interactions": [
+      "mech_protein_mechanical_denaturation",
+      "mech_hydrocolloid_yield_stress_stabilization",
+      "mech_sugar_drainage_retardation"
+    ],
+    "performance_tradeoffs": "85% fewer calories than heavy cream with good overrun (320%); maintains stability at room temperature; slightly more elastic / pseudo-gelled mouthfeel than dairy cream.",
+    "evidence": {
+      "source_id": "doi:10.1016/j.cocis.2007.07.009",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1016/j.cocis.2007.07.009",
+      "publication_date": "2007-08-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_cocis_2007_07_009_20261108_094810.json"
+    }
+  },
+  {
+    "formulation_id": "FORM-004",
+    "title": "Vegan Aquafaba Meringue",
+    "category": "Plant-Based Legume Foam",
+    "description": "Plant-based egg-free meringue utilizing legume globulins and saponins from chickpea cooking liquid, stabilized by cream of tartar and sucrose.",
+    "ingredients_formula": [
+      {
+        "ingredient_id": "ing_aquafaba_liquid",
+        "mass_g": 100.0,
+        "baker_percentage": 100.0,
+        "role": "Plant protein and saponin aqueous foaming extract"
+      },
+      {
+        "ingredient_id": "ing_sucrose_granulated",
+        "mass_g": 90.0,
+        "baker_percentage": 90.0,
+        "role": "Viscosity enhancer, drainage retarder, and structural stabilizer"
+      },
+      {
+        "ingredient_id": "ing_cream_of_tartar",
+        "mass_g": 0.6,
+        "baker_percentage": 0.6,
+        "role": "Acidulant (pH 4.5) to compact legume globulin film"
+      }
+    ],
+    "target_attributes": {
+      "foam_expansion_overrun_pct": 510.0,
+      "foam_stability_half_life_min": 120.0,
+      "drainage_rate_ml_per_10min": 0.45,
+      "foam_density_g_ml": 0.18,
+      "bubble_size_d32_um": 50.0,
+      "firmness_yield_stress_pa": 55.0,
+      "thermal_stability_c": 100.0,
+      "fat_sensitivity": "MODERATE (saponins offer slightly higher fat tolerance than egg white)"
+    },
+    "mechanism_interactions": [
+      "mech_protein_mechanical_denaturation",
+      "mech_sugar_drainage_retardation",
+      "mech_acid_electrostatic_stabilization"
+    ],
+    "performance_tradeoffs": "Fully vegan and allergen-free alternative to egg white; requires longer whipping time (9-12 min); somewhat softer texture before oven drying.",
+    "evidence": {
+      "source_id": "doi:10.1177/1082013219890696",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1177/1082013219890696",
+      "publication_date": "2020-05-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1177_1082013219890696_20261108_094810.json"
+    }
+  },
+  {
+    "formulation_id": "FORM-005",
+    "title": "Whole Egg Sabayon Thermal Emulsion Foam",
+    "category": "Thermally Coagulated Emulsion Foam",
+    "description": "Warm culinary emulsion foam leavened over gentle water bath heat (65-68\u00b0C) to denature whole egg yolk and albumen proteins while trapping air and emulsifying lipid droplets.",
+    "ingredients_formula": [
+      {
+        "ingredient_id": "ing_whole_egg_raw",
+        "mass_g": 100.0,
+        "baker_percentage": 100.0,
+        "role": "Whole egg providing both foaming albumen and emulsifying yolk phospholipids"
+      },
+      {
+        "ingredient_id": "ing_sucrose_granulated",
+        "mass_g": 50.0,
+        "baker_percentage": 50.0,
+        "role": "Thermal stabilizer raising egg protein denaturation temperature to 68\u00b0C"
+      }
+    ],
+    "target_attributes": {
+      "foam_expansion_overrun_pct": 280.0,
+      "foam_stability_half_life_min": 60.0,
+      "drainage_rate_ml_per_10min": 1.2,
+      "foam_density_g_ml": 0.28,
+      "bubble_size_d32_um": 48.0,
+      "firmness_yield_stress_pa": 70.0,
+      "thermal_stability_c": 70.0,
+      "fat_sensitivity": "SELF_COMPENSATING (egg yolk lecithin self-emulsifies native fat globules)"
+    },
+    "mechanism_interactions": [
+      "mech_protein_mechanical_denaturation",
+      "mech_sugar_drainage_retardation"
+    ],
+    "performance_tradeoffs": "Rich custard-like mouthfeel; requires strict temperature control (65-70\u00b0C) over bain-marie; will scramble if heated beyond 72\u00b0C.",
+    "evidence": {
+      "source_id": "usda:171287",
+      "source_type": "usda_fdc",
+      "source_url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171287/nutrients",
+      "publication_date": "2020-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/usda_fdc/usda_171287_20261108_094810.json"
+    }
+  }
+]

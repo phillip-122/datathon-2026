@@ -1,4 +1,0 @@
-{
-  "command": "python predict.py --model-dir . --data public --out submission.csv",
-  "output": "submission.csv"
-}

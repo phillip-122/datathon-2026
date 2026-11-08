@@ -1,0 +1,21 @@
+{
+  "source_name": "pubchem",
+  "item_id": "pubchem_phosphatidylcholine",
+  "captured_at": "2026-11-08T10:54:59.559876+00:00",
+  "data": {
+    "status": "curated_biomolecule",
+    "payload": {
+      "cid": 439341,
+      "name": "1,2-diacyl-sn-glycero-3-phosphocholine (Lecithin)",
+      "iupac_name": "[2-hexadecanoyloxy-3-(octadec-9-enoyloxy)propyl] 2-(trimethylazaniumyl)ethyl phosphate",
+      "formula": "C42H82NO8P",
+      "molecular_weight": 760.08,
+      "classification": "SURFACTANT / EMULSIFIER",
+      "functional_role": "Zwitterionic small-molecule surfactant; lowers interfacial tension rapidly; displaces proteins at interfaces.",
+      "solubility": "Insoluble in water; dispersible forming lamellar/liposomal phases",
+      "isoelectric_point": null,
+      "denaturation_temp_c": null,
+      "inchikey": "DCOPUUMXTXNQFP-UHFFFAOYSA-N"
+    }
+  }
+}

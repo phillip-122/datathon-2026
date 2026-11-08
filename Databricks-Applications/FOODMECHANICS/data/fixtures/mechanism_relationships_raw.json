@@ -1,0 +1,102 @@
+[
+  {
+    "source_id": "rel_ref:01",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_egg_white_mech_denat",
+    "ingredient_or_compound_id": "ing_egg_white",
+    "mechanism_id": "mech_protein_interfacial_denaturation",
+    "role": "promoter",
+    "effect_direction": "PROMOTES_OVERRUN",
+    "evidence_id": "ev_damodaran_2005"
+  },
+  {
+    "source_id": "rel_ref:02",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_ovalbumin_mech_denat",
+    "ingredient_or_compound_id": "cmp_ovalbumin",
+    "mechanism_id": "mech_protein_interfacial_denaturation",
+    "role": "matrix_former",
+    "effect_direction": "INCREASES_STABILITY",
+    "evidence_id": "ev_damodaran_2005"
+  },
+  {
+    "source_id": "rel_ref:03",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_heavy_cream_mech_partial_coal",
+    "ingredient_or_compound_id": "ing_heavy_cream",
+    "mechanism_id": "mech_fat_partial_coalescence",
+    "role": "matrix_former",
+    "effect_direction": "INCREASES_STABILITY",
+    "evidence_id": "ev_goff_1997"
+  },
+  {
+    "source_id": "rel_ref:04",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_fat_triglycerides_partial_coal",
+    "ingredient_or_compound_id": "cmp_milk_fat_triglycerides",
+    "mechanism_id": "mech_fat_partial_coalescence",
+    "role": "matrix_former",
+    "effect_direction": "INCREASES_STABILITY",
+    "evidence_id": "ev_goff_1997"
+  },
+  {
+    "source_id": "rel_ref:05",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_whole_milk_antifoam",
+    "ingredient_or_compound_id": "ing_whole_milk",
+    "mechanism_id": "mech_lipid_antifoam_bridging",
+    "role": "destabilizer",
+    "effect_direction": "INDUCES_COLLAPSE",
+    "evidence_id": "ev_van_vliet_2002"
+  },
+  {
+    "source_id": "rel_ref:06",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_sugar_drainage_retardation",
+    "ingredient_or_compound_id": "ing_sucrose",
+    "mechanism_id": "mech_viscous_drainage_retardation",
+    "role": "stabilizer",
+    "effect_direction": "RETARDS_DRAINAGE",
+    "evidence_id": "ev_lomakina_2006"
+  },
+  {
+    "source_id": "rel_ref:07",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_cream_tartar_charge_mod",
+    "ingredient_or_compound_id": "ing_cream_of_tartar",
+    "mechanism_id": "mech_isoelectric_charge_modulation",
+    "role": "stabilizer",
+    "effect_direction": "INCREASES_STABILITY",
+    "evidence_id": "ev_lomakina_2006"
+  },
+  {
+    "source_id": "rel_ref:08",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_gelatin_hydrocolloid_lock",
+    "ingredient_or_compound_id": "ing_gelatin",
+    "mechanism_id": "mech_hydrocolloid_network_immobilization",
+    "role": "stabilizer",
+    "effect_direction": "RETARDS_DRAINAGE",
+    "evidence_id": "ev_dickinson_2010"
+  },
+  {
+    "source_id": "rel_ref:09",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_xanthan_hydrocolloid_lock",
+    "ingredient_or_compound_id": "ing_xanthan_gum",
+    "mechanism_id": "mech_hydrocolloid_network_immobilization",
+    "role": "stabilizer",
+    "effect_direction": "RETARDS_DRAINAGE",
+    "evidence_id": "ev_dickinson_2010"
+  },
+  {
+    "source_id": "rel_ref:10",
+    "source_type": "curated_culinary",
+    "rel_id": "rel_aquafaba_interfacial_denat",
+    "ingredient_or_compound_id": "ing_aquafaba",
+    "mechanism_id": "mech_protein_interfacial_denaturation",
+    "role": "promoter",
+    "effect_direction": "PROMOTES_OVERRUN",
+    "evidence_id": "ev_shim_2018"
+  }
+]

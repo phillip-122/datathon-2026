@@ -1,0 +1,50 @@
+bundle:
+  name: datathon-2026-intelligence
+
+variables:
+  catalog_name:
+    description: "Target Unity Catalog"
+    default: "workspace"
+  warehouse_id:
+    description: "Databricks Serverless SQL Warehouse ID"
+    default: "01b90cfaa061e148"
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: "https://dbc-b860c6f4-7d17.cloud.databricks.com"
+
+resources:
+  pipelines:
+    foodmechanics_dlt_pipeline:
+      name: "FOODMECHANICS_Medallion_Pipeline"
+      target: "${var.catalog_name}.foodmechanics_gold"
+      continuous: false
+      libraries:
+        - file:
+            path: ./FOODMECHANICS/pipeline/dlt_foodmechanics_pipeline.py
+      edition: "ADVANCED"
+      channel: "CURRENT"
+
+    signal_dlt_pipeline:
+      name: "SIGNAL_Medallion_Pipeline"
+      target: "${var.catalog_name}.signal_gold"
+      continuous: false
+      libraries:
+        - file:
+            path: ./SIGNAL/pipeline/dlt_signal_pipeline.py
+      edition: "ADVANCED"
+      channel: "CURRENT"
+
+  apps:
+    foodmechanics_app:
+      name: "foodmechanics-studio"
+      source_code_path: ./FOODMECHANICS
+      description: "In-Lakehouse Colloid Physics & Formulation Engine"
+
+    signal_app:
+      name: "signal-ai-observatory"
+      source_code_path: ./SIGNAL
+      description: "AI Landscape Observatory & Architecture Studio"

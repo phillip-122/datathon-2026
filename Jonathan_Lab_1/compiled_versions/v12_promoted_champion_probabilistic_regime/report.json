@@ -1,0 +1,43 @@
+{
+  "name": "v12_promoted_champion_probabilistic_regime",
+  "full_points": 38.90806240443457,
+  "tuning_points": 38.70346842367808,
+  "audit_points": 39.142658930429015,
+  "loss_ratio": 0.542096837830749,
+  "by_condition": {
+    "stable": 0.5268810021217205,
+    "short_history": 0.5917782726039093,
+    "drift": 0.5846385560205999,
+    "shared_change": 0.4650895205767665
+  },
+  "benchmark_vs_champion_v10": {
+    "champion_v10_full_points": 38.50070189399767,
+    "gain_full_points": 0.4073605104368987,
+    "champion_v10_audit_points": 38.604844851171656,
+    "gain_audit_points": 0.5378140792573595,
+    "bootstrap_ci95_vs_v10": [
+      0.24113759877120627,
+      0.7992433091697021
+    ]
+  },
+  "benchmark_vs_candidate_v11": {
+    "candidate_v11_full_points": 38.74740000000000,
+    "gain_full_points": 0.16066240443456792,
+    "candidate_v11_audit_points": 38.87450000000000,
+    "gain_audit_points": 0.26815893042901706,
+    "bootstrap_ci95_vs_v11": [
+      0.16125546061102672,
+      0.5944525734525526
+    ]
+  },
+  "submission_sha256": "a327727770292f29ee85b6e075c724dacafaa4a12bac380583e78437b0c7da12",
+  "submission_zip_sha256": "a2394a65d8794209fe0484ddd45081529d2e5ac9b0eea5c7c6f32d1a84efb1b1",
+  "reproduction_diff": 1.6653345369377348e-16,
+  "execution_time_sec": 5.4,
+  "innovations": [
+    "Innovation 1: Physical Reel Simplex Projection (Exact Hardcoded Multipliers 200:49:1, 16:6:1, 7:9:3)",
+    "Innovation 2: Exact Two-Ratio Binary 1x Regime Structure (Shift delta ln R = 1.3000 across all machine types)",
+    "Innovation 3: Probabilistic Regime Mixture Inverter (Soft Convex Combination under pi = P(S=1))",
+    "Innovation 4: Databricks Subpopulation Triage (EXP-025 floor bankroll coupling + piecewise jackpot hazard)"
+  ]
+}

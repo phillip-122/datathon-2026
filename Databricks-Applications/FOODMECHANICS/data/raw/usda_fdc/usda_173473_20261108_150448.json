@@ -1,0 +1,36 @@
+{
+  "source_name": "usda_fdc",
+  "item_id": "usda_173473",
+  "captured_at": "2026-11-08T15:04:48.512695+00:00",
+  "data": {
+    "status": "dry_run",
+    "http_status": 200,
+    "url": "https://api.nal.usda.gov/fdc/v1/food/173473",
+    "payload": {
+      "fdcId": 173473,
+      "description": "Leavening agents, cream of tartar (potassium bitartrate)",
+      "foodCategory": "Baked Products",
+      "foodNutrients": [
+        {
+          "nutrient": {
+            "name": "Protein"
+          },
+          "amount": 0.0
+        },
+        {
+          "nutrient": {
+            "name": "Total lipid (fat)"
+          },
+          "amount": 0.0
+        },
+        {
+          "nutrient": {
+            "name": "Energy"
+          },
+          "amount": 258.0
+        }
+      ]
+    },
+    "fetched_at": "2026-11-08T15:04:48.512690+00:00"
+  }
+}

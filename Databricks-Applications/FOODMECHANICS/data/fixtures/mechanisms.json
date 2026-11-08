@@ -1,0 +1,213 @@
+[
+  {
+    "mechanism_id": "mech_protein_mechanical_denaturation",
+    "title": "Mechanical Denaturation of Globular Proteins at Air-Water Interfaces",
+    "summary": "Shear stress and continuous interfacial expansion uncoil compact globular proteins, exposing buried hydrophobic residues toward the gas phase and forming a contiguous viscoelastic film.",
+    "molecular_physics_rationale": "In native solution, globular proteins minimize free energy by burying non-polar amino acid residues (leucine, isoleucine, valine, phenylalanine) within a hydrophobic core while displaying hydrophilic residues to the aqueous solvent. When whipped, mechanical shear and air bubble incorporation generate huge surface area. At this non-polar gas-liquid interface, the thermodynamic balance shifts: the protein unfolds to place hydrophobic side chains directly into the air bubble cavity, while charged and polar groups remain immersed in the lamella. Adjoining unfolded polypeptide chains cross-link via non-covalent hydrophobic associations, hydrogen bonding, and disulfide exchange (thiol oxidation), creating a solid-like 2D elastic membrane that surrounds each air cell.",
+    "critical_factors": {
+      "beating_intensity": "High shear rate needed to exceed activation energy for globular unfolding",
+      "protein_concentration": "Threshold of 1-3% required for cohesive film formation; 10% provides dense packing",
+      "ionic_strength": "Low-to-moderate ionic strength (~0.05-0.1M) screens repulsive charges without salting out",
+      "temperature": "Ambient (20-25\u00b0C) optimal for mechanical flexibility; refrigeration slows unfolding kinetics"
+    },
+    "kinetics_and_thermodynamics": {
+      "adsorption_time_scale": "Milliseconds for initial collision and monolayer anchoring",
+      "unfolding_time_scale": "Seconds to minutes under sustained mechanical shear",
+      "surface_pressure_increase": "From 0 to 22-26 mN/m within 3 minutes of vigorous agitation",
+      "reversible_vs_irreversible": "Irreversible conformational shift once extensive intermolecular disulfide bridges form"
+    },
+    "culinary_applications": [
+      "Egg white meringue whipping",
+      "Souffle batter leavening",
+      "Angel food cake structure",
+      "Marshmallow foam aeration"
+    ],
+    "failure_modes": [
+      "Under-whipping: insufficient surface area and film thickness -> rapid bubble collapse",
+      "Over-whipping: excessive disulfide cross-linking forms brittle, curdled clumps that drain water ('weeping')",
+      "Contaminant lipid presence: competitive displacement before film cohesion is established"
+    ],
+    "evidence": {
+      "source_id": "doi:10.1016/j.foodhyd.2005.03.014",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1016/j.foodhyd.2005.03.014",
+      "publication_date": "2006-03-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_foodhyd_2005_03_014_20261108_094810.json"
+    }
+  },
+  {
+    "mechanism_id": "mech_fat_interference_foam_disruption",
+    "title": "Fat Globule Interference and Interfacial Film Disruption in Protein Foams",
+    "summary": "Non-polar liquid lipids competitively spread across the air-water interface, displacing cohesive protein networks and causing rapid film rupture and bubble coalescence.",
+    "molecular_physics_rationale": "Free triglycerides and non-polar lipid droplets possess lower surface energy than the hydrated protein film. When even trace liquid lipids (e.g. 0.05% egg yolk, dairy butterfat, or residual bowl grease) come into contact with an expanding air bubble, the lipid droplet enters the air-water interface and spreads rapidly driven by a positive spreading coefficient (S = gamma_water - gamma_oil - gamma_interfacial > 0). Unlike folded or denatured proteins, triglycerides cannot participate in intermolecular hydrogen bonding or covalent disulfide cross-linking. As the lipid spreads, it thins and ruptures the viscoelastic protein lamella via pseudo-emulsion film thinning, leading to immediate bubble coalescence and catastrophically reduced foam overrun.",
+    "critical_factors": {
+      "lipid_phase_state": "Liquid oil is severely disruptive; solid crystalline fat is much less destructive",
+      "concentration_threshold": "As little as 0.03-0.05% free egg yolk fat cuts egg white overrun by >70%",
+      "viscosity_mitigation": "High viscosity continuous phases (sugar, gums) can slow droplet diffusion to interface"
+    },
+    "kinetics_and_thermodynamics": {
+      "spreading_coefficient": "Positive (S > 0), causing spontaneous Marangoni spreading",
+      "rupture_velocity": "Milliseconds upon droplet contact with lamella",
+      "surface_tension_gradient": "Local depression of surface tension pulls surrounding fluid outward, creating film pinch-off"
+    },
+    "culinary_applications": [
+      "Rigorous bowl defatting (glass/copper/stainless steel, lemon juice/vinegar wipe)",
+      "Strict yolk-white separation technique",
+      "Defatted meringue stability"
+    ],
+    "failure_modes": [
+      "Meringue collapse upon yolk contamination",
+      "Inability to whip whole milk into stable cold foam without cooling or emulsifier engineering",
+      "Foam collapse upon premature butter addition"
+    ],
+    "evidence": {
+      "source_id": "doi:10.1016/S0927-7765(99)00042-9",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1016/S0927-7765(99)00042-9",
+      "publication_date": "1999-10-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_S0927-7765_99_00042-9_20261108_094810.json"
+    }
+  },
+  {
+    "mechanism_id": "mech_acid_electrostatic_stabilization",
+    "title": "Acid-Induced Protein Charge Reduction and Electrostatic Stabilization",
+    "summary": "Weak organic acids protonate carboxylate groups, shifting pH toward protein isoelectric points (pI ~4.5-5.0), reducing electrostatic repulsion and promoting compact, elastic interfacial packing.",
+    "molecular_physics_rationale": "Fresh egg white has an initial pH of 7.6, which climbs to 9.0-9.2 during egg aging as dissolved carbon dioxide escapes through shell pores. At pH 9.0, egg white proteins (ovalbumin pI 4.5, conalbumin pI 6.0, lysozyme pI 10.7) carry a strong net negative electrical charge. These like charges create powerful electrostatic repulsion between adjacent adsorbed protein chains, inhibiting tight molecular packing and making the interfacial film fragile and prone to over-coagulation. Adding a mild culinary acid like potassium bitartrate (cream of tartar, ~1/8 tsp per egg white) supplies hydronium ions (H+), lowering the pH to approximately 4.8-5.0. This brings the system directly into proximity with ovalbumin's isoelectric point (pI 4.5). The net surface charge approaches neutrality, minimizing repulsive barriers and allowing proteins to form a dense, uniform, supple 2D gel network that resists over-whipping and heat-induced syneresis.",
+    "critical_factors": {
+      "target_ph_window": "pH 4.6 to 5.2 (optimal elastic modulus without bulk acid precipitation)",
+      "acid_dissociation_constant": "Weak acid buffer (tartaric acid pKa1 = 2.98, pKa2 = 4.34) prevents drastic over-acidification",
+      "timing_of_addition": "Added early after initial frothing (soft foam stage) to establish uniform charge state"
+    },
+    "kinetics_and_thermodynamics": {
+      "zeta_potential_reduction": "Drops from -24 mV at pH 9.0 to -4 mV at pH 4.8",
+      "dilatational_modulus": "Increases by 35% compared to unbuffered alkaline egg white foam",
+      "over-whipping_resistance": "Extends allowable whipping window by 300% without curdle formation"
+    },
+    "culinary_applications": [
+      "Cream of tartar in French and Italian meringues",
+      "Lemon juice in chiffon cakes and macarons",
+      "Copper bowl whipping (copper ions Cu2+ form stabilizing chelates with conalbumin mimicking acid stabilization)"
+    ],
+    "failure_modes": [
+      "Excess acid (pH < 4.0): premature acid precipitation and curdling of albumen proteins",
+      "Omission of acid in aged eggs (pH 9.2): coarse, fragile bubbles prone to weeping upon baking"
+    ],
+    "evidence": {
+      "source_id": "doi:10.1111/j.1365-2621.2005.tb07150.x",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1111/j.1365-2621.2005.tb07150.x",
+      "publication_date": "2005-04-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1111_j_1365-2621_2005_tb07150_x_20261108_094810.json"
+    }
+  },
+  {
+    "mechanism_id": "mech_sugar_drainage_retardation",
+    "title": "Sugar-Induced Liquid Viscosity Increase and Foam Drainage Retardation",
+    "summary": "Dissolved sucrose immobilizes free water via hydrogen bonding, drastically increasing lamellar liquid viscosity and arresting capillary drainage according to Plateau border mechanics.",
+    "molecular_physics_rationale": "Gravitational drainage of liquid from the foam lamellae into Plateau borders is driven by capillary suction (Laplace pressure delta_P = 2*gamma/r) and gravity. According to the Stokes and Navier-Stokes drainage formulation, the drainage velocity v is inversely proportional to liquid viscosity: v = (rho * g * d^2) / (12 * eta). When granulated sugar (sucrose) is dissolved in the aqueous lamella, the multi-hydroxy sugar molecules form dense hydrogen bonds with bulk water, raising dynamic viscosity eta from ~1 mPa*s (pure water) to over 50-200 mPa*s at high sugar concentrations. This 50x-200x viscosity surge slows liquid drainage down bubble walls to a near standstill. Furthermore, sugar hygroscopic properties reduce water evaporation and delay protein thermal aggregation during baking, ensuring smooth glossy cell structure.",
+    "critical_factors": {
+      "sugar_addition_timing": "Critical: adding sugar before foam formation impedes protein adsorption and suppresses initial overrun; adding gradually after soft peaks allows full aeration followed by maximal viscosity stabilization",
+      "solubility_saturation": "Granule size (superfine/caster sugar) ensures rapid complete dissolution into cold albumen",
+      "sugar_to_egg_white_ratio": "Standard hard meringue uses 2:1 sugar-to-white by mass; soft meringue uses 1:1"
+    },
+    "kinetics_and_thermodynamics": {
+      "drainage_half_life": "Extends foam half-life from 45 min (plain white) to >240 min (meringue batter)",
+      "bubble_wall_thickness": "Maintained at >50 nm preventing lamella rupture via van der Waals forces",
+      "thermal_protection": "Shifts ovalbumin thermal denaturation peak from 84.5\u00b0C to >92\u00b0C, preventing rapid gas expansion bursting"
+    },
+    "culinary_applications": [
+      "French, Swiss, and Italian meringues",
+      "Macaron batter (macaronage process)",
+      "Glossy royal icing",
+      "Marshmallow syrup whipping"
+    ],
+    "failure_modes": [
+      "Premature sugar dumping: restricts foam expansion to <200% overrun",
+      "Undissolved sugar crystals: act as localized defect sites causing syrup weeping during baking ('beading')",
+      "Excessive sugar: heavy syrup prevents bubble wall stretch, producing gummy texture"
+    ],
+    "evidence": {
+      "source_id": "doi:10.1016/j.cocis.2007.07.009",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1016/j.cocis.2007.07.009",
+      "publication_date": "2007-08-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_cocis_2007_07_009_20261108_094810.json"
+    }
+  },
+  {
+    "mechanism_id": "mech_cream_partial_coalescence",
+    "title": "Partial Coalescence and Fat Crystal Network Bridging in Whipped Emulsions",
+    "summary": "Refrigerated shear forces partially crystallized fat globules to breach protective membranes and fuse into an interconnected 3D crystal matrix that supports air bubbles.",
+    "molecular_physics_rationale": "In heavy cream (36% milkfat), fat droplets are shielded by the natural milk fat globule membrane (MFGM) composed of glycoproteins and polar phospholipids. When chilled to 4-8\u00b0C, a significant fraction of high-melting triglycerides crystallizes into sharp needle-like beta-prime polymorphic crystals. During whipping, mechanical shear drives droplets into collision. Fat crystals pierce adjacent globule membranes, causing true partial coalescence: the droplets merge into rigid branched clusters without fully coalescing into liquid oil. These interconnected clusters attach directly to air-bubble interfaces, forming a solid colloidal scaffolding that physically locks air cells into place. Because stability relies on solid fat crystal bridging, warmth above the fat melting point (~32-35\u00b0C) liquefies crystals, inducing phase inversion into butter.",
+    "critical_factors": {
+      "temperature": "Strictly 4-8\u00b0C; above 15\u00b0C crystals melt causing rapid collapse; above 20\u00b0C churns into butter",
+      "fat_content": "Minimum 30% milkfat for continuous network; 36-40% delivers optimal overrun and firmness",
+      "shear_rate": "Moderate continuous shear; excess shear drives full coalescence into butter grains"
+    },
+    "kinetics_and_thermodynamics": {
+      "overrun_envelope": "Self-limiting to 100-130% due to dense fat network viscosity",
+      "drainage_stability": "Virtually zero drainage for >3 hours when maintained below 10\u00b0C",
+      "phase_inversion_boundary": "Reversible up to 25\u00b0C; irreversibly collapses if milkfat completely melts"
+    },
+    "culinary_applications": [
+      "Chantilly whipped cream",
+      "Pastry mousse and bavarois folding",
+      "Ice cream overrun and scoopability stabilization"
+    ],
+    "failure_modes": [
+      "Whipping warm cream (>15\u00b0C): droplets fail to link, producing greasy liquid or weeping",
+      "Over-whipping: total coalescence separates buttermilk from yellow butter solids"
+    ],
+    "evidence": {
+      "source_id": "doi:10.1016/S0927-7765(99)00042-9",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1016/S0927-7765(99)00042-9",
+      "publication_date": "1999-10-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_S0927-7765_99_00042-9_20261108_094810.json"
+    }
+  },
+  {
+    "mechanism_id": "mech_hydrocolloid_yield_stress_stabilization",
+    "title": "Polymer Entanglements and Yield Stress Immobilization in Hydrocolloid Foams",
+    "summary": "Anionic rigid polysaccharide chains entangle in solution to create a physical yield stress, immobilizing fluid in Plateau borders without requiring fat or high protein levels.",
+    "molecular_physics_rationale": "Hydrocolloids such as xanthan gum form rigid 5-fold helical conformations in aqueous solution that associate into weak ordered intermolecular networks. Unlike proteins or surfactants, xanthan does not need to adsorb at the gas-liquid boundary. Instead, it creates an enormous zero-shear viscosity (tau_0 > 1-5 Pa) and strong pseudoplastic shear-thinning behavior. During aeration (high shear), viscosity drops dramatically, allowing rapid air incorporation. Once whipping ceases (zero shear), the polymer chains re-entangle instantly, establishing a finite yield stress that halts gravitational liquid drainage and bubble disproportionation (Ostwald ripening). This enables fat-free, low-protein liquids (such as skim milk or fruit juices) to sustain foam stability comparable to whipped cream.",
+    "critical_factors": {
+      "dosage": "0.1% to 0.35% w/w provides yield stress without slimy mouthfeel",
+      "temperature_insensitivity": "Retains viscosity from 0\u00b0C to 90\u00b0C, providing heat-tolerant foam",
+      "ph_electrolyte_robustness": "Stable across pH 2.0 to 11.0 and in high salt environments"
+    },
+    "kinetics_and_thermodynamics": {
+      "zero_shear_viscosity": ">100,000 mPa*s at rest",
+      "yield_stress": "1.2 to 4.5 Pa, sufficient to support bubble buoyant forces",
+      "recovery_time": "Thixotropic recovery within milliseconds upon cessation of shear"
+    },
+    "culinary_applications": [
+      "Modernist culinary airs and espumas",
+      "Low-fat barista plant milk foams",
+      "Dietary dessert foams with skim milk base"
+    ],
+    "failure_modes": [
+      "Under-dispersion: clumping (fish eyes) if added without sugar or high-shear shear blending",
+      "Over-concentration (>0.5%): unpleasantly gummy, pseudoplastic stringy texture"
+    ],
+    "evidence": {
+      "source_id": "doi:10.1016/j.cocis.2007.07.009",
+      "source_type": "scientific_lit",
+      "source_url": "https://doi.org/10.1016/j.cocis.2007.07.009",
+      "publication_date": "2007-08-01",
+      "ingestion_timestamp": "2026-11-08T09:48:10Z",
+      "evidence_confidence": "PEER_REVIEWED",
+      "raw_payload_ref": "FOODMECHANICS/data/raw/scientific_lit/crossref_10_1016_j_cocis_2007_07_009_20261108_094810.json"
+    }
+  }
+]
