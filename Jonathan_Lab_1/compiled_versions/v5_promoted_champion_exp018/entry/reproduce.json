@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "predict_v5.py",
+    "--model-dir",
+    ".",
+    "--data",
+    "/data",
+    "--out",
+    "/output/submission.csv"
+  ],
+  "image": "python"
+}

@@ -7,25 +7,24 @@ This directory houses all compiled, versioned, and verified champion packages fo
 ## 1. Active Champion Submission (CURRENT BEST TO UPLOAD)
 
 📁 **Directory:** [`compiled_versions/active_champion_submission/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/active_champion_submission/)  
-*(Currently pointing to Champion v3 — EXP-013 at **36.7561 points**)*
+*(Currently pointing to Champion v4 — EXP-014 at **37.4814 points**)*
 
 Files ready for the Google Form:
-1. **`submission.csv`** (200,063 bytes)  
-   `SHA-256: f713536a8e6d64e59046019fc1e6c1573b05089a27bc7186766aab2deddec2e9`
-2. **`submission_entry.zip`** (2,595,518 bytes)  
-   `SHA-256: 32a527de145ef74d460f1684c50e49c4db6442d12d2d929848ebb161e4cde5ab`
+1. **`submission.csv`** (200,982 bytes)  
+   `SHA-256: a4b42a156c12797865ebadf9f51c14ce565f1c9b50c5fdf9d04a969b455f29a5`
+2. **`submission_entry.zip`** (10,222,980 bytes)  
+   `SHA-256: b66683c407384e08811067c9ef08fa070656fd9aa462d14c5271691b33ee79ad`
 
 ---
 
 ## 2. Champion Version Archive (Every Champion Preserved Separately)
 
-| Folder | Champion ID | Model Description | Score (out of 60) | Loss Ratio ($R$) | Status | Role |
+| Folder | Champion ID | Method / Architecture | Full Validation | Audit | Loss Ratio ($R$) | Status |
 | :--- | :--- | :--- | :---: | :---: | :---: | :--- |
-| [`v3_promoted_champion_exp013/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v3_promoted_champion_exp013/) | `EXP-013` | 3-Seed HGB Ensemble + Fast Recency ($hl=2,4$) + Machine Volatility Calibration | **36.7561** | **0.6324** (36.76% error reduction) | Verified (2.63s, 336 MB) | **CURRENT ACTIVE CHAMPION** |
-| [`v2_promoted_champion_exp012/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v2_promoted_champion_exp012/) | `EXP-012` | HGB (211 features) + Logit Temperature Calibration ($T=1.06$) | **35.1057** | **0.7091** (29.1% error reduction) | Verified | Previous Champion |
-| [`v1_frozen_champion_exp006/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v1_frozen_champion_exp006/) | `EXP-006` | HistGradientBoosting (leaves=60, L2=2.0, multi-cutoff step 6) | **35.0743** | **0.7107** (28.9% error reduction) | Verified | Safe Frozen Fallback |
-
-If a new candidate (e.g., `EXP-014`) beats 36.7561 on both Tuning and Audit gates, it will be added as `v4_promoted_champion_exp014/` and `active_champion_submission/` will be updated accordingly.
+| [`v4_promoted_champion_exp014/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v4_promoted_champion_exp014/) | `EXP-014` | Calibrated Changing-Lag Blend (75% Jonathan V3 + 25% Changing-Lag Specialist + 3-Fold Episode-Cross-Fitted Calibration) | **37.4814** | **37.4764** | **0.6008** | **CURRENT ACTIVE CHAMPION** |
+| [`v3_promoted_champion_exp013/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v3_promoted_champion_exp013/) | `EXP-013` | 3-Seed HGB Ensemble + Fast Recency ($hl=2,4$) + Machine Volatility Calibration | **36.7561** | **36.6807** | **0.6324** | Previous Champion |
+| [`v2_promoted_champion_exp012/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v2_promoted_champion_exp012/) | `EXP-012` | HGB (211 features) + Logit Temperature Calibration ($T=1.06$) | **35.1057** | **34.9660** | **0.7091** | Previous Champion |
+| [`v1_frozen_champion_exp006/`](file:///Users/jonathankalsky/Developer/Datathon26/datathon-2026/Jonathan_Lab_1/compiled_versions/v1_frozen_champion_exp006/) | `EXP-006` | HistGradientBoosting (leaves=60, L2=2.0, multi-cutoff step 6) | **35.0743** | **34.9486** | **0.7107** | Safe Frozen Fallback |
 
 ---
 
@@ -33,8 +32,13 @@ If a new candidate (e.g., `EXP-014`) beats 36.7561 on both Tuning and Audit gate
 
 From workspace root:
 ```bash
+python lab.py predict
+```
+
+Verify submission format:
+```bash
 python House_Edge_Lab_Starter_Pack/research_environment/check_submission.py \
-  --data House_Edge_Lab_Starter_Pack/research_environment/public \
+  --data ../public \
   compiled_versions/active_champion_submission/submission.csv
 ```
 

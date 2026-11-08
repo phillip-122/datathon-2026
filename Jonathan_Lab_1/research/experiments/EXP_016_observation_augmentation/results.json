@@ -1,0 +1,434 @@
+{
+  "exact_40_24_blend_0.00": {
+    "adversarial_status": "Passed all adversarial checks.",
+    "audit_loss_ratio": 0.6194222748424588,
+    "audit_points": 37.050249914486905,
+    "bootstrap_gain_vs_base_ci95": [
+      -0.7745146209615108,
+      -0.11455590559536923
+    ],
+    "brier_by_class": {
+      "class_0": 0.0765054718667431,
+      "class_1": 0.022823225150511012,
+      "class_2": 0.01370178935429609,
+      "class_20": 0.0006046506184465917,
+      "class_5": 0.0044423471073007795
+    },
+    "by_condition": {
+      "drift": {
+        "error": 0.12902082935315815,
+        "loss_ratio": 0.679651045084294,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "error": 0.10814197956893583,
+        "loss_ratio": 0.5260779610983499,
+        "reference_error": 0.20556264957983816
+      },
+      "short_history": {
+        "error": 0.12293325761141462,
+        "loss_ratio": 0.6932009352930588,
+        "reference_error": 0.1773414479878668
+      },
+      "stable": {
+        "error": 0.112213869855682,
+        "loss_ratio": 0.5717880803622465,
+        "reference_error": 0.19625080289290195
+      }
+    },
+    "by_history_length": {
+      "long_200+": {
+        "brier": 0.11645889292592532,
+        "loss_ratio": 0.5905150411358091,
+        "ref_brier": 0.19721579437151307
+      },
+      "short_64": {
+        "brier": 0.12293325761141462,
+        "loss_ratio": 0.6932009352930589,
+        "ref_brier": 0.17734144798786677
+      }
+    },
+    "by_machine_type": {
+      "balanced": {
+        "brier": 0.13631700844754627,
+        "loss_ratio": 0.6167847069523391,
+        "ref_brier": 0.22101230285218454
+      },
+      "jackpot": {
+        "brier": 0.06913367571458348,
+        "loss_ratio": 0.6085985441884344,
+        "ref_brier": 0.11359487526670504
+      },
+      "steady": {
+        "brier": 0.15042715147075886,
+        "loss_ratio": 0.6147221153060407,
+        "ref_brier": 0.24470756415826747
+      }
+    },
+    "full_loss_ratio": 0.6176795054594872,
+    "full_points": 37.09016513932872,
+    "tuning_audit_spread": 0.0745123089352262,
+    "tuning_loss_ratio": 0.6161719673492159,
+    "tuning_points": 37.12476222342213
+  },
+  "exact_40_24_blend_0.25": {
+    "adversarial_status": "Passed all adversarial checks.",
+    "audit_loss_ratio": 0.6116878910927516,
+    "audit_points": 37.228051616941165,
+    "bootstrap_gain_vs_base_ci95": [
+      -0.7047387922791177,
+      0.20296979717587554
+    ],
+    "brier_by_class": {
+      "class_0": 0.07554593257108246,
+      "class_1": 0.022761581396811476,
+      "class_2": 0.013479000465106812,
+      "class_20": 0.0006261013073443363,
+      "class_5": 0.004318356513404726
+    },
+    "by_condition": {
+      "drift": {
+        "error": 0.12447498771748768,
+        "loss_ratio": 0.6557046324471975,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "error": 0.10752814018713082,
+        "loss_ratio": 0.523091818513305,
+        "reference_error": 0.20556264957983816
+      },
+      "short_history": {
+        "error": 0.12114010133563728,
+        "loss_ratio": 0.6830896144703034,
+        "reference_error": 0.1773414479878668
+      },
+      "stable": {
+        "error": 0.11378065977474348,
+        "loss_ratio": 0.579771690599584,
+        "reference_error": 0.19625080289290195
+      }
+    },
+    "by_history_length": {
+      "long_200+": {
+        "brier": 0.11526126255978733,
+        "loss_ratio": 0.5844423512178714,
+        "ref_brier": 0.19721579437151307
+      },
+      "short_64": {
+        "brier": 0.12114010133563728,
+        "loss_ratio": 0.6830896144703035,
+        "ref_brier": 0.17734144798786677
+      }
+    },
+    "by_machine_type": {
+      "balanced": {
+        "brier": 0.13578634712449733,
+        "loss_ratio": 0.614383658159124,
+        "ref_brier": 0.22101230285218454
+      },
+      "jackpot": {
+        "brier": 0.06693656810399669,
+        "loss_ratio": 0.5892569356393842,
+        "ref_brier": 0.11359487526670504
+      },
+      "steady": {
+        "brier": 0.149208888164269,
+        "loss_ratio": 0.6097436696634617,
+        "ref_brier": 0.24470756415826747
+      }
+    },
+    "full_loss_ratio": 0.6104144390075974,
+    "full_points": 37.25749008868452,
+    "tuning_audit_spread": 0.05546131622282502,
+    "tuning_loss_ratio": 0.6092904149766829,
+    "tuning_points": 37.28351293316399
+  },
+  "exact_40_24_blend_0.50": {
+    "adversarial_status": "Passed all adversarial checks.",
+    "audit_loss_ratio": 0.6149524956032962,
+    "audit_points": 37.15279561680596,
+    "bootstrap_gain_vs_base_ci95": [
+      -0.9902661763068206,
+      0.34014434342357064
+    ],
+    "brier_by_class": {
+      "class_0": 0.07543880364217502,
+      "class_1": 0.023112422646417597,
+      "class_2": 0.01359097037820065,
+      "class_20": 0.0006557968890566136,
+      "class_5": 0.004342473608549669
+    },
+    "by_condition": {
+      "drift": {
+        "error": 0.12177445120535503,
+        "loss_ratio": 0.6414788483473659,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "error": 0.10840259158999004,
+        "loss_ratio": 0.5273457596093483,
+        "reference_error": 0.20556264957983816
+      },
+      "short_history": {
+        "error": 0.12105418937337208,
+        "loss_ratio": 0.6826051706855031,
+        "reference_error": 0.1773414479878668
+      },
+      "stable": {
+        "error": 0.1173306364888812,
+        "loss_ratio": 0.5978606699148686,
+        "reference_error": 0.19625080289290195
+      }
+    },
+    "by_history_length": {
+      "long_200+": {
+        "brier": 0.1158358930947421,
+        "loss_ratio": 0.5873560657952762,
+        "ref_brier": 0.19721579437151307
+      },
+      "short_64": {
+        "brier": 0.12105418937337205,
+        "loss_ratio": 0.682605170685503,
+        "ref_brier": 0.17734144798786677
+      }
+    },
+    "by_machine_type": {
+      "balanced": {
+        "brier": 0.13715846498037101,
+        "loss_ratio": 0.6205919906282507,
+        "ref_brier": 0.22101230285218454
+      },
+      "jackpot": {
+        "brier": 0.0659760992107669,
+        "loss_ratio": 0.5808017224004529,
+        "ref_brier": 0.11359487526670504
+      },
+      "steady": {
+        "brier": 0.15013060106319268,
+        "loss_ratio": 0.6135102589885368,
+        "ref_brier": 0.24470756415826747
+      }
+    },
+    "full_loss_ratio": 0.6123226121392715,
+    "full_points": 37.21339609595281,
+    "tuning_audit_spread": 0.11578924772909716,
+    "tuning_loss_ratio": 0.6099350221665178,
+    "tuning_points": 37.26858486453506
+  },
+  "multi_pattern_blend_0.00": {
+    "adversarial_status": "Passed all adversarial checks.",
+    "audit_loss_ratio": 0.6194222748424588,
+    "audit_points": 37.050249914486905,
+    "bootstrap_gain_vs_base_ci95": [
+      -0.7745146209615108,
+      -0.11455590559536923
+    ],
+    "brier_by_class": {
+      "class_0": 0.0765054718667431,
+      "class_1": 0.022823225150511012,
+      "class_2": 0.01370178935429609,
+      "class_20": 0.0006046506184465917,
+      "class_5": 0.0044423471073007795
+    },
+    "by_condition": {
+      "drift": {
+        "error": 0.12902082935315815,
+        "loss_ratio": 0.679651045084294,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "error": 0.10814197956893583,
+        "loss_ratio": 0.5260779610983499,
+        "reference_error": 0.20556264957983816
+      },
+      "short_history": {
+        "error": 0.12293325761141462,
+        "loss_ratio": 0.6932009352930588,
+        "reference_error": 0.1773414479878668
+      },
+      "stable": {
+        "error": 0.112213869855682,
+        "loss_ratio": 0.5717880803622465,
+        "reference_error": 0.19625080289290195
+      }
+    },
+    "by_history_length": {
+      "long_200+": {
+        "brier": 0.11645889292592532,
+        "loss_ratio": 0.5905150411358091,
+        "ref_brier": 0.19721579437151307
+      },
+      "short_64": {
+        "brier": 0.12293325761141462,
+        "loss_ratio": 0.6932009352930589,
+        "ref_brier": 0.17734144798786677
+      }
+    },
+    "by_machine_type": {
+      "balanced": {
+        "brier": 0.13631700844754627,
+        "loss_ratio": 0.6167847069523391,
+        "ref_brier": 0.22101230285218454
+      },
+      "jackpot": {
+        "brier": 0.06913367571458348,
+        "loss_ratio": 0.6085985441884344,
+        "ref_brier": 0.11359487526670504
+      },
+      "steady": {
+        "brier": 0.15042715147075886,
+        "loss_ratio": 0.6147221153060407,
+        "ref_brier": 0.24470756415826747
+      }
+    },
+    "full_loss_ratio": 0.6176795054594872,
+    "full_points": 37.09016513932872,
+    "tuning_audit_spread": 0.0745123089352262,
+    "tuning_loss_ratio": 0.6161719673492159,
+    "tuning_points": 37.12476222342213
+  },
+  "multi_pattern_blend_0.25": {
+    "adversarial_status": "Passed all adversarial checks.",
+    "audit_loss_ratio": 0.6139838100222841,
+    "audit_points": 37.175094091663524,
+    "bootstrap_gain_vs_base_ci95": [
+      -0.7937697575156603,
+      0.15005560347175756
+    ],
+    "brier_by_class": {
+      "class_0": 0.07580493887277405,
+      "class_1": 0.022954640505106347,
+      "class_2": 0.01344164306734782,
+      "class_20": 0.0006295077659095182,
+      "class_5": 0.004341233679018356
+    },
+    "by_condition": {
+      "drift": {
+        "error": 0.12439808690347731,
+        "loss_ratio": 0.6552995372476703,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "error": 0.10958014213194146,
+        "loss_ratio": 0.5330741861710719,
+        "reference_error": 0.20556264957983816
+      },
+      "short_history": {
+        "error": 0.12073374084164479,
+        "loss_ratio": 0.6807982127782393,
+        "reference_error": 0.1773414479878668
+      },
+      "stable": {
+        "error": 0.11397588568356076,
+        "loss_ratio": 0.5807664682307553,
+        "reference_error": 0.19625080289290195
+      }
+    },
+    "by_history_length": {
+      "long_200+": {
+        "brier": 0.11598470490632651,
+        "loss_ratio": 0.5881106291509073,
+        "ref_brier": 0.19721579437151307
+      },
+      "short_64": {
+        "brier": 0.12073374084164479,
+        "loss_ratio": 0.6807982127782394,
+        "ref_brier": 0.17734144798786677
+      }
+    },
+    "by_machine_type": {
+      "balanced": {
+        "brier": 0.13568876063826749,
+        "loss_ratio": 0.6139421149284057,
+        "ref_brier": 0.22101230285218454
+      },
+      "jackpot": {
+        "brier": 0.06621695864146397,
+        "loss_ratio": 0.5829220595206933,
+        "ref_brier": 0.11359487526670504
+      },
+      "steady": {
+        "brier": 0.15126172579292688,
+        "loss_ratio": 0.6181326119330606,
+        "ref_brier": 0.24470756415826747
+      }
+    },
+    "full_loss_ratio": 0.6124846011069343,
+    "full_points": 37.209657666691115,
+    "tuning_audit_spread": 0.062134108036502766,
+    "tuning_loss_ratio": 0.6112907136434859,
+    "tuning_points": 37.23722819970003
+  },
+  "multi_pattern_blend_0.50": {
+    "adversarial_status": "Passed all adversarial checks.",
+    "audit_loss_ratio": 0.618095473386184,
+    "audit_points": 37.08063027606039,
+    "bootstrap_gain_vs_base_ci95": [
+      -1.076485563589235,
+      0.23813830590459065
+    ],
+    "brier_by_class": {
+      "class_0": 0.07598152697969658,
+      "class_1": 0.023519708868110733,
+      "class_2": 0.013506683334865698,
+      "class_20": 0.0006643177926921526,
+      "class_5": 0.004392978381227252
+    },
+    "by_condition": {
+      "drift": {
+        "error": 0.12167889038192153,
+        "loss_ratio": 0.6409754566559521,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "error": 0.11275493349024145,
+        "loss_ratio": 0.5485185840944745,
+        "reference_error": 0.20556264957983816
+      },
+      "short_history": {
+        "error": 0.12029025336310091,
+        "loss_ratio": 0.6782974579711948,
+        "reference_error": 0.1773414479878668
+      },
+      "stable": {
+        "error": 0.11753678419110604,
+        "loss_ratio": 0.5989110997688415,
+        "reference_error": 0.19625080289290195
+      }
+    },
+    "by_history_length": {
+      "long_200+": {
+        "brier": 0.11732353602108968,
+        "loss_ratio": 0.5948992898615251,
+        "ref_brier": 0.19721579437151307
+      },
+      "short_64": {
+        "brier": 0.12029025336310091,
+        "loss_ratio": 0.6782974579711949,
+        "ref_brier": 0.17734144798786677
+      }
+    },
+    "by_machine_type": {
+      "balanced": {
+        "brier": 0.1369663996518275,
+        "loss_ratio": 0.6197229651212319,
+        "ref_brier": 0.22101230285218454
+      },
+      "jackpot": {
+        "brier": 0.06458225372294712,
+        "loss_ratio": 0.5685314022425477,
+        "ref_brier": 0.11359487526670504
+      },
+      "steady": {
+        "brier": 0.15431096891730264,
+        "loss_ratio": 0.630593375599539,
+        "ref_brier": 0.24470756415826747
+      }
+    },
+    "full_loss_ratio": 0.6166756496226158,
+    "full_points": 37.11319584358553,
+    "tuning_audit_spread": 0.05610477500331257,
+    "tuning_loss_ratio": 0.6156509159326711,
+    "tuning_points": 37.1367350510637
+  }
+}

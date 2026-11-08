@@ -1,0 +1,14 @@
+{
+  "report.json": {
+    "bytes": 3139,
+    "sha256": "c2f74e8384f7e4fa86ddbdb961bd89bab8f4ad3ef9c41fd79dfb899c8a07a6ec"
+  },
+  "submission.csv": {
+    "bytes": 201036,
+    "sha256": "c067ffc7d855bf474374ca5628670c8baf73c940d29b60f8eeb28ee753207ffe"
+  },
+  "submission_entry.zip": {
+    "bytes": 10424865,
+    "sha256": "452f71d87f1297214f8155eac96eadb1eb69b175b1e58781a97a679257cdc6cc"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "by_condition_audit": {
+    "drift": {
+      "episodes": 12,
+      "error": 0.11961864597863427,
+      "loss_ratio": 0.6731123452492257,
+      "queries": 96,
+      "reference_error": 0.17770977879531302
+    },
+    "shared_change": {
+      "episodes": 12,
+      "error": 0.09424433076024535,
+      "loss_ratio": 0.47198519221175317,
+      "queries": 96,
+      "reference_error": 0.19967645662485792
+    },
+    "short_history": {
+      "episodes": 12,
+      "error": 0.1149675831415371,
+      "loss_ratio": 0.6932074959407024,
+      "queries": 96,
+      "reference_error": 0.1658487304519447
+    },
+    "stable": {
+      "episodes": 12,
+      "error": 0.10584060328305078,
+      "loss_ratio": 0.5723591960087224,
+      "queries": 96,
+      "reference_error": 0.18491989649352614
+    }
+  },
+  "by_condition_full": {
+    "drift": {
+      "error": 0.12467322490152903,
+      "loss_ratio": 0.6567488987876307,
+      "reference_error": 0.18983393064179913
+    },
+    "shared_change": {
+      "error": 0.10077105144489364,
+      "loss_ratio": 0.4902206293354636,
+      "reference_error": 0.20556264957983816
+    },
+    "short_history": {
+      "error": 0.12337048608846864,
+      "loss_ratio": 0.695666396593927,
+      "reference_error": 0.1773414479878668
+    },
+    "stable": {
+      "error": 0.11086028738397441,
+      "loss_ratio": 0.5648908730552971,
+      "reference_error": 0.19625080289290195
+    }
+  },
+  "by_condition_tuning": {
+    "drift": {
+      "episodes": 12,
+      "error": 0.12972780382442375,
+      "loss_ratio": 0.6423501462584381,
+      "queries": 96,
+      "reference_error": 0.20195808248828526
+    },
+    "shared_change": {
+      "episodes": 12,
+      "error": 0.10729777212954193,
+      "loss_ratio": 0.5074408109463812,
+      "queries": 96,
+      "reference_error": 0.21144884253481844
+    },
+    "short_history": {
+      "episodes": 12,
+      "error": 0.13177338903540017,
+      "loss_ratio": 0.6978259928222559,
+      "queries": 96,
+      "reference_error": 0.18883416552378887
+    },
+    "stable": {
+      "episodes": 12,
+      "error": 0.11587997148489805,
+      "loss_ratio": 0.5582378711495123,
+      "queries": 96,
+      "reference_error": 0.2075817092922777
+    }
+  },
+  "calibration": {
+    "crossfit": {
+      "0.01": {
+        "by_condition": {
+          "drift": {
+            "error": 0.13146486139260138,
+            "loss_ratio": 0.650951225981397
+          },
+          "shared_change": {
+            "error": 0.10786533823398681,
+            "loss_ratio": 0.510124987873722
+          },
+          "short_history": {
+            "error": 0.13144833519438978,
+            "loss_ratio": 0.6961046208443156
+          },
+          "stable": {
+            "error": 0.11757590894326643,
+            "loss_ratio": 0.5664078465493222
+          }
+        },
+        "mean_loss_ratio": 0.6058971703121891,
+        "technical_points": 37.3622926232169
+      },
+      "0.1": {
+        "by_condition": {
+          "drift": {
+            "error": 0.13145710731703344,
+            "loss_ratio": 0.6509128315013524
+          },
+          "shared_change": {
+            "error": 0.10978277402669855,
+            "loss_ratio": 0.5191930715280272
+          },
+          "short_history": {
+            "error": 0.1318002828266428,
+            "loss_ratio": 0.6979684129778884
+          },
+          "stable": {
+            "error": 0.11737798908347376,
+            "loss_ratio": 0.5654543913510417
+          }
+        },
+        "mean_loss_ratio": 0.6083821768395774,
+        "technical_points": 37.30456657875816
+      },
+      "1.0": {
+        "by_condition": {
+          "drift": {
+            "error": 0.13179705891258156,
+            "loss_ratio": 0.6525961094932983
+          },
+          "shared_change": {
+            "error": 0.11166926724634824,
+            "loss_ratio": 0.5281148192048396
+          },
+          "short_history": {
+            "error": 0.13252582818654765,
+            "loss_ratio": 0.7018106486130147
+          },
+          "stable": {
+            "error": 0.11773443484100517,
+            "loss_ratio": 0.5671715260578839
+          }
+        },
+        "mean_loss_ratio": 0.6124232758422591,
+        "technical_points": 37.211072860914044
+      }
+    },
+    "penalty": 0.01,
+    "theta": [
+      0.152834991662553,
+      -0.2470138896059631,
+      -0.09698463186250271,
+      0.11301231391179117,
+      0.16560020183745938,
+      0.06538600571921484
+    ]
+  },
+  "exp_id": "EXP-015",
+  "gate_thresholds": {
+    "audit_points_min": 37.4764,
+    "tuning_crossfit_points_min": 37.3803
+  },
+  "hypothesis": "Synthetic 64-tick masking exposes decision trees to missingness topology, improving short-history generalization.",
+  "passed_gate": false,
+  "pre_calibration_blend": {
+    "audit_points": 37.11830009960188,
+    "by_condition": {
+      "drift": {
+        "error": 0.12706126919576113,
+        "loss_ratio": 0.669328548200981,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "error": 0.10601339880968103,
+        "loss_ratio": 0.5157230607134524,
+        "reference_error": 0.20556264957983816
+      },
+      "short_history": {
+        "error": 0.12374128516551791,
+        "loss_ratio": 0.697757273155816,
+        "reference_error": 0.1773414479878668
+      },
+      "stable": {
+        "error": 0.11332973024969133,
+        "loss_ratio": 0.577473969935999,
+        "reference_error": 0.19625080289290195
+      }
+    },
+    "full_points": 37.15007616508118,
+    "tuning_points": 37.172870475668844
+  },
+  "runtime_seconds": 218.61143279075623,
+  "scores": {
+    "audit_loss_ratio": 0.6026660573526009,
+    "audit_points": 37.437618226664334,
+    "crossfit_tuning_points": 37.3622926232169,
+    "full_loss_ratio": 0.6018816994430796,
+    "full_points": 37.45594947545751,
+    "insample_tuning_points": 37.46572576178339,
+    "tuning_loss_ratio": 0.6014637052941468
+  },
+  "status": "REJECTED"
+}

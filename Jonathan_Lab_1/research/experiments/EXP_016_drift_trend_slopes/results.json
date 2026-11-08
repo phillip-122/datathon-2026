@@ -1,0 +1,563 @@
+{
+  "exp_id": "EXP-016",
+  "description": "Continuous Drift Trend Slopes & Jackpot Hazard",
+  "runtime_seconds": 7.340021133422852,
+  "features": {
+    "count": 227,
+    "differential_features": [
+      "slope_16_48 = win_rate_16 - win_rate_48",
+      "slope_8_24 = win_rate_8 - win_rate_24",
+      "peer_slope = peer_win_rate_8 - peer_win_rate_24",
+      "jackpot_hazard = (1.0 if machine_type == 'jackpot' else 0.0) * min(streak_0 / 30.0, 1.5)"
+    ]
+  },
+  "models": {
+    "ensemble_configs": [
+      {
+        "leaves": 80,
+        "l2": 1.5,
+        "lr": 0.08,
+        "seed": 42
+      },
+      {
+        "leaves": 80,
+        "l2": 1.5,
+        "lr": 0.08,
+        "seed": 101
+      },
+      {
+        "leaves": 80,
+        "l2": 1.5,
+        "lr": 0.08,
+        "seed": 202
+      }
+    ],
+    "blend_weight_lag_specialist": 0.35,
+    "calibration_penalty": 0.005,
+    "calibration_theta": [
+      0.1766959766269308,
+      -0.3644538010345107,
+      -0.17801266617692812,
+      0.05994129057318031,
+      0.26445502026032774,
+      0.2180701563779311
+    ]
+  },
+  "evaluation": {
+    "standalone_exp016": {
+      "tuning_points": 37.02233531158255,
+      "tuning_loss_ratio": 0.620643308830624,
+      "audit_points": 36.66657582560289,
+      "audit_loss_ratio": 0.6363676904376836,
+      "full_points": 36.85617075087687,
+      "full_loss_ratio": 0.6279499138844339,
+      "by_condition": {
+        "stable": {
+          "loss_ratio": 0.5704171549487502,
+          "error": 0.11194482464257709,
+          "reference_error": 0.19625080289290195
+        },
+        "short_history": {
+          "loss_ratio": 0.7218749554716442,
+          "error": 0.12801834986951824,
+          "reference_error": 0.1773414479878668
+        },
+        "drift": {
+          "loss_ratio": 0.6838374659333691,
+          "error": 0.12981555407825887,
+          "reference_error": 0.18983393064179913
+        },
+        "shared_change": {
+          "loss_ratio": 0.5356700791839721,
+          "error": 0.11011376077769904,
+          "reference_error": 0.20556264957983816
+        }
+      }
+    },
+    "original_champ_v3": {
+      "tuning_points": 36.81938860090991,
+      "tuning_loss_ratio": 0.6295762173116919,
+      "audit_points": 36.68065022338388,
+      "audit_loss_ratio": 0.6357398147143546,
+      "full_points": 36.75609463693784,
+      "full_loss_ratio": 0.632382346183844,
+      "by_condition": {
+        "stable": {
+          "loss_ratio": 0.5696799786812783,
+          "error": 0.11180015320821213,
+          "reference_error": 0.19625080289290195
+        },
+        "short_history": {
+          "loss_ratio": 0.7218267006253226,
+          "error": 0.12800979228519915,
+          "reference_error": 0.1773414479878668
+        },
+        "drift": {
+          "loss_ratio": 0.7052686247854907,
+          "error": 0.1338839152013659,
+          "reference_error": 0.18983393064179913
+        },
+        "shared_change": {
+          "loss_ratio": 0.5327540806432844,
+          "error": 0.10951434039150433,
+          "reference_error": 0.20556264957983816
+        }
+      }
+    },
+    "uncalibrated_blend": {
+      "tuning_points": 37.2891689496368,
+      "tuning_loss_ratio": 0.6090463180082325,
+      "audit_points": 37.0728183298831,
+      "audit_loss_ratio": 0.618436436801356,
+      "full_points": 37.18681024056673,
+      "full_loss_ratio": 0.6134753051378035,
+      "by_condition": {
+        "stable": {
+          "loss_ratio": 0.5786036004452201,
+          "error": 0.11355142114409829,
+          "reference_error": 0.19625080289290195
+        },
+        "short_history": {
+          "loss_ratio": 0.6854371579858726,
+          "error": 0.12155641810190286,
+          "reference_error": 0.1773414479878668
+        },
+        "drift": {
+          "loss_ratio": 0.6614927604521262,
+          "error": 0.12557377080772117,
+          "reference_error": 0.18983393064179913
+        },
+        "shared_change": {
+          "loss_ratio": 0.5283677016679948,
+          "error": 0.1086126647072825,
+          "reference_error": 0.20556264957983816
+        }
+      }
+    },
+    "calibrated_final": {
+      "tuning_points": 37.72098018283488,
+      "tuning_loss_ratio": 0.5906267469503166,
+      "audit_points": 37.60931619780654,
+      "audit_loss_ratio": 0.5953493991868783,
+      "full_points": 37.668703052933445,
+      "full_loss_ratio": 0.5928342400237618,
+      "by_condition": {
+        "stable": {
+          "loss_ratio": 0.5571481823244008,
+          "error": 0.10934077811148457,
+          "reference_error": 0.19625080289290195
+        },
+        "short_history": {
+          "loss_ratio": 0.6761495906722932,
+          "error": 0.1199093474662279,
+          "reference_error": 0.1773414479878668
+        },
+        "drift": {
+          "loss_ratio": 0.644956984902366,
+          "error": 0.12243471953889963,
+          "reference_error": 0.18983393064179913
+        },
+        "shared_change": {
+          "loss_ratio": 0.49308220219598725,
+          "error": 0.10135928394406864,
+          "reference_error": 0.20556264957983816
+        }
+      }
+    },
+    "blend_grid_search": {
+      "weight_0.10": {
+        "uncalibrated": {
+          "tuning_points": 37.16013606187419,
+          "tuning_loss_ratio": 0.6146334851975745,
+          "audit_points": 36.856476179860785,
+          "audit_loss_ratio": 0.6279364230915099,
+          "full_points": 37.0180228586011,
+          "full_loss_ratio": 0.6208321073544064,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.569818463903084,
+              "error": 0.1118273310441803,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.7078607725078281,
+              "error": 0.1255330543703482,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6744484938940767,
+              "error": 0.12803320861135403,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.5312006991126369,
+              "error": 0.10919502316825604,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "calibrated": {
+          "tuning_points": 37.42682476006182,
+          "tuning_loss_ratio": 0.6031282478450063,
+          "audit_points": 37.15522492131663,
+          "audit_loss_ratio": 0.6148469058406079,
+          "full_points": 37.30027407642985,
+          "full_loss_ratio": 0.6085672688907714,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.5549090551882583,
+              "error": 0.10890134761323733,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.706999138229509,
+              "error": 0.12538025089979513,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6643128446489591,
+              "error": 0.1261091184755468,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.5080480374963592,
+              "error": 0.10443570070158857,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "crossfit_tuning_points": 37.294055845971684
+      },
+      "weight_0.15": {
+        "uncalibrated": {
+          "tuning_points": 37.21074477128719,
+          "tuning_loss_ratio": 0.6124374926861882,
+          "audit_points": 36.929594598254866,
+          "audit_loss_ratio": 0.6247132050248755,
+          "full_points": 37.0789714013539,
+          "full_loss_ratio": 0.6181678652986897,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.5704004210222197,
+              "error": 0.11194154059605992,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.7019346961305701,
+              "error": 0.12448211540471858,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6706554390163975,
+              "error": 0.12731315809478413,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.5296809050255717,
+              "error": 0.10888261026890315,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "calibrated": {
+          "tuning_points": 37.5149769521135,
+          "tuning_loss_ratio": 0.5993612384885059,
+          "audit_points": 37.28035322844271,
+          "audit_loss_ratio": 0.6094268107476927,
+          "full_points": 37.40564886877384,
+          "full_loss_ratio": 0.6040358024663993,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.5539274785937075,
+              "error": 0.10870871241845585,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.6993671357712332,
+              "error": 0.12402678053279753,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6591541831290778,
+              "error": 0.1251298294823771,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.5036944123715786,
+              "error": 0.10354075798566131,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "crossfit_tuning_points": 37.38115565597503
+      },
+      "weight_0.20": {
+        "uncalibrated": {
+          "tuning_points": 37.24901659848715,
+          "tuning_loss_ratio": 0.6107807797115609,
+          "audit_points": 36.98791167086605,
+          "audit_loss_ratio": 0.6221515973625429,
+          "full_points": 37.126413973197174,
+          "full_loss_ratio": 0.6161000640491711,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.571569913236001,
+              "error": 0.1121710543819915,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.6967292964897456,
+              "error": 0.12355898229505924,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6674633382333628,
+              "error": 0.1267071890561359,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.5286377082375749,
+              "error": 0.10866816797312935,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "calibrated": {
+          "tuning_points": 37.58934598631847,
+          "tuning_loss_ratio": 0.5961969655401405,
+          "audit_points": 37.38975678425294,
+          "audit_loss_ratio": 0.6047175793684111,
+          "full_points": 37.496309250020644,
+          "full_loss_ratio": 0.6001574874990387,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.5536278536945761,
+              "error": 0.10864991079143461,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.6924072652779224,
+              "error": 0.12279250702170576,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6546128718983671,
+              "error": 0.12426773452118357,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.4999819591252892,
+              "error": 0.10277761625991279,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "crossfit_tuning_points": 37.45527819113811
+      },
+      "weight_0.25": {
+        "uncalibrated": {
+          "tuning_points": 37.27487498482068,
+          "tuning_loss_ratio": 0.6096633462736925,
+          "audit_points": 37.031285755946655,
+          "audit_loss_ratio": 0.6202516001045122,
+          "full_points": 37.16024610859804,
+          "full_loss_ratio": 0.6146287036058504,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.5733269405444282,
+              "error": 0.1125158724019751,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.6922445735853544,
+              "error": 0.12276365504137017,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6648721915449726,
+              "error": 0.1262153014954093,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.5280711087486466,
+              "error": 0.10855169628093465,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "calibrated": {
+          "tuning_points": 37.648959535777045,
+          "tuning_loss_ratio": 0.5936695393396784,
+          "audit_points": 37.481920128747646,
+          "audit_loss_ratio": 0.600771779938285,
+          "full_points": 37.571034294281745,
+          "full_loss_ratio": 0.5969749336693642,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.554046086268809,
+              "error": 0.10873198926992379,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.6861821844811616,
+              "error": 0.12168854217936675,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6507179096918874,
+              "error": 0.12352833853582625,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.4969535542355984,
+              "error": 0.10215508932678741,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "crossfit_tuning_points": 37.51551344357146
+      },
+      "weight_0.30": {
+        "uncalibrated": {
+          "tuning_points": 37.28826806959207,
+          "tuning_loss_ratio": 0.609085192372583,
+          "audit_points": 37.05961106983633,
+          "audit_loss_ratio": 0.6190132132507831,
+          "full_points": 37.180393066184564,
+          "full_loss_ratio": 0.6137537839687279,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.5756715029475012,
+              "error": 0.1129759946560107,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.6884805274173967,
+              "error": 0.12209613364365136,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.662881998951227,
+              "error": 0.1258374954126044,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.5279811065587865,
+              "error": 0.10853319519231902,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "calibrated": {
+          "tuning_points": 37.69301750386686,
+          "tuning_loss_ratio": 0.5918067582104485,
+          "audit_points": 37.55546086502076,
+          "audit_loss_ratio": 0.5976371642901105,
+          "full_points": 37.62875816117957,
+          "full_loss_ratio": 0.5945251167470139,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.5552131520613423,
+              "error": 0.10896102686873728,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.6807476467636953,
+              "error": 0.12072477339140658,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6474938169689195,
+              "error": 0.12291629634147165,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.49464585119409865,
+              "error": 0.10168071177513327,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "crossfit_tuning_points": 37.56104686036776
+      },
+      "weight_0.35": {
+        "uncalibrated": {
+          "tuning_points": 37.2891689496368,
+          "tuning_loss_ratio": 0.6090463180082325,
+          "audit_points": 37.0728183298831,
+          "audit_loss_ratio": 0.618436436801356,
+          "full_points": 37.18681024056673,
+          "full_loss_ratio": 0.6134753051378035,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.5786036004452201,
+              "error": 0.11355142114409829,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.6854371579858726,
+              "error": 0.12155641810190286,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.6614927604521262,
+              "error": 0.12557377080772117,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.5283677016679948,
+              "error": 0.1086126647072825,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "calibrated": {
+          "tuning_points": 37.72098018283488,
+          "tuning_loss_ratio": 0.5906267469503166,
+          "audit_points": 37.60931619780654,
+          "audit_loss_ratio": 0.5953493991868783,
+          "full_points": 37.668703052933445,
+          "full_loss_ratio": 0.5928342400237618,
+          "by_condition": {
+            "stable": {
+              "loss_ratio": 0.5571481823244008,
+              "error": 0.10934077811148457,
+              "reference_error": 0.19625080289290195
+            },
+            "short_history": {
+              "loss_ratio": 0.6761495906722932,
+              "error": 0.1199093474662279,
+              "reference_error": 0.1773414479878668
+            },
+            "drift": {
+              "loss_ratio": 0.644956984902366,
+              "error": 0.12243471953889963,
+              "reference_error": 0.18983393064179913
+            },
+            "shared_change": {
+              "loss_ratio": 0.49308220219598725,
+              "error": 0.10135928394406864,
+              "reference_error": 0.20556264957983816
+            }
+          }
+        },
+        "crossfit_tuning_points": 37.591204539936705
+      }
+    },
+    "crossfit_tuning_points": 37.591204539936705,
+    "crossfit_tuning_loss_ratio": 0.596118047674059
+  },
+  "gates": {
+    "audit_points_threshold": 37.4764,
+    "audit_points_actual": 37.60931619780654,
+    "passed_audit": true,
+    "tuning_points_threshold": 37.3803,
+    "tuning_points_crossfit": 37.591204539936705,
+    "tuning_points_insample": 37.72098018283488,
+    "passed_tuning": true,
+    "drift_loss_ratio_threshold": 0.6662,
+    "drift_loss_ratio_actual": 0.644956984902366,
+    "passed_drift": true,
+    "all_passed": true
+  }
+}

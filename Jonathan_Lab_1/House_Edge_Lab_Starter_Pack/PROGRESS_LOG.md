@@ -6,14 +6,14 @@ reproducible.
 
 ## 0. Project status
 
--   **Current phase:** Final validated & promoted Champion v3 submission package ready for 9 PM deadline
--   **Current best model:** `HGBEnsembleForecaster` (3-Seed Deep Ensemble with 223 cutoff-safe dynamic features, fast recency half-lives [2, 4, 6, 12, 24, 48], machine-type volatility calibration)
--   **Best cross-validation score:** 36.8194 tuning / 36.6807 audit (split-half episodes)
--   **Official validation score:** **36.7561 / 60 technical points** (mean loss ratio: 0.6324, 36.76% error reduction)
--   **Last reproducible run ID:** EXP-013 (`compiled_versions/v3_promoted_champion_exp013`)
+-   **Current phase:** Main Round finalized & ready for Round 2 Adaptation; Champion v4 active
+-   **Current best model:** `CalibratedChangingLagBlend` (75% Jonathan V3 3-Seed HGB Ensemble + 25% Changing-Lag Specialist with 3-fold episode-cross-fitted low-capacity logit calibration)
+-   **Best cross-validation score:** 37.3803 cross-fitted tuning / **37.4764 audit** (split-half episodes)
+-   **Official validation score:** **37.4814 / 60 technical points** (mean loss ratio: 0.6008, 39.92% error reduction)
+-   **Last reproducible run ID:** EXP-014 (`compiled_versions/v4_promoted_champion_exp014`)
 -   **Frozen fallback run ID:** EXP-006 (`compiled_versions/v1_frozen_champion_exp006`, 35.0743 pts)
 -   **Known blockers:** None
--   **Next highest-value action:** Submit `compiled_versions/active_champion_submission/submission.csv` and `compiled_versions/active_champion_submission/submission_entry.zip` via Main Round Google Form before 9 PM Central; prepare for Round 2 (adaptation) at 9 PM Central.
+-   **Next highest-value action:** Await Round 2 (adaptation) kit release; run adaptation fine-tuning and calibration pipeline.
 
 ## 1. Setup checklist
 
