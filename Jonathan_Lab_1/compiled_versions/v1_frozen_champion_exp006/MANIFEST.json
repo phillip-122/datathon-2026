@@ -1,0 +1,19 @@
+{
+  "frozen_at": "2026-11-07T18:10:00-06:00",
+  "champion_id": "EXP-006",
+  "model_type": "HGBForecaster",
+  "validation_score": {
+    "technical_points": 35.07429043313985,
+    "mean_loss_ratio": 0.7106547063118677,
+    "by_condition": {
+      "stable": 0.6684499625165051,
+      "short_history": 0.7826155670462749,
+      "drift": 0.7587518447701924,
+      "shared_change": 0.6328014509144984
+    }
+  },
+  "submission_csv_sha256": "2ae6e79b6a1834100fb2f1ac99c699321611436c769f2d68d43e07759f330756",
+  "submission_zip_sha256": "599aac4086eb6966b5755fcb2292c7ab792594e696ae9f975a0b55fe25aef7e1",
+  "reproduction_verified": true,
+  "status": "FROZEN_CHAMPION_V1"
+}

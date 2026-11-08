@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2765.972999999999 1415.3" width="2765.972999999999" height="1415.3" style="--bg:#18181B;--fg:#F4F4F5;--line:#71717A;--muted:#A1A1AA;--surface:#27272A;--border:#3F3F46;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<g class="subgraph" data-id="Step1" data-label="Step 1: Ingestion &amp; Resolution">
+  <rect x="1105.2237499999994" y="40" width="525.5149999999999" height="283.6" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1105.2237499999994" y="40" width="525.5149999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1117.2237499999994" y="54" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 1: Ingestion &amp; Resolution</text>
+</g>
+<g class="subgraph" data-id="Step2" data-label="Step 2: Cutoff-Safe History Indexing">
+  <rect x="1176.6929999999995" y="383.6" width="357.7529999999998" height="113.80000000000001" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1176.6929999999995" y="383.6" width="357.7529999999998" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1188.6929999999995" y="397.6" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 2: Cutoff-Safe History Indexing</text>
+</g>
+<g class="subgraph" data-id="Step3" data-label="Step 3: 211 Feature Engineering (src/features.py)">
+  <rect x="40" y="557.4000000000001" width="2685.972999999999" height="96.9" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="557.4000000000001" width="2685.972999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="52" y="571.4000000000001" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 3: 211 Feature Engineering (src/features.py)</text>
+</g>
+<g class="subgraph" data-id="Step4" data-label="Step 4: Inference &amp; Calibration (src/model.py)">
+  <rect x="1202.6279999999995" y="714.3" width="305.8829999999999" height="487.2" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1202.6279999999995" y="714.3" width="305.8829999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1214.6279999999995" y="728.3" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 4: Inference &amp; Calibration (src/model.py)</text>
+</g>
+<g class="subgraph" data-id="Step5" data-label="Step 5: Output Generation">
+  <rect x="1167.0599999999995" y="1261.5" width="377.01899999999995" height="113.80000000000001" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1167.0599999999995" y="1261.5" width="377.01899999999995" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1179.0599999999995" y="1275.5" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Step 5: Output Generation</text>
+</g>
+<polyline class="edge" data-from="Q" data-to="T" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1225.1907499999993,307.6 1225.1907499999993,367.6 1355.5694999999994,367.6 1355.5694999999994,427.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="H" data-to="T" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1485.9482499999995,307.6 1485.9482499999995,367.6 1355.5694999999994,367.6 1355.5694999999994,427.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T" data-to="F1" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 217.76499999999996,541.4000000000001 217.76499999999996,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T" data-to="F2" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 614.4959999999999,541.4000000000001 614.4959999999999,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T" data-to="F3" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 1047.5359999999998,541.4000000000001 1047.5359999999998,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T" data-to="F4" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 1534.6689999999994,541.4000000000001 1534.6689999999994,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T" data-to="F5" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 2036.2514999999992,541.4000000000001 2036.2514999999992,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="T" data-to="F6" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,481.40000000000003 1355.5694999999994,541.4000000000001 2493.373999999999,541.4000000000001 2493.373999999999,601.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F1" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="217.76499999999996,638.3000000000001 217.76499999999996,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F2" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="614.4959999999999,638.3000000000001 614.4959999999999,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F3" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1047.5359999999998,638.3000000000001 1047.5359999999998,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F4" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1534.6689999999994,638.3000000000001 1534.6689999999994,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F5" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="2036.2514999999992,638.3000000000001 2036.2514999999992,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="F6" data-to="M" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="2493.373999999999,638.3000000000001 2493.373999999999,698.3 1355.5694999999994,698.3 1355.5694999999994,758.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="N" data-to="CSV" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,1185.5 1355.5694999999994,1305.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="D" data-to="P" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,120.9 1355.5694999999994,168.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="P" data-to="Q" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,205.8 1355.5694999999994,229.8 1225.1907499999993,229.8 1225.1907499999993,253.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="P" data-to="H" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,205.8 1355.5694999999994,229.8 1485.9482499999995,229.8 1485.9482499999995,253.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="M" data-to="L" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,812.0999999999999 1355.5694999999994,860.0999999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="L" data-to="C" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,913.9 1355.5694999999994,961.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="C" data-to="S" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,998.8 1355.5694999999994,1046.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="S" data-to="N" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1355.5694999999994,1083.6999999999998 1355.5694999999994,1131.6999999999998" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="node" data-id="D" data-label="Test Data Folder" data-shape="rectangle">
+  <rect x="1285.6884999999993" y="84" width="139.762" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1355.5694999999994" y="102.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Test Data Folder</text>
+</g>
+<g class="node" data-id="P" data-label="predict.py" data-shape="rectangle">
+  <rect x="1304.9544999999994" y="168.9" width="101.22999999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1355.5694999999994" y="187.35000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">predict.py</text>
+</g>
+<g class="node" data-id="Q" data-label="Load 1,536 Queries
+(machine_type, signal, cutoff)" data-shape="rectangle">
+  <rect x="1121.2237499999994" y="253.8" width="207.93399999999994" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1225.1907499999993" y="280.7" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1225.1907499999993" dy="-3.9000000000000012">Load 1,536 Queries</tspan><tspan x="1225.1907499999993" dy="16.900000000000002">(machine_type, signal, cutoff)</tspan></text>
+</g>
+<g class="node" data-id="H" data-label="Load History Spins
+(episode_id, machine_id, tick, payout)" data-shape="rectangle">
+  <rect x="1357.1577499999994" y="253.8" width="257.5809999999999" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1485.9482499999995" y="280.7" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1485.9482499999995" dy="-3.9000000000000012">Load History Spins</tspan><tspan x="1485.9482499999995" dy="16.900000000000002">(episode_id, machine_id, tick, payout)</tspan></text>
+</g>
+<g class="node" data-id="T" data-label="Filter observations strictly before cutoff (t &lt; cutoff)
+Group by Episode &amp; Machine" data-shape="rectangle">
+  <rect x="1192.6929999999995" y="427.6" width="325.7529999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1355.5694999999994" y="454.5" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">Filter observations strictly before cutoff (t &lt; cutoff)</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">Group by Episode &amp; Machine</tspan></text>
+</g>
+<g class="node" data-id="F1" data-label="Static: Machine type &amp; signal one-hot interactions" data-shape="rectangle">
+  <rect x="56" y="601.4000000000001" width="323.5299999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="217.76499999999996" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Static: Machine type &amp; signal one-hot interactions</text>
+</g>
+<g class="node" data-id="F2" data-label="Recency: Exponential decay weights (half-lives 6, 12, 24, 48 ticks)" data-shape="rectangle">
+  <rect x="407.53" y="601.4000000000001" width="413.93199999999973" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="614.4959999999999" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Recency: Exponential decay weights (half-lives 6, 12, 24, 48 ticks)</text>
+</g>
+<g class="node" data-id="F3" data-label="Rolling Windows: Win rates &amp; average payout (windows 1 to 48)" data-shape="rectangle">
+  <rect x="849.4619999999998" y="601.4000000000001" width="396.14799999999997" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1047.5359999999998" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Rolling Windows: Win rates &amp; average payout (windows 1 to 48)</text>
+</g>
+<g class="node" data-id="F4" data-label="Databricks Markov Lags: Exact payouts at lags 1-8 &amp; pairwise transitions (lag1, lag2)" data-shape="rectangle">
+  <rect x="1273.6099999999997" y="601.4000000000001" width="522.1179999999996" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1534.6689999999994" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Databricks Markov Lags: Exact payouts at lags 1-8 &amp; pairwise transitions (lag1, lag2)</text>
+</g>
+<g class="node" data-id="F5" data-label="Streaks: Current cold drought length &amp; ticks since last big win (&gt;=5)" data-shape="rectangle">
+  <rect x="1823.7279999999992" y="601.4000000000001" width="425.04699999999985" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="2036.2514999999992" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Streaks: Current cold drought length &amp; ticks since last big win (&gt;=5)</text>
+</g>
+<g class="node" data-id="F6" data-label="Peer Regimes: What the other 7 machines in the episode did recently" data-shape="rectangle">
+  <rect x="2276.774999999999" y="601.4000000000001" width="433.19799999999975" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="2493.373999999999" y="619.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Peer Regimes: What the other 7 machines in the episode did recently</text>
+</g>
+<g class="node" data-id="M" data-label="HistGradientBoosting Classifier
+(Loaded from artifacts/hgb_model.joblib)" data-shape="rectangle">
+  <rect x="1218.6279999999995" y="758.3" width="273.8829999999999" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1355.5694999999994" y="785.1999999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">HistGradientBoosting Classifier</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">(Loaded from artifacts/hgb_model.joblib)</tspan></text>
+</g>
+<g class="node" data-id="L" data-label="&quot;Raw Decision Logits
+[z_0, z_1, z_2, z_5, z_20" data-shape="rectangle">
+  <rect x="1265.3109999999995" y="860.0999999999999" width="180.517" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1355.5694999999994" y="886.9999999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">&quot;Raw Decision Logits</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">[z_0, z_1, z_2, z_5, z_20</tspan></text>
+</g>
+<g class="node" data-id="C" data-label="Temperature Scaling: logits / 1.06" data-shape="rectangle">
+  <rect x="1240.1169999999995" y="961.9" width="230.90499999999994" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1355.5694999999994" y="980.35" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Temperature Scaling: logits / 1.06</text>
+</g>
+<g class="node" data-id="S" data-label="Numerically Stable Softmax" data-shape="rectangle">
+  <rect x="1256.0484999999994" y="1046.8" width="199.04199999999994" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1355.5694999999994" y="1065.25" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Numerically Stable Softmax</text>
+</g>
+<g class="node" data-id="N" data-label="math.fsum Normalization
+(Sum = 1.0 within 1e-16)" data-shape="rectangle">
+  <rect x="1265.3109999999995" y="1131.6999999999998" width="180.51699999999997" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1355.5694999999994" y="1158.6" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">math.fsum Normalization</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">(Sum = 1.0 within 1e-16)</tspan></text>
+</g>
+<g class="node" data-id="CSV" data-label="submission.csv
+(1,536 rows, header: query_id,p_0,p_1,p_2,p_5,p_20)" data-shape="rectangle">
+  <rect x="1183.0599999999995" y="1305.5" width="345.01899999999995" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1355.5694999999994" y="1332.4" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1355.5694999999994" dy="-3.9000000000000012">submission.csv</tspan><tspan x="1355.5694999999994" dy="16.900000000000002">(1,536 rows, header: query_id,p_0,p_1,p_2,p_5,p_20)</tspan></text>
+</g>
+</svg>

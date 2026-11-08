@@ -1,0 +1,36 @@
+{
+  "exp_id": "EXP-010",
+  "hypothesis": "Drift velocity & acceleration with safe tick 30 cutoffs",
+  "author": "TemporalDriftSpecialist",
+  "notes": "Decision: REJECTED. Total time: 10.7s",
+  "evaluation": {
+    "tuning_points": 34.87025240098552,
+    "tuning_loss_ratio": 0.7206643447841592,
+    "audit_points": 34.653427094697314,
+    "audit_loss_ratio": 0.7314304826486047,
+    "full_points": 34.764371355918826,
+    "full_loss_ratio": 0.7259049325448155,
+    "by_condition": {
+      "stable": {
+        "loss_ratio": 0.6979139597766169,
+        "error": 0.13696617495632554,
+        "reference_error": 0.19625080289290195
+      },
+      "short_history": {
+        "loss_ratio": 0.7798408149068553,
+        "error": 0.13829809931561973,
+        "reference_error": 0.1773414479878668
+      },
+      "drift": {
+        "loss_ratio": 0.8111823576498595,
+        "error": 0.1539899354199545,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "loss_ratio": 0.61468259784593,
+        "error": 0.1263557834638275,
+        "reference_error": 0.20556264957983816
+      }
+    }
+  }
+}

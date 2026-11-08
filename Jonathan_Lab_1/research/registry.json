@@ -1,0 +1,148 @@
+{
+  "updated_at": "2026-11-07T18:20:47.498061",
+  "champion": "EXP-012",
+  "experiments": [
+    {
+      "id": "BASE-001",
+      "hypothesis": "Official pooled starter reference baseline",
+      "author": "organizers",
+      "tuning_points": 30.0,
+      "audit_points": 30.0,
+      "full_points": 30.0,
+      "mean_loss_ratio": 1.0,
+      "by_condition": {
+        "stable": 1.0,
+        "short_history": 1.0,
+        "drift": 1.0,
+        "shared_change": 1.0
+      },
+      "decision": "BASELINE",
+      "notes": "Starter baseline reference"
+    },
+    {
+      "id": "EXP-006",
+      "hypothesis": "HistGradientBoosting with 211 features, multi-cutoff step 6, leaves=60, l2=2.0",
+      "author": "initial_iteration",
+      "tuning_points": 35.1863,
+      "audit_points": 34.9486,
+      "full_points": 35.0743,
+      "mean_loss_ratio": 0.710655,
+      "by_condition": {
+        "stable": 0.66845,
+        "short_history": 0.782616,
+        "drift": 0.758752,
+        "shared_change": 0.632801
+      },
+      "decision": "CHAMPION",
+      "notes": "Frozen champion v1 (runs/hgb_run/submission.csv, 35.0743 pts)"
+    },
+    {
+      "id": "EXP-007",
+      "hypothesis": "HGB-Prior Blend (alpha=1.00 uniform, cond={'stable': 1.0, 'short_history': 1.0, 'drift': 0.94, 'shared_change': 1.0})",
+      "author": "BlendAgent",
+      "tuning_points": 35.186337663997165,
+      "audit_points": 34.94858558798521,
+      "full_points": 35.07429043313985,
+      "mean_loss_ratio": 0.7106547063118677,
+      "by_condition": {
+        "stable": 0.6684499625165051,
+        "short_history": 0.7826155670462749,
+        "drift": 0.7587518447701924,
+        "shared_change": 0.6328014509144984
+      },
+      "decision": "REJECTED",
+      "notes": "Tuned on tuning split. Uniform best alpha=1.0000. Cond best drift alpha=0.94 (failed audit). Decision: REJECTED",
+      "timestamp": "2026-11-07T18:15:30.713721"
+    },
+    {
+      "id": "EXP-008",
+      "hypothesis": "Principled empirical base rates and explicit missingness indicators",
+      "author": "FeatureAgent",
+      "tuning_points": 34.79845434559229,
+      "audit_points": 34.49923801707819,
+      "full_points": 34.657675319659276,
+      "mean_loss_ratio": 0.7312182495392443,
+      "by_condition": {
+        "stable": 0.6762759419842903,
+        "short_history": 0.8063083021568119,
+        "drift": 0.7949869878787006,
+        "shared_change": 0.6473017661371743
+      },
+      "decision": "REJECTED",
+      "notes": "All conditions degraded: short_history ratio 0.7826->0.8063, drift 0.7588->0.7950",
+      "timestamp": "2026-11-07T18:15:44.759982"
+    },
+    {
+      "id": "EXP-009",
+      "hypothesis": "Early cutoff sampling (tick 12) + drift velocity features",
+      "author": "TemporalSpecialist",
+      "tuning_points": 35.3378,
+      "audit_points": 34.9474,
+      "full_points": 35.1547,
+      "mean_loss_ratio": 0.7067,
+      "by_condition": {
+        "stable": 0.6826,
+        "short_history": 0.797,
+        "drift": 0.7489,
+        "shared_change": 0.5985
+      },
+      "decision": "REJECTED",
+      "notes": "Missed audit gate by 0.0012. Early cutoffs added label noise.",
+      "timestamp": "2026-11-07T18:20:47.497418"
+    },
+    {
+      "id": "EXP-010",
+      "hypothesis": "Drift velocity features with safe tick 30 cutoffs",
+      "author": "TemporalDriftSpecialist",
+      "tuning_points": 34.8703,
+      "audit_points": 34.6534,
+      "full_points": 34.7644,
+      "mean_loss_ratio": 0.7259,
+      "by_condition": {
+        "stable": 0.6979,
+        "short_history": 0.7798,
+        "drift": 0.8112,
+        "shared_change": 0.6147
+      },
+      "decision": "REJECTED",
+      "notes": "Velocity diffs on sparse windows introduced noise.",
+      "timestamp": "2026-11-07T18:20:47.497709"
+    },
+    {
+      "id": "EXP-011",
+      "hypothesis": "Specialist HistGradientBoosting models by machine type",
+      "author": "ModelSpecialist",
+      "tuning_points": 30.9509,
+      "audit_points": 30.3597,
+      "full_points": 30.6602,
+      "mean_loss_ratio": 0.9569,
+      "by_condition": {
+        "stable": 0.9184,
+        "short_history": 1.0386,
+        "drift": 1.0159,
+        "shared_change": 0.8548
+      },
+      "decision": "REJECTED",
+      "notes": "Splitting training data by type fragmented sample size and broke shared episode learning.",
+      "timestamp": "2026-11-07T18:20:47.497863"
+    },
+    {
+      "id": "EXP-012",
+      "hypothesis": "Logit temperature scaling T=1.06 (Brier score optimization)",
+      "author": "CalibrationSpecialist",
+      "tuning_points": 35.2282,
+      "audit_points": 34.966,
+      "full_points": 35.1057,
+      "mean_loss_ratio": 0.7091,
+      "by_condition": {
+        "stable": 0.6686,
+        "short_history": 0.7838,
+        "drift": 0.758,
+        "shared_change": 0.6261
+      },
+      "decision": "CHAMPION",
+      "notes": "Passed both gates: Tune 35.2282 > 35.1863, Audit 34.9660 > 34.9486. Promoted to Champion v2.",
+      "timestamp": "2026-11-07T18:20:47.498051"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "exp_id": "EXP-012",
+  "hypothesis": "Probability calibration via Gamma gamma=0.940",
+  "author": "CalibrationSpecialist",
+  "notes": "Decision: PROMOTED. Total time: 3.9s",
+  "evaluation": {
+    "tuning_points": 35.22835993427803,
+    "tuning_loss_ratio": 0.7031732420111494,
+    "audit_points": 34.96415838339653,
+    "audit_loss_ratio": 0.7160430216015801,
+    "full_points": 35.10504959954325,
+    "full_loss_ratio": 0.7091558247159024,
+    "by_condition": {
+      "stable": {
+        "loss_ratio": 0.6687419175512329,
+        "error": 0.1312411382475683,
+        "reference_error": 0.19625080289290195
+      },
+      "short_history": {
+        "loss_ratio": 0.7840058395462806,
+        "error": 0.13903673081608056,
+        "reference_error": 0.1773414479878668
+      },
+      "drift": {
+        "loss_ratio": 0.7580421030461578,
+        "error": 0.14390211201322786,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "loss_ratio": 0.6258334387199384,
+        "error": 0.1286479798589318,
+        "reference_error": 0.20556264957983816
+      }
+    }
+  }
+}

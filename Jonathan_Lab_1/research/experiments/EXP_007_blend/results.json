@@ -1,0 +1,36 @@
+{
+  "exp_id": "EXP-007",
+  "hypothesis": "HGB-Prior Blend (alpha=1.00 uniform, cond={'stable': 1.0, 'short_history': 1.0, 'drift': 0.94, 'shared_change': 1.0})",
+  "author": "BlendAgent",
+  "notes": "Tuned on tuning split. Winner: uniform. Decision: REJECTED",
+  "evaluation": {
+    "tuning_points": 35.186337663997165,
+    "tuning_loss_ratio": 0.7052073044075939,
+    "audit_points": 34.94858558798521,
+    "audit_loss_ratio": 0.7168076759199975,
+    "full_points": 35.07429043313985,
+    "full_loss_ratio": 0.7106547063118677,
+    "by_condition": {
+      "stable": {
+        "loss_ratio": 0.6684499625165051,
+        "error": 0.13118384183759435,
+        "reference_error": 0.19625080289290195
+      },
+      "short_history": {
+        "loss_ratio": 0.7826155670462749,
+        "error": 0.13879017787783185,
+        "reference_error": 0.1773414479878668
+      },
+      "drift": {
+        "loss_ratio": 0.7587518447701924,
+        "error": 0.14403684507444184,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "loss_ratio": 0.6328014509144984,
+        "error": 0.13008034290795017,
+        "reference_error": 0.20556264957983816
+      }
+    }
+  }
+}

@@ -21,6 +21,7 @@ class HGBForecaster:
         min_samples_leaf=25,
         l2_regularization=2.0,
         step_ticks=6,
+        temperature=1.06,
         random_state=42
     ):
         self.max_iter = max_iter
@@ -29,6 +30,7 @@ class HGBForecaster:
         self.min_samples_leaf = min_samples_leaf
         self.l2_regularization = l2_regularization
         self.step_ticks = step_ticks
+        self.temperature = temperature
         self.random_state = random_state
         
         self.base_forecaster = FrequencyForecaster("pooled_recent", prior_strength=10.0, half_life=16.0)
@@ -105,7 +107,14 @@ class HGBForecaster:
             X.append(f)
             
         X = np.array(X, dtype=np.float32)
-        probs = self.hgb.predict_proba(X)
+        logits = self.hgb.decision_function(X)
+        if self.temperature != 1.0:
+            scaled = logits / self.temperature
+        else:
+            scaled = logits
+        scaled -= np.max(scaled, axis=1, keepdims=True)
+        exp_scaled = np.exp(scaled)
+        probs = exp_scaled / np.sum(exp_scaled, axis=1, keepdims=True)
         
         predictions = {}
         for i, q in enumerate(queries):
@@ -129,6 +138,7 @@ class HGBForecaster:
             "min_samples_leaf": self.min_samples_leaf,
             "l2_regularization": self.l2_regularization,
             "step_ticks": self.step_ticks,
+            "temperature": self.temperature,
             "random_state": self.random_state,
         }
         (directory / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
@@ -146,6 +156,7 @@ class HGBForecaster:
             min_samples_leaf=meta["min_samples_leaf"],
             l2_regularization=meta["l2_regularization"],
             step_ticks=meta["step_ticks"],
+            temperature=meta.get("temperature", 1.0),
             random_state=meta["random_state"]
         )
         model.base_forecaster = FrequencyForecaster.load(directory / "base_forecaster.json")

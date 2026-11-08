@@ -1,0 +1,36 @@
+{
+  "exp_id": "EXP-011",
+  "hypothesis": "Specialist HistGradientBoosting models dedicated to each machine type",
+  "author": "ModelSpecialist",
+  "notes": "Decision: REJECTED. Total time: 54.1s",
+  "evaluation": {
+    "tuning_points": 30.95093073376394,
+    "tuning_loss_ratio": 0.9385523658759262,
+    "audit_points": 30.359726368936528,
+    "audit_loss_ratio": 0.9763023971583227,
+    "full_points": 30.66019677298456,
+    "full_loss_ratio": 0.9569346030051397,
+    "by_condition": {
+      "stable": {
+        "loss_ratio": 0.9183917180031037,
+        "error": 0.1802351120283007,
+        "reference_error": 0.19625080289290195
+      },
+      "short_history": {
+        "loss_ratio": 1.0386179747070785,
+        "error": 0.18419001554077893,
+        "reference_error": 0.1773414479878668
+      },
+      "drift": {
+        "loss_ratio": 1.0159151898664347,
+        "error": 0.19285517369105495,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "loss_ratio": 0.8548135294439417,
+        "error": 0.17571773400918966,
+        "reference_error": 0.20556264957983816
+      }
+    }
+  }
+}

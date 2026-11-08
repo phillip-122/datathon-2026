@@ -1,0 +1,11 @@
+{
+  "model_type": "HGBForecaster",
+  "max_iter": 150,
+  "learning_rate": 0.08,
+  "max_leaf_nodes": 60,
+  "min_samples_leaf": 25,
+  "l2_regularization": 2.0,
+  "step_ticks": 6,
+  "temperature": 1.06,
+  "random_state": 42
+}

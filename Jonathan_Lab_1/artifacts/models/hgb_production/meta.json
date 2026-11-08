@@ -6,5 +6,6 @@
   "min_samples_leaf": 25,
   "l2_regularization": 2.0,
   "step_ticks": 6,
+  "temperature": 1.06,
   "random_state": 42
 }

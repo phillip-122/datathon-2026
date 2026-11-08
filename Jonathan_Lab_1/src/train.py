@@ -41,6 +41,7 @@ def train_and_evaluate(data_dir, output_dir, model_artifact_dir):
         min_samples_leaf=25,
         l2_regularization=2.0,
         step_ticks=6,
+        temperature=1.06,
         random_state=42
     )
     t0 = time.time()

@@ -1,0 +1,22 @@
+{
+  "promoted_at": "2026-11-07T18:20:00-06:00",
+  "champion_id": "EXP-012",
+  "model_type": "HGBForecaster-Calibrated",
+  "temperature": 1.06,
+  "validation_score": {
+    "technical_points": 35.1057,
+    "mean_loss_ratio": 0.7091,
+    "tuning_points": 35.2282,
+    "audit_points": 34.9660,
+    "by_condition": {
+      "stable": 0.6686,
+      "short_history": 0.7838,
+      "drift": 0.7580,
+      "shared_change": 0.6261
+    }
+  },
+  "submission_csv_sha256": "1b479d986d35562be35302127d51b22d23228d3601b4b7691010a3db158d8783",
+  "submission_zip_sha256": "73e1bbe40de68bf63b7847b0d940697978458248b05e0c47c4d4f3ec5a9e026c",
+  "reproduction_verified": true,
+  "status": "PROMOTED_CHAMPION_V2"
+}

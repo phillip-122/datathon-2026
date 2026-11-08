@@ -1,0 +1,36 @@
+{
+  "exp_id": "EXP-008",
+  "hypothesis": "Principled empirical base rates and explicit missingness indicators",
+  "author": "FeatureAgent",
+  "notes": "Decision: REJECTED. Total time: 10.6s",
+  "evaluation": {
+    "tuning_points": 34.79845434559229,
+    "tuning_loss_ratio": 0.7242145126368189,
+    "audit_points": 34.49923801707819,
+    "audit_loss_ratio": 0.73916884686839,
+    "full_points": 34.657675319659276,
+    "full_loss_ratio": 0.7312182495392443,
+    "by_condition": {
+      "stable": {
+        "loss_ratio": 0.6762759419842903,
+        "error": 0.13271969659157054,
+        "reference_error": 0.19625080289290195
+      },
+      "short_history": {
+        "loss_ratio": 0.8063083021568119,
+        "error": 0.14299188182912745,
+        "reference_error": 0.1773414479878668
+      },
+      "drift": {
+        "loss_ratio": 0.7949869878787006,
+        "error": 0.15091550471809806,
+        "reference_error": 0.18983393064179913
+      },
+      "shared_change": {
+        "loss_ratio": 0.6473017661371743,
+        "error": 0.13306106612486632,
+        "reference_error": 0.20556264957983816
+      }
+    }
+  }
+}

@@ -6,13 +6,14 @@ reproducible.
 
 ## 0. Project status
 
--   **Current phase:** Final validation & submission packaging complete
--   **Current best model:** `HGBForecaster` (HistGradientBoosting with 211 cutoff-safe dynamic features, multi-cutoff training slices, leaves=60, l2=2.0)
--   **Best cross-validation score:** 35.1863 tuning / 34.9486 audit (split-half episodes)
--   **Official validation score:** 35.0743 / 60 technical points (mean loss ratio: 0.7107)
--   **Last reproducible run ID:** EXP-006 (runs/hgb_run)
+-   **Current phase:** Final validated & promoted submission package ready for 9 PM deadline
+-   **Current best model:** `HGBForecaster-Calibrated` (HistGradientBoosting with 211 cutoff-safe dynamic features, multi-cutoff training slices, leaves=60, l2=2.0, temperature calibration T=1.06)
+-   **Best cross-validation score:** 35.2282 tuning / 34.9660 audit (split-half episodes)
+-   **Official validation score:** 35.1057 / 60 technical points (mean loss ratio: 0.7091)
+-   **Last reproducible run ID:** EXP-012 (`compiled_versions/v2_promoted_champion_exp012`)
+-   **Frozen fallback run ID:** EXP-006 (`compiled_versions/v1_frozen_champion_exp006`, 35.0743 pts)
 -   **Known blockers:** None
--   **Next highest-value action:** Submit `runs/hgb_run/submission.csv` and `submission_entry.zip` via Main Round Google Form; prepare for Round 2 (adaptation) at 9 PM Central.
+-   **Next highest-value action:** Submit `compiled_versions/final_submission/submission.csv` and `compiled_versions/final_submission/submission_entry.zip` via Main Round Google Form before 9 PM Central; prepare for Round 2 (adaptation) at 9 PM Central.
 
 ## 1. Setup checklist
 
@@ -177,8 +178,15 @@ successful run.
   EXP-004    HistGradientBoosting + Baseline Full validation  HGB (leaves=31) 32.0204      0.873800         ~5.0s    Strong improvement
   EXP-005    211 Advanced Cutoff Features,   50/50 Tune/Audit HGB             34.1988 (aud)0.7545 (aud)     ~10.0s   Breakthrough
              Multi-cutoff Slices (step=6)    Full validation  HGB (leaves=31) 34.3739      0.745500         ~10.0s   Keep
-  EXP-006    HGB Tree Capacity & L2 Tuning   50/50 Tune/Audit HGB             34.9486 (aud)0.7167 (aud)     ~12.0s   Production Model
-             (leaves=60, l2=2.0, min_leaf=25)Full validation  HGB             35.0743      0.710700         12.03s   **CURRENT BEST / SUBMITTED**
+  EXP-006    HGB Tree Capacity & L2 Tuning   50/50 Tune/Audit HGB             34.9486 (aud)0.7167 (aud)     ~12.0s   Frozen Fallback v1
+             (leaves=60, l2=2.0, min_leaf=25)Full validation  HGB             35.0743      0.710700         12.03s   (frozen_champion_v1)
+  EXP-007    HGB-Prior Blend Optimization    50/50 Tune/Audit HGB+Base        34.9486 (aud)0.710700         ~3.0s    Reject (alpha=1.0 best)
+  EXP-008    Missingness Defaults (Base rate)50/50 Tune/Audit HGB             34.4992 (aud)0.731200         ~10.6s   Reject (flags diluted splits)
+  EXP-009    Early Cutoff (t=12) + Drift Vel 50/50 Tune/Audit HGB             34.9474 (aud)0.706700         ~12.5s   Reject (label noise at t<30)
+  EXP-010    Drift Velocity (t=30 safe cut)  50/50 Tune/Audit HGB             34.6534 (aud)0.725900         ~12.0s   Reject (sparse window noise)
+  EXP-011    Specialist Models by Type       50/50 Tune/Audit HGB x 3         30.3597 (aud)0.956900         ~16.0s   Reject (sample fragmentation)
+  EXP-012    Logit Temperature Scaling T=1.0650/50 Tune/Audit HGB-Calibrated  34.9660 (aud)0.709100         12.00s   **PROMOTED CHAMPION V2**
+             (Brier score calibration)       Full validation  HGB-Calibrated  35.1057      0.709100         12.00s   (promoted_champion_v2)
   -----------------------------------------------------------------------------------------------------------------------------------------
 
 ## 6. Learning history / architecture decisions
