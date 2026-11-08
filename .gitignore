@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+house-edge-output*/
+comparisons/
+
+/reproduced.csv
+/combo-reproduced.csv
+/optimizer-results.json
+/phillip-lab/train/
