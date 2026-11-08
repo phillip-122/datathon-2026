@@ -1,4 +1,13 @@
-"""Self-contained offline predictor for v8_routed (Regime-Routed Specialist + Adaptive Mixture)."""
+"""Self-contained offline predictor for Candidate v10 (Short History Subpopulation Triage Solution).
+
+Architecture:
+- Long History (n_past > 100, N >= 192): Active Champion v8 routed pipeline (v6 ensemble + Config 3 mixture).
+- Short History (n_past <= 100, N == 64): Databricks Triage Specialist (EXP-025):
+  1. Floor bankroll peer payout coupling (Inverted-U for balanced/jackpot, monotonic for steady).
+  2. Piecewise jackpot cold streak freeze (75% suppression at 9+ zeros).
+  3. Bayesian small-sample empirical frequency shrinkage toward stable nominal base rates.
+  4. Hierarchical calibration tuned across the multi-episode structure.
+"""
 import argparse
 from pathlib import Path
 import json
@@ -17,6 +26,10 @@ from feature_factory import (
     get_discrete_archetype_state,
     ArchetypeConditionedTransitionTable,
     MTYPES, MTYPE_MAP
+)
+from feature_factory_v25 import (
+    extract_features_v25,
+    ArchetypeConditionedTransitionTable as TableV25
 )
 
 TEMP_MAP = {"steady": 1.00, "balanced": 1.06, "jackpot": 1.12}
@@ -54,7 +67,7 @@ def main():
     test_dir = data / "test" if (data / "test/queries.csv").exists() else data
     if (data / "public/test/queries.csv").exists():
         test_dir = data / "public/test"
-    
+        
     qs, h = load_inputs(test_dir)
     grouped = defaultdict(dict)
     for r in h:
@@ -63,8 +76,11 @@ def main():
     temp = np.asarray([TEMP_MAP[q.machine_type] for q in qs])
     
     n_past = np.asarray([len([t for t in grouped[(q.episode_id, q.machine_id)] if t < q.cutoff]) for q in qs])
+    is_short = (n_past <= 100)
     
-    # 1. Predict Champion v6 component offline
+    # -------------------------------------------------------------
+    # 1. Base Champion v6 component offline (used for long history)
+    # -------------------------------------------------------------
     from predict_v6 import (
         predict_ensemble as v6_predict_ensemble,
         predict_champ as v6_predict_champ,
@@ -93,7 +109,9 @@ def main():
     db_v6 = np.asarray([v6_cal["delta_beta_machine"][m] for m in MTYPES])
     p_v6_cal = v6_transform_hierarchical(np.asarray(p_v6_raw), M, v6_cal["theta_global"], np.asarray(v6_cal["beta_global"]), dt_v6, db_v6)
     
-    # 2. Predict Config 3 component
+    # -------------------------------------------------------------
+    # 2. Config 3 component
+    # -------------------------------------------------------------
     models_cfg3 = joblib.load(root / "models_cfg3.joblib")
     trans_data = json.loads((root / "trans_table_cfg3.json").read_text())
     trans_table_cfg3 = ArchetypeConditionedTransitionTable(alpha=trans_data["alpha"])
@@ -122,14 +140,15 @@ def main():
     logits_cfg3 = np.mean([m.decision_function(X_cfg3) for m in models_cfg3], axis=0)
     raw_cfg3 = softmax(logits_cfg3 / temp[:, None], axis=1)
     
-    # 3. Route predictions based on exact pre-cutoff history length
-    # Short history (n_past <= 100): pure Config 3 calibrated
+    # Base short-history Config 3 prediction
     cal_cfg3_pure = json.loads((root / "hierarchical_cal_cfg3_pure.json").read_text())
     blend_cfg3 = 0.25 * raw_cfg3 + 0.75 * p_v6_cal
     blend_cfg3 = blend_cfg3 / np.sum(blend_cfg3, axis=1, keepdims=True)
     p_cfg3_cal = transform_hierarchical(blend_cfg3, M, cal_cfg3_pure)
     
-    # Long history (n_past > 100): v8 adaptive mixture
+    # -------------------------------------------------------------
+    # 3. Long History (n_past > 100): v8 adaptive mixture
+    # -------------------------------------------------------------
     cal_v8 = json.loads((root / "hierarchical_calibration_v8.json").read_text())
     w_mtype = cal_v8.get("blend_weights", {"steady": 0.15, "balanced": 0.28, "jackpot": 0.35})
     w_vec = np.asarray([w_mtype[q.machine_type] for q in qs])
@@ -137,9 +156,62 @@ def main():
     test_blended_v8 = test_blended_v8 / np.sum(test_blended_v8, axis=1, keepdims=True)
     p_v8_cal = transform_hierarchical(test_blended_v8, M, cal_v8)
     
-    # Routing decision
-    is_short = (n_past <= 100)[:, None]
-    p_final = np.where(is_short, p_cfg3_cal, p_v8_cal)
+    # -------------------------------------------------------------
+    # 4. Short History (n_past <= 100): Databricks Triage Specialist
+    # -------------------------------------------------------------
+    models_v25 = joblib.load(root / "models_v25.joblib")
+    trans_data_v25 = json.loads((root / "trans_table_v25.json").read_text())
+    trans_table_v25 = TableV25(alpha=trans_data_v25["alpha"])
+    trans_table_v25.global_prior = np.asarray(trans_data_v25["global_prior"], dtype=np.float32)
+    for m in MTYPES:
+        trans_table_v25.mt_prior[m] = np.asarray(trans_data_v25["mt_prior"][m], dtype=np.float32)
+    for k_str, cnt in trans_data_v25["pair_counts"].items():
+        p1, p2 = [int(x) for x in k_str.split(",")]
+        trans_table_v25.pair_counts[(p1, p2)] = Counter({int(out): c for out, c in cnt.items()})
+    for arch_str, p_dict in trans_data_v25["archetype_pair_counts"].items():
+        arch = int(arch_str)
+        for k_str, cnt in p_dict.items():
+            p1, p2 = [int(x) for x in k_str.split(",")]
+            trans_table_v25.archetype_pair_counts[arch][(p1, p2)] = Counter({int(out): c for out, c in cnt.items()})
+            
+    # Extract Databricks features only for short history queries
+    short_indices = np.where(is_short)[0]
+    if len(short_indices) > 0:
+        short_qs = [qs[i] for i in short_indices]
+        X_v25 = np.asarray([
+            extract_features_v25(
+                q,
+                {t: p for t, p in grouped[(q.episode_id, q.machine_id)].items() if t < q.cutoff},
+                [{t: p for t, p in s.items() if t < q.cutoff} for (ep, m), s in grouped.items() if ep == q.episode_id and m != q.machine_id],
+                q.cutoff,
+                base,
+                trans_table_v25
+            ) for q in short_qs
+        ], dtype=np.float32)
+        
+        logits_v25 = np.mean([m.decision_function(X_v25) for m in models_v25], axis=0)
+        temp_short = temp[short_indices]
+        raw_v25 = softmax(logits_v25 / temp_short[:, None], axis=1)
+        
+        cal_v10 = json.loads((root / "hierarchical_calibration_v10.json").read_text())
+        short_alpha = cal_v10.get("short_alpha", 0.25)
+        
+        # Blend raw v25 specialist with Config 3
+        p_cfg3_short = p_cfg3_cal[short_indices]
+        blend_short = short_alpha * raw_v25 + (1.0 - short_alpha) * p_cfg3_short
+        blend_short = blend_short / np.sum(blend_short, axis=1, keepdims=True)
+        
+        M_short = M[short_indices]
+        p_v10_short_cal = transform_hierarchical(blend_short, M_short, cal_v10)
+    else:
+        p_v10_short_cal = np.zeros((0, 5))
+        
+    # -------------------------------------------------------------
+    # 5. Route: Pure Databricks specialist on short, v8 on long
+    # -------------------------------------------------------------
+    p_final = np.copy(p_v8_cal)
+    if len(short_indices) > 0:
+        p_final[short_indices] = p_v10_short_cal
     p_final = p_final / np.sum(p_final, axis=1, keepdims=True)
     
     out_preds = {}
